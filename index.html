@@ -874,9 +874,11 @@ document.addEventListener('DOMContentLoaded', function() {
       });
 
       card.addEventListener('touchmove', function(e) {
-        e.preventDefault(); // Prevent scroll from interfering
-        clearTimeout(serviceHoldTimer);
-      }, { passive: false });
+        if (serviceHoldTimer) {
+          clearTimeout(serviceHoldTimer);
+          serviceHoldTimer = null;
+        }
+      }, { passive: true });
 
     });
   }
@@ -1165,6 +1167,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // Slider window reference — declared early so swipe and hover blocks can both use it
+  var sliderWindow = document.querySelector('.tech-slider-window');
+
   // Manual Click Interactive Handlers
   nextBtn.addEventListener('click', function() {
     moveNext();
@@ -1176,6 +1181,35 @@ document.addEventListener('DOMContentLoaded', function() {
     resetAutoCycle();
   });
 
+  // Automated 4 Second Rolling Clock Loop
+  var autoCycleTimer = setInterval(moveNext, 4000);
+
+  // Mobile swipe left/right to change slide
+  if (window.matchMedia('(max-width: 767px)').matches) {
+    var swipeStartX = 0;
+    var swipeStartY = 0;
+    var swipeThreshold = 50;
+
+    sliderWindow.addEventListener('touchstart', function(e) {
+      swipeStartX = e.touches[0].clientX;
+      swipeStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    sliderWindow.addEventListener('touchend', function(e) {
+      var deltaX = e.changedTouches[0].clientX - swipeStartX;
+      var deltaY = e.changedTouches[0].clientY - swipeStartY;
+
+      if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > swipeThreshold) {
+        if (deltaX < 0) {
+          moveNext();
+        } else {
+          movePrev();
+        }
+        resetAutoCycle();
+      }
+    }, { passive: true });
+  }
+
   // Mobile press-and-hold to expand card
   var isMobile = window.matchMedia('(max-width: 767px)').matches;
 
@@ -1186,8 +1220,9 @@ document.addEventListener('DOMContentLoaded', function() {
     track.querySelectorAll('.tech-slide-card').forEach(function(card) {
       
       card.addEventListener('touchstart', function(e) {
-        e.preventDefault(); // Stops browser long-press menu
+        // Don't preventDefault here — it blocks swipe detection
         holdTimer = setTimeout(function() {
+          e.preventDefault(); // Only prevent default once hold is confirmed
           // Collapse any previously expanded card
           if (expandedCard && expandedCard !== card) {
             expandedCard.classList.remove('mobile-expanded');
@@ -1198,24 +1233,22 @@ document.addEventListener('DOMContentLoaded', function() {
           if (expandedCard) clearInterval(autoCycleTimer);
           else autoCycleTimer = setInterval(moveNext, 4000);
         }, 400); // 400ms hold threshold
-      }, { passive: false }); // passive: false required for preventDefault
+      }, { passive: true }); // passive: true so swipe detection isn't blocked
 
       card.addEventListener('touchend', function() {
         clearTimeout(holdTimer); // Short tap = don't expand
       });
 
       card.addEventListener('touchmove', function(e) {
-        e.preventDefault();
-        clearTimeout(holdTimer); // Finger moved = cancel hold
-      }, { passive: false });
+        if (holdTimer) {
+          clearTimeout(holdTimer);
+          holdTimer = null;
+        }
+      }, { passive: true });
     });
   }
 
-  // Automated 4 Second Rolling Clock Loop
-  var autoCycleTimer = setInterval(moveNext, 4000);
-
   // Pause auto-cycle on card hover
-  var sliderWindow = document.querySelector('.tech-slider-window');
   sliderWindow.addEventListener('mouseenter', function() {
     clearInterval(autoCycleTimer);
   });
