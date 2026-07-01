@@ -847,40 +847,54 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Mobile press-and-hold for service cards
+  // Mobile tap-to-reveal for service cards
   if (window.matchMedia('(max-width: 767px)').matches) {
     var activeServiceCard = null;
-    var serviceHoldTimer = null;
+    var activeServiceTimer = null;
+    var touchStartX = 0;
+    var touchStartY = 0;
+    var touchMoved = false;
+    var moveThreshold = 10; // px of movement before we treat it as a scroll, not a tap
 
     document.querySelectorAll('.service-card').forEach(function(card) {
 
       card.addEventListener('touchstart', function(e) {
-        e.preventDefault(); // Stops browser context menu / long-press popup
-        serviceHoldTimer = setTimeout(function() {
-          // Remove active class from any previously held card
-          if (activeServiceCard && activeServiceCard !== card) {
-            activeServiceCard.classList.remove('mobile-touch-active');
-          }
-          card.classList.add('mobile-touch-active');
-          activeServiceCard = card;
-        }, 400);
-      }, { passive: false });
-
-      card.addEventListener('touchend', function() {
-        clearTimeout(serviceHoldTimer);
-        // Release: remove the active state so it snaps back to normal
-        card.classList.remove('mobile-touch-active');
-        activeServiceCard = null;
-      });
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        touchMoved = false;
+      }, { passive: true }); // passive: true -> never blocks scrolling
 
       card.addEventListener('touchmove', function(e) {
-        if (serviceHoldTimer) {
-          clearTimeout(serviceHoldTimer);
-          serviceHoldTimer = null;
+        var dx = Math.abs(e.touches[0].clientX - touchStartX);
+        var dy = Math.abs(e.touches[0].clientY - touchStartY);
+        if (dx > moveThreshold || dy > moveThreshold) {
+          touchMoved = true; // this is a scroll/swipe, not a tap
         }
       }, { passive: true });
 
+      card.addEventListener('touchend', function(e) {
+        if (touchMoved) return; // was a scroll — don't trigger the reveal
+
+        e.preventDefault(); // stop the ghost click that would otherwise double-fire
+        activateServiceCard(card);
+      }, { passive: false });
+
     });
+
+    function activateServiceCard(card) {
+      if (activeServiceCard && activeServiceCard !== card) {
+        activeServiceCard.classList.remove('mobile-touch-active');
+      }
+      clearTimeout(activeServiceTimer);
+
+      card.classList.add('mobile-touch-active');
+      activeServiceCard = card;
+
+      activeServiceTimer = setTimeout(function() {
+        card.classList.remove('mobile-touch-active');
+        if (activeServiceCard === card) activeServiceCard = null;
+      }, 3000);
+    }
   }
 
   // 7. Client Badge - same as services badge
