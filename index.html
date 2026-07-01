@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MISIOM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+</head>
+<body>
+
+<!-- HERO NAV -->
+<header class="hero-nav" id="heroNav">
+  <div class="nav-container">
+
+    <div class="nav-logo">
+      <a href="#">
+        <img src="assets/images/logo.png" alt="Logo" class="nav-logo-img" />
+      </a>
+    </div>
+
+    <nav class="nav-capsule">
+      <ul class="nav-links">
+        <li class="nav-item active">
+          <a href="#">
+            <span class="active-dot"></span>
+            HOME
+          </a>
+        </li>
+        <li class="nav-item"><a href="#">ABOUT</a></li>
+        <li class="nav-item"><a href="#">PAGES</a></li>
+        <li class="nav-item"><a href="#">SERVICES</a></li>
+        <li class="nav-item"><a href="#">SHOP</a></li>
+        <li class="nav-item"><a href="#">BLOG</a></li>
+        <li class="nav-item"><a href="#">CONTACT</a></li>
+      </ul>
+    </nav>
+
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+</header>
+
+<!-- STICKY NAV -->
+<header class="sticky-nav" id="stickyNav">
+  <div class="nav-container">
+
+    <div class="nav-logo">
+      <a href="#">
+        <img src="assets/images/logo.png" alt="Logo" class="nav-logo-img" />
+      </a>
+    </div>
+
+    <nav class="nav-capsule">
+      <ul class="nav-links">
+        <li class="nav-item active">
+          <a href="#">
+            <span class="active-dot"></span>
+            HOME
+          </a>
+        </li>
+        <li class="nav-item"><a href="#">ABOUT</a></li>
+        <li class="nav-item"><a href="#">PAGES</a></li>
+        <li class="nav-item"><a href="#">SERVICES</a></li>
+        <li class="nav-item"><a href="#">SHOP</a></li>
+        <li class="nav-item"><a href="#">BLOG</a></li>
+        <li class="nav-item"><a href="#">CONTACT</a></li>
+      </ul>
+    </nav>
+
+    <button class="hamburger-btn sticky-hamburger" id="stickyHamburgerBtn" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+</header>
+
+<!-- MOBILE MENU OVERLAY -->
+<div class="mobile-menu-overlay" id="mobileMenuOverlay">
+  <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+  <ul class="mobile-nav-links">
+    <li class="nav-item active">
+      <a href="#">
+        <span class="active-dot"></span>
+        HOME
+      </a>
+    </li>
+    <li class="nav-item"><a href="#">ABOUT</a></li>
+    <li class="nav-item"><a href="#">PAGES</a></li>
+    <li class="nav-item"><a href="#">SERVICES</a></li>
+    <li class="nav-item"><a href="#">SHOP</a></li>
+    <li class="nav-item"><a href="#">BLOG</a></li>
+    <li class="nav-item"><a href="#">CONTACT</a></li>
+  </ul>
+</div>
+
+<!-- HERO SECTION -->
+<section class="hero-section" id="hero">
+  <div class="hero-container">
+
+    <div class="hero-left">
+      <h1 class="hero-headline">
+        Unlocking the potential of IT, one empowered step at a time!
+      </h1>
+      <p class="hero-subtext">
+        The advancements in IT have brought an ocean of opportunities
+        and technologies. By placing your trust in us, you and your
+        organization are ensured a smooth voyage through this ocean.
+      </p>
+      <a href="#" class="hero-cta">DISCOVER MORE</a>
+    </div>
+
+    <div class="hero-right">
+
+      <img src="assets/images/hero_img.png" alt="Hero" class="hero-person-img" />
+
+    </div>
+
+  </div>
+</section>
+
+<section class="tech-slider-section">
+  <div class="tech-section-container">
+    
+    <div class="tech-header-block">
+      <div class="services-badge">
+        <span class="badge-dot"></span>
+        Tech Stack
+      </div>
+      <h2 class="tech-main-heading">TECHNOLOGIES</h2>
+      <p class="tech-subtitle">The technologies that we make use of</p>
+    </div>
+
+    <div class="tech-slider-window">
+      <div class="tech-slider-track" id="techSliderTrack">
+        
+        <div class="tech-slide-card" style="background-image: url('assets/images/solidity_bg.png')">
+          <img class="tech-tile-icon tech-tile-icon-solidity" src="assets/images/solidity.png" alt="Solidity icon" />
+          <div class="tech-icon-placeholder"></div>
+          <div class="tech-slide-content">
+            <span class="tech-slide-title">Solidity</span>
+            <p class="tech-slide-desc">Smart contract language powering decentralized blockchain applications.</p>
+          </div>
+        </div>
+        <div class="tech-slide-card" style="background-image: url('assets/images/springboot_bg.png')">
+          <img class="tech-tile-icon tech-tile-icon-springboot" src="assets/images/springboot.png" alt="Spring Boot icon" />
+          <div class="tech-icon-placeholder"></div>
+          <div class="tech-slide-content">
+            <span class="tech-slide-title">Spring Boot</span>
+            <p class="tech-slide-desc">Robust Java framework for building scalable enterprise-grade backend systems.</p>
+          </div>
+        </div>
+        <div class="tech-slide-card" style="background-image: url('assets/images/reactnative_bg.png')">
+          <img class="tech-tile-icon tech-tile-icon-reactnative" src="assets/images/reactnative.png" alt="React Native icon" />
+          <div class="tech-icon-placeholder"></div>
+          <div class="tech-slide-content">
+            <span class="tech-slide-title">React Native</span>
+            <p class="tech-slide-desc">Cross-platform mobile framework delivering native app experiences efficiently.</p>
+          </div>
+        </div>
+        <div class="tech-slide-card" style="background-image: url('assets/images/java_bg.png')">
+          <img class="tech-tile-icon tech-tile-icon-java" src="assets/images/java.png" alt="Java icon" />
+          <div class="tech-icon-placeholder"></div>
+          <div class="tech-slide-content">
+            <span class="tech-slide-title">Java</span>
+            <p class="tech-slide-desc">Versatile and powerful language behind millions of enterprise software solutions.</p>
+          </div>
+        </div>
+        <div class="tech-slide-card" style="background-image: url('assets/images/android_bg.png')">
+          <img class="tech-tile-icon tech-tile-icon-android" src="assets/images/android.png" alt="Android icon" />
+          <div class="tech-icon-placeholder"></div>
+          <div class="tech-slide-content">
+            <span class="tech-slide-title">Android</span>
+            <p class="tech-slide-desc">Native Android development delivering smooth, high-performance mobile applications.</p>
+          </div>
+        </div>
+        <div class="tech-slide-card" style="background-image: url('assets/images/python_bg.png')">
+          <img class="tech-tile-icon tech-tile-icon-python" src="assets/images/python.png" alt="Python icon" />
+          <div class="tech-icon-placeholder"></div>
+          <div class="tech-slide-content">
+            <span class="tech-slide-title">Python</span>
+            <p class="tech-slide-desc">Versatile scripting language excelling in AI, data science, and automation.</p>
+          </div>
+        </div>
+        <div class="tech-slide-card" style="background-image: url('assets/images/php_bg.png')">
+          <img class="tech-tile-icon tech-tile-icon-php" src="assets/images/php.png" alt="PHP icon" />
+          <div class="tech-icon-placeholder"></div>
+          <div class="tech-slide-content">
+            <span class="tech-slide-title">PHP</span>
+            <p class="tech-slide-desc">Server-side language driving dynamic, content-rich web applications worldwide.</p>
+          </div>
+        </div>
+        <div class="tech-slide-card" style="background-image: url('assets/images/flutter_bg.png')">
+          <img class="tech-tile-icon tech-tile-icon-flutter" src="assets/images/flutter.png" alt="Flutter icon" />
+          <div class="tech-icon-placeholder"></div>
+          <div class="tech-slide-content">
+            <span class="tech-slide-title">Flutter</span>
+            <p class="tech-slide-desc">Google's UI toolkit for crafting beautiful natively compiled cross-platform apps.</p>
+          </div>
+        </div>
+        <div class="tech-slide-card" style="background-image: url('assets/images/embedded_bg.png')">
+          <img class="tech-tile-icon tech-tile-icon-embedded" src="assets/images/embedded.png" alt="Embedded icon" />
+          <div class="tech-icon-placeholder"></div>
+          <div class="tech-slide-content">
+            <span class="tech-slide-title">Embedded</span>
+            <p class="tech-slide-desc">Low-level firmware and hardware-integrated systems engineered for real-time performance.</p>
+          </div>
+        </div>
+        <div class="tech-slide-card" style="background-image: url('assets/images/iot_bg.png')">
+          <img class="tech-tile-icon tech-tile-icon-iot" src="assets/images/iot.png" alt="IoT icon" />
+          <div class="tech-icon-placeholder"></div>
+          <div class="tech-slide-content">
+            <span class="tech-slide-title">IoT</span>
+            <p class="tech-slide-desc">Connected devices and sensor networks powering smart, data-driven ecosystems.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="tech-nav-controls">
+      <button class="tech-arrow-btn prev-btn" id="techPrevBtn" aria-label="Previous Slide">←</button>
+      <button class="tech-arrow-btn next-btn" id="techNextBtn" aria-label="Next Slide">→</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICES HEADING SECTION -->
+<section class="services-heading-section">
+
+  <div class="services-circle-decor"></div>
+
+  <div class="services-container">
+
+    <div class="services-badge">
+      <span class="badge-dot"></span>
+      Our Services
+    </div>
+
+    <h2 class="services-heading">Services that we Offer</h2>
+
+    <p class="services-subtitle">Providing secure and quality services</p>
+
+  </div>
+
+</section>
+
+<section class="services-grid-section">
+  <div class="services-grid-container">
+
+    <div class="service-card">
+      <div class="card-static-content">
+        <div class="card-number">01</div>
+        <h3 class="card-title">Web Applications</h3>
+        <p class="card-teaser">Web or cloud-based applications are like the backbone of a business, helping it run smoothly...</p>
+        <span class="read-more-hint">Hover to explore +</span>
+      </div>
+      <img class="card-hover-image" src="assets/images/service1.png" alt="Web Applications" />
+      <div class="card-hover-overlay">
+        <p class="card-full-desc">Web or cloud-based applications are like the backbone of a business, helping it run smoothly and grow steadily. We focus on providing user-friendly applications that bring joy to our customers. By using simple yet effective technology, we aim to make tasks easier and more efficient, ensuring our clients' businesses thrive and flourish.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="card-static-content">
+        <div class="card-number">02</div>
+        <h3 class="card-title">ERP Softwares</h3>
+        <p class="card-teaser">Operating a business in the competitive modern market leaves no room for minor oversights...</p>
+        <span class="read-more-hint">Hover to explore +</span>
+      </div>
+      <img class="card-hover-image" src="assets/images/service2.png" alt="ERP Softwares" />
+      <div class="card-hover-overlay">
+        <p class="card-full-desc">Operating a business in the fiercely competitive modern market leaves no room for even minor oversights, which can lead to significant losses. Partnering with Fleming Embedding And Software Solutions ensures your company remains fully equipped to face competition, thanks to our expertly crafted and thoughtfully developed ERPs. Our solutions are designed with precision and care to guarantee your business excels and prospers.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="card-static-content">
+        <div class="card-number">03</div>
+        <h3 class="card-title">Mobile Applications</h3>
+        <p class="card-teaser">Achieving top-notch services with just a touch is a universal aspiration. We achieve this...</p>
+        <span class="read-more-hint">Hover to explore +</span>
+      </div>
+      <img class="card-hover-image" src="assets/images/service3.png" alt="Mobile Applications" />
+      <div class="card-hover-overlay">
+        <p class="card-full-desc">Achieving top-notch services with just a touch is a universal aspiration. We achieve this by offering expert mobile application development and reliable support services. This means creating user-friendly, efficient applications that meet the highest standards. We're committed to making technology accessible and impactful for our clients, helping them reach new heights in their endeavors.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="card-static-content">
+        <div class="card-number">04</div>
+        <h3 class="card-title">Embedded Solutions</h3>
+        <p class="card-teaser">Fleming Techno Solutions understands the pivotal role that embedded technology plays...</p>
+        <span class="read-more-hint">Hover to explore +</span>
+      </div>
+      <img class="card-hover-image" src="assets/images/service4.png" alt="Embedded Solutions" />
+      <div class="card-hover-overlay">
+        <p class="card-full-desc">Fleming Techno Solutions understands the pivotal role that embedded technology plays in shaping our connected world. Our dedicated team of experts is committed to delivering solutions that exceed expectations, providing you with a competitive edge in today's fast-paced technological landscape. We offer a wide range of embedded solutions tailored to meet the specific needs of your projects.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="card-static-content">
+        <div class="card-number">05</div>
+        <h3 class="card-title">AI & Machine Learning</h3>
+        <p class="card-teaser">Dive into the transformative world of Artificial Intelligence (AI) and Machine Learning...</p>
+        <span class="read-more-hint">Hover to explore +</span>
+      </div>
+      <img class="card-hover-image" src="assets/images/service5.png" alt="AI & Machine Learning" />
+      <div class="card-hover-overlay">
+        <p class="card-full-desc">Dive into the transformative world of Artificial Intelligence (AI) and Machine Learning (ML) with Fleming Techno Solutions. Whether you're a student eager to grasp AI/ML fundamentals or a professional seeking advanced applications, we're your trusted partner. Our dedicated team is here to simplify complex concepts, offer expert guidance, and empower you to harness AI and ML's potential for innovation.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="card-static-content">
+        <div class="card-number">06</div>
+        <h3 class="card-title">Cyber Security</h3>
+        <p class="card-teaser">We specialize in guiding students through hands-on Cyber Security projects, providing expertise...</p>
+        <span class="read-more-hint">Hover to explore +</span>
+      </div>
+      <img class="card-hover-image" src="assets/images/service6.png" alt="Cyber Security" />
+      <div class="card-hover-overlay">
+        <p class="card-full-desc">We specialize in guiding students through hands-on Cyber Security projects, providing expertise in critical areas like intrusion detection, cryptography, and proficiency in utilizing platforms such as Ubuntu and Kali Linux. Our approach emphasizes practical skills and real-world applications, ensuring students gain valuable experience in tackling cyber threats and securing systems effectively. This hands-on learning approach sets a solid foundation for future success in the field of Cyber Security.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="card-static-content">
+        <div class="card-number">07</div>
+        <h3 class="card-title">Blockchain</h3>
+        <p class="card-teaser">Blockchain is a revolutionary technology that ensures secure, transparent, and tamper-proof...</p>
+        <span class="read-more-hint">Hover to explore +</span>
+      </div>
+      <img class="card-hover-image" src="assets/images/service7.png" alt="Blockchain" />
+      <div class="card-hover-overlay">
+        <p class="card-full-desc">Blockchain is a revolutionary technology that ensures secure, transparent, and tamper-proof transactions. It forms the backbone of cryptocurrencies like Bitcoin, but its applications extend far beyond digital currencies. We specialize in guiding students through the intricacies of Ethereum-related decentralized applications (dApps), covering areas such as smart contracts and their implementation on the Ethereum platform.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="card-static-content">
+        <div class="card-number">08</div>
+        <h3 class="card-title">Data Mining</h3>
+        <p class="card-teaser">Our expertise in data mining involves the adept application of advanced algorithms...</p>
+        <span class="read-more-hint">Hover to explore +</span>
+      </div>
+      <img class="card-hover-image" src="assets/images/service8.png" alt="Data Mining" />
+      <div class="card-hover-overlay">
+        <p class="card-full-desc">Our expertise in data mining involves the adept application of advanced algorithms and sophisticated statistical techniques to extract valuable insights from intricate datasets. We go beyond mere analysis, providing comprehensive guidance and support throughout the process. This empowers you to not only make well-informed decisions but also to innovate.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="card-static-content">
+        <div class="card-number">09</div>
+        <h3 class="card-title">Research Guidance</h3>
+        <p class="card-teaser">Seeking expert guidance for your research projects? Look no further. We offer comprehensive...</p>
+        <span class="read-more-hint">Hover to explore +</span>
+      </div>
+      <img class="card-hover-image" src="assets/images/service9.png" alt="Research Guidance" />
+      <div class="card-hover-overlay">
+        <p class="card-full-desc">Seeking expert guidance for your research projects? Look no further. We offer comprehensive project assistance and academic guidance to ensure you're not just on the right track, but also equipped with the necessary tools to conduct thorough research. Our experienced team is dedicated to providing a curated selection of the most pertinent and timely topics, along with the support needed to help you excel in your academic endeavors.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="management-section">
+  <div class="management-parallax-bg" style="background-image: url('assets/images/management_bg.png');"></div>
+<div class="management-shape-1"></div>
+<div class="management-shape-2"></div>
+<div class="management-shape-3"></div>
+
+  <div class="management-container">
+
+    <div class="management-left-card">
+      <h2 class="management-title">Experienced and dedicated management team</h2>
+      <p class="management-desc">
+        Our perfectly structured management hierarchy,with over 12 years of experience,makes sure that our team of developers work towards a singular goal in a motivated and focused manner.
+      </p>
+
+      <ul class="management-bullets">
+        <li>
+          <span class="bullet-check">✓</span>
+          Expert IT solutions & embedded systems
+        </li>
+        <li>
+          <span class="bullet-check">✓</span>
+          Creative and results-driven operational approach
+        </li>
+        <li>
+          <span class="bullet-check">✓</span>
+          Focused on growing your business online
+        </li>
+      </ul>
+
+      <div class="management-footer-text">
+        <span class="text-large-year" id="yearsCount"></span>
+        <div class="management-footer-divider"></div>
+        <span class="text-sub-year">YEARS IN THIS INDUSTRY<br>SINCE OCTOBER 2013.</span>
+      </div>
+    </div>
+
+    <div class="management-right-stats">
+
+      <div class="stat-blue-box stat-top">
+        <div class="stat-header">
+          <span class="stat-number">4,800+</span>
+          <span class="stat-arrow">↑</span>
+        </div>
+        <p class="stat-desc">
+          Happy Clients Served. Excellence delivered across every engagement.
+        </p>
+      </div>
+
+      <div class="stat-white-box stat-bottom">
+        <div class="stat-header">
+          <span class="stat-number stat-number-dark">3,200+</span>
+          <span class="stat-arrow stat-arrow-blue">↑</span>
+        </div>
+        <p class="stat-desc stat-desc-dark">
+          Projects Completed. Expectations exceeded on every milestone.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="clients-section">
+  <div class="clients-grid-container">
+    
+    <div class="client-heading-box">
+      <div class="client-badge">
+        <span class="badge-dot"></span>
+        Our Clients
+      </div>
+      <h2 class="client-section-heading">Some of our Respected Clients</h2>
+    </div>
+
+    <div class="client-logo-box">
+      <div class="logo-wrapper">
+        <img src="assets/images/client1.png" alt="Client Logo 1" class="client-logo" />
+      </div>
+    </div>
+
+    <div class="client-logo-box">
+      <div class="logo-wrapper">
+        <img src="assets/images/client2.png" alt="Client Logo 2" class="client-logo" />
+      </div>
+    </div>
+
+    <div class="client-logo-box">
+      <div class="logo-wrapper">
+        <img src="assets/images/client3.png" alt="Client Logo 3" class="client-logo" />
+      </div>
+    </div>
+
+    <div class="client-logo-box">
+      <div class="logo-wrapper">
+        <img src="assets/images/client4.png" alt="Client Logo 4" class="client-logo" />
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="cta-dark-section">
+  <div class="cta-container">
+    <div class="cta-content-left">
+      <h2 class="cta-main-title">Let's make something great together</h2>
+    </div>
+    <div class="cta-action-right">
+      <a href="#contact" class="cta-brush-link">
+        Get Started <span class="cta-arrow">↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+
+  <div class="footer-blob footer-blob-1"></div>
+  <div class="footer-blob footer-blob-2"></div>
+
+  <div class="footer-container">
+
+    <div class="footer-newsletter-row">
+      <div class="footer-newsletter">
+        <input type="email" placeholder="Enter your email address" class="newsletter-input" />
+        <button class="newsletter-btn">SUBSCRIBE</button>
+      </div>
+    </div>
+
+    <div class="footer-columns">
+
+      <div class="footer-col footer-col-brand">
+        <div class="footer-logo">
+          <a href="#">
+            <img src="assets/images/logo.png" alt="Logo" class="footer-logo-img" />
+          </a>
+        </div>
+        <p class="footer-brand-desc">
+          Empowering businesses through embedded systems,
+          software solutions, and cutting-edge IT services.
+          Your trusted technology partner in Kerala.
+        </p>
+        <div class="footer-socials">
+          <a href="#" class="social-icon" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col footer-col-links">
+        <h4 class="footer-col-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Training Division</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-about">
+        <h4 class="footer-col-heading">About Us</h4>
+        <ul class="footer-links">
+          <li><a href="#">Who We Are</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-contact">
+        <h4 class="footer-col-heading">Reach Us</h4>
+        <ul class="footer-contact-list">
+
+          <li class="footer-contact-item">
+            <span class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.57 3.42 2 2 0 0 1 3.54 1.25h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.68 2.81a2 2 0 0 1-.45 2.11L7.91 8.75a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.91.33 1.85.55 2.81.68A2 2 0 0 1 21.5 16h.5z"/>
+              </svg>
+            </span>
+            <div class="contact-info-group">
+              <a href="tel:04844045252" class="contact-link">+91-484-4045252</a>
+              <a href="tel:9745205252" class="contact-link">+91-9745205252</a>
+            </div>
+          </li>
+
+          <li class="footer-contact-item">
+            <span class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </span>
+            <a href="mailto:helpdesk@fleming.co.in" class="contact-link">helpdesk@fleming.co.in</a>
+          </li>
+
+          <li class="footer-contact-item">
+            <span class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </span>
+            <span class="contact-info-text">
+              Fleming Techno Solutions<br>
+              #37/3956, 2nd Floor, Bank Road,<br>
+              Kaloor, Ernakulam — 682017
+            </span>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-divider"></div>
+      <p class="footer-copyright">
+        &copy; 2026 All Rights Reserved by
+        <span class="footer-brand-name">Fleming Embedded and Software Solutions</span>
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+const heroNav   = document.getElementById('heroNav');
+const stickyNav = document.getElementById('stickyNav');
+
+let lastScrollY = window.scrollY;
+
+function getHeroBottom() {
+  const hero = document.querySelector('.hero-section');
+  return hero ? hero.offsetTop + hero.offsetHeight : window.innerHeight;
+}
+
+function getHeroMidpoint() {
+  const hero = document.querySelector('.hero-section');
+  return hero ? hero.offsetTop + hero.offsetHeight * 0.5 : window.innerHeight * 0.5;
+}
+
+window.addEventListener('scroll', () => {
+  const currentY    = window.scrollY;
+  const scrollingUp = currentY < lastScrollY;
+  const heroBottom  = getHeroBottom();
+  const heroMid     = getHeroMidpoint();
+  const inHeroZone  = currentY < heroBottom;
+
+  if (inHeroZone) {
+    /* Inside hero */
+    stickyNav.classList.remove('nav-visible');
+    stickyNav.classList.add('nav-hidden');
+
+    if (scrollingUp) {
+      heroNav.classList.remove('nav-hidden');
+      heroNav.classList.add('nav-visible');
+    } else {
+      heroNav.classList.remove('nav-visible');
+      heroNav.classList.add('nav-hidden');
+    }
+
+  } else {
+    /* Below hero */
+    heroNav.classList.remove('nav-visible');
+    heroNav.classList.add('nav-hidden');
+
+    if (scrollingUp) {
+      stickyNav.classList.remove('nav-hidden');
+      stickyNav.classList.add('nav-visible');
+    } else {
+      stickyNav.classList.remove('nav-visible');
+      stickyNav.classList.add('nav-hidden');
+    }
+  }
+
+  lastScrollY = currentY;
+}, { passive: true });
+
+heroNav.classList.add('nav-visible');
+stickyNav.classList.add('nav-hidden');
+
+// Dynamic years since October 2013
+(function() {
+  var founded = new Date(2013, 9, 1);
+  var now = new Date();
+  var years = now.getFullYear() - founded.getFullYear();
+  if (now < new Date(now.getFullYear(), 9, 1)) years--;
+  var el = document.getElementById('yearsCount');
+  if (el) el.textContent = years + '+';
+})();
+</script>
+
+<script>
+// Mobile hamburger menu toggle
+(function() {
+  var overlay = document.getElementById('mobileMenuOverlay');
+  var hamburgerBtns = document.querySelectorAll('#hamburgerBtn, #stickyHamburgerBtn');
+  var closeBtn = document.getElementById('mobileMenuClose');
+  var navLinks = overlay.querySelectorAll('.nav-item a');
+
+  function openMenu() {
+    overlay.classList.add('open');
+  }
+
+  function closeMenu() {
+    overlay.classList.remove('open');
+  }
+
+  hamburgerBtns.forEach(function(btn) {
+    btn.addEventListener('click', openMenu);
+  });
+
+  closeBtn.addEventListener('click', closeMenu);
+
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', closeMenu);
+  });
+
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) closeMenu();
+  });
+})();
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  var section = document.querySelector('.services-heading-section');
+  if (!section) return;
+
+  var badgeEl = section.querySelector('.services-badge');
+  var headingEl = section.querySelector('.services-heading');
+  var subtitleEl = section.querySelector('.services-subtitle');
+
+  if (!headingEl) return;
+
+  // 1. Upper Badge - Delayed to trigger at screen center
+  if (badgeEl) {
+    gsap.fromTo(badgeEl,
+      { opacity: 0, y: -20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: badgeEl,
+          start: 'top center',
+          toggleActions: 'play none none reverse'
+        }
+      }
+    );
+  }
+
+  // 2. Split the Heading into individual characters
+  var split = new SplitType(headingEl, { types: 'chars' });
+  var chars = split.chars;
+
+  if (!chars || chars.length === 0) return;
+
+  // Set the INITIAL state of the letters (faded look)
+  gsap.set(chars, {
+    opacity: 0.15
+  });
+
+  // 3. Main Heading Reveal - Shifted up to start around the center
+  gsap.to(chars, {
+    scrollTrigger: {
+      trigger: headingEl,
+      start: 'top 60%',
+      end: 'top 35%',
+      scrub: true,
+      invalidateOnRefresh: true
+    },
+    opacity: 1,
+    stagger: 0.1,
+    ease: 'none'
+  });
+
+  // 4. Subtitle Fade-In - Delayed to trigger at screen center
+  if (subtitleEl) {
+    gsap.fromTo(subtitleEl,
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1,
+        y: 0,
+        scrollTrigger: {
+          trigger: subtitleEl,
+          start: 'top 65%',
+          end: 'top 45%',
+          scrub: true
+        }
+      }
+    );
+  }
+
+  // 5. Row-by-Row Smooth Scroll-Driven Tile Animations
+
+  // ROW 1: Cards 1, 2, and 3
+  gsap.to(".service-card:nth-child(-n+3)", {
+    opacity: 1,
+    y: 0,
+    stagger: 0.15,
+    scrollTrigger: {
+      trigger: ".service-card:nth-child(1)",
+      start: "top 80%",
+      end: "top 50%",
+      scrub: 1.5,
+      invalidateOnRefresh: true
+    }
+  });
+
+  // ROW 2: Cards 4, 5, and 6
+  gsap.to(".service-card:nth-child(n+4):nth-child(-n+6)", {
+    opacity: 1,
+    y: 0,
+    stagger: 0.15,
+    scrollTrigger: {
+      trigger: ".service-card:nth-child(4)",
+      start: "top 80%",
+      end: "top 50%",
+      scrub: 1.5,
+      invalidateOnRefresh: true
+    }
+  });
+
+  // ROW 3: Cards 7, 8, and 9
+  gsap.to(".service-card:nth-child(n+7)", {
+    opacity: 1,
+    y: 0,
+    stagger: 0.15,
+    scrollTrigger: {
+      trigger: ".service-card:nth-child(7)",
+      start: "top 80%",
+      end: "top 50%",
+      scrub: 1.5,
+      invalidateOnRefresh: true
+    }
+  });
+
+  // Mobile press-and-hold for service cards
+  if (window.matchMedia('(max-width: 767px)').matches) {
+    var activeServiceCard = null;
+    var serviceHoldTimer = null;
+
+    document.querySelectorAll('.service-card').forEach(function(card) {
+
+      card.addEventListener('touchstart', function(e) {
+        e.preventDefault(); // Stops browser context menu / long-press popup
+        serviceHoldTimer = setTimeout(function() {
+          // Remove active class from any previously held card
+          if (activeServiceCard && activeServiceCard !== card) {
+            activeServiceCard.classList.remove('mobile-touch-active');
+          }
+          card.classList.add('mobile-touch-active');
+          activeServiceCard = card;
+        }, 400);
+      }, { passive: false });
+
+      card.addEventListener('touchend', function() {
+        clearTimeout(serviceHoldTimer);
+        // Release: remove the active state so it snaps back to normal
+        card.classList.remove('mobile-touch-active');
+        activeServiceCard = null;
+      });
+
+      card.addEventListener('touchmove', function(e) {
+        e.preventDefault(); // Prevent scroll from interfering
+        clearTimeout(serviceHoldTimer);
+      }, { passive: false });
+
+    });
+  }
+
+  // 7. Client Badge - same as services badge
+  var clientBadge = document.querySelector('.client-badge');
+  if (clientBadge) {
+    gsap.fromTo(clientBadge,
+      { opacity: 0, y: -20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: clientBadge,
+          start: 'top center',
+          toggleActions: 'play none none reverse'
+        }
+      }
+    );
+  }
+
+  // 8. Client Heading - same scrub char reveal as services heading
+  var clientHeading = document.querySelector('.client-section-heading');
+  if (clientHeading) {
+    var clientSplit = new SplitType(clientHeading, { types: 'chars' });
+    var clientChars = clientSplit.chars;
+
+    if (clientChars && clientChars.length > 0) {
+      gsap.set(clientChars, { opacity: 0.15 });
+
+      gsap.to(clientChars, {
+        scrollTrigger: {
+          trigger: clientHeading,
+          start: 'top 60%',
+          end: 'top 35%',
+          scrub: true,
+          invalidateOnRefresh: true
+        },
+        opacity: 1,
+        stagger: 0.1,
+        ease: 'none'
+      });
+    }
+  }
+
+  // 9. Client Logo Cards Entry Slide Animation
+  gsap.to(".client-logo-box", {
+    opacity: 1,
+    y: 0,
+    stagger: 0.15,
+    scrollTrigger: {
+      trigger: ".client-logo-box",
+      start: "top 80%",
+      end: "top 50%",
+      scrub: 1.5,
+      invalidateOnRefresh: true
+    }
+  });
+
+  // 8. Management Background Image Horizontal Parallax Engine
+  gsap.to(".management-parallax-bg", {
+    x: "5%",
+    scrollTrigger: {
+      trigger: ".management-section",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true
+    }
+  });
+
+  // Set all three hidden immediately — no fromTo wrapper, just callbacks
+  gsap.set(".management-left-card", { opacity: 0, y: 80 });
+  gsap.set(".stat-blue-box", { opacity: 0, y: 80 });
+  gsap.set(".stat-white-box", { opacity: 0, y: 80 });
+
+  ScrollTrigger.create({
+    trigger: ".management-section",
+    start: "top 20%",
+    onEnter: function() {
+      gsap.to(".management-left-card", { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" });
+      gsap.to(".stat-blue-box",        { opacity: 1, y: 0, duration: 0.9, ease: "power3.out", delay: 0.25 });
+      gsap.to(".stat-white-box",       { opacity: 1, y: 0, duration: 0.9, ease: "power3.out", delay: 0.5 });
+    },
+    onLeaveBack: function() {
+      gsap.to(".stat-white-box",       { opacity: 0, y: 80, duration: 0.6, ease: "power3.in" });
+      gsap.to(".stat-blue-box",        { opacity: 0, y: 80, duration: 0.6, ease: "power3.in", delay: 0.2 });
+      gsap.to(".management-left-card", { opacity: 0, y: 80, duration: 0.6, ease: "power3.in", delay: 0.4 });
+    },
+    onEnterBack: function() {
+      gsap.to(".management-left-card", { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" });
+      gsap.to(".stat-blue-box",        { opacity: 1, y: 0, duration: 0.9, ease: "power3.out", delay: 0.25 });
+      gsap.to(".stat-white-box",       { opacity: 1, y: 0, duration: 0.9, ease: "power3.out", delay: 0.5 });
+    }
+  });
+
+  // A. Tech Badge - same as services badge
+  var techBadge = document.querySelector('.tech-header-block .services-badge');
+  if (techBadge) {
+    gsap.fromTo(techBadge,
+      { opacity: 0, y: -20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: techBadge,
+          start: 'top center',
+          toggleActions: 'play none none reverse'
+        }
+      }
+    );
+  }
+
+  // B. Character Reveal Animation for Tech Heading
+  var techHeading = document.querySelector('.tech-main-heading');
+  if (techHeading) {
+    var techSplit = new SplitType(techHeading, { types: 'chars' });
+    var techChars = techSplit.chars;
+
+    if (techChars && techChars.length > 0) {
+      gsap.set(techChars, { opacity: 0.15 });
+      gsap.to(techChars, {
+        scrollTrigger: {
+          trigger: techHeading,
+          start: 'top 60%',
+          end: 'top 35%',
+          scrub: true,
+          invalidateOnRefresh: true
+        },
+        opacity: 1,
+        stagger: 0.1,
+        ease: 'none'
+      });
+    }
+  }
+
+  // C. Tech Subtitle - same as services subtitle
+  var techSubtitle = document.querySelector('.tech-subtitle');
+  if (techSubtitle) {
+    gsap.fromTo(techSubtitle,
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1,
+        y: 0,
+        scrollTrigger: {
+          trigger: techSubtitle,
+          start: 'top 65%',
+          end: 'top 45%',
+          scrub: true
+        }
+      }
+    );
+  }
+
+  // C. Interactive Seamless Carousel Infinite Loop Engine
+  var track = document.getElementById('techSliderTrack');
+  var prevBtn = document.getElementById('techPrevBtn');
+  var nextBtn = document.getElementById('techNextBtn');
+  var isAnimating = false; // Prevents click spamming from breaking the alignment
+  var isRevealAnimating = false; // True while entrance/exit fade animations are running — blocks shifts until fully settled
+
+  // D1. Scroll Entrance/Exit — always queries the CURRENT front-5 cards live,
+  // so it stays correct no matter how many carousel shifts have happened.
+  function getVisibleTechCards() {
+    return Array.prototype.slice.call(track.querySelectorAll('.tech-slide-card')).slice(0, 5);
+  }
+
+  ScrollTrigger.create({
+    trigger: ".tech-slider-window",
+    start: "top 85%",
+    onEnter: function() {
+      isRevealAnimating = true;
+      gsap.to(getVisibleTechCards(), {
+        opacity: 1, y: 0, stagger: 0.12, duration: 0.6, ease: "power2.out", overwrite: "auto",
+        onComplete: function() { isRevealAnimating = false; }
+      });
+    },
+    onEnterBack: function() {
+      isRevealAnimating = true;
+      gsap.to(getVisibleTechCards(), {
+        opacity: 1, y: 0, stagger: 0.12, duration: 0.6, ease: "power2.out", overwrite: "auto",
+        onComplete: function() { isRevealAnimating = false; }
+      });
+    },
+    onLeaveBack: function() {
+      isRevealAnimating = true;
+      gsap.to(getVisibleTechCards(), {
+        opacity: 0, y: 40, stagger: { each: 0.12, from: "end" }, duration: 0.5, ease: "power2.out", overwrite: "auto",
+        onComplete: function() { isRevealAnimating = false; }
+      });
+    }
+  });
+
+  // D2. Shift Reveal Animation — after a shift, only ONE card is actually new
+  // to the visible set (the other 4 were already showing). Only that one card
+  // fades/slides in; the rest are left completely untouched so nothing flashes.
+  function playTechShiftReveal(edge) {
+    var visibleCards = Array.prototype.slice.call(track.querySelectorAll('.tech-slide-card')).slice(0, 5);
+
+    // 'end'   -> moveNext: the newly-visible card is the LAST of the front 5
+    // 'start' -> movePrev: the newly-visible card is the FIRST of the front 5
+    var newCard = edge === 'start' ? visibleCards[0] : visibleCards[4];
+
+    isRevealAnimating = true;
+    gsap.fromTo(newCard,
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: "power2.out",
+        overwrite: "auto",
+        onComplete: function() { isRevealAnimating = false; }
+      }
+    );
+  }
+
+  function getCardSpacing() {
+    var firstCard = track.querySelector('.tech-slide-card');
+    if (!firstCard) return 0;
+    var cardWidth = firstCard.offsetWidth;
+    var gap = 0;
+    return cardWidth + gap;
+  }
+
+  function moveNext() {
+    if (isAnimating || isRevealAnimating) return;
+    isAnimating = true;
+
+    var moveAmount = getCardSpacing();
+
+    // Hide the card about to enter the view so it doesn't show during the horizontal slide —
+    // it will only appear afterward via playTechShiftReveal's fade-in
+    var allCards = track.querySelectorAll('.tech-slide-card');
+    var enteringCard = allCards[5];
+    if (enteringCard) gsap.set(enteringCard, { opacity: 0 });
+
+    // Smoothly shift the entire track layout frame to the left by one card width
+    gsap.to(track, {
+      x: -moveAmount,
+      duration: 0.6,
+      ease: "power2.out",
+      onComplete: function() {
+        // As soon as the animation completes, append the first card smoothly to the end of the track array
+        var firstCard = track.querySelector('.tech-slide-card');
+        track.appendChild(firstCard);
+        // Instantly reset the track's physical coordinate translation layout framework to 0 without transition stutter
+        gsap.set(track, { x: 0 });
+        isAnimating = false;
+        // Only the newly-entered card (last of the visible 5) animates in
+        playTechShiftReveal('end');
+      }
+    });
+  }
+
+  function movePrev() {
+    if (isAnimating || isRevealAnimating) return;
+    isAnimating = true;
+
+    var moveAmount = getCardSpacing();
+    
+    // Grab the very last element in the line sequence layout list...
+    var cards = track.querySelectorAll('.tech-slide-card');
+    var lastCard = cards[cards.length - 1];
+    // Hide it before it enters view — it will only appear via playTechShiftReveal's fade-in
+    gsap.set(lastCard, { opacity: 0 });
+    // ...and immediately prepend it ahead of Slide 1 behind the view boundary scenes
+    track.insertBefore(lastCard, track.firstChild);
+
+    // Instantly shift the track viewport left so the visual rendering frame doesn't pop or jitter
+    gsap.set(track, { x: -moveAmount });
+
+    // Smoothly glide back rightward to rest beautifully at 0 coordinates
+    gsap.to(track, {
+      x: 0,
+      duration: 0.6,
+      ease: "power2.out",
+      onComplete: function() {
+        isAnimating = false;
+        // Only the newly-entered card (first of the visible 5) animates in
+        playTechShiftReveal('start');
+      }
+    });
+  }
+
+  // Manual Click Interactive Handlers
+  nextBtn.addEventListener('click', function() {
+    moveNext();
+    resetAutoCycle();
+  });
+
+  prevBtn.addEventListener('click', function() {
+    movePrev();
+    resetAutoCycle();
+  });
+
+  // Mobile press-and-hold to expand card
+  var isMobile = window.matchMedia('(max-width: 767px)').matches;
+
+  if (isMobile) {
+    var holdTimer = null;
+    var expandedCard = null;
+
+    track.querySelectorAll('.tech-slide-card').forEach(function(card) {
+      
+      card.addEventListener('touchstart', function(e) {
+        e.preventDefault(); // Stops browser long-press menu
+        holdTimer = setTimeout(function() {
+          // Collapse any previously expanded card
+          if (expandedCard && expandedCard !== card) {
+            expandedCard.classList.remove('mobile-expanded');
+          }
+          card.classList.toggle('mobile-expanded');
+          expandedCard = card.classList.contains('mobile-expanded') ? card : null;
+          // Pause auto-cycle while expanded
+          if (expandedCard) clearInterval(autoCycleTimer);
+          else autoCycleTimer = setInterval(moveNext, 4000);
+        }, 400); // 400ms hold threshold
+      }, { passive: false }); // passive: false required for preventDefault
+
+      card.addEventListener('touchend', function() {
+        clearTimeout(holdTimer); // Short tap = don't expand
+      });
+
+      card.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+        clearTimeout(holdTimer); // Finger moved = cancel hold
+      }, { passive: false });
+    });
+  }
+
+  // Automated 4 Second Rolling Clock Loop
+  var autoCycleTimer = setInterval(moveNext, 4000);
+
+  // Pause auto-cycle on card hover
+  var sliderWindow = document.querySelector('.tech-slider-window');
+  sliderWindow.addEventListener('mouseenter', function() {
+    clearInterval(autoCycleTimer);
+  });
+  sliderWindow.addEventListener('mouseleave', function() {
+    autoCycleTimer = setInterval(moveNext, 4000);
+  });
+
+  function resetAutoCycle() {
+    clearInterval(autoCycleTimer);
+    autoCycleTimer = setInterval(moveNext, 4000);
+  }
+
+  // 9. Call to Action Blue Container Slide-Up Fade Reveal
+  gsap.set(".cta-container", { opacity: 0, y: 80 });
+
+  ScrollTrigger.create({
+    trigger: ".cta-dark-section",
+    start: "top 85%",
+    onEnter: function() {
+      gsap.to(".cta-container", { opacity: 1, y: 0, duration: 1.2, ease: "power4.out" });
+    },
+    onLeaveBack: function() {
+      gsap.to(".cta-container", { opacity: 0, y: 80, duration: 0.6, ease: "power3.in" });
+    },
+    onEnterBack: function() {
+      gsap.to(".cta-container", { opacity: 1, y: 0, duration: 1.2, ease: "power4.out" });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
