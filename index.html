@@ -1224,42 +1224,58 @@ document.addEventListener('DOMContentLoaded', function() {
     }, { passive: true });
   }
 
-  // Mobile press-and-hold to expand card
+  // Mobile tap-to-expand card (matches services section behavior)
   var isMobile = window.matchMedia('(max-width: 767px)').matches;
 
   if (isMobile) {
-    var holdTimer = null;
     var expandedCard = null;
+    var expandTimer = null;
+    var cardTouchStartX = 0;
+    var cardTouchStartY = 0;
+    var cardTouchMoved = false;
+    var cardMoveThreshold = 10; // px of movement before we treat it as a swipe, not a tap
 
     track.querySelectorAll('.tech-slide-card').forEach(function(card) {
-      
-      card.addEventListener('touchstart', function(e) {
-        // Don't preventDefault here — it blocks swipe detection
-        holdTimer = setTimeout(function() {
-          e.preventDefault(); // Only prevent default once hold is confirmed
-          // Collapse any previously expanded card
-          if (expandedCard && expandedCard !== card) {
-            expandedCard.classList.remove('mobile-expanded');
-          }
-          card.classList.toggle('mobile-expanded');
-          expandedCard = card.classList.contains('mobile-expanded') ? card : null;
-          // Pause auto-cycle while expanded
-          if (expandedCard) clearInterval(autoCycleTimer);
-          else autoCycleTimer = setInterval(moveNext, 4000);
-        }, 400); // 400ms hold threshold
-      }, { passive: true }); // passive: true so swipe detection isn't blocked
 
-      card.addEventListener('touchend', function() {
-        clearTimeout(holdTimer); // Short tap = don't expand
-      });
+      card.addEventListener('touchstart', function(e) {
+        cardTouchStartX = e.touches[0].clientX;
+        cardTouchStartY = e.touches[0].clientY;
+        cardTouchMoved = false;
+      }, { passive: true }); // never blocks the swipe gesture
 
       card.addEventListener('touchmove', function(e) {
-        if (holdTimer) {
-          clearTimeout(holdTimer);
-          holdTimer = null;
+        var dx = Math.abs(e.touches[0].clientX - cardTouchStartX);
+        var dy = Math.abs(e.touches[0].clientY - cardTouchStartY);
+        if (dx > cardMoveThreshold || dy > cardMoveThreshold) {
+          cardTouchMoved = true; // this is a swipe, not a tap
         }
       }, { passive: true });
+
+      card.addEventListener('touchend', function(e) {
+        if (cardTouchMoved) return; // was a swipe — let the slider handle it
+
+        e.preventDefault(); // stop the ghost click
+        expandTechCard(card);
+      }, { passive: false });
+
     });
+
+    function expandTechCard(card) {
+      if (expandedCard && expandedCard !== card) {
+        expandedCard.classList.remove('mobile-expanded');
+      }
+      clearTimeout(expandTimer);
+
+      card.classList.add('mobile-expanded');
+      expandedCard = card;
+      clearInterval(autoCycleTimer); // pause auto-cycle while expanded
+
+      expandTimer = setTimeout(function() {
+        card.classList.remove('mobile-expanded');
+        if (expandedCard === card) expandedCard = null;
+        autoCycleTimer = setInterval(moveNext, 4000); // resume auto-cycle
+      }, 3000);
+    }
   }
 
   // Pause auto-cycle on card hover
