@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MISIOM</title>
+  <title>Fleming Embedded & Software Solutions</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -242,8 +242,6 @@
 
 <!-- SERVICES HEADING SECTION -->
 <section class="services-heading-section">
-
-  <div class="services-circle-decor"></div>
 
   <div class="services-container">
 
@@ -893,6 +891,55 @@ document.addEventListener('DOMContentLoaded', function() {
       activeServiceTimer = setTimeout(function() {
         card.classList.remove('mobile-touch-active');
         if (activeServiceCard === card) activeServiceCard = null;
+      }, 3000);
+    }
+  }
+
+  // Mobile tap-to-reveal for client logos
+  if (window.matchMedia('(max-width: 767px)').matches) {
+    var activeClientLogo = null;
+    var activeClientTimer = null;
+    var clientTouchStartX = 0;
+    var clientTouchStartY = 0;
+    var clientTouchMoved = false;
+    var clientMoveThreshold = 10;
+
+    document.querySelectorAll('.client-logo-box').forEach(function(box) {
+
+      box.addEventListener('touchstart', function(e) {
+        clientTouchStartX = e.touches[0].clientX;
+        clientTouchStartY = e.touches[0].clientY;
+        clientTouchMoved = false;
+      }, { passive: true });
+
+      box.addEventListener('touchmove', function(e) {
+        var dx = Math.abs(e.touches[0].clientX - clientTouchStartX);
+        var dy = Math.abs(e.touches[0].clientY - clientTouchStartY);
+        if (dx > clientMoveThreshold || dy > clientMoveThreshold) {
+          clientTouchMoved = true;
+        }
+      }, { passive: true });
+
+      box.addEventListener('touchend', function(e) {
+        if (clientTouchMoved) return;
+        e.preventDefault();
+        activateClientLogo(box);
+      }, { passive: false });
+
+    });
+
+    function activateClientLogo(box) {
+      if (activeClientLogo && activeClientLogo !== box) {
+        activeClientLogo.classList.remove('mobile-touch-active');
+      }
+      clearTimeout(activeClientTimer);
+
+      box.classList.add('mobile-touch-active');
+      activeClientLogo = box;
+
+      activeClientTimer = setTimeout(function() {
+        box.classList.remove('mobile-touch-active');
+        if (activeClientLogo === box) activeClientLogo = null;
       }, 3000);
     }
   }

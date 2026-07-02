@@ -1081,10 +1081,18 @@ body { font-family: 'Poppins', sans-serif; }
     padding: 30px 24px;
   }
   .client-section-heading {
-    font-size: 22px;
+      font-size: clamp(15px, 4.3vw, 22px);
+      white-space: nowrap;
   }
   .client-logo-box {
     height: 120px;
+  }
+  .client-logo-box.mobile-touch-active {
+    background: #f9fafb;
+  }
+  .client-logo-box.mobile-touch-active .logo-wrapper {
+    filter: grayscale(0%);
+    transform: scale(1.1);
   }
 }
 
