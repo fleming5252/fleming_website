@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Fleming Embedded & Software Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+
+</head>
+<body>
+
+<!-- HERO NAV -->
+<header class="hero-nav" id="heroNav">
+  <div class="nav-container">
+
+    <div class="nav-logo">
+      <a href="index.html">
+        <img src="assets/images/logo.png" alt="Logo" class="nav-logo-img" />
+      </a>
+    </div>
+
+    <nav class="nav-capsule">
+      <ul class="nav-links">
+        <li class="nav-item"><a href="index.html">HOME</a></li>
+        <li class="nav-item active">
+          <a href="about.html">
+            <span class="active-dot"></span>
+            ABOUT
+          </a>
+        </li>
+        <li class="nav-item"><a href="#">PAGES</a></li>
+        <li class="nav-item"><a href="#">SERVICES</a></li>
+        <li class="nav-item"><a href="#">SHOP</a></li>
+        <li class="nav-item"><a href="#">BLOG</a></li>
+        <li class="nav-item"><a href="#">CONTACT</a></li>
+      </ul>
+    </nav>
+
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+</header>
+
+<!-- STICKY NAV -->
+<header class="sticky-nav" id="stickyNav">
+  <div class="nav-container">
+
+    <div class="nav-logo">
+      <a href="index.html">
+        <img src="assets/images/logo.png" alt="Logo" class="nav-logo-img" />
+      </a>
+    </div>
+
+    <nav class="nav-capsule">
+      <ul class="nav-links">
+        <li class="nav-item"><a href="index.html">HOME</a></li>
+        <li class="nav-item active">
+          <a href="about.html">
+            <span class="active-dot"></span>
+            ABOUT
+          </a>
+        </li>
+        <li class="nav-item"><a href="#">PAGES</a></li>
+        <li class="nav-item"><a href="#">SERVICES</a></li>
+        <li class="nav-item"><a href="#">SHOP</a></li>
+        <li class="nav-item"><a href="#">BLOG</a></li>
+        <li class="nav-item"><a href="#">CONTACT</a></li>
+      </ul>
+    </nav>
+
+    <button class="hamburger-btn sticky-hamburger" id="stickyHamburgerBtn" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+</header>
+
+<!-- MOBILE MENU OVERLAY -->
+<div class="mobile-menu-overlay" id="mobileMenuOverlay">
+  <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+  <ul class="mobile-nav-links">
+    <li class="nav-item"><a href="index.html">HOME</a></li>
+    <li class="nav-item active">
+      <a href="about.html">
+        <span class="active-dot"></span>
+        ABOUT
+      </a>
+    </li>
+    <li class="nav-item"><a href="#">PAGES</a></li>
+    <li class="nav-item"><a href="#">SERVICES</a></li>
+    <li class="nav-item"><a href="#">SHOP</a></li>
+    <li class="nav-item"><a href="#">BLOG</a></li>
+    <li class="nav-item"><a href="#">CONTACT</a></li>
+  </ul>
+</div>
+
+<!-- ABOUT HERO SECTION -->
+<section class="about-bg" id="parallaxHero">
+    <div class="about-overlay"></div>
+    <div class="about-content">
+        <h1>ABOUT US</h1>
+        <p class="about-breadcrumbs">
+            <a href="index.html">HOME</a>
+            <span class="dot">•</span>
+            <span class="active-page">ABOUT US</span>
+        </p>
+    </div>
+</section>
+
+<!-- ABOUT COMPANY PRESENTATION SECTION -->
+<section class="about-frame-section">
+  <div class="about-frame-container">
+    
+    <!-- Left Column: Typography, Brand Growth Graphic & Satisfaction Stat -->
+    <div class="about-frame-left">
+      <div class="company-badge">
+        <span class="badge-dot"></span> About Company
+      </div>
+      <h2 class="about-frame-title">
+        ENGINEERING SMART SOLUTIONS FOR A CONNECTED FUTURE.
+      </h2>
+      <p class="about-frame-desc reveal-lines">
+        <span class="line"><span class="line-child">Fleming Embedded and Software Solutions is a technology-driven company delivering</span></span>
+        <span class="line"><span class="line-child">innovative embedded systems and software solutions for businesses across diverse</span></span>
+        <span class="line"><span class="line-child">industries. Backed by over 12 years of experience, we combine engineering excellence with</span></span>
+        <span class="line"><span class="line-child">modern software development to create reliable, scalable, and future-ready technology</span></span>
+        <span class="line"><span class="line-child">that empowers organizations to innovate, automate, and grow with confidence.</span></span>
+      </p>
+      
+      <!-- Visual Split Row for Cards/Lists -->
+      <div class="about-split-row">
+        <!-- Inner Left: Stacked Graphic Cards -->
+        <div class="about-cards-stack">
+          <!-- Orange Growth Block -->
+          <div class="growth-metric-card">
+            <div class="growth-card-text">
+              BUILDING INNOVATIVE TECHNOLOGY THROUGH EMBEDDED & SOFTWARE EXCELLENCE.
+            </div>
+            <div class="growth-bars-container">
+              <div class="growth-bar"><span>60%</span></div>
+              <div class="growth-bar"><span>80%</span></div>
+              <div class="growth-bar"><span>100%</span></div>
+            </div>
+          </div>
+          
+          <!-- Black Satisfaction Block -->
+          <div class="satisfaction-badge-card">
+            <div class="sat-percentage">99%</div>
+            <div class="sat-text-side">
+              Delivering trusted technology solutions with long-term client relationships and proven satisfaction.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Right Column: Clean Visual Image Frame Panel -->
+    <div class="about-frame-right">
+      <div class="media-frame-wrapper grid-reveal-container" id="gridRevealContainer">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- PRINCIPLES SECTION -->
+<section class="principles-section" id="principlesSection">
+  <div class="principles-container">
+
+    <div class="principles-header">
+      <div class="principles-label">
+        <span class="principles-label-dot"></span> What Drives Us
+      </div>
+      <h2 class="principles-heading">THE PRINCIPLES THAT POWER<br>EVERY <span class="principles-heading-accent">PROJECT.</span></h2>
+      <p class="principles-subheading">Every solution we deliver is guided by innovation, quality,<br>collaboration, and a commitment to creating lasting value.</p>
+    </div>
+
+    <div class="hex-stage" id="hexStage">
+
+      <svg class="hex-connectors" viewBox="0 0 560 600" xmlns="http://www.w3.org/2000/svg">
+        <!-- outer ring connections -->
+        <line x1="280" y1="60"  x2="56"  y2="168" stroke="#1a56db" stroke-width="1" stroke-dasharray="3 5" opacity="0.3"/>
+        <line x1="280" y1="60"  x2="504" y2="168" stroke="#1a56db" stroke-width="1" stroke-dasharray="3 5" opacity="0.3"/>
+        <line x1="56"  y1="168" x2="56"  y2="432" stroke="#1a56db" stroke-width="1" stroke-dasharray="3 5" opacity="0.3"/>
+        <line x1="504" y1="168" x2="504" y2="432" stroke="#1a56db" stroke-width="1" stroke-dasharray="3 5" opacity="0.3"/>
+        <line x1="56"  y1="432" x2="280" y2="540" stroke="#1a56db" stroke-width="1" stroke-dasharray="3 5" opacity="0.3"/>
+        <line x1="504" y1="432" x2="280" y2="540" stroke="#1a56db" stroke-width="1" stroke-dasharray="3 5" opacity="0.3"/>
+        <!-- each node to center -->
+        <line x1="280" y1="60"  x2="280" y2="300" stroke="#1a56db" stroke-width="1" stroke-dasharray="3 5" opacity="0.2"/>
+        <line x1="56"  y1="168" x2="280" y2="300" stroke="#1a56db" stroke-width="1" stroke-dasharray="3 5" opacity="0.2"/>
+        <line x1="504" y1="168" x2="280" y2="300" stroke="#1a56db" stroke-width="1" stroke-dasharray="3 5" opacity="0.2"/>
+        <line x1="56"  y1="432" x2="280" y2="300" stroke="#1a56db" stroke-width="1" stroke-dasharray="3 5" opacity="0.2"/>
+        <line x1="504" y1="432" x2="280" y2="300" stroke="#1a56db" stroke-width="1" stroke-dasharray="3 5" opacity="0.2"/>
+        <line x1="280" y1="540" x2="280" y2="300" stroke="#1a56db" stroke-width="1" stroke-dasharray="3 5" opacity="0.2"/>
+      </svg>
+
+      <!-- Center Logo -->
+      <div class="hex-center-logo">
+        <div class="pulse-ring"></div>
+        <div class="pulse-ring pulse-ring-2"></div>
+        <div class="hex-center-body">
+          <img src="assets/images/logo.png" alt="Fleming Logo" class="hex-logo-img" />
+        </div>
+      </div>
+
+      <!-- Node 1: Top -->
+      <div class="hex-node" style="left:50%;top:10%;" data-index="0">
+        <div class="node-ring"></div>
+        <div class="hex-inner">
+          <div class="hex-front">
+            <div class="hex-icon">♛</div>
+            <div class="hex-title">Client is King</div>
+          </div>
+          <div class="hex-back">
+            <div class="hex-back-title">Client is King</div>
+            <div class="hex-desc">Every customer idea is clearly communicated to developers so your vision becomes reality exactly as imagined.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Node 2: Left -->
+      <div class="hex-node" style="left:10%;top:28%;" data-index="1">
+        <div class="node-ring node-ring-reverse"></div>
+        <div class="hex-inner">
+          <div class="hex-front">
+            <div class="hex-icon">◈</div>
+            <div class="hex-title">Quality is Our Middle Name</div>
+          </div>
+          <div class="hex-back">
+            <div class="hex-back-title">Quality First</div>
+            <div class="hex-desc">Dedicated effort in every phase from design to delivery means clients never doubt what they receive.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Node 3: Right -->
+      <div class="hex-node" style="left:90%;top:28%;" data-index="2">
+        <div class="node-ring"></div>
+        <div class="hex-inner">
+          <div class="hex-front">
+            <div class="hex-icon">⟁</div>
+            <div class="hex-title">Trailblazing Technologies</div>
+          </div>
+          <div class="hex-back">
+            <div class="hex-back-title">Trailblazing</div>
+            <div class="hex-desc">We constantly incorporate the latest technologies — staying on top to deliver top-quality products every time.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Node 4: Bottom Left -->
+      <div class="hex-node" style="left:10%;top:72%;" data-index="3">
+        <div class="node-ring node-ring-reverse"></div>
+        <div class="hex-inner">
+          <div class="hex-front">
+            <div class="hex-icon">◷</div>
+            <div class="hex-title">Always On Time</div>
+          </div>
+          <div class="hex-back">
+            <div class="hex-back-title">Always On Time</div>
+            <div class="hex-desc">Meticulous planning from inception ensures every product reaches clients within their desired timeframe.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Node 5: Bottom Right -->
+      <div class="hex-node" style="left:90%;top:72%;" data-index="4">
+        <div class="node-ring"></div>
+        <div class="hex-inner">
+          <div class="hex-front">
+            <div class="hex-icon">❋</div>
+            <div class="hex-title">Unwavering Support</div>
+          </div>
+          <div class="hex-back">
+            <div class="hex-back-title">Unwavering Support</div>
+            <div class="hex-desc">Our service doesn't end at delivery. Dedicated technical support ensures clients are fully familiarized.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Node 6: Bottom -->
+      <div class="hex-node" style="left:50%;top:90%;" data-index="5">
+        <div class="node-ring node-ring-reverse"></div>
+        <div class="hex-inner">
+          <div class="hex-front">
+            <div class="hex-icon">⬡</div>
+            <div class="hex-title">Uncompromised Security</div>
+          </div>
+          <div class="hex-back">
+            <div class="hex-back-title">Zero Compromise</div>
+            <div class="hex-desc">Every product passes rigorous testing to ensure the final delivery is as secure as it can possibly be.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TEAM SECTION -->
+<section class="team-section">
+  <div class="team-container">
+
+    <!-- Left: Illustration -->
+    <div class="team-image-col">
+      <div class="team-image-card">
+        <div class="team-img-circle team-img-circle-1"></div>
+        <div class="team-img-circle team-img-circle-2"></div>
+        <div class="team-img-dots"></div>
+        <img src="assets/images/about_team.png" alt="Development Team" class="team-illustration" />
+      </div>
+    </div>
+
+    <!-- Right: Content -->
+    <div class="team-content-col">
+
+      <div class="team-badge">
+        <span class="team-badge-dot"></span> Our Team
+      </div>
+
+      <h2 class="team-heading">
+        PROACTIVE<br>
+        <span class="team-heading-blue">DEVELOPMENT TEAM</span>
+      </h2>
+      <div class="team-heading-rule"></div>
+
+      <p class="team-desc reveal-lines">
+        <span class="line"><span class="line-child">Just like how artists skillfully use their tools to create a beautiful piece of</span></span>
+        <span class="line"><span class="line-child">art, our artists at work here, the developers, masterfully use their tools.</span></span>
+        <span class="line"><span class="line-child">They are built by putting together many fine pieces like thorough</span></span>
+        <span class="line"><span class="line-child">technical knowledge, teamwork, attention to detail, and passion to make</span></span>
+        <span class="line"><span class="line-child">sure that services are delivered to the customers exactly the way they</span></span>
+        <span class="line"><span class="line-child">had envisioned.</span></span>
+      </p>
+
+      <div class="team-features-grid">
+
+        <div class="team-feature-item">
+          <div class="team-feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </div>
+          <div class="team-feature-text">
+            <h4>Technical Expertise</h4>
+            <p>Thorough knowledge and experience in modern technologies.</p>
+          </div>
+        </div>
+
+        <div class="team-feature-item">
+          <div class="team-feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div class="team-feature-text">
+            <h4>Team Collaboration</h4>
+            <p>We work together, share ideas and build solutions with a shared vision.</p>
+          </div>
+        </div>
+
+        <div class="team-feature-item">
+          <div class="team-feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </div>
+          <div class="team-feature-text">
+            <h4>Attention to Detail</h4>
+            <p>Every line of code and every element is crafted with precision.</p>
+          </div>
+        </div>
+
+        <div class="team-feature-item">
+          <div class="team-feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </div>
+          <div class="team-feature-text">
+            <h4>Passion to Deliver</h4>
+            <p>We are passionate about building high-quality solutions our clients love.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     APPROACH SECTION  —  paste this block AFTER </section> (team)
+     and BEFORE the CTA section
+     ═══════════════════════════════════════════════════════════ -->
+
+<section class="approach-section" id="approachSection">
+
+  <!-- pinned wrapper — GSAP pins this while cards animate -->
+  <div class="approach-pin-wrap" id="approachPinWrap">
+
+    
+    <!-- ── HEADER (always visible) ── -->
+    <div class="approach-header" id="approachHeader">
+      <div class="approach-label">
+        <span class="approach-label-dot"></span> Our Approach
+      </div>
+      <h2 class="approach-heading">
+        COMPANY–CLIENT <span class="approach-heading-blue">RELATION</span>
+      </h2>
+      <div class="approach-heading-rule"></div>
+      <p class="approach-subtext">
+        The company is designed in such a way that every input from the customer is taken into account and incorporated into the final product in a technically and economically feasible way.
+      </p>
+
+      <!-- animated chevron arrows -->
+      <div class="approach-chevrons" id="approachChevrons">
+        <svg class="chevron-svg chev-1" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="2,2 12,12 22,2" stroke="#1a56db" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg class="chevron-svg chev-2" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="2,2 12,12 22,2" stroke="#1a56db" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg class="chevron-svg chev-3" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="2,2 12,12 22,2" stroke="#1a56db" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- ── CARDS ROW (rises from below on scroll) ── -->
+    <div class="approach-cards-row" id="approachCardsRow">
+
+      <!-- Card 1: Research -->
+      <div class="ap-card" id="apCard1">
+        <div class="ap-card-icon-wrap">
+          <svg class="ap-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="22" cy="22" r="14" stroke="#1a56db" stroke-width="2.5"/>
+            <line x1="32" y1="32" x2="43" y2="43" stroke="#1a56db" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="17" y1="22" x2="27" y2="22" stroke="#1a56db" stroke-width="2" stroke-linecap="round"/>
+            <line x1="22" y1="17" x2="22" y2="27" stroke="#1a56db" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="ap-card-number">01</div>
+        <div class="ap-card-title">RESEARCH</div>
+        <div class="ap-card-rule"></div>
+        <p class="ap-card-desc">We deep-dive into your domain, goals, and market to build a clear understanding before a single line is written.</p>
+        <div class="ap-card-bottom-bar"></div>
+      </div>
+
+      <!-- Card 2: Design -->
+      <div class="ap-card" id="apCard2">
+        <div class="ap-card-icon-wrap">
+          <svg class="ap-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="8" width="32" height="32" rx="4" stroke="#1a56db" stroke-width="2.5"/>
+            <line x1="8" y1="18" x2="40" y2="18" stroke="#1a56db" stroke-width="2" stroke-linecap="round"/>
+            <line x1="18" y1="18" x2="18" y2="40" stroke="#1a56db" stroke-width="2" stroke-linecap="round"/>
+            <path d="M26 28 L30 24 L34 28" stroke="#1a56db" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="ap-card-number">02</div>
+        <div class="ap-card-title">DESIGN</div>
+        <div class="ap-card-rule"></div>
+        <p class="ap-card-desc">We craft intuitive architectures and interfaces — every layout and flow is planned with precision and purpose.</p>
+        <div class="ap-card-bottom-bar" style="background: linear-gradient(90deg,#06b6d4,#8b5cf6);"></div>
+      </div>
+
+      <!-- Card 3: Implementation -->
+      <div class="ap-card ap-card-center" id="apCard3">
+        <div class="ap-card-icon-wrap ap-icon-center">
+          <svg class="ap-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="10,20 18,28 38,12" stroke="#06b6d4" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8 36 L16 28 M32 12 L40 20" stroke="#1a56db" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="ap-card-number ap-num-center">03</div>
+        <div class="ap-card-title">IMPLEMENTATION</div>
+        <div class="ap-card-rule ap-rule-center"></div>
+        <p class="ap-card-desc">Our engineers build your solution with clean, scalable code — following best practices at every step.</p>
+        <div class="ap-card-bottom-bar" style="background: linear-gradient(90deg,#06b6d4,#10b981);"></div>
+      </div>
+
+      <!-- Card 4: Testing -->
+      <div class="ap-card" id="apCard4">
+        <div class="ap-card-icon-wrap">
+          <svg class="ap-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 8 L14 20 L8 32 L40 32 L34 20 L34 8 Z" stroke="#1a56db" stroke-width="2.5" stroke-linejoin="round"/>
+            <line x1="14" y1="14" x2="34" y2="14" stroke="#1a56db" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="24" cy="26" r="3" stroke="#1a56db" stroke-width="2"/>
+            <line x1="12" y1="38" x2="36" y2="38" stroke="#1a56db" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="ap-card-number">04</div>
+        <div class="ap-card-title">TESTING</div>
+        <div class="ap-card-rule"></div>
+        <p class="ap-card-desc">Every product passes rigorous quality checks — ensuring reliability, security, and performance before delivery.</p>
+        <div class="ap-card-bottom-bar" style="background: linear-gradient(90deg,#1a56db,#06b6d4);"></div>
+      </div>
+
+      <!-- Card 5: Launching -->
+      <div class="ap-card" id="apCard5">
+        <div class="ap-card-icon-wrap">
+          <svg class="ap-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 6 C32 6 42 14 40 28 C38 36 30 40 24 42 C18 40 10 36 8 28 C6 14 16 6 24 6 Z" stroke="#8b5cf6" stroke-width="2.5"/>
+            <line x1="24" y1="6" x2="24" y2="42" stroke="#8b5cf6" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <path d="M18 14 Q24 10 30 14" stroke="#8b5cf6" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path d="M14 24 Q24 18 34 24" stroke="#8b5cf6" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+        <div class="ap-card-number" style="color:#8b5cf6;">05</div>
+        <div class="ap-card-title">LAUNCHING</div>
+        <div class="ap-card-rule" style="background:#8b5cf6;"></div>
+        <p class="ap-card-desc">We deliver the final product, guide your team through adoption, and provide continuous post-launch support.</p>
+        <div class="ap-card-bottom-bar" style="background: linear-gradient(90deg,#8b5cf6,#1a56db);"></div>
+      </div>
+
+    </div><!-- /cards-row -->
+
+  </div><!-- /pin-wrap -->
+</section>
+
+
+
+
+
+
+<!-- CTA SECTION -->
+<section class="cta-dark-section">
+  <div class="cta-container">
+    <div class="cta-content-left">
+      <h2 class="cta-main-title">Let's make something great together</h2>
+    </div>
+    <div class="cta-action-right">
+      <a href="#contact" class="cta-brush-link">
+        Get Started <span class="cta-arrow">↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-blob footer-blob-1"></div>
+  <div class="footer-blob footer-blob-2"></div>
+
+  <div class="footer-container">
+
+    <div class="footer-newsletter-row">
+      <div class="footer-newsletter">
+        <input type="email" placeholder="Enter your email address" class="newsletter-input" />
+        <button class="newsletter-btn">SUBSCRIBE</button>
+      </div>
+    </div>
+
+    <div class="footer-columns">
+
+      <div class="footer-col footer-col-brand">
+        <div class="footer-logo">
+          <a href="index.html">
+            <img src="assets/images/logo.png" alt="Logo" class="footer-logo-img" />
+          </a>
+        </div>
+        <p class="footer-brand-desc">
+          Empowering businesses through embedded systems,
+          software solutions, and cutting-edge IT services.
+          Your trusted technology partner in Kerala.
+        </p>
+        <div class="footer-socials">
+          <a href="#" class="social-icon" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col footer-col-links">
+        <h4 class="footer-col-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Training Division</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-about">
+        <h4 class="footer-col-heading">About Us</h4>
+        <ul class="footer-links">
+          <li><a href="#">Who We Are</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-contact">
+        <h4 class="footer-col-heading">Reach Us</h4>
+        <ul class="footer-contact-list">
+
+          <li class="footer-contact-item">
+            <span class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.57 3.42 2 2 0 0 1 3.54 1.25h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.68 2.81a2 2 0 0 1-.45 2.11L7.91 8.75a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.91.33 1.85.55 2.81.68A2 2 0 0 1 21.5 16h.5z"/>
+              </svg>
+            </span>
+            <div class="contact-info-group">
+              <a href="tel:04844045252" class="contact-link">+91-484-4045252</a>
+              <a href="tel:9745205252" class="contact-link">+91-9745205252</a>
+            </div>
+          </li>
+
+          <li class="footer-contact-item">
+            <span class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </span>
+            <a href="mailto:helpdesk@fleming.co.in" class="contact-link">helpdesk@fleming.co.in</a>
+          </li>
+
+          <li class="footer-contact-item">
+            <span class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </span>
+            <span class="contact-info-text">
+              Fleming Embedded and Software Solutions<br>
+              #37/3956, 2nd Floor, Bank Road,<br>
+              Kaloor, Ernakulam — 682017
+            </span>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-divider"></div>
+      <p class="footer-copyright">
+        &copy; 2026 All Rights Reserved by
+        <span class="footer-brand-name">Fleming Embedded and Software Solutions</span>
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+var heroNav   = document.getElementById('heroNav');
+var stickyNav = document.getElementById('stickyNav');
+
+var lastScrollY = window.scrollY;
+
+function getAboutHeroBottom() {
+  var hero = document.getElementById('parallaxHero');
+  return hero ? hero.offsetTop + hero.offsetHeight : window.innerHeight;
+}
+
+window.addEventListener('scroll', function() {
+  var currentY    = window.scrollY;
+  var scrollingUp = currentY < lastScrollY;
+  var heroBottom  = getAboutHeroBottom();
+  var inHeroZone  = currentY < heroBottom;
+
+  if (inHeroZone) {
+    stickyNav.classList.remove('nav-visible');
+    stickyNav.classList.add('nav-hidden');
+
+    if (scrollingUp) {
+      heroNav.classList.remove('nav-hidden');
+      heroNav.classList.add('nav-visible');
+    } else {
+      heroNav.classList.remove('nav-visible');
+      heroNav.classList.add('nav-hidden');
+    }
+  } else {
+    heroNav.classList.remove('nav-visible');
+    heroNav.classList.add('nav-hidden');
+
+    if (scrollingUp) {
+      stickyNav.classList.remove('nav-hidden');
+      stickyNav.classList.add('nav-visible');
+    } else {
+      stickyNav.classList.remove('nav-visible');
+      stickyNav.classList.add('nav-hidden');
+    }
+  }
+
+  lastScrollY = currentY;
+}, { passive: true });
+
+heroNav.classList.add('nav-visible');
+stickyNav.classList.add('nav-hidden');
+</script>
+
+<script>
+(function() {
+  var overlay = document.getElementById('mobileMenuOverlay');
+  var hamburgerBtns = document.querySelectorAll('#hamburgerBtn, #stickyHamburgerBtn');
+  var closeBtn = document.getElementById('mobileMenuClose');
+  var navLinks = overlay.querySelectorAll('.nav-item a');
+
+  function openMenu() {
+    overlay.classList.add('open');
+  }
+
+  function closeMenu() {
+    overlay.classList.remove('open');
+  }
+
+  hamburgerBtns.forEach(function(btn) {
+    btn.addEventListener('click', openMenu);
+  });
+
+  closeBtn.addEventListener('click', closeMenu);
+
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', closeMenu);
+  });
+
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) closeMenu();
+  });
+})();
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // About Company badge animation (matches index.html badge pattern)
+  var badgeEl = document.querySelector('.company-badge');
+
+  // Character reveal for about-frame-title (matches index.html heading pattern)
+  var aboutHeading = document.querySelector('.about-frame-title');
+  if (aboutHeading) {
+    var aboutSplit = new SplitType(aboutHeading, { types: 'chars' });
+    var aboutChars = aboutSplit.chars;
+    if (aboutChars && aboutChars.length > 0) {
+      gsap.set(aboutChars, { opacity: 0.15 });
+      gsap.to(aboutChars, {
+        scrollTrigger: {
+          trigger: aboutHeading,
+          start: 'top 60%',
+          end: 'top 35%',
+          scrub: true,
+          invalidateOnRefresh: true
+        },
+        opacity: 1,
+        stagger: 0.1,
+        ease: 'none'
+      });
+    }
+  }
+
+  // Sliding up animation for growth metric card and satisfaction badge card
+  var cardsToSlide = document.querySelectorAll('.growth-metric-card, .satisfaction-badge-card');
+  if (cardsToSlide.length > 0) {
+    gsap.set(cardsToSlide, { y: 60, opacity: 0 });
+    gsap.to(cardsToSlide, {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      ease: 'power4.out',
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: '.about-cards-stack',
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+      }
+    });
+  }
+
+  // Manual line-by-line reveal for about-frame-desc
+  var descTargetLines = document.querySelectorAll('.reveal-lines .line-child');
+  if (descTargetLines.length > 0) {
+    gsap.to(descTargetLines, {
+      y: '0%',
+      opacity: 1,
+      duration: 1.1,
+      ease: 'power4.out',
+      stagger: 0.12,
+      scrollTrigger: {
+        trigger: '.reveal-lines',
+        start: 'top 82%',
+        toggleActions: 'play none none reverse',
+        invalidateOnRefresh: true
+      }
+    });
+  }
+  if (badgeEl) {
+    gsap.fromTo(badgeEl,
+      { opacity: 0, y: -20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: badgeEl,
+          start: 'top center',
+          toggleActions: 'play none none reverse'
+        }
+      }
+    );
+  }
+
+  gsap.set(".cta-container", { opacity: 0, y: 80 });
+
+  ScrollTrigger.create({
+    trigger: ".cta-dark-section",
+    start: "top 85%",
+    onEnter: function() {
+      gsap.to(".cta-container", { opacity: 1, y: 0, duration: 1.2, ease: "power4.out" });
+    },
+    onLeaveBack: function() {
+      gsap.to(".cta-container", { opacity: 0, y: 80, duration: 0.6, ease: "power3.in" });
+    },
+    onEnterBack: function() {
+      gsap.to(".cta-container", { opacity: 1, y: 0, duration: 1.2, ease: "power4.out" });
+    }
+  });
+
+  // ─── DYNAMIC IMAGE GRID REVEAL TRANSITION ───
+  const gridContainer = document.getElementById('gridRevealContainer');
+
+  if (gridContainer) {
+    const cols = 4;
+    const rows = 4;
+
+    // Build grid cells with a white cover inside each
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        const tile = document.createElement('div');
+        tile.className = 'reveal-tile';
+        tile.dataset.r = r;
+        tile.dataset.c = c;
+
+        const cover = document.createElement('div');
+        cover.className = 'reveal-tile-cover';
+        tile.appendChild(cover);
+
+        gridContainer.appendChild(tile);
+      }
+    }
+
+    // Diagonal wave reveal on scroll
+    const cellDur = 500;   // ms — how long each cell takes to reveal
+    const waveGap = -400;   // ms — pause between each diagonal wave
+
+    const maxDiag = (rows - 1) + (cols - 1);
+
+    ScrollTrigger.create({
+      trigger: gridContainer,
+      start: 'top 75%',
+      end: 'top top',
+      onEnter: function () {
+        let waveStart = 0;
+
+        for (let d = 0; d <= maxDiag; d++) {
+          const waveCells = [];
+          for (let r = 0; r < rows; r++) {
+            const c = d - r;
+            if (c >= 0 && c < cols) waveCells.push({ r, c });
+          }
+
+          const delay = waveStart;
+          waveStart += cellDur + waveGap;
+
+          waveCells.forEach(({ r, c }) => {
+            const tile  = gridContainer.querySelector(`.reveal-tile[data-r="${r}"][data-c="${c}"]`);
+            const cover = tile.querySelector('.reveal-tile-cover');
+
+            setTimeout(() => {
+              cover.style.transition = `transform ${cellDur}ms cubic-bezier(0.77, 0, 0.18, 1)`;
+              cover.style.transform  = 'scaleX(0)';
+            }, delay);
+          });
+        }
+      },
+      onLeaveBack: function () {
+        const covers = gridContainer.querySelectorAll('.reveal-tile-cover');
+        covers.forEach(cover => {
+          cover.style.transition = 'none';
+          cover.style.transform  = 'scaleX(1)';
+        });
+      }
+    });
+  }
+  // ─── PRINCIPLES HEX GRID ENTRANCE ANIMATION ───
+  const hexNodes = document.querySelectorAll('.hex-node');
+  const hexCenter = document.querySelector('.hex-center-logo');
+
+  if (hexNodes.length > 0) {
+    // set initial scale-down state
+    hexNodes.forEach(function(node) {
+      node.style.transform = 'translate(-50%, -50%) scale(0.7)';
+    });
+
+    const hexObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          hexNodes.forEach(function(node) {
+            const delay = (parseInt(node.dataset.index) || 0) * 110;
+            setTimeout(function() {
+              node.style.transform = 'translate(-50%, -50%) scale(1)';
+              node.classList.add('is-visible');
+            }, delay);
+          });
+          if (hexCenter) {
+            hexCenter.classList.add('is-visible');
+          }
+          hexObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.15 });
+
+    const stage = document.getElementById('hexStage');
+    if (stage) hexObserver.observe(stage);
+  }
+
+  // ─── TEAM SECTION ANIMATIONS ───
+
+  // Team badge animation
+  var teamBadge = document.querySelector('.team-badge');
+  if (teamBadge) {
+    gsap.fromTo(teamBadge,
+      { opacity: 0, y: -20 },
+      {
+        opacity: 1, y: 0, duration: 0.6, ease: 'power2.out',
+        scrollTrigger: { trigger: teamBadge, start: 'top center', toggleActions: 'play none none reverse' }
+      }
+    );
+  }
+
+  // Team heading character reveal
+  var teamHeading = document.querySelector('.team-heading');
+  if (teamHeading) {
+    var teamSplit = new SplitType(teamHeading, { types: 'chars' });
+    var teamChars = teamSplit.chars;
+    if (teamChars && teamChars.length > 0) {
+      gsap.set(teamChars, { opacity: 0.15 });
+      gsap.to(teamChars, {
+        scrollTrigger: { trigger: teamHeading, start: 'top 60%', end: 'top 35%', scrub: true, invalidateOnRefresh: true },
+        opacity: 1, stagger: 0.1, ease: 'none'
+      });
+    }
+  }
+
+  // Team description line-by-line reveal
+  var teamDescLines = document.querySelectorAll('.team-desc.reveal-lines .line-child');
+  if (teamDescLines.length > 0) {
+    gsap.to(teamDescLines, {
+      y: '0%', opacity: 1, duration: 1.1, ease: 'power4.out', stagger: 0.12,
+      scrollTrigger: { trigger: '.team-desc.reveal-lines', start: 'top 82%', toggleActions: 'play none none reverse', invalidateOnRefresh: true }
+    });
+  }
+
+  // Team feature items slide up
+  var teamFeatures = document.querySelectorAll('.team-feature-item');
+  if (teamFeatures.length > 0) {
+    gsap.set(teamFeatures, { y: 60, opacity: 0 });
+    gsap.to(teamFeatures, {
+      y: 0, opacity: 1, duration: 1, ease: 'power4.out', stagger: 0.15,
+      scrollTrigger: { trigger: '.team-features-grid', start: 'top 80%', toggleActions: 'play none none reverse' }
+    });
+  }
+
+  // Team illustration card slide in from left
+  var teamImageCard = document.querySelector('.team-image-card');
+  if (teamImageCard) {
+    gsap.fromTo(teamImageCard,
+      { x: -80, opacity: 0 },
+      {
+        x: 0, opacity: 1, duration: 1, ease: 'power4.out',
+        scrollTrigger: { trigger: '.team-image-col', start: 'top 75%', toggleActions: 'play none none reverse' }
+      }
+    );
+  }
+
+  // ─── APPROACH LABEL ANIMATION ───
+  var approachLabel = document.querySelector('.approach-label');
+  if (approachLabel) {
+    gsap.fromTo(approachLabel,
+      { opacity: 0, y: -20 },
+      {
+        opacity: 1, y: 0, duration: 0.6, ease: 'power2.out',
+        scrollTrigger: { trigger: approachLabel, start: 'top center', toggleActions: 'play none none reverse' }
+      }
+    );
+  }
+
+  // ─── APPROACH HEADING CHARACTER REVEAL ───
+  var approachHeading = document.querySelector('.approach-heading');
+  if (approachHeading) {
+    var approachSplit = new SplitType(approachHeading, { types: 'chars' });
+    var approachChars = approachSplit.chars;
+    if (approachChars && approachChars.length > 0) {
+      gsap.set(approachChars, { opacity: 0.15 });
+      gsap.to(approachChars, {
+        scrollTrigger: { trigger: approachHeading, start: 'top 60%', end: 'top 35%', scrub: true, invalidateOnRefresh: true },
+        opacity: 1, stagger: 0.1, ease: 'none'
+      });
+    }
+  }
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to("#parallaxHero", {
+    backgroundPosition: "60% bottom",
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#parallaxHero",
+      start: "top top",
+      end: "bottom top",
+      scrub: 2.5,
+    }
+  });
+});
+</script>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+  HEX ELECTRIC ANIMATION
+  Paste this entire <script> block into about.html
+  just before the closing </body> tag.
+════════════════════════════════════════════════════════════ -->
+<script>
+(function () {
+
+  const stage    = document.getElementById('hexStage');
+  const svgEl    = stage ? stage.querySelector('.hex-connectors') : null;
+  const hexNodes = stage ? Array.from(stage.querySelectorAll('.hex-node')) : [];
+  if (!stage || !svgEl || hexNodes.length === 0) return;
+
+  /* ── Canvas ── */
+  const canvas = document.createElement('canvas');
+  canvas.id = 'hexLightningCanvas';
+  stage.appendChild(canvas);
+  const ctx = canvas.getContext('2d');
+
+  function resizeCanvas() {
+    const BLEED = 220;
+    canvas.width  = stage.offsetWidth  + BLEED * 2;
+    canvas.height = stage.offsetHeight + BLEED * 2;
+    canvas.style.left   = `-${BLEED}px`;
+    canvas.style.top    = `-${BLEED}px`;
+    canvas.style.width  = `${stage.offsetWidth  + BLEED * 2}px`;
+    canvas.style.height = `${stage.offsetHeight + BLEED * 2}px`;
+  }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  /* ── ViewBox → pixel ── */
+  const VB_W = 560, VB_H = 600;
+
+  function vbToPx(vbX, vbY) {
+    const r = stage.getBoundingClientRect();
+    const BLEED = 220;
+    return {
+      x: (vbX / VB_W) * r.width  + BLEED,
+      y: (vbY / VB_H) * r.height + BLEED
+    };
+  }
+
+  /* Node anchor points in SVG viewBox coords */
+  const nodeAnchors = [
+    { x: 280, y: 60  },
+    { x: 56,  y: 168 },
+    { x: 504, y: 168 },
+    { x: 56,  y: 432 },
+    { x: 504, y: 432 },
+    { x: 280, y: 540 },
+  ];
+  const centerAnchor = { x: 280, y: 300 };
+
+  /* ── SVG spoke lines (last 6 lines in the SVG) ── */
+  const allLines  = Array.from(svgEl.querySelectorAll('line'));
+  const spokeLines = allLines.slice(6);
+
+  function resetLine(line) {
+    line.removeAttribute('style');
+    line.setAttribute('stroke', '#1a56db');
+    line.setAttribute('stroke-width', '1');
+    line.setAttribute('stroke-dasharray', '3 5');
+    line.setAttribute('opacity', '0.2');
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  /* ─────────────────────────────────────────────────────────────
+   REPLACEMENT BLOCK FOR about.html electric animation script.
+
+   Replace everything between (and including) these two markers:
+
+   START: function animateSpokePulse(line, fromAnchor, toAnchor, duration, onComplete) {
+   END:   the closing } of runRoots(nodePx, nodeRadius) { ... }
+
+   i.e. replace these four functions entirely:
+     animateSpokePulse()
+     buildRootTree()
+     generateRoots()
+     drawRoots()
+     runRoots()
+
+   with the code below.
+───────────────────────────────────────────────────────────── */
+
+  /* ── SPOKE LINE: pulse travels center → node ──────────────
+     SVG lines are defined node→center (x1=node, x2=center).
+     To make the visible stroke travel center→node we start
+     dashoffset at 0 (fully hidden from node end) and animate
+     to -vbLen (revealing from center end outward).
+  ── */
+  function animateSpokePulse(line, nodeAnchor, centerAnchorPt, duration, onComplete) {
+    const vbLen = Math.hypot(
+      nodeAnchor.x - centerAnchorPt.x,
+      nodeAnchor.y - centerAnchorPt.y
+    );
+
+    line.setAttribute('stroke-dasharray', `${vbLen} ${vbLen}`);
+    line.setAttribute('stroke-dashoffset', `${-vbLen}`);   // fully hidden at start
+    line.setAttribute('stroke', '#60a5fa');
+    line.setAttribute('stroke-width', '2.2');
+    line.setAttribute('opacity', '1');
+    line.style.filter = 'drop-shadow(0 0 5px #60a5fa)';
+    line.style.transition = 'none';
+
+    const start = performance.now();
+
+    function tick(now) {
+      const t = Math.min((now - start) / duration, 1);
+      const eased = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+      // dashoffset goes vbLen → 0: stroke grows from center end toward node
+      line.setAttribute('stroke-dashoffset', `${vbLen * (1 - eased)}`);
+
+      if (t < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        line.setAttribute('stroke-dasharray', 'none');
+        line.setAttribute('stroke-dashoffset', '0');
+        line.setAttribute('stroke-width', '2.5');
+        setTimeout(() => {
+          line.style.transition = 'opacity 0.5s ease, stroke-width 0.5s ease';
+          line.setAttribute('opacity', '0.2');
+          line.setAttribute('stroke-width', '1');
+          setTimeout(() => resetLine(line), 600);
+        }, 120);
+        if (onComplete) onComplete();
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+
+  /* ── GROWING ROOTS ─────────────────────────────────────────
+     Rules for the organic root look:
+     - No long straight segments: every segment is split into
+       sub-segments with random perpendicular displacement.
+     - Heavy branching: each node splits into 2–3 children.
+     - More rays, shorter individual segments = denser mesh.
+     - Fading starts FROM the circle edge (origin) outward.
+  ── */
+
+  let rootRAF  = null;
+
+  // Recursively build a branching tree of tiny jagged segments.
+  // Each "branch" is stored as an array of micro-points so we can
+  // draw it as a polyline with lots of direction changes.
+  function buildRootTree(ox, oy, angle, maxLength, depth, tree, distFromOrigin) {
+    if (depth === 0 || maxLength < 2) return;
+
+    // Break the segment into 3–5 micro-steps with random offsets
+    // to destroy any straight-line appearance.
+    const steps   = 3 + Math.floor(Math.random() * 3);
+    const stepLen = maxLength / steps;
+    const points  = [{ x: ox, y: oy }];
+
+    let cx = ox, cy = oy, currentAngle = angle;
+    for (let s = 0; s < steps; s++) {
+      // Each step randomly deflects the direction
+      currentAngle += (Math.random() - 0.5) * 1.1;
+      cx += Math.cos(currentAngle) * stepLen;
+      cy += Math.sin(currentAngle) * stepLen;
+      // Additional perpendicular jitter
+      const perp = currentAngle + Math.PI / 2;
+      cx += Math.cos(perp) * (Math.random() - 0.5) * stepLen * 0.55;
+      cy += Math.sin(perp) * (Math.random() - 0.5) * stepLen * 0.55;
+      points.push({ x: cx, y: cy });
+    }
+
+    tree.push({
+      points,
+      depth,
+      maxLen:    maxLength,
+      distFromOrigin,        // distance from node edge — used for fade timing
+    });
+
+    // Fork into 2 children (always)
+    const spread1 = (Math.PI / 5) + Math.random() * (Math.PI / 5);
+    const spread2 = (Math.PI / 5) + Math.random() * (Math.PI / 5);
+    buildRootTree(cx, cy, currentAngle - spread1, maxLength * 0.62, depth - 1, tree, distFromOrigin + maxLength);
+    buildRootTree(cx, cy, currentAngle + spread2, maxLength * 0.55, depth - 1, tree, distFromOrigin + maxLength);
+
+    // 60% chance of a 3rd fork for density
+    if (Math.random() > 0.40) {
+      const spread3 = (Math.random() - 0.5) * Math.PI * 0.9;
+      buildRootTree(cx, cy, currentAngle + spread3, maxLength * 0.40, depth - 1, tree, distFromOrigin + maxLength);
+    }
+
+    // 25% chance of an extra side-shoot mid-branch for extra chaos
+    if (Math.random() > 0.75 && points.length > 1) {
+      const mid = points[Math.floor(points.length / 2)];
+      buildRootTree(mid.x, mid.y, currentAngle + (Math.random() - 0.5) * Math.PI, maxLength * 0.28, depth - 1, tree, distFromOrigin + maxLength * 0.5);
+    }
+  }
+
+  function generateRoots(nodePx, nodeRadius) {
+    const numRays = 10 + Math.floor(Math.random() * 5); // 10–14 main rays
+    const tree    = [];
+    for (let i = 0; i < numRays; i++) {
+      const angle  = (Math.PI * 2 / numRays) * i + (Math.random() - 0.5) * 0.5;
+      // Start exactly from the circle's edge
+      const startX = nodePx.x + Math.cos(angle) * nodeRadius;
+      const startY = nodePx.y + Math.sin(angle) * nodeRadius;
+      const maxLen = 55 + Math.random() * 65; // longer spread, 55–120px
+      buildRootTree(startX, startY, angle, maxLen, 4, tree, 0); // depth=4 for denser branching
+    }
+    return tree;
+  }
+
+  /* growProgress 0→1: reveals segments from origin outward by depth order.
+     fadeProgress 0→1: fades segments starting from distFromOrigin=0 (circle edge) outward.
+     This means the fade BEGINS at the circle and moves toward the tips — opposite of before. */
+  function drawRoots(tree, growProgress, fadeProgress) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.save();
+    ctx.lineCap  = 'round';
+    ctx.lineJoin = 'round';
+
+    // Find max distFromOrigin for normalising fade
+    let maxDist = 1;
+    tree.forEach(seg => { if (seg.distFromOrigin > maxDist) maxDist = seg.distFromOrigin; });
+
+    tree.forEach(seg => {
+      const depthRatio = seg.depth / 4; // 1=thickest/first, 0.25=tips/last
+
+      // Grow: deeper segments appear later in the grow phase
+      const appearAt = (1 - depthRatio) * 0.7; // main rays at 0, tips at 0.525
+      const segGrow  = Math.max(0, Math.min(1, (growProgress - appearAt) / (depthRatio * 0.5 + 0.15)));
+      if (segGrow <= 0) return;
+
+      // Fade: starts at circle edge (distFromOrigin=0) and moves outward.
+      // Segments closest to origin fade first, tips fade last.
+      let alpha;
+      if (fadeProgress <= 0) {
+        alpha = depthRatio * 0.7 + 0.3;
+      } else {
+        // normalised distance 0=at circle, 1=tip
+        const normDist = seg.distFromOrigin / maxDist;
+        // fade front travels from normDist=0 outward as fadeProgress→1
+        // segment is erased when fadeProgress passes its normDist
+        const fadeFront = fadeProgress * 1.4; // slightly overshoot so tips fully vanish
+        alpha = Math.max(0, Math.min(1, (fadeFront - normDist) < 0
+          ? (depthRatio * 0.7 + 0.3)                   // not yet reached by fade
+          : (depthRatio * 0.7 + 0.3) * (1 - Math.min(1, (fadeFront - normDist) / 0.3)) // erasing
+        ));
+        // Invert: we want segments AT the circle to fade FIRST
+        // normDist=0 → fades when fadeProgress > 0 immediately
+        // normDist=1 → fades when fadeProgress > 0.7
+        alpha = Math.max(0, (depthRatio * 0.7 + 0.3) * (1 - Math.max(0, (fadeProgress - normDist * 0.7) / 0.35)));
+      }
+      if (alpha <= 0) return;
+
+      // Draw only `segGrow` fraction of the polyline points
+      const pts   = seg.points;
+      const count = Math.max(2, Math.ceil((pts.length - 1) * segGrow) + 1);
+
+      ctx.beginPath();
+      ctx.moveTo(pts[0].x, pts[0].y);
+      for (let p = 1; p < count && p < pts.length; p++) {
+        ctx.lineTo(pts[p].x, pts[p].y);
+      }
+
+      ctx.strokeStyle = `rgba(96, 165, 250, ${alpha})`;
+      ctx.lineWidth   = Math.max(0.3, depthRatio * 1.5);
+      ctx.shadowColor = '#3b82f6';
+      ctx.shadowBlur  = 4;
+      ctx.stroke();
+    });
+
+    ctx.restore();
+  }
+
+  function runRoots(nodePx, nodeRadius) {
+    if (rootRAF) cancelAnimationFrame(rootRAF);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    const tree = generateRoots(nodePx, nodeRadius);
+
+    const GROW_DUR = 650;
+    const HOLD_DUR = 150;
+    const FADE_DUR = 600;
+    const startTime = performance.now();
+
+    function frame(now) {
+      const elapsed = now - startTime;
+
+      if (elapsed < GROW_DUR) {
+        drawRoots(tree, elapsed / GROW_DUR, 0);
+        rootRAF = requestAnimationFrame(frame);
+      } else if (elapsed < GROW_DUR + HOLD_DUR) {
+        drawRoots(tree, 1, 0);
+        rootRAF = requestAnimationFrame(frame);
+      } else if (elapsed < GROW_DUR + HOLD_DUR + FADE_DUR) {
+        drawRoots(tree, 1, (elapsed - GROW_DUR - HOLD_DUR) / FADE_DUR);
+        rootRAF = requestAnimationFrame(frame);
+      } else {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        rootRAF = null;
+      }
+    }
+    rootRAF = requestAnimationFrame(frame);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* ── NODE RADIUS in pixels ── */
+  function getNodeRadiusPx() {
+    const node = hexNodes[0];
+    if (!node) return 40;
+    return node.getBoundingClientRect().width / 2;
+  }
+
+  /* ── VIBRATE ── */
+  function vibrateNode(nodeEl) {
+    nodeEl.classList.remove('is-vibrating');
+    void nodeEl.offsetWidth;
+    nodeEl.classList.add('is-vibrating');
+  }
+
+  /* ── FULL SEQUENCE ── */
+  function triggerElectric(nodeIndex, nodeEl) {
+    const spokeLine  = spokeLines[nodeIndex];
+    const anchor     = nodeAnchors[nodeIndex];
+    const nodePx     = vbToPx(anchor.x, anchor.y);
+    const nodeRadius = getNodeRadiusPx();
+
+    // 1. Animate spoke line: center → node (450ms travel)
+    if (spokeLine) {
+      animateSpokePulse(spokeLine, anchor, centerAnchor, 450, () => {
+        // 2. Pulse arrives → vibrate
+        vibrateNode(nodeEl);
+
+        // 3. Growing roots from node edge
+        runRoots(nodePx, nodeRadius);
+
+        // 4. Reveal content after vibrate settles
+        setTimeout(() => nodeEl.classList.add('electric-active'), 220);
+      });
+    }
+  }
+
+  /* ── HOVER LISTENERS ── */
+  hexNodes.forEach((nodeEl, index) => {
+    let enterTimer = null;
+
+    nodeEl.addEventListener('mouseenter', () => {
+      enterTimer = setTimeout(() => triggerElectric(index, nodeEl), 40);
+    });
+
+    nodeEl.addEventListener('mouseleave', () => {
+      clearTimeout(enterTimer);
+      if (rootRAF) { cancelAnimationFrame(rootRAF); rootRAF = null; }
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      nodeEl.classList.remove('electric-active', 'is-vibrating');
+      const line = spokeLines[index];
+      if (line) resetLine(line);
+    });
+
+    /* Mobile */
+    nodeEl.addEventListener('touchstart', e => {
+      e.preventDefault();
+      triggerElectric(index, nodeEl);
+    }, { passive: false });
+
+    nodeEl.addEventListener('touchend', () => {
+      setTimeout(() => {
+        nodeEl.classList.remove('electric-active', 'is-vibrating');
+        const line = spokeLines[index];
+        if (line) resetLine(line);
+        if (rootRAF) { cancelAnimationFrame(rootRAF); rootRAF = null; }
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }, 1800);
+    });
+  });
+
+})();
+</script>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     APPROACH SECTION SCRIPT
+     Paste this <script> block INSIDE the existing <script> tag
+     at the bottom of about.html  — place it AFTER the existing
+     nav/scroll code, just before the closing </script> tag.
+     ═══════════════════════════════════════════════════════════════ -->
+
+<script>
+/* ── APPROACH SECTION: Pinned scroll + staggered card rise ── */
+(function () {
+
+  /* Make sure GSAP + ScrollTrigger are available (they are,
+     since about.html already loads them via CDN) */
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const section   = document.getElementById('approachSection');
+  const pinWrap   = document.getElementById('approachPinWrap');
+  const chevrons  = document.getElementById('approachChevrons');
+  const cards     = [
+    document.getElementById('apCard1'),
+    document.getElementById('apCard2'),
+    document.getElementById('apCard3'),
+    document.getElementById('apCard4'),
+    document.getElementById('apCard5'),
+  ];
+
+  if (!section || !pinWrap || cards.some(c => !c)) return;
+
+  /* ── 1. SET INITIAL STATE: cards hidden below ── */
+  gsap.set(cards, { y: 120, opacity: 0 });
+
+  /* ── 2. STAGGER OFFSETS: alternating heights like the design ──
+     Cards 1 & 5 are highest up, 2 & 4 mid, 3 lowest (centre/tallest)
+     We achieve this by giving each card a different starting Y
+     and a different vertical offset so they land at staggered heights */
+
+  /* visual offset so cards sit at different heights when revealed */
+  const finalY = [-180, -140, -80, -110, -180]; /* card 3 sits lowest, cards 1&5 highest */
+  gsap.set(cards, (i) => ({ y: 300 + finalY[i] }));
+
+  /* ── 3. SCROLL-PIN TIMELINE ── */
+  /* Total scroll "scrub distance" = 100vh × (cards + a little breathing room) */
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger : section,
+      start   : 'top top',
+      /* Each card gets ~80px of scroll travel; 5 cards = 400px, plus padding */
+      end     : () => '+=' + (window.innerHeight * 1.6),
+      pin     : pinWrap,
+      scrub   : 1.2,           /* smooth scrub so it feels weighted */
+      anticipatePin: 1,
+    }
+  });
+
+  /* Fade chevrons out as cards start coming in */
+  tl.to(chevrons, { opacity: 0, y: -10, duration: 0.15 }, 0);
+
+  /* Cards rise in one by one, staggered */
+  cards.forEach((card, i) => {
+    tl.to(card, {
+      y      : finalY[i],   /* each card lands at its visual height offset */
+      opacity: 1,
+      duration: 0.3,
+      ease   : 'power3.out',
+    }, i * 0.22);           /* stagger: each card starts 0.22 "units" after previous */
+  });
+
+  /* ── Chevrons reappear briefly when scrolling back up through the pin ──
+     (handled automatically by scrub reversal) */
+
+})();
+</script>
+
+</body>
+</html>
