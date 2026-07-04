@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fleming Techno Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/techno.css" />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+</head>
+<body>
+
+<!-- HERO NAV -->
+<header class="hero-nav" id="heroNav">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <a href="#">
+        <img src="assets/images/logo.png" alt="Logo" class="nav-logo-img" />
+      </a>
+    </div>
+    <nav class="nav-capsule">
+      <ul class="nav-links">
+        <li class="nav-item"><a href="techno.html">HOME</a></li>
+        <li class="nav-item"><a href="services.html">SERVICES</a></li>
+        <li class="nav-item"><a href="index.html">IT Development Division</a></li>
+        <li class="nav-item"><a href="#">R&amp;D</a></li>
+        <li class="nav-item"><a href="#">Careers</a></li>
+        <li class="nav-item"><a href="#">Contact</a></li>
+        <li class="nav-item"><a href="#">Blog</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- STICKY NAV -->
+<header class="sticky-nav" id="stickyNav">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <a href="#">
+        <img src="assets/images/logo.png" alt="Logo" class="nav-logo-img" />
+      </a>
+    </div>
+    <nav class="nav-capsule">
+      <ul class="nav-links">
+        <li class="nav-item"><a href="techno.html">HOME</a></li>
+        <li class="nav-item"><a href="services.html">SERVICES</a></li>
+        <li class="nav-item"><a href="index.html">IT Development Division</a></li>
+        <li class="nav-item"><a href="#">R&amp;D</a></li>
+        <li class="nav-item"><a href="#">Careers</a></li>
+        <li class="nav-item"><a href="#">Contact</a></li>
+        <li class="nav-item"><a href="#">Blog</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger-btn sticky-hamburger" id="stickyHamburgerBtn" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE MENU OVERLAY -->
+<div class="mobile-menu-overlay" id="mobileMenuOverlay">
+  <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+  <ul class="mobile-nav-links">
+    <li class="nav-item"><a href="techno.html">HOME</a></li>
+    <li class="nav-item"><a href="about.html">ABOUT</a></li>
+    <li class="nav-item"><a href="services.html">SERVICES</a></li>
+    <li class="nav-item"><a href="index.html">IT Development Division</a></li>
+    <li class="nav-item"><a href="#">R&amp;D</a></li>
+    <li class="nav-item"><a href="#">Careers</a></li>
+    <li class="nav-item"><a href="#">Contact</a></li>
+    <li class="nav-item"><a href="#">Blog</a></li>
+  </ul>
+</div>
+
+<!-- PAGE CONTENT -->
+<main>
+
+  <!-- ═══════════════════════════════════
+       HERO SECTION
+  ════════════════════════════════════ -->
+  <section class="techno-hero" id="technoHero">
+
+    
+    <div class="techno-hero-container">
+
+      <!-- ── LEFT COLUMN ── -->
+      <div class="techno-hero-left">
+
+        <div class="hero-eyebrow">
+          <span class="eyebrow-dot"></span> TRAINING
+          <span class="eyebrow-sep">•</span> INTERNSHIP
+          <span class="eyebrow-sep">•</span> PROJECT SUPPORT
+        </div>
+
+        <h1 class="hero-headline">
+          Learn Today,<br>
+          Build Tomorrow,<br>
+          <span class="hero-headline-blue">Lead the Future.</span>
+        </h1>
+
+        <p class="hero-subtext">
+          Industry-focused training programs, real-time internships
+          and project support for B.Tech, M.Tech, MS and PhD
+          to turn your ideas into impactful solutions.
+        </p>
+
+        <!-- Service icons row -->
+        <div class="hero-services-row">
+          <div class="hero-service-item">
+            <div class="hero-service-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="hero-service-label">TRAINING</div>
+            <div class="hero-service-sub">Industry oriented<br>training programs</div>
+          </div>
+          <div class="hero-service-item">
+            <div class="hero-service-icon hero-service-icon--purple">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <div class="hero-service-label">INTERNSHIPS</div>
+            <div class="hero-service-sub">2 Weeks to 6 Months<br>internship programs</div>
+          </div>
+          <div class="hero-service-item">
+            <div class="hero-service-icon hero-service-icon--green">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="hero-service-label">PROJECT SUPPORT</div>
+            <div class="hero-service-sub">B.Tech / M.Tech / MS<br>projects support</div>
+          </div>
+          <div class="hero-service-item">
+            <div class="hero-service-icon hero-service-icon--orange">
+              <i class="fas fa-user-graduate"></i>
+            </div>
+            <div class="hero-service-label">RESEARCH SUPPORT</div>
+            <div class="hero-service-sub">PhD, Theses &amp;<br>Dissertation support</div>
+          </div>
+        </div>
+
+        <!-- CTA buttons -->
+        <div class="hero-cta-row">
+          <a href="#programs" class="hero-cta-btn hero-cta-btn--primary">
+            EXPLORE PROGRAMS <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="#internship" class="hero-cta-btn hero-cta-btn--outline">
+            APPLY FOR INTERNSHIP <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+      </div><!-- /hero-left -->
+
+      <!-- ── RIGHT COLUMN: orbit diagram ── -->
+      <div class="techno-hero-right">
+
+        <!-- Hero photo -->
+        <img
+          src="assets/images/techno/hero_img1.png"
+          alt="Student working on embedded systems"
+          class="hero-student-img"
+        />
+
+        <!-- SVG connector lines (drawn behind bubbles) -->
+        <svg class="hero-orbit-svg" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+          <!-- glowing dots on ring -->
+          <circle cx="300" cy="30"  r="4" fill="#3b82f6" opacity="0.8"/>
+          <circle cx="525" cy="295" r="4" fill="#3b82f6" opacity="0.8"/>
+          <circle cx="75"  cy="260" r="4" fill="#3b82f6" opacity="0.6"/>
+        </svg>
+
+        <!-- Orbit bubbles -->
+        <div class="orbit-bubble" style="top:2%; left:44%;">
+          <div class="orbit-bubble-inner">
+            <img src="assets/images/techno/embeded.png" alt="Embedded" />
+          </div>
+        </div>
+
+        <div class="orbit-bubble" style="top:10%; left:76%;">
+          <div class="orbit-bubble-inner">
+            <img src="assets/images/techno/aiml.png" alt="AI & ML" />
+          </div>
+        </div>
+
+        <div class="orbit-bubble" style="top:41%; left:83%;">
+          <div class="orbit-bubble-inner">
+            <img src="assets/images/techno/iot.png" alt="IoT" />
+          </div>
+        </div>
+
+        <div class="orbit-bubble" style="top:70%; left:76%;">
+          <div class="orbit-bubble-inner">
+            <img src="assets/images/techno/robotics.png" alt="Robotics" />
+          </div>
+        </div>
+
+        <div class="orbit-bubble" style="top:55%; left:3%;">
+          <div class="orbit-bubble-inner">
+            <img src="assets/images/techno/python.png" alt="Python" />
+          </div>
+        </div>
+
+        <div class="orbit-bubble" style="top:22%; left:3%;">
+          <div class="orbit-bubble-inner">
+            <img src="assets/images/techno/web.png" alt="Web & App Dev" />
+          </div>
+        </div>
+
+      </div><!-- /hero-right -->
+
+    </div><!-- /container -->
+
+  </section>
+
+</main>
+
+<!-- SERVICES / PROGRAMS SECTION -->
+<section class="ts-section" id="tsSection">
+  <div class="ts-container">
+
+    <!-- LEFT -->
+    <div class="ts-left">
+      <div class="ts-badge">
+        <span class="ts-badge-dot"></span> What We Offer
+      </div>
+      <h2 class="ts-heading">
+        OUR<br>
+        <span class="ts-heading-blue">PROGRAMS</span>
+      </h2>
+      <div class="ts-heading-rule"></div>
+      <p class="ts-desc">
+        From hands-on internships to advanced research support, we provide industry-focused programs designed to bridge the gap between academia and the real world.
+      </p>
+      <div class="ts-divider"></div>
+      <div class="ts-quote">
+        <p>We don&rsquo;t just teach skills,<br>we build careers that last.</p>
+      </div>
+    </div>
+
+    <!-- RIGHT: Honeycomb -->
+    <div class="ts-right">
+      <div class="ts-honeycomb-scale">
+        <div class="ts-honeycomb" id="tsHoneycomb">
+
+          <!-- Left column -->
+          <div class="ts-col ts-col-side">
+
+            <div class="ts-hex">
+              <svg class="ts-hex-outline" viewBox="0 0 230 250" preserveAspectRatio="none">
+                <polyline points="0,58 115,0 230,58" />
+                <polyline points="0,192 115,250 230,192" />
+              </svg>
+              <div class="ts-hex-inner">
+                <div class="ts-hex-front">
+                  <div class="ts-hex-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="7" width="20" height="14" rx="2"/>
+                      <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+                      <line x1="12" y1="12" x2="12" y2="16"/>
+                      <line x1="10" y1="14" x2="14" y2="14"/>
+                    </svg>
+                  </div>
+                  <h4 class="ts-hex-title">Internship</h4>
+                </div>
+                <div class="ts-hex-back">
+                  <p class="ts-hex-desc">Real-world internship programs from 2 weeks to 6 months. Work on live projects alongside industry professionals and gain experience that sets you apart.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="ts-hex">
+              <svg class="ts-hex-outline" viewBox="0 0 230 250" preserveAspectRatio="none">
+                <polyline points="0,58 115,0 230,58" />
+                <polyline points="0,192 115,250 230,192" />
+              </svg>
+              <div class="ts-hex-inner">
+                <div class="ts-hex-front">
+                  <div class="ts-hex-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                    </svg>
+                  </div>
+                  <h4 class="ts-hex-title">Training</h4>
+                </div>
+                <div class="ts-hex-back">
+                  <p class="ts-hex-desc">Industry-focused training in Cyber Security, AI &amp; ML, Web Development, Embedded &amp; IoT, ROS, and more — for both software and hardware domains.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Center column -->
+          <div class="ts-col ts-col-center">
+
+            <div class="ts-hex">
+              <svg class="ts-hex-outline" viewBox="0 0 230 250" preserveAspectRatio="none">
+                <polyline points="0,58 115,0 230,58" />
+                <polyline points="0,192 115,250 230,192" />
+              </svg>
+              <div class="ts-hex-inner">
+                <div class="ts-hex-front">
+                  <div class="ts-hex-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="16 18 22 12 16 6"/>
+                      <polyline points="8 6 2 12 8 18"/>
+                    </svg>
+                  </div>
+                  <h4 class="ts-hex-title">B.Tech / M.Tech<br>/ BCA Projects</h4>
+                </div>
+                <div class="ts-hex-back">
+                  <p class="ts-hex-desc">Complete project support for B.Tech, M.Tech and BCA students — from ideation and design to development and submission, aligned with university guidelines.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Center Logo Hex -->
+            <div class="ts-hex ts-hex-logo">
+              <div class="ts-pulse-ring"></div>
+              <div class="ts-pulse-ring ts-pulse-ring-2"></div>
+              <svg class="ts-hex-outline ts-hex-outline-logo" viewBox="0 0 230 250" preserveAspectRatio="none">
+                <polyline points="0,58 115,0 230,58" />
+                <polyline points="0,192 115,250 230,192" />
+              </svg>
+              <div class="ts-hex-inner ts-hex-logo-inner">
+                <img src="assets/images/techno/logo.png" alt="Fleming Logo" class="ts-logo-img" />
+                <div class="ts-logo-title">FLEMING</div>
+                <div class="ts-logo-sub">Embedded &amp; Software<br>Solutions</div>
+              </div>
+            </div>
+
+            <div class="ts-hex">
+              <svg class="ts-hex-outline" viewBox="0 0 230 250" preserveAspectRatio="none">
+                <polyline points="0,58 115,0 230,58" />
+                <polyline points="0,192 115,250 230,192" />
+              </svg>
+              <div class="ts-hex-inner">
+                <div class="ts-hex-front">
+                  <div class="ts-hex-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                      <polyline points="14 2 14 8 20 8"/>
+                      <line x1="16" y1="13" x2="8" y2="13"/>
+                      <line x1="16" y1="17" x2="8" y2="17"/>
+                    </svg>
+                  </div>
+                  <h4 class="ts-hex-title">Documentation<br>Support</h4>
+                </div>
+                <div class="ts-hex-back">
+                  <p class="ts-hex-desc">Professional support for reports, assignments, lab records, technical write-ups, and academic submissions — structured, accurate, and ready to submit.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right column -->
+          <div class="ts-col ts-col-side">
+
+            <div class="ts-hex">
+              <svg class="ts-hex-outline" viewBox="0 0 230 250" preserveAspectRatio="none">
+                <polyline points="0,58 115,0 230,58" />
+                <polyline points="0,192 115,250 230,192" />
+              </svg>
+              <div class="ts-hex-inner">
+                <div class="ts-hex-front">
+                  <div class="ts-hex-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                      <polyline points="14 2 14 8 20 8"/>
+                      <line x1="16" y1="13" x2="8" y2="13"/>
+                      <line x1="16" y1="17" x2="8" y2="17"/>
+                      <line x1="12" y1="21" x2="12" y2="17"/>
+                    </svg>
+                  </div>
+                  <h4 class="ts-hex-title">MS<br>Dissertation</h4>
+                </div>
+                <div class="ts-hex-back">
+                  <p class="ts-hex-desc">Comprehensive MS dissertation and thesis support — literature review, methodology, implementation, analysis, and final presentation, all handled with care.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="ts-hex">
+              <svg class="ts-hex-outline" viewBox="0 0 230 250" preserveAspectRatio="none">
+                <polyline points="0,58 115,0 230,58" />
+                <polyline points="0,192 115,250 230,192" />
+              </svg>
+              <div class="ts-hex-inner">
+                <div class="ts-hex-front">
+                  <div class="ts-hex-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="11" cy="11" r="8"/>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                      <line x1="11" y1="8" x2="11" y2="14"/>
+                      <line x1="8" y1="11" x2="14" y2="11"/>
+                    </svg>
+                  </div>
+                  <h4 class="ts-hex-title">PhD &amp;<br>Research</h4>
+                </div>
+                <div class="ts-hex-back">
+                  <p class="ts-hex-desc">Expert PhD support — research gap analysis, prototype development, paper writing, journal publication guidance, and end-to-end dissertation assistance.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Connector dots -->
+          <span class="ts-dot" style="top:197px; left:260px;"></span>
+          <span class="ts-dot" style="top:342px; left:260px;"></span>
+          <span class="ts-dot" style="top:487px; left:260px;"></span>
+          <span class="ts-dot" style="top:632px; left:260px;"></span>
+          <span class="ts-dot" style="top:197px; left:550px;"></span>
+          <span class="ts-dot" style="top:342px; left:550px;"></span>
+          <span class="ts-dot" style="top:487px; left:550px;"></span>
+          <span class="ts-dot" style="top:632px; left:550px;"></span>
+
+        </div>
+      </div>
+
+      <div class="ts-slider-arrows" id="tsSliderArrows">
+        <button class="ts-arrow-btn ts-prev-btn" id="tsPrevBtn" aria-label="Previous">&larr;</button>
+        <button class="ts-arrow-btn ts-next-btn" id="tsNextBtn" aria-label="Next">&rarr;</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US SECTION -->
+<section class="wcu-section">
+  <div class="wcu-inner">
+
+    <!-- Left: Image -->
+    <div class="wcu-image-col">
+      <div class="media-frame-wrapper wcu-grid-reveal" id="wcuGridReveal"></div>
+    </div>
+
+    <!-- Right: Content -->
+    <div class="wcu-content-col">
+
+      <!-- Top zone: badge + heading (above the step) -->
+      <div class="wcu-top">
+        <div class="wcu-badge">
+          <span class="wcu-badge-dot"></span> Why Choose Us
+        </div>
+        <h2 class="wcu-heading">WHY CHOOSE US?</h2>
+      </div>
+
+      <!-- Bottom zone: stepped card with features -->
+      <div class="wcu-card">
+        <div class="wcu-features">
+
+          <div class="wcu-feature">
+            <div class="wcu-feature-header">
+              <div class="wcu-feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <h4 class="wcu-feature-title">Industry-Oriented Training</h4>
+            </div>
+            <p class="wcu-feature-desc">Our training programs are designed to meet current industry standards, combining practical learning with real-world technologies to help students become job-ready professionals.</p>
+          </div>
+
+          <div class="wcu-feature">
+            <div class="wcu-feature-header">
+              <div class="wcu-feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <h4 class="wcu-feature-title">Hands-on Project Experience</h4>
+            </div>
+            <p class="wcu-feature-desc">Gain practical experience by working on live projects, academic projects, and real-world problem statements under the guidance of experienced mentors.</p>
+          </div>
+
+          <div class="wcu-feature">
+            <div class="wcu-feature-header">
+              <div class="wcu-feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <h4 class="wcu-feature-title">End-to-End Student Support</h4>
+            </div>
+            <p class="wcu-feature-desc">From training and internships to project guidance, documentation, dissertations, and placement preparation — we provide complete support throughout your academic and professional journey.</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- INTERNSHIP CTA SECTION -->
+<section class="ict-section">
+  <div class="ict-container">
+
+    <!-- LEFT COLUMN -->
+    <div class="ict-left">
+
+      <div class="ict-eyebrow">
+        <span class="ict-eyebrow-dot"></span> Start Your Journey
+      </div>
+
+      <h2 class="ict-heading">
+        GET AN INTERNSHIP &amp;<br>
+        <span class="ict-heading-blue">BAG YOUR DREAM JOB</span>
+      </h2>
+
+      <p class="ict-subtext">
+        Industry-oriented training, live projects, and internship
+        opportunities that help you gain real-world skills and
+        kickstart your career.
+      </p>
+
+      <!-- Feature pills row -->
+      <div class="ict-features-row">
+        <div class="ict-feature-pill">
+          <div class="ict-feature-icon">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <span class="ict-feature-label">Expert<br>Mentors</span>
+        </div>
+        <div class="ict-feature-pill">
+          <div class="ict-feature-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <span class="ict-feature-label">Live<br>Projects</span>
+        </div>
+        <div class="ict-feature-pill">
+          <div class="ict-feature-icon">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <span class="ict-feature-label">Flexible<br>Internships</span>
+        </div>
+        <div class="ict-feature-pill">
+          <div class="ict-feature-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <span class="ict-feature-label">Industry<br>Certificate</span>
+        </div>
+        <div class="ict-feature-pill">
+          <div class="ict-feature-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <span class="ict-feature-label">Placement<br>Support</span>
+        </div>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="ict-cta-row">
+        <a href="#programs" class="ict-btn ict-btn-primary">
+          Explore Programs <i class="fas fa-arrow-up-right-from-square"></i>
+        </a>
+        <a href="#internship" class="ict-btn ict-btn-outline">
+          Apply for Internship <i class="fas fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+
+    </div><!-- /ict-left -->
+
+    <!-- RIGHT COLUMN -->
+    <div class="ict-right">
+
+      <!-- Central student image -->
+      <div class="ict-img-wrapper">
+        <img
+          src="assets/images/techno/img2.png"
+          alt="Student ready for internship"
+          class="ict-student-img"
+        />
+      </div>
+
+      <!-- Floating info cards -->
+      <div class="ict-card ict-card--tl">
+        <div class="ict-card-icon"><i class="fas fa-rocket"></i></div>
+        <div class="ict-card-text">
+          <span class="ict-card-title">Industry Exposure</span>
+        </div>
+      </div>
+
+      <div class="ict-card ict-card--tr">
+        <div class="ict-card-icon"><i class="fas fa-bullseye"></i></div>
+        <div class="ict-card-text">
+          <span class="ict-card-title">Build Your Skills</span>
+        </div>
+      </div>
+
+      <div class="ict-card ict-card--ml">
+        <div class="ict-card-icon ict-card-icon--blue">
+          <i class="fas fa-code"></i>
+        </div>
+        <div class="ict-card-text">
+          <span class="ict-card-title">Real World Projects</span>
+        </div>
+      </div>
+
+      <div class="ict-card ict-card--mr">
+        <div class="ict-card-icon ict-card-icon--blue">
+          <i class="fas fa-users"></i>
+        </div>
+        <div class="ict-card-text">
+          <span class="ict-card-title">Career Support</span>
+        </div>
+      </div>
+
+    </div><!-- /ict-right -->
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     DOMAINS SECTION — sticky left nav + scrolling right
+══════════════════════════════════════════════ -->
+<section class="dom-section" id="domSection">
+
+  <!-- Section header (above the split) -->
+  <div class="dom-header">
+    <div class="dom-header-eyebrow">
+      <span class="dom-eyebrow-dot"></span> What We Specialise In
+    </div>
+    <h2 class="dom-header-heading">
+      DOMAINS WE <span class="dom-heading-blue">WORK ON</span>
+    </h2>
+    <p class="dom-header-sub">
+      From hardware to cloud, we bridge theory and industry across every major technology domain.
+    </p>
+  </div>
+
+  <!-- Split panel -->
+  <div class="dom-split" id="domSplit">
+
+    <!-- LEFT: sticky nav -->
+    <aside class="dom-left" id="domLeft">
+      <div class="dom-nav-track">
+        <!-- sliding indicator bar -->
+        <div class="dom-indicator" id="domIndicator"></div>
+
+        <ul class="dom-nav-list" id="domNavList">
+          <li class="dom-nav-item dom-nav-item--active" data-index="0">
+            <span class="dom-nav-dot"></span>
+            <span class="dom-nav-label">Cloud Computing</span>
+          </li>
+          <li class="dom-nav-item" data-index="1">
+            <span class="dom-nav-dot"></span>
+            <span class="dom-nav-label">Networking</span>
+          </li>
+          <li class="dom-nav-item" data-index="2">
+            <span class="dom-nav-dot"></span>
+            <span class="dom-nav-label">Data Mining</span>
+          </li>
+          <li class="dom-nav-item" data-index="3">
+            <span class="dom-nav-dot"></span>
+            <span class="dom-nav-label">Mobile Computing</span>
+          </li>
+          <li class="dom-nav-item" data-index="4">
+            <span class="dom-nav-dot"></span>
+            <span class="dom-nav-label">Internet Technologies</span>
+          </li>
+          <li class="dom-nav-item" data-index="5">
+            <span class="dom-nav-dot"></span>
+            <span class="dom-nav-label">Data Security</span>
+          </li>
+          <li class="dom-nav-item" data-index="6">
+            <span class="dom-nav-dot"></span>
+            <span class="dom-nav-label">Embedded Systems</span>
+          </li>
+          <li class="dom-nav-item" data-index="7">
+            <span class="dom-nav-dot"></span>
+            <span class="dom-nav-label">And Several More...</span>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- RIGHT: scroll container -->
+    <div class="dom-right" id="domRight">
+
+      <!-- PANEL 0: Cloud Computing -->
+      <div class="dom-panel" data-index="0">
+        <div class="dom-panel-img-wrap">
+          <img src="assets/images/techno/cloud.png" alt="Cloud Computing" class="dom-panel-img" />
+          <div class="dom-panel-img-glow"></div>
+        </div>
+        <div class="dom-panel-body">
+          <div class="dom-panel-tag">
+            <i class="fas fa-cloud"></i> Cloud & Infrastructure
+          </div>
+          <h3 class="dom-panel-title">Cloud Computing</h3>
+          <p class="dom-panel-desc">
+            Learn modern cloud technologies and deployment models, including SaaS, PaaS, and IaaS. Build scalable, secure, and high-performance cloud solutions while improving productivity and resource management.
+          </p>
+          <ul class="dom-panel-points">
+            <li><i class="fas fa-check-circle"></i> Cloud Architecture & Deployment</li>
+            <li><i class="fas fa-check-circle"></i> Scalable Infrastructure Design</li>
+            <li><i class="fas fa-check-circle"></i> AWS, Azure & GCP Platforms</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PANEL 1: Networking -->
+      <div class="dom-panel" data-index="1">
+        <div class="dom-panel-img-wrap">
+          <img src="assets/images/techno/networking.png" alt="Networking" class="dom-panel-img" />
+          <div class="dom-panel-img-glow"></div>
+        </div>
+        <div class="dom-panel-body">
+          <div class="dom-panel-tag">
+            <i class="fas fa-network-wired"></i> Networks & Protocols
+          </div>
+          <h3 class="dom-panel-title">Networking</h3>
+          <p class="dom-panel-desc">
+            Understand the principles of computer networking, communication protocols, routing, switching, and secure data exchange between connected systems across local and global networks.
+          </p>
+          <ul class="dom-panel-points">
+            <li><i class="fas fa-check-circle"></i> Routing & Switching Fundamentals</li>
+            <li><i class="fas fa-check-circle"></i> Network Security & Firewalls</li>
+            <li><i class="fas fa-check-circle"></i> TCP/IP, DNS & Communication Protocols</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PANEL 2: Data Mining -->
+      <div class="dom-panel" data-index="2">
+        <div class="dom-panel-img-wrap">
+          <img src="assets/images/techno/datamining.png" alt="Data Mining" class="dom-panel-img" />
+          <div class="dom-panel-img-glow"></div>
+        </div>
+        <div class="dom-panel-body">
+          <div class="dom-panel-tag">
+            <i class="fas fa-database"></i> Data & Analytics
+          </div>
+          <h3 class="dom-panel-title">Data Mining</h3>
+          <p class="dom-panel-desc">
+            Explore intelligent techniques for collecting, organizing, analyzing, compressing, and extracting meaningful insights from large volumes of structured and unstructured data.
+          </p>
+          <ul class="dom-panel-points">
+            <li><i class="fas fa-check-circle"></i> Pattern Recognition & Clustering</li>
+            <li><i class="fas fa-check-circle"></i> Big Data Processing Pipelines</li>
+            <li><i class="fas fa-check-circle"></i> Predictive Analytics & Modeling</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PANEL 3: Mobile Computing -->
+      <div class="dom-panel" data-index="3">
+        <div class="dom-panel-img-wrap">
+          <img src="assets/images/techno/mobilecomputing.png" alt="Mobile Computing" class="dom-panel-img" />
+          <div class="dom-panel-img-glow"></div>
+        </div>
+        <div class="dom-panel-body">
+          <div class="dom-panel-tag">
+            <i class="fas fa-mobile-alt"></i> Mobile & App Dev
+          </div>
+          <h3 class="dom-panel-title">Mobile Computing</h3>
+          <p class="dom-panel-desc">
+            Develop innovative mobile applications and communication solutions while learning modern technologies that enhance accessibility, performance, and user experience across mobile platforms.
+          </p>
+          <ul class="dom-panel-points">
+            <li><i class="fas fa-check-circle"></i> Android & iOS Development</li>
+            <li><i class="fas fa-check-circle"></i> Cross-Platform with Flutter</li>
+            <li><i class="fas fa-check-circle"></i> Mobile UX & Performance Optimisation</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PANEL 4: Internet Technologies -->
+      <div class="dom-panel" data-index="4">
+        <div class="dom-panel-img-wrap">
+          <img src="assets/images/techno/internet.png" alt="Internet Technologies" class="dom-panel-img" />
+          <div class="dom-panel-img-glow"></div>
+        </div>
+        <div class="dom-panel-body">
+          <div class="dom-panel-tag">
+            <i class="fas fa-globe"></i> Web & Internet
+          </div>
+          <h3 class="dom-panel-title">Internet Technologies</h3>
+          <p class="dom-panel-desc">
+            Build web-based applications, automation tools, web crawlers, APIs, and intelligent internet-enabled solutions that simplify digital interactions and online services.
+          </p>
+          <ul class="dom-panel-points">
+            <li><i class="fas fa-check-circle"></i> Full-Stack Web Development</li>
+            <li><i class="fas fa-check-circle"></i> RESTful APIs & Web Services</li>
+            <li><i class="fas fa-check-circle"></i> Web Automation & Crawling</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PANEL 5: Data Security -->
+      <div class="dom-panel" data-index="5">
+        <div class="dom-panel-img-wrap">
+          <img src="assets/images/techno/datasecuirity.png" alt="Data Security" class="dom-panel-img" />
+          <div class="dom-panel-img-glow"></div>
+        </div>
+        <div class="dom-panel-body">
+          <div class="dom-panel-tag">
+            <i class="fas fa-shield-alt"></i> Security & Cryptography
+          </div>
+          <h3 class="dom-panel-title">Data Security</h3>
+          <p class="dom-panel-desc">
+            Learn advanced cryptographic methods, secure communication techniques, authentication mechanisms, and cybersecurity practices to protect digital information and systems.
+          </p>
+          <ul class="dom-panel-points">
+            <li><i class="fas fa-check-circle"></i> Cryptography & Encryption</li>
+            <li><i class="fas fa-check-circle"></i> Ethical Hacking & Penetration Testing</li>
+            <li><i class="fas fa-check-circle"></i> Secure System Architecture</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PANEL 6: Embedded Systems -->
+      <div class="dom-panel" data-index="6">
+        <div class="dom-panel-img-wrap">
+          <img src="assets/images/techno/embeddedsystem.png" alt="Embedded Systems" class="dom-panel-img" />
+          <div class="dom-panel-img-glow"></div>
+        </div>
+        <div class="dom-panel-body">
+          <div class="dom-panel-tag">
+            <i class="fas fa-microchip"></i> Hardware & IoT
+          </div>
+          <h3 class="dom-panel-title">Embedded Systems</h3>
+          <p class="dom-panel-desc">
+            Gain practical experience in microcontrollers, IoT devices, embedded Linux, real-time systems, sensor integration, robotics, and hardware-software co-design through industry-oriented projects.
+          </p>
+          <ul class="dom-panel-points">
+            <li><i class="fas fa-check-circle"></i> Microcontrollers & RTOS</li>
+            <li><i class="fas fa-check-circle"></i> IoT Sensor Integration & Robotics</li>
+            <li><i class="fas fa-check-circle"></i> Hardware-Software Co-Design</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PANEL 7: And Several More -->
+      <div class="dom-panel dom-panel--more" data-index="7">
+        <div class="dom-panel-img-wrap">
+          <img src="assets/images/techno/other.png" alt="And Many More" class="dom-panel-img" />
+          <div class="dom-panel-img-glow"></div>
+        </div>
+        <div class="dom-panel-body">
+          <div class="dom-panel-tag">
+            <i class="fas fa-rocket"></i> Expanding Horizons
+          </div>
+          <h3 class="dom-panel-title">And Many More Technologies</h3>
+          <p class="dom-panel-desc">
+            Our expertise extends beyond these domains, covering Artificial Intelligence, Machine Learning, Robotics, Computer Vision, ROS, Edge AI, PCB Design, Python, Flutter, Web Development, Industrial Automation, and many other emerging technologies tailored to industry needs.
+          </p>
+          <div class="dom-tags-grid">
+            <span class="dom-tag">Artificial Intelligence</span>
+            <span class="dom-tag">Machine Learning</span>
+            <span class="dom-tag">Robotics</span>
+            <span class="dom-tag">Computer Vision</span>
+            <span class="dom-tag">ROS</span>
+            <span class="dom-tag">Edge AI</span>
+            <span class="dom-tag">PCB Design</span>
+            <span class="dom-tag">Flutter</span>
+            <span class="dom-tag">Python</span>
+            <span class="dom-tag">Industrial Automation</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /dom-right -->
+  </div><!-- /dom-split -->
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-blob footer-blob-1"></div>
+  <div class="footer-blob footer-blob-2"></div>
+  <div class="footer-container">
+    <div class="footer-newsletter-row">
+      <div class="footer-newsletter">
+        <input type="email" placeholder="Enter your email address" class="newsletter-input" />
+        <button class="newsletter-btn">SUBSCRIBE</button>
+      </div>
+    </div>
+    <div class="footer-columns">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-logo">
+          <a href="#">
+            <img src="assets/images/logo.png" alt="Logo" class="footer-logo-img" />
+          </a>
+        </div>
+        <p class="footer-brand-desc">
+          Empowering businesses through embedded systems,
+          software solutions, and cutting-edge IT services.
+          Your trusted technology partner in Kerala.
+        </p>
+        <div class="footer-socials">
+          <a href="#" class="social-icon" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col footer-col-links">
+        <h4 class="footer-col-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#">Services</a></li>
+          <li><a href="techno.html">Training Division</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-col-about">
+        <h4 class="footer-col-heading">About Us</h4>
+        <ul class="footer-links">
+          <li><a href="#">Who We Are</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-col-contact">
+        <h4 class="footer-col-heading">Reach Us</h4>
+        <ul class="footer-contact-list">
+          <li class="footer-contact-item">
+            <span class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.57 3.42 2 2 0 0 1 3.54 1.25h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.68 2.81a2 2 0 0 1-.45 2.11L7.91 8.75a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.91.33 1.85.55 2.81.68A2 2 0 0 1 21.5 16h.5z"/>
+              </svg>
+            </span>
+            <div class="contact-info-group">
+              <a href="tel:04844045252" class="contact-link">+91-484-4045252</a>
+              <a href="tel:9745205252" class="contact-link">+91-9745205252</a>
+            </div>
+          </li>
+          <li class="footer-contact-item">
+            <span class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </span>
+            <a href="mailto:helpdesk@fleming.co.in" class="contact-link">helpdesk@fleming.co.in</a>
+          </li>
+          <li class="footer-contact-item">
+            <span class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </span>
+            <span class="contact-info-text">
+              Fleming Embedded and Software Solutions<br>
+              #37/3956, 2nd Floor, Bank Road,<br>
+              Kaloor, Ernakulam — 682017
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-divider"></div>
+      <p class="footer-copyright">
+        &copy; 2026 All Rights Reserved by
+        <span class="footer-brand-name">Fleming Embedded and Software Solutions</span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const heroNav   = document.getElementById('heroNav');
+const stickyNav = document.getElementById('stickyNav');
+let lastScrollY = window.scrollY;
+
+function getHeroBottom() {
+  const hero = document.querySelector('.hero-section');
+  return hero ? hero.offsetTop + hero.offsetHeight : window.innerHeight;
+}
+
+function getHeroMidpoint() {
+  const hero = document.querySelector('.hero-section');
+  return hero ? hero.offsetTop + hero.offsetHeight * 0.5 : window.innerHeight * 0.5;
+}
+
+window.addEventListener('scroll', () => {
+  const currentY    = window.scrollY;
+  const scrollingUp = currentY < lastScrollY;
+  const heroBottom  = getHeroBottom();
+  const heroMid     = getHeroMidpoint();
+  const inHeroZone  = currentY < heroBottom;
+
+  if (inHeroZone) {
+    stickyNav.classList.remove('nav-visible');
+    stickyNav.classList.add('nav-hidden');
+    if (scrollingUp) {
+      heroNav.classList.remove('nav-hidden');
+      heroNav.classList.add('nav-visible');
+    } else {
+      heroNav.classList.remove('nav-visible');
+      heroNav.classList.add('nav-hidden');
+    }
+  } else {
+    heroNav.classList.remove('nav-visible');
+    heroNav.classList.add('nav-hidden');
+    if (scrollingUp) {
+      stickyNav.classList.remove('nav-hidden');
+      stickyNav.classList.add('nav-visible');
+    } else {
+      stickyNav.classList.remove('nav-visible');
+      stickyNav.classList.add('nav-hidden');
+    }
+  }
+  lastScrollY = currentY;
+}, { passive: true });
+
+heroNav.classList.add('nav-visible');
+stickyNav.classList.add('nav-hidden');
+
+(function() {
+  var founded = new Date(2013, 9, 1);
+  var now = new Date();
+  var years = now.getFullYear() - founded.getFullYear();
+  if (now < new Date(now.getFullYear(), 9, 1)) years--;
+  var el = document.getElementById('yearsCount');
+  if (el) el.textContent = years + '+';
+})();
+</script>
+
+<script>
+(function() {
+  var overlay = document.getElementById('mobileMenuOverlay');
+  var hamburgerBtns = document.querySelectorAll('#hamburgerBtn, #stickyHamburgerBtn');
+  var closeBtn = document.getElementById('mobileMenuClose');
+  var navLinks = overlay.querySelectorAll('.nav-item a');
+
+  function openMenu() { overlay.classList.add('open'); }
+  function closeMenu() { overlay.classList.remove('open'); }
+
+  hamburgerBtns.forEach(function(btn) {
+    btn.addEventListener('click', openMenu);
+  });
+  closeBtn.addEventListener('click', closeMenu);
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', closeMenu);
+  });
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) closeMenu();
+  });
+})();
+</script>
+
+<script>
+/* ── PROGRAMS SECTION: scroll reveal ── */
+(function () {
+  const hexes = document.querySelectorAll('#tsHoneycomb .ts-hex');
+  const honeycomb = document.getElementById('tsHoneycomb');
+  if (!hexes.length || !honeycomb) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('ts-in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  hexes.forEach((hex, i) => {
+    hex.style.transitionDelay = (i * 0.13) + 's';
+    observer.observe(hex);
+  });
+  const dotObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) { honeycomb.classList.add('ts-dots-in-view'); dotObserver.disconnect(); }
+    });
+  }, { threshold: 0.3 });
+  dotObserver.observe(honeycomb);
+})();
+
+/* ── PROGRAMS SECTION: Mobile slider ── */
+(function () {
+  if (!window.matchMedia('(max-width: 767px)').matches) return;
+
+  var track   = document.getElementById('tsHoneycomb');
+  var prevBtn = document.getElementById('tsPrevBtn');
+  var nextBtn = document.getElementById('tsNextBtn');
+  if (!track) return;
+
+  /* Flatten all hex cards in DOM order, logo hex first */
+  var allHexes = Array.from(track.querySelectorAll('.ts-hex'));
+  var logoHex  = track.querySelector('.ts-hex-logo');
+  if (logoHex) {
+    allHexes = allHexes.filter(function(h){ return h !== logoHex; });
+    allHexes.unshift(logoHex);
+  }
+
+  /* Build a fresh flat wrapper so every card is a direct child */
+  var wrapper = document.createElement('div');
+  wrapper.id  = 'tsMobileTrack';
+  allHexes.forEach(function(h){ wrapper.appendChild(h); });
+
+  /* Replace honeycomb content with flat wrapper */
+  track.innerHTML = '';
+  track.appendChild(wrapper);
+
+  /* Move each outline SVG inside ts-hex-inner so it renders correctly */
+  allHexes.forEach(function(hex) {
+    var outline = hex.querySelector('.ts-hex-outline');
+    var inner   = hex.querySelector('.ts-hex-inner');
+    if (outline && inner) {
+      inner.appendChild(outline);
+    }
+  });
+
+  var total        = allHexes.length;
+  var currentIndex = 0;
+  var flipTimer    = null;
+  var autoTimer    = null;
+
+  /* ── Flip a card: pause auto, show back for 3 s then resume ── */
+  function flipCard(hex) {
+    if (hex.classList.contains('ts-hex-logo')) return; /* skip logo */
+    clearTimeout(flipTimer);
+    clearInterval(autoTimer); /* pause auto-slide while flipped */
+    allHexes.forEach(function(h){ h.classList.remove('ts-flipped'); });
+    hex.classList.add('ts-flipped');
+    flipTimer = setTimeout(function(){
+      hex.classList.remove('ts-flipped');
+      startAuto(); /* resume auto-slide after flip ends */
+    }, 3000);
+  }
+
+  /* ── Move to slide index ── */
+  function goTo(index) {
+    currentIndex = (index + total) % total;
+    wrapper.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
+  }
+
+  function goNext() { goTo(currentIndex + 1); }
+  function goPrev() { goTo(currentIndex - 1); }
+
+  /* ── Auto-advance every 3 s ── */
+  function startAuto() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(goNext, 3000);
+  }
+  function resetAuto() { startAuto(); }
+
+  /* ── Tap to flip or pulse (logo) ── */
+  allHexes.forEach(function(hex) {
+    hex.addEventListener('click', function(){
+      if (hex.classList.contains('ts-hex-logo')) {
+        /* Pulse animation on logo tap */
+        hex.classList.remove('ts-pulse-tap');
+        void hex.offsetWidth; /* force reflow to restart animation */
+        hex.classList.add('ts-pulse-tap');
+        setTimeout(function(){ hex.classList.remove('ts-pulse-tap'); }, 700);
+      } else {
+        flipCard(hex);
+      }
+    });
+  });
+
+  /* ── Arrow buttons ── */
+  if (prevBtn) prevBtn.addEventListener('click', function(){ goPrev(); resetAuto(); });
+  if (nextBtn) nextBtn.addEventListener('click', function(){ goNext(); resetAuto(); });
+
+  /* ── Swipe ── */
+  var swipeX = 0;
+  wrapper.addEventListener('touchstart', function(e){ swipeX = e.touches[0].clientX; }, { passive: true });
+  wrapper.addEventListener('touchend', function(e){
+    var dx = e.changedTouches[0].clientX - swipeX;
+    if (Math.abs(dx) > 40) { dx < 0 ? goNext() : goPrev(); resetAuto(); }
+    else { flipCard(allHexes[currentIndex]); } /* tap-in-place = flip */
+  }, { passive: true });
+
+  goTo(0);
+  startAuto();
+})();
+</script>
+
+<script>
+/* ── SECTION HEADING ANIMATIONS (badge + heading + desc) ── */
+(function () {
+  // ── Programs / "What We Offer" section ──
+  var tsBadge   = document.querySelector('.ts-badge');
+  var tsHeading = document.querySelector('.ts-heading');
+  var tsDesc    = document.querySelector('.ts-desc');
+  var tsQuote   = document.querySelector('.ts-quote');
+
+  if (tsBadge) {
+    gsap.fromTo(tsBadge,
+      { opacity: 0, y: -20 },
+      { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out',
+        scrollTrigger: { trigger: tsBadge, start: 'top center', toggleActions: 'play none none reverse' } }
+    );
+  }
+  if (tsHeading) {
+    var split = new SplitType(tsHeading, { types: 'chars' });
+    var chars = split.chars;
+    if (chars && chars.length > 0) {
+      gsap.set(chars, { opacity: 0.15 });
+      gsap.to(chars, {
+        scrollTrigger: { trigger: tsHeading, start: 'top 65%', end: 'top 35%', scrub: true, invalidateOnRefresh: true },
+        opacity: 1, stagger: 0.08, ease: 'none'
+      });
+    }
+  }
+  if (tsDesc) {
+    gsap.fromTo(tsDesc,
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, ease: 'power4.out',
+        scrollTrigger: { trigger: tsDesc, start: 'top 82%', toggleActions: 'play none none reverse' } }
+    );
+  }
+  if (tsQuote) {
+    gsap.fromTo(tsQuote,
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, ease: 'power4.out',
+        scrollTrigger: { trigger: tsQuote, start: 'top 85%', toggleActions: 'play none none reverse' } }
+    );
+  }
+
+  // ── Why Choose Us section ──
+  var wcuBadge   = document.querySelector('.wcu-badge');
+  var wcuHeading = document.querySelector('.wcu-heading');
+
+  if (wcuBadge) {
+    gsap.fromTo(wcuBadge,
+      { opacity: 0, y: -20 },
+      { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out',
+        scrollTrigger: { trigger: wcuBadge, start: 'top center', toggleActions: 'play none none reverse' } }
+    );
+  }
+  if (wcuHeading) {
+    var split2 = new SplitType(wcuHeading, { types: 'chars' });
+    var chars2 = split2.chars;
+    if (chars2 && chars2.length > 0) {
+      gsap.set(chars2, { opacity: 0.15 });
+      gsap.to(chars2, {
+        scrollTrigger: { trigger: wcuHeading, start: 'top 65%', end: 'top 35%', scrub: true, invalidateOnRefresh: true },
+        opacity: 1, stagger: 0.08, ease: 'none'
+      });
+    }
+  }
+})();
+</script>
+
+<script>
+/* ── WCU GRID REVEAL ANIMATION ── */
+(function () {
+  var gridContainer = document.getElementById('wcuGridReveal');
+  if (!gridContainer) return;
+  var cols = 4, rows = 4;
+  for (var r = 0; r < rows; r++) {
+    for (var c = 0; c < cols; c++) {
+      var tile = document.createElement('div');
+      tile.className = 'reveal-tile';
+      tile.dataset.r = r;
+      tile.dataset.c = c;
+      var cover = document.createElement('div');
+      cover.className = 'reveal-tile-cover';
+      tile.appendChild(cover);
+      gridContainer.appendChild(tile);
+    }
+  }
+  var cellDur = 400;
+  var waveGap = -300;
+  var maxDiag = (rows - 1) + (cols - 1);
+  ScrollTrigger.create({
+    trigger: gridContainer,
+    start: 'top 80%',
+    end: 'top top',
+    onEnter: function () {
+      var waveStart = 0;
+      for (var d = 0; d <= maxDiag; d++) {
+        var waveCells = [];
+        for (var r = 0; r < rows; r++) {
+          var c = d - r;
+          if (c >= 0 && c < cols) waveCells.push({ r: r, c: c });
+        }
+        var delay = waveStart;
+        waveStart += cellDur + waveGap;
+        waveCells.forEach(function (_a) {
+          var r = _a.r, c = _a.c;
+          var tile = gridContainer.querySelector('.reveal-tile[data-r="' + r + '"][data-c="' + c + '"]');
+          var cover = tile.querySelector('.reveal-tile-cover');
+          setTimeout(function () {
+            cover.style.transition = 'transform ' + cellDur + 'ms cubic-bezier(0.77, 0, 0.18, 1)';
+            cover.style.transform = 'scaleX(0)';
+          }, delay);
+        });
+      }
+    },
+    onLeaveBack: function () {
+      var covers = gridContainer.querySelectorAll('.reveal-tile-cover');
+      covers.forEach(function (cover) {
+        cover.style.transition = 'none';
+        cover.style.transform = 'scaleX(1)';
+      });
+    }
+  });
+})();
+</script>
+
+<script>
+/* ── START YOUR JOURNEY SECTION ANIMATIONS ── */
+(function () {
+  var badge   = document.querySelector('.ict-eyebrow');
+  var heading = document.querySelector('.ict-heading');
+  var subtext = document.querySelector('.ict-subtext');
+  var pills   = document.querySelectorAll('.ict-feature-pill');
+  var ctaRow  = document.querySelector('.ict-cta-row');
+
+  if (badge) {
+    gsap.fromTo(badge,
+      { opacity: 0, y: -20 },
+      { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out',
+        scrollTrigger: { trigger: badge, start: 'top center', toggleActions: 'play none none reverse' } }
+    );
+  }
+
+  if (heading) {
+    var split = new SplitType(heading, { types: 'chars' });
+    var chars = split.chars;
+    if (chars && chars.length > 0) {
+      gsap.set(chars, { opacity: 0.15 });
+      gsap.to(chars, {
+        scrollTrigger: { trigger: heading, start: 'top 65%', end: 'top 35%', scrub: true, invalidateOnRefresh: true },
+        opacity: 1, stagger: 0.08, ease: 'none'
+      });
+    }
+  }
+
+  if (subtext) {
+    gsap.fromTo(subtext,
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, ease: 'power4.out',
+        scrollTrigger: { trigger: subtext, start: 'top 82%', toggleActions: 'play none none reverse' } }
+    );
+  }
+
+  if (pills.length > 0) {
+    gsap.fromTo(pills,
+      { y: 40, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out', stagger: 0.1,
+        scrollTrigger: { trigger: pills[0], start: 'top 85%', toggleActions: 'play none none reverse' } }
+    );
+  }
+
+  if (ctaRow) {
+    var btns = ctaRow.querySelectorAll('.ict-btn');
+    if (btns.length > 0) {
+      gsap.fromTo(btns,
+        { y: 30, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out', stagger: 0.12,
+          scrollTrigger: { trigger: ctaRow, start: 'top 90%', toggleActions: 'play none none reverse' } }
+      );
+    }
+  }
+})();
+</script>
+
+<script>
+/* ── DOMAINS SECTION HEADER ANIMATIONS ── */
+(function () {
+  var badge   = document.querySelector('.dom-header-eyebrow');
+  var heading = document.querySelector('.dom-header-heading');
+  var subtext = document.querySelector('.dom-header-sub');
+
+  if (badge) {
+    gsap.fromTo(badge,
+      { opacity: 0, y: -20 },
+      { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out',
+        scrollTrigger: { trigger: badge, start: 'top center', toggleActions: 'play none none reverse' } }
+    );
+  }
+
+  if (heading) {
+    var split = new SplitType(heading, { types: 'chars' });
+    var chars = split.chars;
+    if (chars && chars.length > 0) {
+      gsap.set(chars, { opacity: 0.15 });
+      gsap.to(chars, {
+        scrollTrigger: { trigger: heading, start: 'top 65%', end: 'top 35%', scrub: true, invalidateOnRefresh: true },
+        opacity: 1, stagger: 0.08, ease: 'none'
+      });
+    }
+  }
+
+  if (subtext) {
+    gsap.fromTo(subtext,
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, ease: 'power4.out',
+        scrollTrigger: { trigger: subtext, start: 'top 82%', toggleActions: 'play none none reverse' } }
+    );
+  }
+})();
+</script>
+
+<script>
+/* ═══════════════════════════════════════════
+   1.  MOBILE ACCORDION — build dynamically
+════════════════════════════════════════════ */
+(function () {
+  var domSection = document.getElementById('domSection');
+  if (!domSection) return;
+
+  var domains = [
+    { label: 'Cloud Computing', tag: '☁ Cloud & Infrastructure', img: 'assets/images/techno/cloud.png',
+      desc: 'Learn modern cloud technologies and deployment models, including SaaS, PaaS, and IaaS. Build scalable, secure, and high-performance cloud solutions while improving productivity and resource management.',
+      points: ['Cloud Architecture & Deployment', 'Scalable Infrastructure Design', 'AWS, Azure & GCP Platforms'], tags: null },
+    { label: 'Networking', tag: '🌐 Networks & Protocols', img: 'assets/images/techno/networking.png',
+      desc: 'Understand the principles of computer networking, communication protocols, routing, switching, and secure data exchange between connected systems across local and global networks.',
+      points: ['Routing & Switching Fundamentals', 'Network Security & Firewalls', 'TCP/IP, DNS & Communication Protocols'], tags: null },
+    { label: 'Data Mining', tag: '📊 Data & Analytics', img: 'assets/images/techno/datamining.png',
+      desc: 'Explore intelligent techniques for collecting, organizing, analyzing, compressing, and extracting meaningful insights from large volumes of structured and unstructured data.',
+      points: ['Pattern Recognition & Clustering', 'Big Data Processing Pipelines', 'Predictive Analytics & Modeling'], tags: null },
+    { label: 'Mobile Computing', tag: '📱 Mobile & App Dev', img: 'assets/images/techno/mobilecomputing.png',
+      desc: 'Develop innovative mobile applications and communication solutions while learning modern technologies that enhance accessibility, performance, and user experience across mobile platforms.',
+      points: ['Android & iOS Development', 'Cross-Platform with Flutter', 'Mobile UX & Performance Optimisation'], tags: null },
+    { label: 'Internet Technologies', tag: '🌍 Web & Internet', img: 'assets/images/techno/internet.png',
+      desc: 'Build web-based applications, automation tools, web crawlers, APIs, and intelligent internet-enabled solutions that simplify digital interactions and online services.',
+      points: ['Full-Stack Web Development', 'RESTful APIs & Web Services', 'Web Automation & Crawling'], tags: null },
+    { label: 'Data Security', tag: '🔒 Security & Cryptography', img: 'assets/images/techno/datasecuirity.png',
+      desc: 'Learn advanced cryptographic methods, secure communication techniques, authentication mechanisms, and cybersecurity practices to protect digital information and systems.',
+      points: ['Cryptography & Encryption', 'Ethical Hacking & Penetration Testing', 'Secure System Architecture'], tags: null },
+    { label: 'Embedded Systems', tag: '⚙ Hardware & IoT', img: 'assets/images/techno/embeddedsystem.png',
+      desc: 'Gain practical experience in microcontrollers, IoT devices, embedded Linux, real-time systems, sensor integration, robotics, and hardware-software co-design through industry-oriented projects.',
+      points: ['Microcontrollers & RTOS', 'IoT Sensor Integration & Robotics', 'PCB Design & Hardware-Software Co-Design'], tags: null },
+    { label: 'And Several More...', tag: '🚀 Expanding Horizons', img: 'assets/images/techno/other.png',
+      desc: 'Our expertise extends beyond these domains, covering Artificial Intelligence, Machine Learning, Robotics, Computer Vision, ROS, Edge AI, PCB Design, Python, Flutter, Web Development, Industrial Automation, and many other emerging technologies tailored to industry needs.',
+      points: null, tags: ['Artificial Intelligence', 'Machine Learning', 'Robotics', 'Computer Vision', 'ROS', 'Edge AI', 'PCB Design', 'Flutter', 'Python', 'Industrial Automation'] }
+  ];
+
+  var mobileWrap = document.createElement('div');
+  mobileWrap.className = 'dom-mobile-section';
+
+  domains.forEach(function (d, i) {
+    var pointsHTML = '';
+    if (d.points) {
+      pointsHTML = '<ul class="dom-accordion-points">' +
+        d.points.map(function (p) { return '<li><i class="fas fa-check-circle"></i>' + p + '</li>'; }).join('') + '</ul>';
+    }
+    var tagsHTML = '';
+    if (d.tags) {
+      tagsHTML = '<div class="dom-accordion-tags">' +
+        d.tags.map(function (t) { return '<span class="dom-tag">' + t + '</span>'; }).join('') + '</div>';
+    }
+
+    var item = document.createElement('div');
+    item.className = 'dom-accordion-item' + (i === 0 ? ' open' : '');
+    item.innerHTML =
+      '<button class="dom-accordion-trigger" aria-expanded="' + (i === 0 ? 'true' : 'false') + '">' +
+        '<span class="dom-accordion-trigger-label">' + d.label + '</span>' +
+        '<i class="fas fa-plus"></i>' +
+      '</button>' +
+      '<div class="dom-accordion-body">' +
+        '<div class="dom-accordion-inner">' +
+          '<img src="' + d.img + '" alt="' + d.label + '" class="dom-accordion-img" />' +
+          '<div class="dom-accordion-tag">' + d.tag + '</div>' +
+          '<p class="dom-accordion-desc">' + d.desc + '</p>' +
+          pointsHTML + tagsHTML +
+        '</div>' +
+      '</div>';
+
+    item.querySelector('.dom-accordion-trigger').addEventListener('click', function () {
+      var isOpen = item.classList.contains('open');
+      mobileWrap.querySelectorAll('.dom-accordion-item').forEach(function (el) {
+        el.classList.remove('open');
+        el.querySelector('.dom-accordion-trigger').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        this.setAttribute('aria-expanded', 'true');
+      }
+    });
+
+    mobileWrap.appendChild(item);
+  });
+
+  domSection.appendChild(mobileWrap);
+})();
+
+/* ═══════════════════════════════════════════
+   2.  DESKTOP: SCROLL-DRIVEN STICKY NAV
+════════════════════════════════════════════ */
+(function () {
+  var panels    = document.querySelectorAll('#domRight .dom-panel');
+  var navItems  = document.querySelectorAll('#domNavList .dom-nav-item');
+  var indicator = document.getElementById('domIndicator');
+
+  if (!panels.length || !navItems.length || !indicator) return;
+
+  panels.forEach(function (p) {
+    var tl = gsap.timeline({ paused: true });
+
+    var tag    = p.querySelector('.dom-panel-tag');
+    var title  = p.querySelector('.dom-panel-title');
+    var desc   = p.querySelector('.dom-panel-desc') || p.querySelector('.dom-tags-grid');
+    var points = p.querySelectorAll('.dom-panel-points li');
+    var img    = p.querySelector('.dom-panel-img-wrap');
+
+    if (tag) {
+      tl.fromTo(tag,
+        { opacity: 0, y: -20 },
+        { opacity: 1, y: 0, duration: 0.45, ease: 'power2.out' },
+        0.0
+      );
+    }
+
+    if (title) {
+      var split = new SplitType(title, { types: 'chars' });
+      var chars = split.chars;
+      if (chars && chars.length > 0) {
+        tl.fromTo(chars,
+          { opacity: 0 },
+          { opacity: 1, stagger: 0.04, duration: 0.35, ease: 'none' },
+          0.15
+        );
+      }
+    }
+
+    if (desc) {
+      tl.fromTo(desc,
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.65, ease: 'power3.out' },
+        0.3
+      );
+    }
+
+    if (points.length > 0) {
+      tl.fromTo(points,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.5, stagger: 0.07, ease: 'power2.out' },
+        0.4
+      );
+    }
+
+    if (img) {
+      tl.fromTo(img,
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 0.75, ease: 'power3.out' },
+        0.1
+      );
+    }
+
+    p._domTL = tl;
+
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          p.classList.add('dom-panel--visible');
+          p._domTL.timeScale(1).play();
+        } else {
+          p.classList.remove('dom-panel--visible');
+          p._domTL.timeScale(1.6).reverse();
+        }
+      });
+    }, { threshold: 0.12 });
+
+    obs.observe(p);
+  });
+
+  var activeIndex = 0;
+
+  function setActive(index) {
+    if (index === activeIndex && navItems[index].classList.contains('dom-nav-item--active')) return;
+    activeIndex = index;
+
+    navItems.forEach(function (item, i) {
+      item.classList.toggle('dom-nav-item--active', i === index);
+    });
+
+    var targetItem = navItems[index];
+    var navTrack   = document.querySelector('.dom-nav-track');
+    if (targetItem && navTrack && indicator) {
+      var itemTop    = targetItem.offsetTop;
+      var itemHeight = targetItem.offsetHeight;
+      indicator.style.transform = 'translateY(' + itemTop + 'px)';
+      indicator.style.height    = itemHeight + 'px';
+    }
+  }
+
+  setActive(0);
+
+  var navObs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        var idx = parseInt(e.target.getAttribute('data-index'), 10);
+        if (!isNaN(idx)) setActive(idx);
+      }
+    });
+  }, { rootMargin: '-20% 0px -55% 0px', threshold: 0 });
+
+  panels.forEach(function (p) { navObs.observe(p); });
+
+  navItems.forEach(function (item) {
+    item.addEventListener('click', function () {
+      var idx = parseInt(item.getAttribute('data-index'), 10);
+      if (isNaN(idx)) return;
+      var target = document.querySelector('#domRight .dom-panel[data-index="' + idx + '"]');
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

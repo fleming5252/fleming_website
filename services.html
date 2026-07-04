@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Fleming Embedded & Software Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+</head>
+<body>
+
+<!-- HERO NAV -->
+<header class="hero-nav" id="heroNav">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <a href="index.html">
+        <img src="assets/images/logo.png" alt="Logo" class="nav-logo-img" />
+      </a>
+    </div>
+    <nav class="nav-capsule">
+      <ul class="nav-links">
+        <li class="nav-item"><a href="index.html">HOME</a></li>
+        <li class="nav-item"><a href="about.html">ABOUT</a></li>
+        <li class="nav-item active">
+          <a href="services.html">
+            <span class="active-dot"></span>
+            SERVICES
+          </a>
+        </li>
+        <li class="nav-item"><a href="#">Products</a></li>
+        <li class="nav-item"><a href="techno.html">Training Division</a></li>
+        <li class="nav-item"><a href="contact.html">Contact</a></li>
+        <li class="nav-item"><a href="#">Blog</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- STICKY NAV -->
+<header class="sticky-nav" id="stickyNav">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <a href="index.html">
+        <img src="assets/images/logo.png" alt="Logo" class="nav-logo-img" />
+      </a>
+    </div>
+    <nav class="nav-capsule">
+      <ul class="nav-links">
+        <li class="nav-item"><a href="index.html">HOME</a></li>
+        <li class="nav-item"><a href="about.html">ABOUT</a></li>
+        <li class="nav-item active">
+          <a href="services.html">
+            <span class="active-dot"></span>
+            SERVICES
+          </a>
+        </li>
+        <li class="nav-item"><a href="#">Products</a></li>
+        <li class="nav-item"><a href="techno.html">Training Division</a></li>
+        <li class="nav-item"><a href="contact.html">Contact</a></li>
+        <li class="nav-item"><a href="#">Blog</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger-btn sticky-hamburger" id="stickyHamburgerBtn" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE MENU OVERLAY -->
+<div class="mobile-menu-overlay" id="mobileMenuOverlay">
+  <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+  <ul class="mobile-nav-links">
+    <li class="nav-item"><a href="index.html">HOME</a></li>
+    <li class="nav-item"><a href="about.html">ABOUT</a></li>
+    <li class="nav-item active">
+      <a href="#">
+        <span class="active-dot"></span>
+        SERVICES
+      </a>
+    </li>
+    <li class="nav-item"><a href="#">Products</a></li>
+    <li class="nav-item"><a href="techno.html">Training Division</a></li>
+    <li class="nav-item"><a href="contact.html">Contact</a></li>
+    <li class="nav-item"><a href="#">Blog</a></li>
+  </ul>
+</div>
+
+<!-- SERVICES HERO SECTION -->
+<section class="about-bg" id="parallaxHero">
+    <div class="about-overlay"></div>
+    <div class="about-content">
+        <h1>SERVICES</h1>
+        <p class="about-breadcrumbs">
+            <a href="index.html">HOME</a>
+            <span class="dot">•</span>
+            <span class="active-page">SERVICES</span>
+        </p>
+    </div>
+</section>
+
+<!-- SERVICES HEADING SECTION -->
+<section class="services-heading-section">
+  <div class="services-container">
+    <div class="services-badge">
+      <span class="badge-dot"></span>
+      Our Services
+    </div>
+    <h2 class="services-heading">Services that we Offer</h2>
+    <p class="services-subtitle">Providing secure and quality services</p>
+  </div>
+</section>
+
+<section class="services-grid-section">
+  <div class="services-grid-container">
+
+    <div class="service-card">
+      <div class="card-static-content">
+        <div class="card-number">01</div>
+        <h3 class="card-title">Web Applications</h3>
+        <p class="card-teaser">Web or cloud-based applications are like the backbone of a business, helping it run smoothly...</p>
+        <span class="read-more-hint">Hover to explore +</span>
+      </div>
+      <img class="card-hover-image" src="assets/images/service1.png" alt="Web Applications" />
+      <div class="card-hover-overlay">
+        <p class="card-full-desc">Web or cloud-based applications are like the backbone of a business, helping it run smoothly and grow steadily. We focus on providing user-friendly applications that bring joy to our customers. By using simple yet effective technology, we aim to make tasks easier and more efficient, ensuring our clients' businesses thrive and flourish.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="card-static-content">
+        <div class="card-number">02</div>
+        <h3 class="card-title">ERP Softwares</h3>
+        <p class="card-teaser">Operating a business in the competitive modern market leaves no room for minor oversights...</p>
+        <span class="read-more-hint">Hover to explore +</span>
+      </div>
+      <img class="card-hover-image" src="assets/images/service2.png" alt="ERP Softwares" />
+      <div class="card-hover-overlay">
+        <p class="card-full-desc">Operating a business in the fiercely competitive modern market leaves no room for even minor oversights, which can lead to significant losses. Partnering with Fleming Embedding And Software Solutions ensures your company remains fully equipped to face competition, thanks to our expertly crafted and thoughtfully developed ERPs. Our solutions are designed with precision and care to guarantee your business excels and prospers.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="card-static-content">
+        <div class="card-number">03</div>
+        <h3 class="card-title">Mobile Applications</h3>
+        <p class="card-teaser">Achieving top-notch services with just a touch is a universal aspiration. We achieve this...</p>
+        <span class="read-more-hint">Hover to explore +</span>
+      </div>
+      <img class="card-hover-image" src="assets/images/service3.png" alt="Mobile Applications" />
+      <div class="card-hover-overlay">
+        <p class="card-full-desc">Achieving top-notch services with just a touch is a universal aspiration. We achieve this by offering expert mobile application development and reliable support services. This means creating user-friendly, efficient applications that meet the highest standards. We're committed to making technology accessible and impactful for our clients, helping them reach new heights in their endeavors.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="card-static-content">
+        <div class="card-number">04</div>
+        <h3 class="card-title">Embedded Solutions</h3>
+        <p class="card-teaser">Fleming Embedded and Software Solutions understands the pivotal role that embedded technology plays...</p>
+        <span class="read-more-hint">Hover to explore +</span>
+      </div>
+      <img class="card-hover-image" src="assets/images/service4.png" alt="Embedded Solutions" />
+      <div class="card-hover-overlay">
+        <p class="card-full-desc">Fleming Embedded and Software Solutions understands the pivotal role that embedded technology plays in shaping our connected world. Our dedicated team of experts is committed to delivering solutions that exceed expectations, providing you with a competitive edge in today's fast-paced technological landscape. We offer a wide range of embedded solutions tailored to meet the specific needs of your projects.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="card-static-content">
+        <div class="card-number">05</div>
+        <h3 class="card-title">AI & Machine Learning</h3>
+        <p class="card-teaser">Dive into the transformative world of Artificial Intelligence (AI) and Machine Learning...</p>
+        <span class="read-more-hint">Hover to explore +</span>
+      </div>
+      <img class="card-hover-image" src="assets/images/service5.png" alt="AI & Machine Learning" />
+      <div class="card-hover-overlay">
+        <p class="card-full-desc">Dive into the transformative world of Artificial Intelligence (AI) and Machine Learning (ML) with Fleming Embedded and Software Solutions. Whether you're a student eager to grasp AI/ML fundamentals or a professional seeking advanced applications, we're your trusted partner. Our dedicated team is here to simplify complex concepts, offer expert guidance, and empower you to harness AI and ML's potential for innovation.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="card-static-content">
+        <div class="card-number">06</div>
+        <h3 class="card-title">Cyber Security</h3>
+        <p class="card-teaser">We specialize in guiding students through hands-on Cyber Security projects, providing expertise...</p>
+        <span class="read-more-hint">Hover to explore +</span>
+      </div>
+      <img class="card-hover-image" src="assets/images/service6.png" alt="Cyber Security" />
+      <div class="card-hover-overlay">
+        <p class="card-full-desc">We specialize in guiding students through hands-on Cyber Security projects, providing expertise in critical areas like intrusion detection, cryptography, and proficiency in utilizing platforms such as Ubuntu and Kali Linux. Our approach emphasizes practical skills and real-world applications, ensuring students gain valuable experience in tackling cyber threats and securing systems effectively. This hands-on learning approach sets a solid foundation for future success in the field of Cyber Security.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="card-static-content">
+        <div class="card-number">07</div>
+        <h3 class="card-title">Blockchain</h3>
+        <p class="card-teaser">Blockchain is a revolutionary technology that ensures secure, transparent, and tamper-proof...</p>
+        <span class="read-more-hint">Hover to explore +</span>
+      </div>
+      <img class="card-hover-image" src="assets/images/service7.png" alt="Blockchain" />
+      <div class="card-hover-overlay">
+        <p class="card-full-desc">Blockchain is a revolutionary technology that ensures secure, transparent, and tamper-proof transactions. It forms the backbone of cryptocurrencies like Bitcoin, but its applications extend far beyond digital currencies. We specialize in guiding students through the intricacies of Ethereum-related decentralized applications (dApps), covering areas such as smart contracts and their implementation on the Ethereum platform.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="card-static-content">
+        <div class="card-number">08</div>
+        <h3 class="card-title">Data Mining</h3>
+        <p class="card-teaser">Our expertise in data mining involves the adept application of advanced algorithms...</p>
+        <span class="read-more-hint">Hover to explore +</span>
+      </div>
+      <img class="card-hover-image" src="assets/images/service8.png" alt="Data Mining" />
+      <div class="card-hover-overlay">
+        <p class="card-full-desc">Our expertise in data mining involves the adept application of advanced algorithms and sophisticated statistical techniques to extract valuable insights from intricate datasets. We go beyond mere analysis, providing comprehensive guidance and support throughout the process. This empowers you to not only make well-informed decisions but also to innovate.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="card-static-content">
+        <div class="card-number">09</div>
+        <h3 class="card-title">Research Guidance</h3>
+        <p class="card-teaser">Seeking expert guidance for your research projects? Look no further. We offer comprehensive...</p>
+        <span class="read-more-hint">Hover to explore +</span>
+      </div>
+      <img class="card-hover-image" src="assets/images/service9.png" alt="Research Guidance" />
+      <div class="card-hover-overlay">
+        <p class="card-full-desc">Seeking expert guidance for your research projects? Look no further. We offer comprehensive project assistance and academic guidance to ensure you're not just on the right track, but also equipped with the necessary tools to conduct thorough research. Our experienced team is dedicated to providing a curated selection of the most pertinent and timely topics, along with the support needed to help you excel in your academic endeavors.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-dark-section">
+  <div class="cta-container">
+    <div class="cta-content-left">
+      <h2 class="cta-main-title">Let's make something great together</h2>
+    </div>
+    <div class="cta-action-right">
+      <a href="#contact" class="cta-brush-link">
+        Get Started <span class="cta-arrow">↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-blob footer-blob-1"></div>
+  <div class="footer-blob footer-blob-2"></div>
+  <div class="footer-container">
+    <div class="footer-newsletter-row">
+      <div class="footer-newsletter">
+        <input type="email" placeholder="Enter your email address" class="newsletter-input" />
+        <button class="newsletter-btn">SUBSCRIBE</button>
+      </div>
+    </div>
+    <div class="footer-columns">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-logo">
+          <a href="index.html">
+            <img src="assets/images/logo.png" alt="Logo" class="footer-logo-img" />
+          </a>
+        </div>
+        <p class="footer-brand-desc">
+          Empowering businesses through embedded systems,
+          software solutions, and cutting-edge IT services.
+          Your trusted technology partner in Kerala.
+        </p>
+        <div class="footer-socials">
+          <a href="#" class="social-icon" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col footer-col-links">
+        <h4 class="footer-col-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#">Services</a></li>
+          <li><a href="techno.html">Training Division</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-col-about">
+        <h4 class="footer-col-heading">About Us</h4>
+        <ul class="footer-links">
+          <li><a href="#">Who We Are</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-col-contact">
+        <h4 class="footer-col-heading">Reach Us</h4>
+        <ul class="footer-contact-list">
+          <li class="footer-contact-item">
+            <span class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.57 3.42 2 2 0 0 1 3.54 1.25h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.68 2.81a2 2 0 0 1-.45 2.11L7.91 8.75a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.91.33 1.85.55 2.81.68A2 2 0 0 1 21.5 16h.5z"/>
+              </svg>
+            </span>
+            <div class="contact-info-group">
+              <a href="tel:04844045252" class="contact-link">+91-484-4045252</a>
+              <a href="tel:9745205252" class="contact-link">+91-9745205252</a>
+            </div>
+          </li>
+          <li class="footer-contact-item">
+            <span class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </span>
+            <a href="mailto:helpdesk@fleming.co.in" class="contact-link">helpdesk@fleming.co.in</a>
+          </li>
+          <li class="footer-contact-item">
+            <span class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </span>
+            <span class="contact-info-text">
+              Fleming Embedded and Software Solutions<br>
+              #37/3956, 2nd Floor, Bank Road,<br>
+              Kaloor, Ernakulam — 682017
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-divider"></div>
+      <p class="footer-copyright">
+        &copy; 2026 All Rights Reserved by
+        <span class="footer-brand-name">Fleming Embedded and Software Solutions</span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+var heroNav   = document.getElementById('heroNav');
+var stickyNav = document.getElementById('stickyNav');
+var lastScrollY = window.scrollY;
+
+function getAboutHeroBottom() {
+  var hero = document.getElementById('parallaxHero');
+  return hero ? hero.offsetTop + hero.offsetHeight : window.innerHeight;
+}
+
+window.addEventListener('scroll', function() {
+  var currentY    = window.scrollY;
+  var scrollingUp = currentY < lastScrollY;
+  var heroBottom  = getAboutHeroBottom();
+  var inHeroZone  = currentY < heroBottom;
+
+  if (inHeroZone) {
+    stickyNav.classList.remove('nav-visible');
+    stickyNav.classList.add('nav-hidden');
+    if (scrollingUp) {
+      heroNav.classList.remove('nav-hidden');
+      heroNav.classList.add('nav-visible');
+    } else {
+      heroNav.classList.remove('nav-visible');
+      heroNav.classList.add('nav-hidden');
+    }
+  } else {
+    heroNav.classList.remove('nav-visible');
+    heroNav.classList.add('nav-hidden');
+    if (scrollingUp) {
+      stickyNav.classList.remove('nav-hidden');
+      stickyNav.classList.add('nav-visible');
+    } else {
+      stickyNav.classList.remove('nav-visible');
+      stickyNav.classList.add('nav-hidden');
+    }
+  }
+  lastScrollY = currentY;
+}, { passive: true });
+
+heroNav.classList.add('nav-visible');
+stickyNav.classList.add('nav-hidden');
+</script>
+
+<script>
+(function() {
+  var overlay = document.getElementById('mobileMenuOverlay');
+  var hamburgerBtns = document.querySelectorAll('#hamburgerBtn, #stickyHamburgerBtn');
+  var closeBtn = document.getElementById('mobileMenuClose');
+  var navLinks = overlay.querySelectorAll('.nav-item a');
+
+  function openMenu() { overlay.classList.add('open'); }
+  function closeMenu() { overlay.classList.remove('open'); }
+
+  hamburgerBtns.forEach(function(btn) {
+    btn.addEventListener('click', openMenu);
+  });
+  closeBtn.addEventListener('click', closeMenu);
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', closeMenu);
+  });
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) closeMenu();
+  });
+})();
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  var section = document.querySelector('.services-heading-section');
+  if (!section) return;
+
+  var badgeEl = section.querySelector('.services-badge');
+  var headingEl = section.querySelector('.services-heading');
+  var subtitleEl = section.querySelector('.services-subtitle');
+
+  if (!headingEl) return;
+
+  if (badgeEl) {
+    gsap.fromTo(badgeEl,
+      { opacity: 0, y: -20 },
+      {
+        opacity: 1, y: 0, duration: 0.6, ease: 'power2.out',
+        scrollTrigger: { trigger: badgeEl, start: 'top center', toggleActions: 'play none none reverse' }
+      }
+    );
+  }
+
+  var split = new SplitType(headingEl, { types: 'chars' });
+  var chars = split.chars;
+  if (!chars || chars.length === 0) return;
+
+  gsap.set(chars, { opacity: 0.15 });
+
+  gsap.to(chars, {
+    scrollTrigger: { trigger: headingEl, start: 'top 60%', end: 'top 35%', scrub: true, invalidateOnRefresh: true },
+    opacity: 1, stagger: 0.1, ease: 'none'
+  });
+
+  if (subtitleEl) {
+    gsap.fromTo(subtitleEl,
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, scrollTrigger: { trigger: subtitleEl, start: 'top 65%', end: 'top 45%', scrub: true } }
+    );
+  }
+
+  gsap.to(".service-card:nth-child(-n+3)", {
+    opacity: 1, y: 0, stagger: 0.15,
+    scrollTrigger: { trigger: ".service-card:nth-child(1)", start: "top 80%", end: "top 50%", scrub: 1.5, invalidateOnRefresh: true }
+  });
+
+  gsap.to(".service-card:nth-child(n+4):nth-child(-n+6)", {
+    opacity: 1, y: 0, stagger: 0.15,
+    scrollTrigger: { trigger: ".service-card:nth-child(4)", start: "top 80%", end: "top 50%", scrub: 1.5, invalidateOnRefresh: true }
+  });
+
+  gsap.to(".service-card:nth-child(n+7)", {
+    opacity: 1, y: 0, stagger: 0.15,
+    scrollTrigger: { trigger: ".service-card:nth-child(7)", start: "top 80%", end: "top 50%", scrub: 1.5, invalidateOnRefresh: true }
+  });
+
+  if (window.matchMedia('(max-width: 767px)').matches) {
+    var activeServiceCard = null;
+    var activeServiceTimer = null;
+    var touchStartX = 0, touchStartY = 0, touchMoved = false, moveThreshold = 10;
+
+    document.querySelectorAll('.service-card').forEach(function(card) {
+      card.addEventListener('touchstart', function(e) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        touchMoved = false;
+      }, { passive: true });
+
+      card.addEventListener('touchmove', function(e) {
+        var dx = Math.abs(e.touches[0].clientX - touchStartX);
+        var dy = Math.abs(e.touches[0].clientY - touchStartY);
+        if (dx > moveThreshold || dy > moveThreshold) touchMoved = true;
+      }, { passive: true });
+
+      card.addEventListener('touchend', function(e) {
+        if (touchMoved) return;
+        e.preventDefault();
+        activateServiceCard(card);
+      }, { passive: false });
+    });
+
+    function activateServiceCard(card) {
+      if (activeServiceCard && activeServiceCard !== card) activeServiceCard.classList.remove('mobile-touch-active');
+      clearTimeout(activeServiceTimer);
+      card.classList.add('mobile-touch-active');
+      activeServiceCard = card;
+      activeServiceTimer = setTimeout(function() {
+        card.classList.remove('mobile-touch-active');
+        if (activeServiceCard === card) activeServiceCard = null;
+      }, 3000);
+    }
+  }
+
+  gsap.set(".cta-container", { opacity: 0, y: 80 });
+  ScrollTrigger.create({
+    trigger: ".cta-dark-section",
+    start: "top 85%",
+    onEnter: function() { gsap.to(".cta-container", { opacity: 1, y: 0, duration: 1.2, ease: "power4.out" }); },
+    onLeaveBack: function() { gsap.to(".cta-container", { opacity: 0, y: 80, duration: 0.6, ease: "power3.in" }); },
+    onEnterBack: function() { gsap.to(".cta-container", { opacity: 1, y: 0, duration: 1.2, ease: "power4.out" }); }
+  });
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.to("#parallaxHero", {
+    backgroundPosition: "60% bottom",
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#parallaxHero",
+      start: "top top",
+      end: "bottom top",
+      scrub: 2.5,
+    }
+  });
+});
+</script>
+
+</body>
+</html>
