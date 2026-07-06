@@ -4025,3 +4025,884 @@ body { font-family: 'Poppins', sans-serif; }
   }
 }
 
+/* ══════════════════════════════════════════════════════════════
+   PRODUCTS SCROLL-STORYTELLING SECTION
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Outer Section ── */
+.ps-section {
+  position: relative;
+  background: #ffffff;
+  /* height set by JS to give scroll distance */
+}
+
+.ps-scroll-spacer {
+  display: none; /* no longer needed */
+}
+
+/* ── Sticky Viewport ── */
+.ps-sticky {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+}
+
+/* ── Ambient Glow ── */
+.ps-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  transition: background 800ms ease;
+}
+
+/* ── Badge (top-left) ── */
+.ps-badge {
+  position: absolute;
+  top: 32px;
+  left: 48px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 50px;
+  padding: 6px 18px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  background: #ffffff;
+  z-index: 10;
+  letter-spacing: 0.5px;
+}
+
+.ps-badge-num {
+  font-weight: 800;
+  color: #1a56db;
+  font-size: 13px;
+  transition: color 400ms ease;
+}
+
+/* ── Layout: two columns ── */
+.ps-layout {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: center;
+  padding: 72px 48px 16px 48px;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  transition: none;
+}
+
+/* Flipped: image left, text right */
+.ps-layout-flipped .ps-text-side {
+  order: 2;
+}
+.ps-layout-flipped .ps-image-side {
+  order: 1;
+}
+
+/* ── Text Side ── */
+.ps-text-side {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-right: 48px;
+}
+
+.ps-layout-flipped .ps-text-side {
+  padding-right: 0;
+  padding-left: 48px;
+}
+
+/* Title */
+.ps-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+}
+
+.ps-title-line1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(38px, 4.5vw, 64px);
+  font-weight: 800;
+  color: #111111;
+  line-height: 1.05;
+  display: block;
+  will-change: transform, opacity;
+}
+
+.ps-title-line2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(38px, 4.5vw, 64px);
+  font-weight: 800;
+  color: #1a56db;
+  line-height: 1.05;
+  display: block;
+  will-change: transform, opacity;
+}
+
+/* Blue rule */
+.ps-rule {
+  width: 48px;
+  height: 4px;
+  background: #1a56db;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* Tagline */
+.ps-tagline {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #374151;
+  text-transform: uppercase;
+}
+
+.ps-tagline-blue {
+  color: #1a56db;
+}
+
+/* Body paragraphs */
+.ps-body {
+  font-size: 13.5px;
+  color: #555555;
+  line-height: 1.75;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  will-change: opacity;
+}
+
+.ps-body p {
+  margin: 0;
+}
+
+/* Features grid */
+.ps-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.ps-feat {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px 14px;
+  will-change: transform, opacity;
+}
+
+.ps-feat-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+  line-height: 1.4;
+}
+
+.ps-feat-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ps-feat-text strong {
+  font-size: 12px;
+  font-weight: 700;
+  color: #111111;
+  line-height: 1.35;
+}
+
+.ps-feat-text span {
+  font-size: 11px;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+/* ── Image Side ── */
+.ps-image-side {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ps-image-frame {
+  position: relative;
+  width: 100%;
+  max-width: 620px;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: #e5e7eb;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.12);
+}
+
+/* All images stacked, only active one visible */
+.ps-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.ps-img-active {
+  opacity: 1;
+}
+
+/* Floating card over image */
+.ps-float-card {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+  will-change: transform, opacity;
+  z-index: 3;
+}
+
+.ps-float-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #eef2ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ps-float-text {
+  flex: 1;
+}
+
+.ps-float-text strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.ps-float-text p {
+  margin: 0;
+  font-size: 12px;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* Dot grid decoration (bottom-right of float card area) */
+.ps-image-frame::after {
+  content: '';
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 60px;
+  height: 60px;
+  background-image: radial-gradient(circle, rgba(26,86,219,0.2) 1.5px, transparent 1.5px);
+  background-size: 8px 8px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.6;
+}
+
+/* ── Progress Bar (bottom strip) ── */
+.ps-progress-bar {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 0 48px 24px 48px;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.ps-progress-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.ps-progress-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #9ca3af;
+}
+
+.ps-progress-counter {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  overflow: hidden;
+  height: 26px;
+}
+
+.ps-counter-current {
+  display: block;
+  overflow: hidden;
+  height: 26px;
+  line-height: 26px;
+}
+
+.ps-counter-digit {
+  display: block;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 900;
+  font-size: 22px;
+  color: #1a56db;
+  line-height: 26px;
+  will-change: transform, opacity;
+}
+
+.ps-counter-of {
+  font-size: 12px;
+  font-weight: 600;
+  color: #9ca3af;
+}
+
+/* Track */
+.ps-progress-track-wrap {
+  flex: 1;
+  position: relative;
+}
+
+.ps-progress-track {
+  position: relative;
+  height: 3px;
+  background: #e5e7eb;
+  border-radius: 2px;
+  overflow: visible;
+}
+
+.ps-progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #1a56db;
+  border-radius: 2px;
+  width: 0%;
+  transition: width 200ms linear;
+}
+
+.ps-progress-dots {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.ps-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #d1d5db;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 1.5px #d1d5db;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: background 300ms ease, box-shadow 300ms ease, transform 300ms ease;
+  flex-shrink: 0;
+}
+
+.ps-dot-active {
+  background: #1a56db;
+  box-shadow: 0 0 0 3px rgba(26,86,219,0.2);
+  transform: scale(1.3);
+}
+
+/* Nav Button */
+.ps-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #1a56db;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 24px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.ps-nav-btn:hover {
+  background: #1446b8;
+  transform: translateY(-2px);
+}
+
+.ps-nav-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════ */
+
+@media (max-width: 1100px) {
+  .ps-layout {
+    padding: 64px 32px 16px 32px;
+    gap: 0;
+  }
+  .ps-text-side {
+    padding-right: 28px;
+  }
+  .ps-layout-flipped .ps-text-side {
+    padding-left: 28px;
+  }
+  .ps-progress-bar {
+    padding: 0 32px 20px 32px;
+  }
+}
+
+@media (max-width: 900px) {
+  .ps-sticky {
+    height: auto;
+    min-height: 100svh;
+    position: sticky;
+  }
+
+  .ps-layout {
+    grid-template-columns: 1fr;
+    padding: 72px 24px 12px 24px;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .ps-text-side,
+  .ps-layout-flipped .ps-text-side {
+    order: 1 !important;
+    padding: 0;
+  }
+  .ps-image-side,
+  .ps-layout-flipped .ps-image-side {
+    order: 2 !important;
+  }
+
+  .ps-image-frame {
+    max-width: 100%;
+    aspect-ratio: 16/9;
+  }
+
+  .ps-badge {
+    top: 20px;
+    left: 24px;
+  }
+
+  .ps-progress-bar {
+    padding: 0 24px 16px 24px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .ps-progress-track-wrap {
+    order: 3;
+    width: 100%;
+    flex: none;
+  }
+
+  .ps-nav-btn {
+    order: 2;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .ps-title-line1,
+  .ps-title-line2 {
+    font-size: 32px;
+  }
+
+  .ps-features {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .ps-feat {
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px 12px;
+  }
+
+  .ps-float-card {
+    padding: 12px 14px;
+  }
+
+  .ps-float-text strong {
+    font-size: 12px;
+  }
+
+  .ps-float-text p {
+    font-size: 11px;
+  }
+
+  .ps-nav-btn {
+    font-size: 10px;
+    padding: 10px 16px;
+  }
+
+  .ps-counter-digit {
+    font-size: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ps-img,
+  .ps-title-line1,
+  .ps-title-line2,
+  .ps-tagline,
+  .ps-body,
+  .ps-feat,
+  .ps-float-card,
+  .ps-counter-digit,
+  .ps-progress-fill,
+  .ps-glow {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   PRODUCTS SECTION — COMPACT FIT FIX
+   Add these overrides at the very bottom of your style.css,
+   AFTER the existing products CSS block. They override only
+   what needs changing to make everything fit in 100vh.
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Sticky pane: use dvh so mobile browser chrome doesn't break it ── */
+.ps-sticky {
+  height: 100dvh;
+  height: 100vh; /* fallback */
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* ── Badge: smaller top offset ── */
+.ps-badge {
+  top: 14px;
+  left: 40px;
+  padding: 4px 14px;
+  font-size: 11px;
+}
+
+/* ── Layout: less top padding so content fits ── */
+.ps-layout {
+  padding: 58px 48px 0 48px;
+  gap: 0;
+  align-items: center;
+}
+
+/* ── Text side: tighter gaps ── */
+.ps-text-side {
+  gap: 8px;
+}
+
+/* ── Title: smaller so long titles don't wrap too much ── */
+.ps-title-line1,
+.ps-title-line2 {
+  font-size: clamp(28px, 3.6vw, 52px);
+  line-height: 1.0;
+}
+
+/* ── Blue rule: thinner margin ── */
+.ps-rule {
+  margin-top: 2px;
+}
+
+/* ── Tagline: no change needed ── */
+
+/* ── Body text: reduce to single paragraph font-size & line-height ── */
+.ps-body {
+  font-size: 12.5px;
+  line-height: 1.6;
+  gap: 6px;
+}
+
+/* ── Feature cards: compact ── */
+.ps-features {
+  gap: 7px;
+  margin-top: 2px;
+}
+
+.ps-feat {
+  padding: 8px 10px;
+  gap: 8px;
+  border-radius: 10px;
+}
+
+.ps-feat-icon {
+  font-size: 16px;
+}
+
+.ps-feat-text strong {
+  font-size: 11px;
+}
+
+.ps-feat-text span {
+  font-size: 10px;
+}
+
+/* ── Image frame: fixed height so it doesn't stretch ── */
+.ps-image-frame {
+  aspect-ratio: unset;
+  height: clamp(260px, 46vh, 380px);
+  max-width: 100%;
+}
+
+/* ── Float card: keep it inside the frame, never overflow ── */
+.ps-float-card {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  width: calc(100% - 24px);
+  transform: none;
+  padding: 10px 14px;
+  gap: 10px;
+  border-radius: 12px;
+}
+
+.ps-float-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+.ps-float-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.ps-float-text strong {
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+
+.ps-float-text p {
+  font-size: 11px;
+  line-height: 1.45;
+  /* Clamp to 2 lines to prevent overflow */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Progress bar: less bottom padding ── */
+.ps-progress-bar {
+  padding: 8px 48px 14px 48px;
+}
+
+/* ── Nav button: slightly smaller ── */
+.ps-nav-btn {
+  padding: 10px 20px;
+  font-size: 10.5px;
+}
+
+.ps-nav-arrow {
+  width: 26px;
+  height: 26px;
+}
+
+/* ── Dot grid decoration: don't overlap float card ── */
+.ps-image-frame::after {
+  bottom: 8px;
+  right: 8px;
+  width: 40px;
+  height: 40px;
+  opacity: 0.4;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE OVERRIDES (patch for mobile too)
+   ═══════════════════════════════════════════ */
+
+@media (max-width: 1100px) {
+  .ps-layout {
+    padding: 52px 28px 0 28px;
+  }
+  .ps-progress-bar {
+    padding: 8px 28px 14px 28px;
+  }
+  .ps-badge {
+    left: 28px;
+  }
+}
+
+@media (max-width: 900px) {
+  /* On mobile, let it scroll naturally — remove fixed vh */
+  .ps-sticky {
+    height: auto;
+    min-height: 100svh;
+  }
+
+  .ps-layout {
+    grid-template-columns: 1fr;
+    padding: 60px 20px 8px 20px;
+    gap: 16px;
+    align-items: start;
+  }
+
+  .ps-image-frame {
+    height: clamp(200px, 40vw, 280px);
+  }
+
+  .ps-title-line1,
+  .ps-title-line2 {
+    font-size: clamp(26px, 6vw, 40px);
+  }
+
+  .ps-badge {
+    top: 16px;
+    left: 20px;
+  }
+
+  .ps-progress-bar {
+    padding: 6px 20px 12px 20px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ps-title-line1,
+  .ps-title-line2 {
+    font-size: 28px;
+  }
+
+  .ps-image-frame {
+    height: 200px;
+  }
+
+  .ps-float-card {
+    padding: 8px 10px;
+    gap: 8px;
+  }
+
+  .ps-float-text strong {
+    font-size: 11px;
+  }
+
+  .ps-float-text p {
+    font-size: 10px;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   PRODUCTS SECTION — IMAGE RATIO + NAV OVERLAP FIX
+   Paste at the very bottom of style.css (after compact fix)
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Image: narrower, taller ── */
+.ps-image-side {
+  justify-content: flex-end; /* push image toward center column gap */
+}
+
+.ps-image-frame {
+  width: 85%;           /* narrower than full column width */
+  max-width: 520px;
+  height: clamp(300px, 52vh, 420px);  /* taller */
+  margin: 0 auto;
+}
+
+/* ── Badge: account for sticky nav height (72px) + extra breathing room ── */
+.ps-badge {
+  top: 20px;
+  /* When sticky nav is visible (72px tall), the badge sits at top:20px
+     inside the sticky pane which itself starts at top:0 of viewport.
+     We add scroll-margin equivalent by nudging the layout instead. */
+}
+
+/* Push the entire layout down slightly so content clears the nav */
+.ps-layout {
+  padding-top: 72px; /* matches sticky-nav height exactly */
+}
+
+/* ── On the flipped layout (image left), mirror the image alignment ── */
+.ps-layout-flipped .ps-image-side {
+  justify-content: flex-start;
+}
+
+/* ── Tighten text side top gap to compensate ── */
+.ps-text-side {
+  padding-top: 0;
+}
+
+@media (max-width: 1100px) {
+  .ps-image-frame {
+    width: 90%;
+    height: clamp(260px, 44vh, 360px);
+  }
+  .ps-layout {
+    padding-top: 72px;
+  }
+}
+
+@media (max-width: 900px) {
+  .ps-image-frame {
+    width: 100%;
+    max-width: 100%;
+    height: clamp(200px, 38vw, 280px);
+  }
+  .ps-image-side {
+    justify-content: center;
+  }
+  .ps-layout {
+    padding-top: 64px;
+  }
+}
+
+/* ── Badge: in-flow, not absolutely positioned ── */
+.ps-badge {
+  position: static;
+  top: auto;
+  left: auto;
+  width: fit-content;
+  margin-bottom: 4px;
+}
+

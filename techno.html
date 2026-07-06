@@ -29,12 +29,12 @@
     <nav class="nav-capsule">
       <ul class="nav-links">
         <li class="nav-item"><a href="techno.html">HOME</a></li>
-        <li class="nav-item"><a href="services.html">SERVICES</a></li>
+        <li class="nav-item"><a href="techno_services.html">SERVICES</a></li>
         <li class="nav-item"><a href="index.html">IT Development Division</a></li>
-        <li class="nav-item"><a href="#">R&amp;D</a></li>
-        <li class="nav-item"><a href="#">Careers</a></li>
-        <li class="nav-item"><a href="#">Contact</a></li>
-        <li class="nav-item"><a href="#">Blog</a></li>
+        <li class="nav-item"><a href="techno_r&amp;d.html">R&amp;D</a></li>
+        <li class="nav-item"><a href="techno_careers.html">Careers</a></li>
+        <li class="nav-item"><a href="contact.html">Contact</a></li>
+        <li class="nav-item"><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank">Blog</a></li>
       </ul>
     </nav>
     <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">
@@ -56,12 +56,12 @@
     <nav class="nav-capsule">
       <ul class="nav-links">
         <li class="nav-item"><a href="techno.html">HOME</a></li>
-        <li class="nav-item"><a href="services.html">SERVICES</a></li>
+        <li class="nav-item"><a href="techno_services.html">SERVICES</a></li>
         <li class="nav-item"><a href="index.html">IT Development Division</a></li>
-        <li class="nav-item"><a href="#">R&amp;D</a></li>
-        <li class="nav-item"><a href="#">Careers</a></li>
-        <li class="nav-item"><a href="#">Contact</a></li>
-        <li class="nav-item"><a href="#">Blog</a></li>
+        <li class="nav-item"><a href="techno_r&amp;d.html">R&amp;D</a></li>
+        <li class="nav-item"><a href="techno_careers.html">Careers</a></li>
+        <li class="nav-item"><a href="contact.html">Contact</a></li>
+        <li class="nav-item"><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank">Blog</a></li>
       </ul>
     </nav>
     <button class="hamburger-btn sticky-hamburger" id="stickyHamburgerBtn" aria-label="Menu">
@@ -78,12 +78,12 @@
   <ul class="mobile-nav-links">
     <li class="nav-item"><a href="techno.html">HOME</a></li>
     <li class="nav-item"><a href="about.html">ABOUT</a></li>
-    <li class="nav-item"><a href="services.html">SERVICES</a></li>
+    <li class="nav-item"><a href="techno_services.html">SERVICES</a></li>
     <li class="nav-item"><a href="index.html">IT Development Division</a></li>
-    <li class="nav-item"><a href="#">R&amp;D</a></li>
-    <li class="nav-item"><a href="#">Careers</a></li>
-    <li class="nav-item"><a href="#">Contact</a></li>
-    <li class="nav-item"><a href="#">Blog</a></li>
+    <li class="nav-item"><a href="techno_r&amp;d.html">R&amp;D</a></li>
+    <li class="nav-item"><a href="techno_careers.html">Careers</a></li>
+    <li class="nav-item"><a href="contact.html">Contact</a></li>
+    <li class="nav-item"><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank">Blog</a></li>
   </ul>
 </div>
 
@@ -934,8 +934,8 @@
         <ul class="footer-links">
           <li><a href="#">Services</a></li>
           <li><a href="techno.html">Training Division</a></li>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">Blog</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank">Blog</a></li>
         </ul>
       </div>
       <div class="footer-col footer-col-about">
@@ -1704,6 +1704,17 @@ stickyNav.classList.add('nav-hidden');
       wrapper.classList.remove('fcw-open');
     }
   });
+})();
+</script>
+
+<script>
+(function() {
+  var page = window.location.pathname.split('/').pop() || 'index.html';
+  if (page === 'techno.html') {
+    document.querySelectorAll('.nav-item a[href="contact.html"]').forEach(function(link) {
+      link.href = 'techno_contact.html';
+    });
+  }
 })();
 </script>
 

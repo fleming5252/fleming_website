@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products | Fleming Embedded & Software Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+</head>
+<body>
+
+<!-- HERO NAV -->
+<header class="hero-nav" id="heroNav">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <a href="index.html">
+        <img src="assets/images/logo.png" alt="Logo" class="nav-logo-img" />
+      </a>
+    </div>
+    <nav class="nav-capsule">
+      <ul class="nav-links">
+        <li class="nav-item"><a href="index.html">HOME</a></li>
+        <li class="nav-item"><a href="about.html">ABOUT</a></li>
+        <li class="nav-item"><a href="services.html">SERVICES</a></li>
+        <li class="nav-item active">
+          <a href="products.html">
+            <span class="active-dot"></span>
+            Products
+          </a>
+        </li>
+        <li class="nav-item"><a href="techno.html">Training Division</a></li>
+        <li class="nav-item"><a href="contact.html">Contact</a></li>
+        <li class="nav-item"><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank">Blog</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- STICKY NAV -->
+<header class="sticky-nav" id="stickyNav">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <a href="index.html">
+        <img src="assets/images/logo.png" alt="Logo" class="nav-logo-img" />
+      </a>
+    </div>
+    <nav class="nav-capsule">
+      <ul class="nav-links">
+        <li class="nav-item"><a href="index.html">HOME</a></li>
+        <li class="nav-item"><a href="about.html">ABOUT</a></li>
+        <li class="nav-item"><a href="services.html">SERVICES</a></li>
+        <li class="nav-item active">
+          <a href="products.html">
+            <span class="active-dot"></span>
+            Products
+          </a>
+        </li>
+        <li class="nav-item"><a href="techno.html">Training Division</a></li>
+        <li class="nav-item"><a href="contact.html">Contact</a></li>
+        <li class="nav-item"><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank">Blog</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger-btn sticky-hamburger" id="stickyHamburgerBtn" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE MENU OVERLAY -->
+<div class="mobile-menu-overlay" id="mobileMenuOverlay">
+  <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+  <ul class="mobile-nav-links">
+    <li class="nav-item"><a href="index.html">HOME</a></li>
+    <li class="nav-item"><a href="about.html">ABOUT</a></li>
+    <li class="nav-item"><a href="services.html">SERVICES</a></li>
+    <li class="nav-item active">
+      <a href="products.html">
+        <span class="active-dot"></span>
+        Products
+      </a>
+    </li>
+    <li class="nav-item"><a href="techno.html">Training Division</a></li>
+    <li class="nav-item"><a href="contact.html">Contact</a></li>
+    <li class="nav-item"><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank">Blog</a></li>
+  </ul>
+</div>
+
+<!-- PRODUCTS HERO SECTION -->
+<section class="about-bg" id="parallaxHero">
+    <div class="about-overlay"></div>
+    <div class="about-content">
+        <h1>PRODUCTS</h1>
+        <p class="about-breadcrumbs">
+            <a href="index.html">HOME</a>
+            <span class="dot">•</span>
+            <span class="active-page">PRODUCTS</span>
+        </p>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     PRODUCTS SCROLL-STORYTELLING SECTION
+     ═══════════════════════════════════════════ -->
+
+<section class="ps-section" id="productsSection">
+
+  <!-- Sticky viewport — stays pinned while section scrolls -->
+  <div class="ps-sticky" id="psSticky">
+
+    <!-- Ambient background glow (colour morphs per product) -->
+    <div class="ps-glow" id="psGlow"></div>
+
+    <!-- ── MAIN CONTENT AREA ── -->
+    <div class="ps-layout" id="psLayout">
+
+      <!-- TEXT SIDE (alternates left / right) -->
+      <div class="ps-text-side" id="psTextSide">
+
+        <!-- Badge now sits inside text flow, above the heading -->
+        <div class="ps-badge" id="psBadge">
+          <span class="ps-badge-num" id="psBadgeNum">01</span>
+          <span class="ps-badge-label">OUR PRODUCTS</span>
+        </div>
+
+        <h2 class="ps-title" id="psTitle">
+          <span class="ps-title-line1" id="psTitleL1">Payroll</span>
+          <span class="ps-title-line2" id="psTitleL2">Management</span>
+        </h2>
+        <div class="ps-rule" id="psRule"></div>
+
+        <p class="ps-tagline" id="psTagline">
+          SIMPLIFY PAYROLL. <span class="ps-tagline-blue">EMPOWER PEOPLE.</span>
+        </p>
+
+        <div class="ps-body" id="psBody">
+          <p>Fleming makes sure that managing the payrolls of the employees of an organisation is a cakewalk, as we have developed a web application that allows organisations to effortlessly take care of the payroll of their employees.</p>
+          <p>Our application is designed with user-friendly features, providing a seamless experience for payroll processing. With just a few clicks, organizations can efficiently handle all payroll-related tasks, ensuring smooth operations.</p>
+        </div>
+
+        <!-- Feature icons grid -->
+        <div class="ps-features" id="psFeatures">
+          <!-- filled by JS -->
+        </div>
+
+      </div><!-- /ps-text-side -->
+
+      <!-- IMAGE SIDE -->
+      <div class="ps-image-side" id="psImageSide">
+
+        <!-- Image stack — all 6 images stacked, JS controls which is visible -->
+        <div class="ps-image-frame" id="psImageFrame">
+          <img src="assets/images/product1.png"     class="ps-img ps-img-active" data-idx="0" alt="Payroll Management" />
+          <img src="assets/images/product2.jpg"     class="ps-img"               data-idx="1" alt="Newspaper Billing" />
+          <img src="assets/images/product3.jpg"     class="ps-img"               data-idx="2" alt="Education Fees" />
+          <img src="assets/images/product4.jpg"     class="ps-img"               data-idx="3" alt="E-Commerce" />
+          <img src="assets/images/product5.jpg"     class="ps-img"               data-idx="4" alt="Attendance" />
+          <img src="assets/images/product6.jpg"     class="ps-img"               data-idx="5" alt="E-Learning" />
+
+          <!-- Floating info card -->
+          <div class="ps-float-card" id="psFloatCard">
+            <div class="ps-float-icon" id="psFloatIcon">
+              <!-- SVG icon injected by JS -->
+            </div>
+            <div class="ps-float-text">
+              <strong id="psFloatTitle">Accurate. Compliant. Hassle-free.</strong>
+              <p id="psFloatBody">From salary calculation to tax compliance, Fleming Payroll Management keeps your payroll process simple, secure, and reliable.</p>
+            </div>
+          </div>
+
+        </div><!-- /ps-image-frame -->
+      </div><!-- /ps-image-side -->
+
+    </div><!-- /ps-layout -->
+
+    <!-- ── BOTTOM PROGRESS BAR ── -->
+    <div class="ps-progress-bar" id="psProgressBar">
+
+      <div class="ps-progress-left">
+        <span class="ps-progress-label">PRODUCT</span>
+        <div class="ps-progress-counter">
+          <span class="ps-counter-current" id="psCounterCurrent">
+            <span class="ps-counter-digit" id="psCounterDigit">01</span>
+          </span>
+          <span class="ps-counter-of">OF 06</span>
+        </div>
+      </div>
+
+      <div class="ps-progress-track-wrap">
+        <div class="ps-progress-track">
+          <div class="ps-progress-fill" id="psProgressFill"></div>
+          <div class="ps-progress-dots" id="psProgressDots">
+            <!-- 6 dots injected by JS -->
+          </div>
+        </div>
+      </div>
+
+  </div><!-- /ps-sticky -->
+
+</section>
+<!-- ═══════════════ END PRODUCTS SECTION ═══════════════ -->
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-blob footer-blob-1"></div>
+  <div class="footer-blob footer-blob-2"></div>
+  <div class="footer-container">
+    <div class="footer-newsletter-row">
+      <div class="footer-newsletter">
+        <input type="email" placeholder="Enter your email address" class="newsletter-input" />
+        <button class="newsletter-btn">SUBSCRIBE</button>
+      </div>
+    </div>
+    <div class="footer-columns">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-logo">
+          <a href="index.html">
+            <img src="assets/images/logo.png" alt="Logo" class="footer-logo-img" />
+          </a>
+        </div>
+        <p class="footer-brand-desc">
+          Empowering businesses through embedded systems,
+          software solutions, and cutting-edge IT services.
+          Your trusted technology partner in Kerala.
+        </p>
+        <div class="footer-socials">
+          <a href="#" class="social-icon" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col footer-col-links">
+        <h4 class="footer-col-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#">Services</a></li>
+          <li><a href="techno.html">Training Division</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-col-about">
+        <h4 class="footer-col-heading">About Us</h4>
+        <ul class="footer-links">
+          <li><a href="#">Who We Are</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-col-contact">
+        <h4 class="footer-col-heading">Reach Us</h4>
+        <ul class="footer-contact-list">
+          <li class="footer-contact-item">
+            <span class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.57 3.42 2 2 0 0 1 3.54 1.25h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.68 2.81a2 2 0 0 1-.45 2.11L7.91 8.75a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.91.33 1.85.55 2.81.68A2 2 0 0 1 21.5 16h.5z"/>
+              </svg>
+            </span>
+            <div class="contact-info-group">
+              <a href="tel:04844045252" class="contact-link">+91-484-4045252</a>
+              <a href="tel:9745205252" class="contact-link">+91-9745205252</a>
+            </div>
+          </li>
+          <li class="footer-contact-item">
+            <span class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </span>
+            <a href="mailto:helpdesk@fleming.co.in" class="contact-link">helpdesk@fleming.co.in</a>
+          </li>
+          <li class="footer-contact-item">
+            <span class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </span>
+            <span class="contact-info-text">
+              Fleming Embedded and Software Solutions<br>
+              #37/3956, 2nd Floor, Bank Road,<br>
+              Kaloor, Ernakulam — 682017
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-divider"></div>
+      <p class="footer-copyright">
+        &copy; 2026 All Rights Reserved by
+        <span class="footer-brand-name">Fleming Embedded and Software Solutions</span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+var heroNav   = document.getElementById('heroNav');
+var stickyNav = document.getElementById('stickyNav');
+var lastScrollY = window.scrollY;
+
+function getAboutHeroBottom() {
+  var hero = document.getElementById('parallaxHero');
+  return hero ? hero.offsetTop + hero.offsetHeight : window.innerHeight;
+}
+
+window.addEventListener('scroll', function() {
+  var currentY    = window.scrollY;
+  var scrollingUp = currentY < lastScrollY;
+  var heroBottom  = getAboutHeroBottom();
+  var inHeroZone  = currentY < heroBottom;
+
+  if (inHeroZone) {
+    stickyNav.classList.remove('nav-visible');
+    stickyNav.classList.add('nav-hidden');
+    if (scrollingUp) {
+      heroNav.classList.remove('nav-hidden');
+      heroNav.classList.add('nav-visible');
+    } else {
+      heroNav.classList.remove('nav-visible');
+      heroNav.classList.add('nav-hidden');
+    }
+  } else {
+    heroNav.classList.remove('nav-visible');
+    heroNav.classList.add('nav-hidden');
+    if (scrollingUp) {
+      stickyNav.classList.remove('nav-hidden');
+      stickyNav.classList.add('nav-visible');
+    } else {
+      stickyNav.classList.remove('nav-visible');
+      stickyNav.classList.add('nav-hidden');
+    }
+  }
+  lastScrollY = currentY;
+}, { passive: true });
+
+heroNav.classList.add('nav-visible');
+stickyNav.classList.add('nav-hidden');
+</script>
+
+<script>
+(function() {
+  var overlay = document.getElementById('mobileMenuOverlay');
+  var hamburgerBtns = document.querySelectorAll('#hamburgerBtn, #stickyHamburgerBtn');
+  var closeBtn = document.getElementById('mobileMenuClose');
+  var navLinks = overlay.querySelectorAll('.nav-item a');
+
+  function openMenu() { overlay.classList.add('open'); }
+  function closeMenu() { overlay.classList.remove('open'); }
+
+  hamburgerBtns.forEach(function(btn) {
+    btn.addEventListener('click', openMenu);
+  });
+  closeBtn.addEventListener('click', closeMenu);
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', closeMenu);
+  });
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) closeMenu();
+  });
+})();
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.to("#parallaxHero", {
+    backgroundPosition: "60% bottom",
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#parallaxHero",
+      start: "top top",
+      end: "bottom top",
+      scrub: 2.5,
+    }
+  });
+});
+</script>
+
+<!-- FLOATING CONTACT WIDGET -->
+<div class="fcw-wrapper" id="fcwWrapper">
+
+  <div class="fcw-actions" id="fcwActions">
+
+    <a href="https://wa.me/919745205252" target="_blank" class="fcw-btn fcw-whatsapp" aria-label="WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      <span class="fcw-tooltip">WhatsApp</span>
+    </a>
+
+    <a href="tel:04844045252" class="fcw-btn fcw-call" aria-label="Call Us">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.57 3.42 2 2 0 0 1 3.54 1.25h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.68 2.81a2 2 0 0 1-.45 2.11L7.91 8.75a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.91.33 1.85.55 2.81.68A2 2 0 0 1 21.5 16h.5z"/>
+      </svg>
+      <span class="fcw-tooltip">Call Us</span>
+    </a>
+
+    <a href="contact.html" class="fcw-btn fcw-message" aria-label="Contact">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+        <polyline points="22,6 12,13 2,6"/>
+      </svg>
+      <span class="fcw-tooltip">Email Us</span>
+    </a>
+
+  </div>
+
+  <button class="fcw-toggle" id="fcwToggle" aria-label="Contact options">
+    <span class="fcw-icon-chat">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      </svg>
+    </span>
+    <span class="fcw-icon-close">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </span>
+  </button>
+
+</div>
+<!-- /FLOATING CONTACT WIDGET -->
+
+<script>
+(function() {
+  var wrapper = document.getElementById('fcwWrapper');
+  var toggle  = document.getElementById('fcwToggle');
+  var actions = document.getElementById('fcwActions');
+  var isOpen  = false;
+
+  toggle.addEventListener('click', function() {
+    isOpen = !isOpen;
+    if (isOpen) {
+      wrapper.classList.add('fcw-open');
+    } else {
+      wrapper.classList.remove('fcw-open');
+    }
+  });
+
+  document.addEventListener('click', function(e) {
+    if (isOpen && !wrapper.contains(e.target)) {
+      isOpen = false;
+      wrapper.classList.remove('fcw-open');
+    }
+  });
+})();
+</script>
+
+<script>
+(function() {
+  var page = window.location.pathname.split('/').pop() || 'index.html';
+  if (page === 'techno.html') {
+    document.querySelectorAll('.nav-item a[href="contact.html"]').forEach(function(link) {
+      link.href = 'techno_contact.html';
+    });
+  }
+})();
+</script>
+
+<!-- ═══════════════════════════════════════════
+     PRODUCTS JAVASCRIPT
+     ═══════════════════════════════════════════ -->
+<script>
+(function () {
+  'use strict';
+
+  /* ─── PRODUCT DATA ─────────────────────────────────────────── */
+  const PRODUCTS = [
+    {
+      num: '01',
+      line1: 'Payroll',
+      line2: 'Management',
+      tagline: 'SIMPLIFY PAYROLL. <span class="ps-tagline-blue">EMPOWER PEOPLE.</span>',
+      body: `<p>Fleming makes sure that managing the payrolls of the employees of an organisation is a cakewalk, as we have developed a web application that allows organisations to effortlessly take care of the payroll of their employees.</p>
+             <p>Our application is designed with user-friendly features, providing a seamless experience for payroll processing. With just a few clicks, organizations can efficiently handle all payroll-related tasks, ensuring smooth operations.</p>`,
+      features: [
+        { icon: '📄', title: 'Accurate Processing',   desc: 'Ensure precise salary calculations every time.' },
+        { icon: '🛡️', title: 'Tax Compliance',        desc: 'Stay compliant with latest tax regulations.' },
+        { icon: '👥', title: 'Employee Management',   desc: 'Manage employee data, roles and payroll history.' },
+        { icon: '📊', title: 'Real-time Reports',     desc: 'Generate insightful reports and analytics instantly.' },
+      ],
+      floatTitle: 'Accurate. Compliant. Hassle-free.',
+      floatBody:  'From salary calculation to tax compliance, Fleming Payroll Management keeps your payroll process simple, secure, and reliable.',
+      floatIconSvg: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`,
+      glow: 'rgba(26,86,219,0.12)',
+      layout: 'text-left',
+    },
+    {
+      num: '02',
+      line1: 'Newspaper',
+      line2: 'Agent Billing Software',
+      tagline: 'SMART BILLING. <span class="ps-tagline-blue">STRONG RELATIONSHIPS.</span>',
+      body: `<p>Billing is one of the most important aspects of the sale of products, and it is imperative for every company to have a proper system to make sure that all activities associated with billing take place smoothly.</p>
+             <p>We have developed a web and mobile application that assists our clients in carrying out the billing associated with their organization effortlessly. The mobile app is available on both Android and iOS.</p>`,
+      features: [
+        { icon: '🧾', title: 'Easy Billing',          desc: 'Generate bills quickly and accurately.' },
+        { icon: '👥', title: 'Agent Management',      desc: 'Manage agents, territories and customers with ease.' },
+        { icon: '📊', title: 'Collection Tracking',   desc: 'Track payments and outstanding in real-time.' },
+        { icon: '📋', title: 'Detailed Reports',      desc: 'Get insights with comprehensive billing reports.' },
+      ],
+      floatTitle: 'Accurate. Efficient. Effortless.',
+      floatBody:  'Automate billing, manage agents, track collections, and generate reports — all in one powerful platform.',
+      floatIconSvg: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="12" y2="17"/></svg>`,
+      glow: 'rgba(6,182,212,0.12)',
+      layout: 'text-right',
+    },
+    {
+      num: '03',
+      line1: 'Educational',
+      line2: 'Institution Fees Management',
+      tagline: 'SIMPLIFY FEES. <span class="ps-tagline-blue">EMPOWER EDUCATION.</span>',
+      body: `<p>One of the most time-consuming and tedious processes in an educational institution is the management of fees.</p>
+             <p>We at Fleming make sure that this process becomes one of the easiest and most hassle-free with our Educational Institution Fees Management App.</p>`,
+      features: [
+        { icon: '₹',  title: 'Online Fee Collection',      desc: 'Collect fees securely through multiple online modes.' },
+        { icon: '📅', title: 'Fee Structure Management',   desc: 'Create and manage flexible fee structures with ease.' },
+        { icon: '📊', title: 'Reports & Analytics',        desc: 'Generate detailed reports and get real-time insights.' },
+        { icon: '🔔', title: 'Reminders & Notifications',  desc: 'Automated reminders reduce delays and improve collections.' },
+      ],
+      floatTitle: 'Smarter Fee Management. Better Education.',
+      floatBody:  'Our solution brings transparency, accuracy, and efficiency to fee management — so institutions can focus on what truly matters: students and learning.',
+      floatIconSvg: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`,
+      glow: 'rgba(139,92,246,0.12)',
+      layout: 'text-left',
+    },
+    {
+      num: '04',
+      line1: 'E-Commerce',
+      line2: 'Management',
+      tagline: 'SELL SMARTER. <span class="ps-tagline-blue">MANAGE BETTER.</span>',
+      body: `<p>Selling and managing products is one of the most basic needs for the successful operation of an organization.</p>
+             <p>We make sure that this basic need is carried out smoothly for every client that joins hands with us as we provide an e-commerce application that helps our clients sell and manage products in a straightforward and organized manner.</p>`,
+      features: [
+        { icon: '🛒', title: 'Product Management',        desc: 'Add, update and manage products with ease.' },
+        { icon: '📦', title: 'Order & Inventory Tracking', desc: 'Track orders and inventory in real-time seamlessly.' },
+        { icon: '💳', title: 'Secure Payments',            desc: 'Multiple payment gateways for safe transactions.' },
+        { icon: '📈', title: 'Sales Analytics',            desc: 'Get insights into sales performance and grow your business.' },
+      ],
+      floatTitle: 'Build. Sell. Grow Online.',
+      floatBody:  'Our e-commerce solution empowers you to manage products, track orders, accept payments, and grow your business — all from one powerful platform.',
+      floatIconSvg: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>`,
+      glow: 'rgba(234,179,8,0.10)',
+      layout: 'text-right',
+    },
+    {
+      num: '05',
+      line1: 'Attendance',
+      line2: 'Management',
+      tagline: 'MARK ATTENDANCE. <span class="ps-tagline-blue">ANYWHERE. ACCURATELY.</span>',
+      body: `<p>We have developed a location-based attendance management mobile app, F track, which allows the employees of a particular organization to mark their attendance in an easy and user-friendly manner.</p>
+             <p>The mobile app is designed such that employees can <strong>only mark their attendance from a specific location</strong>, which can be decided by the employer. The app is available on both Android and iOS.</p>`,
+      features: [
+        { icon: '📍', title: 'Location Based',      desc: 'Mark attendance only within the employer defined location.' },
+        { icon: '✅', title: 'Accurate & Reliable',  desc: 'Ensure accurate attendance records with real-time sync.' },
+        { icon: '🕐', title: 'Real-time Tracking',  desc: 'Track employee attendance and working hours live.' },
+        { icon: '📊', title: 'Reports & Analytics', desc: 'Get detailed insights and export reports effortlessly.' },
+      ],
+      floatTitle: 'Right Person. Right Place. Right Time.',
+      floatBody:  'Our location-based attendance system ensures accuracy, prevents fraud, and helps organizations track workforce productivity in real-time.',
+      floatIconSvg: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
+      glow: 'rgba(34,197,94,0.12)',
+      layout: 'text-left',
+    },
+    {
+      num: '06',
+      line1: 'E-Learning',
+      line2: 'Management',
+      tagline: 'LEARN <span class="ps-tagline-blue">ANYTIME. ANYWHERE.</span>',
+      body: `<p>We have developed an e-learning application that helps educational institutions deliver quality education in a digital and interactive manner.</p>
+             <p>The platform is designed to manage courses, students, lessons, assignments, exams and performance — all in one place. It empowers both educators and learners with a smooth and engaging learning experience.</p>`,
+      features: [
+        { icon: '📚', title: 'Course Management',     desc: 'Organize and manage courses, lessons and study materials.' },
+        { icon: '👥', title: 'Student Management',    desc: 'Add and manage students, batches and enrollments with ease.' },
+        { icon: '📝', title: 'Assignments & Exams',   desc: 'Create assignments, quizzes and exams with automated evaluation.' },
+        { icon: '📈', title: 'Progress Tracking',     desc: 'Track student performance and generate insightful reports.' },
+      ],
+      floatTitle: 'Empowering Education. Enriching Futures.',
+      floatBody:  'Our e-learning solution makes digital education simple, interactive, and effective for both teachers and students.',
+      floatIconSvg: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`,
+      glow: 'rgba(239,68,68,0.10)',
+      layout: 'text-right',
+    },
+  ];
+
+  /* ─── DOM REFS ──────────────────────────────────────────────── */
+  const section       = document.getElementById('productsSection');
+  const sticky        = document.getElementById('psSticky');
+  const spacer        = section; // section itself is the scroll spacer
+  const glowEl        = document.getElementById('psGlow');
+  const badgeNum      = document.getElementById('psBadgeNum');
+  const layout        = document.getElementById('psLayout');
+  const textSide      = document.getElementById('psTextSide');
+  const imageSide     = document.getElementById('psImageSide');
+  const titleL1       = document.getElementById('psTitleL1');
+  const titleL2       = document.getElementById('psTitleL2');
+  const taglineEl     = document.getElementById('psTagline');
+  const bodyEl        = document.getElementById('psBody');
+  const featuresEl    = document.getElementById('psFeatures');
+  const floatCard     = document.getElementById('psFloatCard');
+  const floatIcon     = document.getElementById('psFloatIcon');
+  const floatTitle    = document.getElementById('psFloatTitle');
+  const floatBody     = document.getElementById('psFloatBody');
+  const progressFill  = document.getElementById('psProgressFill');
+  const progressDots  = document.getElementById('psProgressDots');
+  const counterDigit  = document.getElementById('psCounterDigit');
+
+  const images        = document.querySelectorAll('.ps-img');
+
+  /* ─── STATE ─────────────────────────────────────────────────── */
+  let current      = 0;
+  let isAnimating  = false;
+  const SCROLL_PER = 600;
+
+  /* ─── INIT ──────────────────────────────────────────────────── */
+  function init() {
+    section.style.minHeight = (PRODUCTS.length * SCROLL_PER + window.innerHeight) + 'px';
+
+    PRODUCTS.forEach((_, i) => {
+      const d = document.createElement('div');
+      d.className = 'ps-dot' + (i === 0 ? ' ps-dot-active' : '');
+      d.dataset.idx = i;
+      d.addEventListener('click', () => jumpTo(i));
+      progressDots.appendChild(d);
+    });
+
+    applyProduct(0, false);
+  }
+
+  /* ─── SCROLL HANDLER ────────────────────────────────────────── */
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  function onScroll() {
+    const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+    const scrollInSection = window.scrollY - sectionTop;
+    const maxScroll = PRODUCTS.length * SCROLL_PER;
+
+    if (scrollInSection < 0 || scrollInSection > maxScroll) return;
+
+    const rawIndex = scrollInSection / SCROLL_PER;
+    const targetIndex = Math.min(Math.floor(rawIndex), PRODUCTS.length - 1);
+
+    const slotProgress = rawIndex - Math.floor(rawIndex);
+
+    const fillPct = (rawIndex / PRODUCTS.length) * 100;
+    progressFill.style.width = Math.min(fillPct, 100) + '%';
+
+    if (targetIndex !== current && !isAnimating) {
+      transitionTo(targetIndex);
+    }
+  }
+
+  /* ─── JUMP ──────────────────────────────────────────────────── */
+  function jumpTo(idx) {
+    if (idx === current || isAnimating) return;
+    const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+    const targetScroll = sectionTop + idx * SCROLL_PER;
+    window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+  }
+
+  /* ─── TRANSITION ────────────────────────────────────────────── */
+  function transitionTo(nextIdx) {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    const next    = PRODUCTS[nextIdx];
+    const isForward = nextIdx > current;
+
+    titleL1.style.transition = 'transform 320ms ease, opacity 320ms ease';
+    titleL1.style.transform  = isForward ? 'translateY(-28px)' : 'translateY(28px)';
+    titleL1.style.opacity    = '0';
+
+    setTimeout(() => {
+      titleL2.style.transition = 'transform 320ms ease, opacity 320ms ease';
+      titleL2.style.transform  = isForward ? 'translateY(-28px)' : 'translateY(28px)';
+      titleL2.style.opacity    = '0';
+    }, 80);
+
+    setTimeout(() => {
+      taglineEl.style.transition = 'opacity 250ms ease';
+      taglineEl.style.opacity    = '0';
+    }, 140);
+
+    setTimeout(() => {
+      bodyEl.style.transition = 'opacity 250ms ease';
+      bodyEl.style.opacity    = '0';
+    }, 180);
+
+    const featureItems = featuresEl.querySelectorAll('.ps-feat');
+    featureItems.forEach((f, i) => {
+      setTimeout(() => {
+        f.style.transition = 'opacity 200ms ease, transform 200ms ease';
+        f.style.opacity    = '0';
+        f.style.transform  = 'translateY(-10px)';
+      }, i * 60);
+    });
+
+    floatCard.style.transition = 'transform 360ms cubic-bezier(0.4,0,0.2,1), opacity 300ms ease';
+    floatCard.style.transform  = 'translateY(24px)';
+    floatCard.style.opacity    = '0';
+
+    const currentImg = document.querySelector('.ps-img-active');
+    if (currentImg) {
+      currentImg.style.transition = 'transform 500ms ease, opacity 450ms ease';
+      currentImg.style.transform  = 'scale(1.07)';
+      currentImg.style.opacity    = '0';
+    }
+
+    setTimeout(() => {
+      applyProduct(nextIdx, true);
+    }, 420);
+  }
+
+  /* ─── APPLY PRODUCT ─────────────────────────────────────────── */
+  function applyProduct(idx, animated) {
+    const p = PRODUCTS[idx];
+    const prevIdx = current;
+    current = idx;
+
+    badgeNum.textContent = p.num;
+
+    animateCounter(p.num);
+
+    glowEl.style.background = `radial-gradient(ellipse 60% 60% at 60% 50%, ${p.glow}, transparent 70%)`;
+
+    if (p.layout === 'text-right') {
+      layout.classList.add('ps-layout-flipped');
+    } else {
+      layout.classList.remove('ps-layout-flipped');
+    }
+
+    titleL1.textContent    = p.line1;
+    titleL2.innerHTML      = p.line2;
+    taglineEl.innerHTML    = p.tagline;
+    bodyEl.innerHTML       = p.body;
+
+    featuresEl.innerHTML = '';
+    p.features.forEach((f) => {
+      const div = document.createElement('div');
+      div.className = 'ps-feat';
+      div.innerHTML = `<div class="ps-feat-icon">${f.icon}</div>
+                       <div class="ps-feat-text">
+                         <strong>${f.title}</strong>
+                         <span>${f.desc}</span>
+                       </div>`;
+      featuresEl.appendChild(div);
+    });
+
+    floatIcon.innerHTML    = p.floatIconSvg;
+    floatTitle.textContent = p.floatTitle;
+    floatBody.textContent  = p.floatBody;
+
+    images.forEach(img => {
+      img.classList.remove('ps-img-active');
+      img.style.transition = '';
+      img.style.transform  = '';
+      img.style.opacity    = '';
+    });
+    const nextImg = document.querySelector(`.ps-img[data-idx="${idx}"]`);
+    if (nextImg) nextImg.classList.add('ps-img-active');
+
+    document.querySelectorAll('.ps-dot').forEach((d, i) => {
+      d.classList.toggle('ps-dot-active', i === idx);
+    });
+
+    if (animated) {
+      const isForward = idx > prevIdx;
+
+      titleL1.style.transition = 'none';
+      titleL1.style.transform  = isForward ? 'translateY(28px)' : 'translateY(-28px)';
+      titleL1.style.opacity    = '0';
+      titleL2.style.transition = 'none';
+      titleL2.style.transform  = isForward ? 'translateY(28px)' : 'translateY(-28px)';
+      titleL2.style.opacity    = '0';
+      taglineEl.style.opacity  = '0';
+      bodyEl.style.opacity     = '0';
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          titleL1.style.transition = 'transform 380ms cubic-bezier(0.34,1.1,0.64,1), opacity 340ms ease';
+          titleL1.style.transform  = 'translateY(0)';
+          titleL1.style.opacity    = '1';
+
+          setTimeout(() => {
+            titleL2.style.transition = 'transform 380ms cubic-bezier(0.34,1.1,0.64,1), opacity 340ms ease';
+            titleL2.style.transform  = 'translateY(0)';
+            titleL2.style.opacity    = '1';
+          }, 80);
+
+          setTimeout(() => {
+            taglineEl.style.transition = 'opacity 300ms ease';
+            taglineEl.style.opacity    = '1';
+          }, 160);
+
+          setTimeout(() => {
+            bodyEl.style.transition = 'opacity 300ms ease';
+            bodyEl.style.opacity    = '1';
+          }, 220);
+
+          const newFeats = featuresEl.querySelectorAll('.ps-feat');
+          newFeats.forEach((f, i) => {
+            f.style.opacity   = '0';
+            f.style.transform = 'translateY(14px)';
+            setTimeout(() => {
+              f.style.transition = 'opacity 280ms ease, transform 280ms cubic-bezier(0.34,1.1,0.64,1)';
+              f.style.opacity    = '1';
+              f.style.transform  = 'translateY(0)';
+            }, 280 + i * 70);
+          });
+
+          floatCard.style.transform = 'translateY(24px)';
+          floatCard.style.opacity   = '0';
+          setTimeout(() => {
+            floatCard.style.transition = 'transform 420ms cubic-bezier(0.34,1.1,0.64,1), opacity 380ms ease';
+            floatCard.style.transform  = 'translateY(0)';
+            floatCard.style.opacity    = '1';
+          }, 200);
+        });
+      });
+
+      if (nextImg) {
+        nextImg.style.transition = 'none';
+        nextImg.style.transform  = 'scale(1.06)';
+        nextImg.style.opacity    = '0';
+        setTimeout(() => {
+          nextImg.style.transition = 'transform 600ms cubic-bezier(0.4,0,0.2,1), opacity 500ms ease';
+          nextImg.style.transform  = 'scale(1)';
+          nextImg.style.opacity    = '1';
+        }, 60);
+      }
+
+      setTimeout(() => { isAnimating = false; }, 700);
+    } else {
+      titleL1.style.cssText  = '';
+      titleL2.style.cssText  = '';
+      taglineEl.style.cssText= '';
+      bodyEl.style.cssText   = '';
+      floatCard.style.cssText= '';
+      featuresEl.querySelectorAll('.ps-feat').forEach(f => { f.style.cssText = ''; });
+      isAnimating = false;
+    }
+  }
+
+  /* ─── COUNTER ROLLER ────────────────────────────────────────── */
+  function animateCounter(numStr) {
+    const el = counterDigit;
+    el.style.transition = 'transform 300ms cubic-bezier(0.4,0,0.2,1), opacity 300ms ease';
+    el.style.transform  = 'translateY(-100%)';
+    el.style.opacity    = '0';
+    setTimeout(() => {
+      el.style.transition = 'none';
+      el.style.transform  = 'translateY(100%)';
+      el.textContent      = numStr;
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          el.style.transition = 'transform 320ms cubic-bezier(0.34,1.1,0.64,1), opacity 280ms ease';
+          el.style.transform  = 'translateY(0)';
+          el.style.opacity    = '1';
+        });
+      });
+    }, 300);
+  }
+
+  /* ─── KEYBOARD ──────────────────────────────────────────────── */
+  document.addEventListener('keydown', (e) => {
+    const sTop = section.getBoundingClientRect().top;
+    const sBot = section.getBoundingClientRect().bottom;
+    if (sTop > window.innerHeight || sBot < 0) return;
+    if (e.key === 'ArrowDown' || e.key === 'ArrowRight') jumpTo(Math.min(current + 1, PRODUCTS.length - 1));
+    if (e.key === 'ArrowUp'   || e.key === 'ArrowLeft')  jumpTo(Math.max(current - 1, 0));
+  });
+
+  /* ─── TOUCH / SWIPE ─────────────────────────────────────────── */
+  let touchStartY = 0;
+  sticky.addEventListener('touchstart', (e) => { touchStartY = e.touches[0].clientY; }, { passive: true });
+  sticky.addEventListener('touchend', (e) => {
+    const dy = touchStartY - e.changedTouches[0].clientY;
+    if (Math.abs(dy) > 40) {
+      if (dy > 0) jumpTo(Math.min(current + 1, PRODUCTS.length - 1));
+      else        jumpTo(Math.max(current - 1, 0));
+    }
+  }, { passive: true });
+
+  /* ─── START ─────────────────────────────────────────────────── */
+  init();
+
+})();
+</script>
+
+</body>
+</html>

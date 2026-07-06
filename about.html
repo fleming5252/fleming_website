@@ -38,10 +38,10 @@
           </a>
         </li>
         <li class="nav-item"><a href="services.html">SERVICES</a></li>
-        <li class="nav-item"><a href="#">Products</a></li>
+        <li class="nav-item"><a href="products.html">Products</a></li>
         <li class="nav-item"><a href="techno.html">Training Division</a></li>
         <li class="nav-item"><a href="contact.html">Contact</a></li>
-        <li class="nav-item"><a href="#">Blog</a></li>
+        <li class="nav-item"><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank">Blog</a></li>
       </ul>
     </nav>
 
@@ -74,10 +74,10 @@
           </a>
         </li>
         <li class="nav-item"><a href="services.html">SERVICES</a></li>
-        <li class="nav-item"><a href="#">Products</a></li>
+        <li class="nav-item"><a href="products.html">Products</a></li>
         <li class="nav-item"><a href="techno.html">Training Division</a></li>
         <li class="nav-item"><a href="contact.html">Contact</a></li>
-        <li class="nav-item"><a href="#">Blog</a></li>
+        <li class="nav-item"><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank">Blog</a></li>
       </ul>
     </nav>
 
@@ -102,10 +102,10 @@
       </a>
     </li>
     <li class="nav-item"><a href="services.html">SERVICES</a></li>
-    <li class="nav-item"><a href="#">Products</a></li>
+    <li class="nav-item"><a href="products.html">Products</a></li>
     <li class="nav-item"><a href="techno.html">Training Division</a></li>
     <li class="nav-item"><a href="contact.html">Contact</a></li>
-    <li class="nav-item"><a href="#">Blog</a></li>
+    <li class="nav-item"><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank">Blog</a></li>
   </ul>
 </div>
 
@@ -621,8 +621,8 @@
         <ul class="footer-links">
           <li><a href="#">Services</a></li>
           <li><a href="techno.html">Training Division</a></li>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">Blog</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank">Blog</a></li>
         </ul>
       </div>
 
@@ -1819,6 +1819,17 @@ document.addEventListener('DOMContentLoaded', function() {
       wrapper.classList.remove('fcw-open');
     }
   });
+})();
+</script>
+
+<script>
+(function() {
+  var page = window.location.pathname.split('/').pop() || 'index.html';
+  if (page === 'techno.html') {
+    document.querySelectorAll('.nav-item a[href="contact.html"]').forEach(function(link) {
+      link.href = 'techno_contact.html';
+    });
+  }
 })();
 </script>
 
