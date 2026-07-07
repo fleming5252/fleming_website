@@ -17,6 +17,129 @@
 </head>
 <body>
 
+<div class="site-preloader-overlay" id="loadingScreen">
+  <style>
+    .site-preloader-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #0b5fa5 !important; 
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      z-index: 999999 !important; 
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.4s ease;
+      perspective: 1000px;
+    }
+    .site-preloader-overlay.loader-hidden {
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+    }
+    .loader-wrapper-master {
+      position: relative;
+      width: 165px;
+      height: 165px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform-style: preserve-3d;
+    }
+    .loader-wrapper {
+      position: absolute;
+      width: 90px; 
+      height: 90px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform-style: preserve-3d;
+      animation: global-spin 5s infinite linear;
+    }
+    .site-preloader-overlay .circle {
+      position: absolute;
+      border-radius: 50%;
+      border: 3px dashed rgba(255, 255, 255, 0.9) !important; 
+      transform-style: preserve-3d;
+      box-sizing: border-box;
+    }
+    .loader-wrapper .circle {
+      width: 100%;
+      height: 100%;
+    }
+    .r-z { transform: rotateY(0deg); }
+    .r-y { transform: rotateY(90deg); }
+    .r-x { transform: rotateX(90deg); }
+    .r-4-outer, .r-5-outer {
+      width: 130px;
+      height: 130px;
+    }
+    .r-4-outer { animation: spin-outer-horizontal 3.8s infinite linear; }
+    .r-5-outer { animation: spin-outer-vertical 2.7s infinite linear; }
+    .r-6-outer, .r-7-outer {
+      width: 165px;
+      height: 165px;
+    }
+    .r-6-outer { animation: rotate-flat-clockwise 4s infinite linear; }
+    .r-7-outer { animation: rotate-flat-counter 3.2s infinite linear; }
+    .site-preloader-overlay .logo {
+      position: absolute;
+      width: 65px; 
+      height: auto;
+      user-select: none;
+      transform: translateZ(2px); 
+      filter: brightness(0) invert(1) !important; 
+    }
+    @keyframes global-spin {
+      0% { transform: rotateX(45deg) rotateY(0deg) rotateZ(0deg); }
+      100% { transform: rotateX(45deg) rotateY(360deg) rotateZ(360deg); }
+    }
+    @keyframes spin-outer-horizontal {
+      0% { transform: rotateX(15deg) rotateY(40deg); }
+      100% { transform: rotateX(15deg) rotateY(400deg); }
+    }
+    @keyframes spin-outer-vertical {
+      0% { transform: rotateY(-30deg) rotateX(85deg); }
+      100% { transform: rotateY(-30deg) rotateX(445deg); }
+    }
+    @keyframes rotate-flat-clockwise {
+      0% { transform: rotateX(45deg) rotateZ(0deg); }
+      100% { transform: rotateX(45deg) rotateZ(360deg); }
+    }
+    @keyframes rotate-flat-counter {
+      0% { transform: rotateY(45deg) rotateZ(360deg); }
+      100% { transform: rotateY(45deg) rotateZ(0deg); }
+    }
+  </style>
+
+  <div class="loader-wrapper-master">
+    <div class="circle r-6-outer"></div>
+    <div class="circle r-7-outer"></div>
+    <div class="circle r-4-outer"></div>
+    <div class="circle r-5-outer"></div>
+    <div class="loader-wrapper">
+      <div class="circle r-z"></div>
+      <div class="circle r-y"></div>
+      <div class="circle r-x"></div>
+      <img src="assets/images/logo1.png" class="logo" alt="Loading...">
+    </div>
+  </div>
+
+  <script>
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('load', function() {
+      var overlay = document.getElementById('loadingScreen');
+      if (overlay) {
+        overlay.classList.add('loader-hidden');
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
+</div>
+
 <!-- HERO NAV -->
 <header class="hero-nav" id="heroNav">
   <div class="nav-container">
@@ -816,6 +939,270 @@
   </div>
 </section>
 
+<!-- PROFESSIONAL CAREER PROGRAMS SECTION -->
+<section class="pcp-section">
+  <div class="pcp-container">
+
+    <!-- Header -->
+    <div class="pcp-header">
+      <div class="pcp-eyebrow">
+        <span class="pcp-eyebrow-dot"></span>
+        PROFESSIONAL CAREER PROGRAMS
+      </div>
+      <h2 class="pcp-title">Choose Your Technology <span>Career Path</span></h2>
+      <p class="pcp-subtitle">Build industry-ready skills through structured career training programs designed to transform beginners into confident technology professionals.</p>
+    </div>
+
+    <!-- Tab Buttons -->
+    <div class="pcp-tabs" id="pcpTabs">
+
+      <button class="pcp-tab active" data-index="0">
+        <div class="pcp-tab-icon">
+          <img src="assets/images/techno/tpw1.png" alt="Python Full-Stack Developer" class="pcp-tab-img" />
+        </div>
+        <div class="pcp-tab-text">
+          <span class="pcp-tab-title">Python Full-Stack<br>Developer</span>
+          <span class="pcp-tab-sub">Training Program</span>
+        </div>
+      </button>
+
+      <button class="pcp-tab" data-index="1">
+        <div class="pcp-tab-icon">
+          <img src="assets/images/techno/tpw2.png" alt="Java Full-Stack Developer" class="pcp-tab-img" />
+        </div>
+        <div class="pcp-tab-text">
+          <span class="pcp-tab-title">Java Full-Stack<br>Developer</span>
+          <span class="pcp-tab-sub">Training Program</span>
+        </div>
+      </button>
+
+      <button class="pcp-tab" data-index="2">
+        <div class="pcp-tab-icon">
+          <img src="assets/images/techno/tpw3.png" alt="Embedded & IoT Developer" class="pcp-tab-img" />
+        </div>
+        <div class="pcp-tab-text">
+          <span class="pcp-tab-title">Embedded &amp; IoT<br>Developer</span>
+          <span class="pcp-tab-sub">Training Program</span>
+        </div>
+      </button>
+
+      <button class="pcp-tab" data-index="3">
+        <div class="pcp-tab-icon">
+          <img src="assets/images/techno/tpw1.png" alt="Python Data Science" class="pcp-tab-img" />
+        </div>
+        <div class="pcp-tab-text">
+          <span class="pcp-tab-title">Python Data<br>Science</span>
+          <span class="pcp-tab-sub">Training Program</span>
+        </div>
+      </button>
+
+      <button class="pcp-tab" data-index="4">
+        <div class="pcp-tab-icon">
+          <img src="assets/images/techno/tpw5.png" alt="ML and Deep Learning" class="pcp-tab-img" />
+        </div>
+        <div class="pcp-tab-text">
+          <span class="pcp-tab-title">ML and Deep Learning<br>with I Tools</span>
+          <span class="pcp-tab-sub">Training Program</span>
+        </div>
+      </button>
+
+      <button class="pcp-tab" data-index="5">
+        <div class="pcp-tab-icon">
+          <img src="assets/images/techno/tpw6.png" alt="And More Other Courses" class="pcp-tab-img" />
+        </div>
+        <div class="pcp-tab-text">
+          <span class="pcp-tab-title">And More Other<br>Courses</span>
+          <span class="pcp-tab-sub">Training Program</span>
+        </div>
+      </button>
+
+    </div>
+
+    <!-- Content Panels -->
+    <div class="pcp-panels">
+
+      <!-- Panel 1 -->
+      <div class="pcp-panel active" data-index="0">
+        <div class="pcp-panel-body">
+          <h3 class="pcp-panel-title">
+            <span class="pcp-panel-emoji"></span>
+            Python Full-Stack Developer
+          </h3>
+          <p class="pcp-panel-desc">Become a professional full-stack developer by mastering core programming, OOP concepts, database integration, APIs, and modern front-end and back-end web development with real-world applications.</p>
+          <div class="pcp-panel-points">
+            <div class="pcp-points-col">
+              <div class="pcp-point"><span class="pcp-check">✓</span> Web Development (Full-Stack)</div>
+              <div class="pcp-point"><span class="pcp-check">✓</span> Core &amp; Advanced Python</div>
+              <div class="pcp-point"><span class="pcp-check">✓</span> Database Development</div>
+            </div>
+            <div class="pcp-points-col">
+              <div class="pcp-point"><span class="pcp-check">✓</span> Database Development</div>
+              <div class="pcp-point"><span class="pcp-check">✓</span> Advanced APIs</div>
+              <div class="pcp-point"><span class="pcp-check">✓</span> Final Capstone Project</div>
+            </div>
+          </div>
+          <div class="pcp-panel-actions">
+            <a href="techno_contact.html" class="pcp-btn"> Register Interest </a>
+            </div>
+        </div>
+        <div class="pcp-panel-image">
+          <img src="assets/images/techno/training1.png" alt="Python Full-Stack Developer" class="pcp-panel-img" />
+        </div>
+      </div>
+
+      <!-- Panel 2 -->
+      <div class="pcp-panel" data-index="1">
+        <div class="pcp-panel-body">
+          <h3 class="pcp-panel-title">
+            <span class="pcp-panel-emoji"></span>
+            Java Full-Stack Developer
+          </h3>
+          <p class="pcp-panel-desc">Master enterprise-grade Java development covering core Java, Spring Boot, REST APIs, microservices, and full-stack web development with real-world project experience.</p>
+          <div class="pcp-panel-points">
+            <div class="pcp-points-col">
+              <div class="pcp-point"><span class="pcp-check">✓</span> Core &amp; Advanced Java</div>
+              <div class="pcp-point"><span class="pcp-check">✓</span> Spring Boot Framework</div>
+              <div class="pcp-point"><span class="pcp-check">✓</span> REST API Development</div>
+            </div>
+            <div class="pcp-points-col">
+              <div class="pcp-point"><span class="pcp-check">✓</span> Microservices Architecture</div>
+              <div class="pcp-point"><span class="pcp-check">✓</span> Database Integration</div>
+              <div class="pcp-point"><span class="pcp-check">✓</span> Capstone Project</div>
+            </div>
+          </div>
+          <div class="pcp-panel-actions">
+            <a href="techno_contact.html" class="pcp-btn"> Register Interest </a>
+            </div>
+        </div>
+        <div class="pcp-panel-image">
+          <img src="assets/images/techno/training2.png" alt="Java Full-Stack Developer" class="pcp-panel-img" />
+        </div>
+      </div>
+
+      <!-- Panel 3 -->
+      <div class="pcp-panel" data-index="2">
+        <div class="pcp-panel-body">
+          <h3 class="pcp-panel-title">
+            <span class="pcp-panel-emoji"></span>
+            Embedded &amp; IoT Developer
+          </h3>
+          <p class="pcp-panel-desc">Build expertise in embedded systems and IoT by working with microcontrollers, sensors, RTOS, communication protocols, and cloud-connected smart device development.</p>
+          <div class="pcp-panel-points">
+            <div class="pcp-points-col">
+              <div class="pcp-point"><span class="pcp-check">✓</span> Microcontroller Programming</div>
+              <div class="pcp-point"><span class="pcp-check">✓</span> IoT Communication Protocols</div>
+              <div class="pcp-point"><span class="pcp-check">✓</span> Embedded Linux</div>
+            </div>
+            <div class="pcp-points-col">
+              <div class="pcp-point"><span class="pcp-check">✓</span> Sensor Integration</div>
+              <div class="pcp-point"><span class="pcp-check">✓</span> Cloud Connectivity</div>
+              <div class="pcp-point"><span class="pcp-check">✓</span> Hardware Project Development</div>
+            </div>
+          </div>
+          <div class="pcp-panel-actions">
+            <a href="techno_contact.html" class="pcp-btn"> Register Interest </a>
+
+          </div>
+        </div>
+        <div class="pcp-panel-image">
+          <img src="assets/images/techno/training3.png" alt="Embedded & IoT Developer" class="pcp-panel-img" />
+        </div>
+      </div>
+
+      <!-- Panel 4 -->
+      <div class="pcp-panel" data-index="3">
+        <div class="pcp-panel-body">
+          <h3 class="pcp-panel-title">
+            <span class="pcp-panel-emoji"></span>
+            Python Data Science
+          </h3>
+          <p class="pcp-panel-desc">Learn the complete data science pipeline using Python — from data collection, cleaning, and visualization to statistical analysis and building predictive models with real-world datasets.</p>
+          <div class="pcp-panel-points">
+            <div class="pcp-points-col">
+              <div class="pcp-point"><span class="pcp-check">✓</span> Python for Data Science</div>
+              <div class="pcp-point"><span class="pcp-check">✓</span> NumPy, Pandas &amp; Matplotlib</div>
+              <div class="pcp-point"><span class="pcp-check">✓</span> Statistical Analysis</div>
+            </div>
+            <div class="pcp-points-col">
+              <div class="pcp-point"><span class="pcp-check">✓</span> Data Visualization</div>
+              <div class="pcp-point"><span class="pcp-check">✓</span> Machine Learning Basics</div>
+              <div class="pcp-point"><span class="pcp-check">✓</span> Real Dataset Projects</div>
+            </div>
+          </div>
+          <div class="pcp-panel-actions">
+            <a href="techno_contact.html" class="pcp-btn"> Register Interest </a>
+
+          </div>
+        </div>
+        <div class="pcp-panel-image">
+          <img src="assets/images/techno/training4.png" alt="Python Data Science" class="pcp-panel-img" />
+        </div>
+      </div>
+
+      <!-- Panel 5 -->
+      <div class="pcp-panel" data-index="4">
+        <div class="pcp-panel-body">
+          <h3 class="pcp-panel-title">
+            <span class="pcp-panel-emoji"></span>
+            ML and Deep Learning with I Tools
+          </h3>
+          <p class="pcp-panel-desc">Dive deep into machine learning and deep learning using industry-standard tools. Build intelligent systems with neural networks, computer vision, NLP, and model deployment techniques.</p>
+          <div class="pcp-panel-points">
+            <div class="pcp-points-col">
+              <div class="pcp-point"><span class="pcp-check">✓</span> Machine Learning Algorithms</div>
+              <div class="pcp-point"><span class="pcp-check">✓</span> Deep Neural Networks</div>
+              <div class="pcp-point"><span class="pcp-check">✓</span> Computer Vision &amp; OpenCV</div>
+            </div>
+            <div class="pcp-points-col">
+              <div class="pcp-point"><span class="pcp-check">✓</span> Natural Language Processing</div>
+              <div class="pcp-point"><span class="pcp-check">✓</span> TensorFlow &amp; PyTorch</div>
+              <div class="pcp-point"><span class="pcp-check">✓</span> Model Deployment</div>
+            </div>
+          </div>
+          <div class="pcp-panel-actions">
+            <a href="techno_contact.html" class="pcp-btn"> Register Interest </a>
+
+          </div>
+        </div>
+        <div class="pcp-panel-image">
+          <img src="assets/images/techno/training5.png" alt="ML and Deep Learning" class="pcp-panel-img" />
+        </div>
+      </div>
+
+      <!-- Panel 6 -->
+      <div class="pcp-panel" data-index="5">
+        <div class="pcp-panel-body">
+          <h3 class="pcp-panel-title">
+            <span class="pcp-panel-emoji"></span>
+            And More Other Courses
+          </h3>
+          <p class="pcp-panel-desc">Beyond our flagship programs, we offer a wide range of short-term and long-term specialized courses tailored to industry needs. Whether you're looking to upskill quickly or build deep expertise, we have a program for you.</p>
+          <div class="pcp-panel-points">
+            <div class="pcp-points-col">
+              <div class="pcp-point"><span class="pcp-check">✓</span> ROS &amp; Robotics</div>
+              <div class="pcp-point"><span class="pcp-check">✓</span> FPGA Design</div>
+              <div class="pcp-point"><span class="pcp-check">✓</span> Mobile App Development</div>
+            </div>
+            <div class="pcp-points-col">
+              <div class="pcp-point"><span class="pcp-check">✓</span> Web Development</div>
+              <div class="pcp-point"><span class="pcp-check">✓</span> Short-Term Programs</div>
+              <div class="pcp-point"><span class="pcp-check">✓</span> Long-Term Programs</div>
+            </div>
+          </div>
+          <div class="pcp-panel-actions">
+            <a href="techno_contact.html" class="pcp-btn"> Register Interest </a>
+
+          </div>
+        </div>
+        <div class="pcp-panel-image">
+          <img src="assets/images/techno/training6.png" alt="And More Other Courses" class="pcp-panel-img" />
+        </div>
+      </div>
+
+    </div><!-- /.pcp-panels -->
+  </div>
+</section>
+
 </main>
 
 <!-- FOOTER -->
@@ -1427,6 +1814,55 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   init();
+})();
+</script>
+
+<script>
+(function () {
+  gsap.fromTo('.pcp-eyebrow', { opacity: 0, y: -20 }, {
+    opacity: 1, y: 0, duration: 0.6, ease: 'power2.out',
+    scrollTrigger: { trigger: '.pcp-eyebrow', start: 'top center', toggleActions: 'play none none reverse' }
+  });
+
+  var pcpH = new SplitType('.pcp-title', { types: 'chars' });
+  gsap.set(pcpH.chars, { opacity: 0.15 });
+  gsap.to(pcpH.chars, {
+    opacity: 1, stagger: 0.08, ease: 'none',
+    scrollTrigger: { trigger: '.pcp-header', start: 'top 65%', end: 'top 35%', scrub: true, invalidateOnRefresh: true }
+  });
+
+  gsap.fromTo('.pcp-subtitle', { y: 30, opacity: 0 }, {
+    y: 0, opacity: 1, duration: 1, ease: 'power4.out',
+    scrollTrigger: { trigger: '.pcp-subtitle', start: 'top 82%', toggleActions: 'play none none reverse' }
+  });
+
+  gsap.fromTo('.pcp-tab', { y: 20, opacity: 0 }, {
+    y: 0, opacity: 1, duration: 0.5, ease: 'power3.out', stagger: 0.06,
+    scrollTrigger: { trigger: '.pcp-tabs', start: 'top 85%', toggleActions: 'play none none reverse' }
+  });
+})();
+</script>
+
+<script>
+(function () {
+  var tabs   = document.querySelectorAll('.pcp-tab');
+  var panels = document.querySelectorAll('.pcp-panel');
+
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      var index = Number(tab.dataset.index);
+
+      tabs.forEach(function (t) { t.classList.remove('active'); });
+      panels.forEach(function (p) { p.classList.remove('active'); });
+
+      tab.classList.add('active');
+      panels[index].classList.add('active');
+
+      if (typeof ScrollTrigger !== 'undefined') {
+        ScrollTrigger.refresh();
+      }
+    });
+  });
 })();
 </script>
 
