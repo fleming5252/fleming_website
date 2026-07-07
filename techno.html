@@ -70,7 +70,7 @@
         <li class="nav-item"><a href="index.html">IT Development Division</a></li>
         <li class="nav-item"><a href="techno_r&amp;d.html">R&amp;D</a></li>
         <li class="nav-item"><a href="techno_careers.html">Careers</a></li>
-        <li class="nav-item"><a href="contact.html">Contact</a></li>
+        <li class="nav-item"><a href="techno_contact.html">Contact</a></li>
         <li class="nav-item"><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank">Blog</a></li>
       </ul>
     </nav>
@@ -97,7 +97,7 @@
         <li class="nav-item"><a href="index.html">IT Development Division</a></li>
         <li class="nav-item"><a href="techno_r&amp;d.html">R&amp;D</a></li>
         <li class="nav-item"><a href="techno_careers.html">Careers</a></li>
-        <li class="nav-item"><a href="contact.html">Contact</a></li>
+        <li class="nav-item"><a href="techno_contact.html">Contact</a></li>
         <li class="nav-item"><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank">Blog</a></li>
       </ul>
     </nav>
@@ -114,12 +114,11 @@
   <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
   <ul class="mobile-nav-links">
     <li class="nav-item"><a href="techno.html">HOME</a></li>
-    <li class="nav-item"><a href="about.html">ABOUT</a></li>
-    <li class="nav-item"><a href="techno_services.html">SERVICES</a></li>
+  <li class="nav-item"><a href="techno_services.html">SERVICES</a></li>
     <li class="nav-item"><a href="index.html">IT Development Division</a></li>
     <li class="nav-item"><a href="techno_r&amp;d.html">R&amp;D</a></li>
     <li class="nav-item"><a href="techno_careers.html">Careers</a></li>
-    <li class="nav-item"><a href="contact.html">Contact</a></li>
+    <li class="nav-item"><a href="techno_contact.html">Contact</a></li>
     <li class="nav-item"><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank">Blog</a></li>
   </ul>
 </div>
@@ -190,11 +189,11 @@
 
         <!-- CTA buttons -->
         <div class="hero-cta-row">
-          <a href="#programs" class="hero-cta-btn hero-cta-btn--primary">
-            EXPLORE PROGRAMS <i class="fas fa-arrow-right"></i>
+          <a href="techno_services.html" class="hero-cta-btn hero-cta-btn--primary">
+            EXPLORE SERVICES <i class="fas fa-arrow-right"></i>
           </a>
-          <a href="#internship" class="hero-cta-btn hero-cta-btn--outline">
-            APPLY FOR INTERNSHIP <i class="fas fa-arrow-right"></i>
+          <a href="techno_services.html#internship-programs" class="hero-cta-btn hero-cta-btn--outline">
+            EXPLORE INTERNSHIP <i class="fas fa-arrow-right"></i>
           </a>
         </div>
 
@@ -603,11 +602,11 @@
 
       <!-- CTA Buttons -->
       <div class="ict-cta-row">
-        <a href="#programs" class="ict-btn ict-btn-primary">
+        <a href="techno_services.html#lec-eyebrow-dot-id" class="ict-btn ict-btn-primary">
           Explore Programs <i class="fas fa-arrow-up-right-from-square"></i>
         </a>
-        <a href="#internship" class="ict-btn ict-btn-outline">
-          Apply for Internship <i class="fas fa-arrow-up-right-from-square"></i>
+        <a href="techno_services.html#internship-programs" class="ict-btn ict-btn-outline">
+          Explore Internship <i class="fas fa-arrow-up-right-from-square"></i>
         </a>
       </div>
 
@@ -917,6 +916,18 @@
   </div><!-- /dom-split -->
 </section>
 
+<section class="cta-dark-section">
+  <div class="cta-container">
+    <div class="cta-content-left">
+      <h2 class="cta-main-title">Let's make something great together</h2>
+    </div>
+    <div class="cta-action-right">
+      <a href="techno_contact.html" class="cta-brush-link">
+        Get Started <span class="cta-arrow">↗</span>
+      </a>
+    </div>
+  </div>
+</section>
 <!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-blob footer-blob-1"></div>
@@ -963,7 +974,7 @@
       <div class="footer-col footer-col-links">
         <h4 class="footer-col-heading">Quick Links</h4>
         <ul class="footer-links">
-          <li><a href="#">Services</a></li>
+          <li><a href="techno_services.html">Services</a></li>
           <li><a href="techno.html">Training Division</a></li>
           <li><a href="products.html">Products</a></li>
           <li><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank">Blog</a></li>
@@ -972,8 +983,8 @@
       <div class="footer-col footer-col-about">
         <h4 class="footer-col-heading">About Us</h4>
         <ul class="footer-links">
-          <li><a href="#">Who We Are</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="techno.html">Who We Are</a></li>
+          <li><a href="techno_contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col footer-col-contact">
@@ -1148,13 +1159,26 @@ stickyNav.classList.add('nav-hidden');
   var nextBtn = document.getElementById('tsNextBtn');
   if (!track) return;
 
-  /* Flatten all hex cards in DOM order, logo hex first */
-  var allHexes = Array.from(track.querySelectorAll('.ts-hex'));
-  var logoHex  = track.querySelector('.ts-hex-logo');
-  if (logoHex) {
-    allHexes = allHexes.filter(function(h){ return h !== logoHex; });
-    allHexes.unshift(logoHex);
+  /* Flatten hex cards in custom order for mobile */
+  function findHex(titleText) {
+    var all = track.querySelectorAll('.ts-hex');
+    for (var i = 0; i < all.length; i++) {
+      var t = all[i].querySelector('.ts-hex-title');
+      if (t && t.textContent.trim().indexOf(titleText) !== -1) return all[i];
+    }
+    return null;
   }
+  var logoHex = track.querySelector('.ts-hex-logo');
+  var order = [
+    logoHex,
+    findHex('B.Tech'),
+    findHex('Internship'),
+    findHex('Dissertation'),
+    findHex('Training'),
+    findHex('PhD'),
+    findHex('Documentation')
+  ];
+  var allHexes = order.filter(function(h){ return h !== null; });
 
   /* Build a fresh flat wrapper so every card is a direct child */
   var wrapper = document.createElement('div');
@@ -1666,6 +1690,25 @@ stickyNav.classList.add('nav-hidden');
     });
   });
 })();
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  gsap.set(".cta-container", { opacity: 0, y: 80 });
+  ScrollTrigger.create({
+    trigger: ".cta-dark-section",
+    start: "top 85%",
+    onEnter: function() {
+      gsap.to(".cta-container", { opacity: 1, y: 0, duration: 1.2, ease: "power4.out" });
+    },
+    onLeaveBack: function() {
+      gsap.to(".cta-container", { opacity: 0, y: 80, duration: 0.6, ease: "power3.in" });
+    },
+    onEnterBack: function() {
+      gsap.to(".cta-container", { opacity: 1, y: 0, duration: 1.2, ease: "power4.out" });
+    }
+  });
+});
 </script>
 
 <!-- FLOATING CONTACT WIDGET -->

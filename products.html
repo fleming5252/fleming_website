@@ -251,6 +251,18 @@
 </section>
 <!-- ═══════════════ END PRODUCTS SECTION ═══════════════ -->
 
+<section class="cta-dark-section">
+  <div class="cta-container">
+    <div class="cta-content-left">
+      <h2 class="cta-main-title">Let's make something great together</h2>
+    </div>
+    <div class="cta-action-right">
+      <a href="contact.html" class="cta-brush-link">
+        Get Started <span class="cta-arrow">↗</span>
+      </a>
+    </div>
+  </div>
+</section>
 <!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-blob footer-blob-1"></div>
@@ -297,7 +309,7 @@
       <div class="footer-col footer-col-links">
         <h4 class="footer-col-heading">Quick Links</h4>
         <ul class="footer-links">
-          <li><a href="#">Services</a></li>
+          <li><a href="services.html">Services</a></li>
           <li><a href="techno.html">Training Division</a></li>
           <li><a href="#">Products</a></li>
           <li><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank">Blog</a></li>
@@ -306,7 +318,7 @@
       <div class="footer-col footer-col-about">
         <h4 class="footer-col-heading">About Us</h4>
         <ul class="footer-links">
-          <li><a href="#">Who We Are</a></li>
+          <li><a href="about.html">Who We Are</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
@@ -940,6 +952,22 @@ document.addEventListener('DOMContentLoaded', function() {
     if (sTop > window.innerHeight || sBot < 0) return;
     if (e.key === 'ArrowDown' || e.key === 'ArrowRight') jumpTo(Math.min(current + 1, PRODUCTS.length - 1));
     if (e.key === 'ArrowUp'   || e.key === 'ArrowLeft')  jumpTo(Math.max(current - 1, 0));
+  });
+
+    // CTA scroll reveal
+  gsap.set(".cta-container", { opacity: 0, y: 80 });
+  ScrollTrigger.create({
+    trigger: ".cta-dark-section",
+    start: "top 85%",
+    onEnter: function() {
+      gsap.to(".cta-container", { opacity: 1, y: 0, duration: 1.2, ease: "power4.out" });
+    },
+    onLeaveBack: function() {
+      gsap.to(".cta-container", { opacity: 0, y: 80, duration: 0.6, ease: "power3.in" });
+    },
+    onEnterBack: function() {
+      gsap.to(".cta-container", { opacity: 1, y: 0, duration: 1.2, ease: "power4.out" });
+    }
   });
 
   /* ─── TOUCH / SWIPE ─────────────────────────────────────────── */

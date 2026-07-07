@@ -258,6 +258,12 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
   }
 }
 
+@media (max-width: 767px) {
+  .nav-logo-img {
+    height: 56px;
+  }
+}
+
 /* ══════════════════════════════════════════════
    FOOTER
 ═══════════════════════════════════════════════ */
@@ -1380,15 +1386,14 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
   }
 
   /* Logo inner content must sit above the pseudo bg */
-  .ts-hex.ts-hex-logo .ts-hex-inner .ts-hex-logo-inner {
+  .ts-hex.ts-hex-logo .ts-hex-inner.ts-hex-logo-inner {
     position: relative;
     z-index: 4;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
+  }
+
+  /* Pull logo hex pseudo behind in-flow content so children stay centered */
+  .ts-hex.ts-hex-logo .ts-hex-inner::before {
+    z-index: -1 !important;
   }
 
   /* Pulse rings need z-index above pseudo bg but below outline */
@@ -3789,13 +3794,23 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
 /* --- Responsive --- */
 @media (max-width: 900px) {
   .car-intro-container {
-    flex-direction: column;
-    gap: 30px;
+    grid-template-columns: 1fr;
+    padding: 0 24px 40px;
+    min-height: auto;
   }
   .car-intro-right {
-    flex: 0 0 auto;
     width: 100%;
-    max-width: 500px;
+    justify-content: center;
+  }
+  .car-intro-img {
+    width: 100%;
+    min-height: auto;
+    max-height: 300px;
+    object-fit: contain;
+    object-position: center;
+  }
+  .car-intro-desc {
+    max-width: 100%;
   }
   .car-intro-subheading {
     font-size: 28px;
@@ -3805,7 +3820,17 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
   }
   .car-job-img-wrap {
     width: 100%;
-    height: 220px;
+    display: flex;
+    justify-content: center;
+    padding: 0 0 20px;
+    overflow: hidden;
+  }
+  .car-job-img {
+    width: 80%;
+    max-width: 280px;
+    height: auto;
+    margin-left: 0;
+    object-fit: contain;
   }
   .car-job-body {
     padding: 24px;
@@ -3839,24 +3864,41 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
     padding: 40px 16px 80px;
   }
   .car-timeline-item {
-    padding-left: 56px;
+    padding-left: 58px;
   }
   .car-timeline-node {
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
   }
   .car-node-num {
-    font-size: 12px;
+    font-size: 13px;
   }
   .car-timeline-line {
-    left: 19px;
+    left: 20px;
   }
   .car-job-body {
-    padding: 20px;
+    padding: 20px 16px;
+  }
+  .car-job-title {
+    font-size: 18px;
+  }
+  .car-skills-row {
+    flex-wrap: wrap;
+    gap: 6px;
   }
   .car-job-meta {
     flex-direction: column;
     gap: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-bg h1 {
+    font-size: 2.8rem;
+  }
+  .about-bg {
+    background-size: 200% auto;
+    min-height: 260px;
   }
 }
 
@@ -5916,4 +5958,97 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
 @media (max-width: 480px) {
   .pcp-tabs { grid-template-columns: repeat(2, 1fr); }
   .pcp-tab-icon { width: 40px; height: 40px; }
+}
+
+/* ─── CALL TO ACTION SECTION ─── */
+.cta-dark-section {
+  background: #ffffff;
+  padding: 60px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  background: #1a56db;
+  border-radius: 30px;
+}
+
+.cta-main-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 48px;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.cta-action-right {
+  display: flex;
+  align-items: center;
+}
+
+.cta-brush-link {
+  font-family: 'Caveat', cursive;
+  font-size: 48px;
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cta-brush-link:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
+}
+
+.cta-arrow {
+  font-family: 'Poppins', sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  transition: transform 0.3s ease;
+}
+
+.cta-brush-link:hover .cta-arrow {
+  transform: translate(5px, -5px);
+}
+
+@media (max-width: 991px) {
+  .cta-container {
+    padding: 0 40px;
+    gap: 30px;
+  }
+  .cta-main-title {
+    font-size: 42px;
+  }
+  .cta-brush-link {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 767px) {
+  .cta-dark-section {
+    padding: 40px 24px;
+  }
+  .cta-container {
+    padding: 50px 30px;
+    border-radius: 20px;
+  }
+  .cta-main-title {
+    font-size: 26px;
+    text-align: center;
+  }
+  .cta-brush-link {
+    font-size: 32px;
+    text-align: center;
+  }
 }

@@ -151,7 +151,7 @@
 </section>
 
 <!-- SERVICES HEADING SECTION -->
-<section class="services-heading-section">
+<section class="services-heading-section" id="services-heading-section-id">
   <div class="services-container">
     <div class="services-badge">
       <span class="badge-dot"></span>
@@ -292,7 +292,7 @@
       <h2 class="cta-main-title">Let's make something great together</h2>
     </div>
     <div class="cta-action-right">
-      <a href="#contact" class="cta-brush-link">
+      <a href="contact.html" class="cta-brush-link">
         Get Started <span class="cta-arrow">↗</span>
       </a>
     </div>
@@ -345,7 +345,7 @@
       <div class="footer-col footer-col-links">
         <h4 class="footer-col-heading">Quick Links</h4>
         <ul class="footer-links">
-          <li><a href="#">Services</a></li>
+          <li><a href="services.html">Services</a></li>
           <li><a href="techno.html">Training Division</a></li>
           <li><a href="products.html">Products</a></li>
           <li><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank">Blog</a></li>
@@ -354,7 +354,7 @@
       <div class="footer-col footer-col-about">
         <h4 class="footer-col-heading">About Us</h4>
         <ul class="footer-links">
-          <li><a href="#">Who We Are</a></li>
+          <li><a href="about.html">Who We Are</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
@@ -537,40 +537,14 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   if (window.matchMedia('(max-width: 767px)').matches) {
-    var activeServiceCard = null;
-    var activeServiceTimer = null;
-    var touchStartX = 0, touchStartY = 0, touchMoved = false, moveThreshold = 10;
-
     document.querySelectorAll('.service-card').forEach(function(card) {
-      card.addEventListener('touchstart', function(e) {
-        touchStartX = e.touches[0].clientX;
-        touchStartY = e.touches[0].clientY;
-        touchMoved = false;
-      }, { passive: true });
-
-      card.addEventListener('touchmove', function(e) {
-        var dx = Math.abs(e.touches[0].clientX - touchStartX);
-        var dy = Math.abs(e.touches[0].clientY - touchStartY);
-        if (dx > moveThreshold || dy > moveThreshold) touchMoved = true;
-      }, { passive: true });
-
-      card.addEventListener('touchend', function(e) {
-        if (touchMoved) return;
-        e.preventDefault();
-        activateServiceCard(card);
-      }, { passive: false });
+      ScrollTrigger.create({
+        trigger: card,
+        start: "top 50%",
+        end: "bottom 50%",
+        toggleClass: { targets: card, className: "mobile-touch-active" }
+      });
     });
-
-    function activateServiceCard(card) {
-      if (activeServiceCard && activeServiceCard !== card) activeServiceCard.classList.remove('mobile-touch-active');
-      clearTimeout(activeServiceTimer);
-      card.classList.add('mobile-touch-active');
-      activeServiceCard = card;
-      activeServiceTimer = setTimeout(function() {
-        card.classList.remove('mobile-touch-active');
-        if (activeServiceCard === card) activeServiceCard = null;
-      }, 3000);
-    }
   }
 
   gsap.set(".cta-container", { opacity: 0, y: 80 });
