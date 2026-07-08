@@ -524,8 +524,9 @@
       <div class="ap-card ap-card-center" id="apCard3">
         <div class="ap-card-icon-wrap ap-icon-center">
           <svg class="ap-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <polyline points="10,20 18,28 38,12" stroke="#06b6d4" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M8 36 L16 28 M32 12 L40 20" stroke="#1a56db" stroke-width="2" stroke-linecap="round"/>
+            <polyline points="10,16 6,24 10,32" stroke="#06b6d4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="38,16 42,24 38,32" stroke="#06b6d4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="28" y1="12" x2="20" y2="36" stroke="#06b6d4" stroke-width="2.5" stroke-linecap="round"/>
           </svg>
         </div>
         <div class="ap-card-number ap-num-center">03</div>
@@ -539,10 +540,12 @@
       <div class="ap-card" id="apCard4">
         <div class="ap-card-icon-wrap">
           <svg class="ap-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M14 8 L14 20 L8 32 L40 32 L34 20 L34 8 Z" stroke="#1a56db" stroke-width="2.5" stroke-linejoin="round"/>
-            <line x1="14" y1="14" x2="34" y2="14" stroke="#1a56db" stroke-width="2" stroke-linecap="round"/>
-            <circle cx="24" cy="26" r="3" stroke="#1a56db" stroke-width="2"/>
-            <line x1="12" y1="38" x2="36" y2="38" stroke="#1a56db" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="24" cy="24" r="16" stroke="#1a56db" stroke-width="2.5"/>
+            <polyline points="16,24 21,29 32,18" stroke="#1a56db" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="24" y1="8" x2="24" y2="4" stroke="#1a56db" stroke-width="2" stroke-linecap="round"/>
+            <line x1="24" y1="44" x2="24" y2="40" stroke="#1a56db" stroke-width="2" stroke-linecap="round"/>
+            <line x1="8" y1="24" x2="4" y2="24" stroke="#1a56db" stroke-width="2" stroke-linecap="round"/>
+            <line x1="44" y1="24" x2="40" y2="24" stroke="#1a56db" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </div>
         <div class="ap-card-number">04</div>
@@ -556,10 +559,18 @@
       <div class="ap-card" id="apCard5">
         <div class="ap-card-icon-wrap">
           <svg class="ap-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M24 6 C32 6 42 14 40 28 C38 36 30 40 24 42 C18 40 10 36 8 28 C6 14 16 6 24 6 Z" stroke="#8b5cf6" stroke-width="2.5"/>
-            <line x1="24" y1="6" x2="24" y2="42" stroke="#8b5cf6" stroke-width="1.5" stroke-dasharray="3 3"/>
-            <path d="M18 14 Q24 10 30 14" stroke="#8b5cf6" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-            <path d="M14 24 Q24 18 34 24" stroke="#8b5cf6" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <!-- Rocket body -->
+            <path d="M24 6 C20 6 14 14 14 26 L34 26 C34 14 28 6 24 6 Z" stroke="#8b5cf6" stroke-width="2.5" stroke-linejoin="round"/>
+            <!-- Nose tip -->
+            <circle cx="24" cy="6" r="2" fill="#8b5cf6"/>
+            <!-- Left fin -->
+            <path d="M14 26 L8 34 L14 32" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Right fin -->
+            <path d="M34 26 L40 34 L34 32" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Exhaust nozzle -->
+            <path d="M18 32 L14 32 L16 38 L24 40 L32 38 L34 32 L30 32" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Window -->
+            <circle cx="24" cy="20" r="3.5" stroke="#8b5cf6" stroke-width="2"/>
           </svg>
         </div>
         <div class="ap-card-number" style="color:#8b5cf6;">05</div>
@@ -704,11 +715,13 @@
                 <circle cx="12" cy="10" r="3"/>
               </svg>
             </span>
-            <span class="contact-info-text">
-              Fleming Embedded and Software Solutions<br>
-              #37/3956, 2nd Floor, Bank Road,<br>
-              Kaloor, Ernakulam — 682017
-            </span>
+            <a href="https://www.google.com/maps?ll=9.996532,76.295951&z=17&t=m&hl=en&gl=IN&mapclient=embed&cid=2057725792007139428" target="_blank" class="contact-link" style="display:inline-block;">
+              <span class="contact-info-text">
+                Fleming Embedded and Software Solutions<br>
+                #37/3956, 2nd Floor, Bank Road,<br>
+                Kaloor, Ernakulam — 682017
+              </span>
+            </a>
           </li>
 
         </ul>
@@ -1722,8 +1735,23 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }, { passive: true });
 
-    /* Tap to expand (3s) */
+    /* Tap to expand (5s, tap-anywhere to dismiss) */
     if (config.expandable) {
+      var justExpanded = false;
+
+      document.addEventListener('touchend', function(e) {
+        if (justExpanded) return;
+        if (expandedEl) {
+          clearTimeout(expandTimer);
+          expandedEl.classList.remove('mobile-expanded');
+          expandedEl = null;
+          clearInterval(autoTimer);
+          setTimeout(function() {
+            autoTimer = setInterval(goNext, 3000);
+          }, 3000);
+        }
+      }, { passive: true });
+
       Array.from(slides).forEach(function(slide) {
         var touchStartX = 0, touchStartY = 0, touchMoved = false;
 
@@ -1751,21 +1779,26 @@ document.addEventListener('DOMContentLoaded', function() {
           expandedEl = slide;
           clearInterval(autoTimer);
 
+          justExpanded = true;
+          setTimeout(function() { justExpanded = false; }, 150);
+
           expandTimer = setTimeout(function() {
             slide.classList.remove('mobile-expanded');
             if (expandedEl === slide) expandedEl = null;
-            autoTimer = setInterval(goNext, 4000);
-          }, 3000);
+            setTimeout(function() {
+              autoTimer = setInterval(goNext, 3000);
+            }, 3000);
+          }, 5000);
         }, { passive: false });
       });
     }
 
     /* Auto-advance */
-    autoTimer = setInterval(goNext, 4000);
+    autoTimer = setInterval(goNext, 3000);
 
     function resetAuto() {
       clearInterval(autoTimer);
-      autoTimer = setInterval(goNext, 4000);
+      autoTimer = setInterval(goNext, 3000);
     }
 
     updateSlider();

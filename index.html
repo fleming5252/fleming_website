@@ -429,7 +429,7 @@
     <div class="management-left-card">
       <h2 class="management-title">Experienced and dedicated management team</h2>
       <p class="management-desc">
-        Our perfectly structured management hierarchy,with over 12 years of experience,makes sure that our team of developers work towards a singular goal in a motivated and focused manner.
+        Our perfectly structured management hierarchy,with over <span id="mgmtYearsInline"></span> years of experience,makes sure that our team of developers work towards a singular goal in a motivated and focused manner.
       </p>
 
       <ul class="management-bullets">
@@ -637,11 +637,13 @@
                 <circle cx="12" cy="10" r="3"/>
               </svg>
             </span>
-            <span class="contact-info-text">
-              Fleming Embedded and Software Solutions<br>
-              #37/3956, 2nd Floor, Bank Road,<br>
-              Kaloor, Ernakulam — 682017
-            </span>
+            <a href="https://www.google.com/maps?ll=9.996532,76.295951&z=17&t=m&hl=en&gl=IN&mapclient=embed&cid=2057725792007139428" target="_blank" class="contact-link" style="display:inline-block;">
+              <span class="contact-info-text">
+                Fleming Embedded and Software Solutions<br>
+                #37/3956, 2nd Floor, Bank Road,<br>
+                Kaloor, Ernakulam — 682017
+              </span>
+            </a>
           </li>
 
         </ul>
@@ -724,6 +726,8 @@ stickyNav.classList.add('nav-hidden');
   if (now < new Date(now.getFullYear(), 9, 1)) years--;
   var el = document.getElementById('yearsCount');
   if (el) el.textContent = years + '+';
+  var el2 = document.getElementById('mgmtYearsInline');
+  if (el2) el2.textContent = years;
 })();
 </script>
 

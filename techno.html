@@ -332,7 +332,7 @@
                   <h4 class="ts-hex-title">Training</h4>
                 </div>
                 <div class="ts-hex-back">
-                  <p class="ts-hex-desc">Industry-focused training in Cyber Security, AI &amp; ML, Web Development, Embedded &amp; IoT, ROS, and more — for both software and hardware domains.</p>
+                  <p class="ts-hex-desc">Industry-focused career training in Python Full Stack, Java Full Stack, Embedded Development, and more — preparing engineers for software and hardware careers.</p>
                 </div>
               </div>
             </div>
@@ -1023,11 +1023,13 @@
                 <circle cx="12" cy="10" r="3"/>
               </svg>
             </span>
-            <span class="contact-info-text">
-              Fleming Embedded and Software Solutions<br>
-              #37/3956, 2nd Floor, Bank Road,<br>
-              Kaloor, Ernakulam — 682017
-            </span>
+            <a href="https://www.google.com/maps?ll=9.996532,76.295951&z=17&t=m&hl=en&gl=IN&mapclient=embed&cid=2057725792007139428" target="_blank" class="contact-link" style="display:inline-block;">
+              <span class="contact-info-text">
+                Fleming Embedded and Software Solutions<br>
+                #37/3956, 2nd Floor, Bank Road,<br>
+                Kaloor, Ernakulam — 682017
+              </span>
+            </a>
           </li>
         </ul>
       </div>
@@ -1203,17 +1205,36 @@ stickyNav.classList.add('nav-hidden');
   var flipTimer    = null;
   var autoTimer    = null;
 
-  /* ── Flip a card: pause auto, show back for 3 s then resume ── */
+  /* ── Flip a card: show back for 5 s, auto-close, then 3 s delay before slide ── */
+  var isFlipped = false;
+
   function flipCard(hex) {
-    if (hex.classList.contains('ts-hex-logo')) return; /* skip logo */
+    if (hex.classList.contains('ts-hex-logo')) return;
+
+    if (isFlipped) {
+      clearTimeout(flipTimer);
+      allHexes.forEach(function(h){ h.classList.remove('ts-flipped'); });
+      isFlipped = false;
+      flipTimer = setTimeout(function(){
+        goNext();
+        startAuto();
+      }, 3000);
+      return;
+    }
+
     clearTimeout(flipTimer);
-    clearInterval(autoTimer); /* pause auto-slide while flipped */
+    clearInterval(autoTimer);
     allHexes.forEach(function(h){ h.classList.remove('ts-flipped'); });
     hex.classList.add('ts-flipped');
+    isFlipped = true;
     flipTimer = setTimeout(function(){
       hex.classList.remove('ts-flipped');
-      startAuto(); /* resume auto-slide after flip ends */
-    }, 3000);
+      isFlipped = false;
+      setTimeout(function(){
+        goNext();
+        startAuto();
+      }, 3000);
+    }, 5000);
   }
 
   /* ── Move to slide index ── */
