@@ -1694,43 +1694,8 @@ stickyNav.classList.add('nav-hidden');
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Mobile orbit bubble tap-to-center
-  if (window.matchMedia('(max-width: 850px)').matches) {
-    var orbitContainer = document.querySelector('.techno-hero-right');
-    var orbitBubbles = document.querySelectorAll('.orbit-bubble');
-    var activeBubble = null;
-    var activeBubbleTimer = null;
-    var origStyles = {};
-
-    orbitBubbles.forEach(function(bubble) {
-      bubble.addEventListener('click', function() {
-        if (activeBubble) {
-          gsap.killTweensOf(activeBubble);
-          gsap.set(activeBubble, { x: 0, y: 0, scale: 1 });
-          clearTimeout(activeBubbleTimer);
-        }
-        gsap.set(bubble, { x: 0, y: 0, scale: 1 });
-        var cr = orbitContainer.getBoundingClientRect();
-        var br = bubble.getBoundingClientRect();
-        var ox = (cr.width - br.width) / 2 - (br.left - cr.left);
-        var oy = (cr.height - br.height) / 2 - (br.top - cr.top);
-        activeBubble = bubble;
-        gsap.to(bubble, {
-          x: ox, y: oy, scale: 2.5,
-          duration: 0.5, ease: 'power3.out',
-          onComplete: function() {
-            activeBubbleTimer = setTimeout(function() {
-              gsap.to(bubble, {
-                x: 0, y: 0, scale: 1,
-                duration: 0.5, ease: 'power3.out'
-              });
-              activeBubble = null;
-            }, 2000);
-          }
-        });
-      });
-    });
-  }
+  // Completely disable any GSAP interaction on orbit bubbles for mobile
+  // The CSS handles the no-hover state; no JS needed for bubbles
 
   gsap.set(".cta-container", { opacity: 0, y: 80 });
   ScrollTrigger.create({

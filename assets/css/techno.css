@@ -611,7 +611,15 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
 }
 
 .eyebrow-sep {
-  color: rgba(255,255,255,0.3);
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3b82f6;
+  box-shadow: 0 0 8px #3b82f6;
+  vertical-align: middle;
+  font-size: 0;
+  line-height: 0;
 }
 
 .hero-headline {
@@ -870,6 +878,7 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
   position: absolute;
   z-index: 4;
   animation: bubbleFloat 4s ease-in-out infinite;
+  touch-action: manipulation;
 }
 
 /* Stagger float animation per bubble */
@@ -987,9 +996,37 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
 
   .hero-student-img { width: 70%; }
   .orbit-bubble { user-select: none; -webkit-tap-highlight-color: transparent; cursor: default; }
-  .orbit-bubble-inner { width: 82px; height: 82px; }
-  .orbit-bubble-inner img { width: 144px; height: 144px; }
-  .orbit-bubble-inner:hover { border-color: inherit; box-shadow: none; transform: none; }
+  .orbit-bubble-inner,
+  .orbit-bubble-inner * {
+    pointer-events: none !important;
+  }
+
+  .orbit-bubble-inner,
+  .orbit-bubble-inner:hover,
+  .orbit-bubble-inner:focus,
+  .orbit-bubble-inner:active,
+  .orbit-bubble-inner:focus-within {
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+    border-color: rgba(59, 130, 246, 0.4) !important;
+    box-shadow:
+      0 0 20px rgba(59, 130, 246, 0.15),
+      inset 0 0 16px rgba(59, 130, 246, 0.06) !important;
+  }
+
+  .orbit-bubble-inner img {
+    pointer-events: none !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    touch-action: none !important;
+  }
+
+  .orbit-bubble {
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
   .orbit-center-body { width: 120px; height: 120px; font-size: 11px; }
   .hero-orbit-center { width: 120px; height: 120px; }
 }
