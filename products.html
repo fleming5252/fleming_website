@@ -728,7 +728,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const slotProgress = rawIndex - Math.floor(rawIndex);
 
-    const fillPct = (rawIndex / PRODUCTS.length) * 100;
+    const fillPct = (rawIndex / (PRODUCTS.length - 1)) * 100;
     progressFill.style.width = Math.min(fillPct, 100) + '%';
 
     if (targetIndex !== current && !isAnimating) {

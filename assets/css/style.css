@@ -4935,7 +4935,7 @@ body { font-family: 'Poppins', sans-serif; }
 }
 
 /* ══════════════════════════════════════════════════════════════
-   PRODUCTS SECTION — MOBILE RESPONSIVE FIX v5
+   PRODUCTS SECTION — MOBILE RESPONSIVE FIX v7
    Replace ALL previous mobile fix blocks with this one.
    Paste at the very bottom of style.css.
    ══════════════════════════════════════════════════════════════ */
@@ -4975,7 +4975,8 @@ body { font-family: 'Poppins', sans-serif; }
     gap: 0;
     flex: 1;
     min-height: 0;
-    overflow: hidden;
+    /* KEY: must NOT clip children — float card lives here */
+    overflow: visible;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -4989,39 +4990,52 @@ body { font-family: 'Poppins', sans-serif; }
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
+    overflow: visible;
   }
 
+  /* Image side: a positioning context for the float card */
   .ps-image-side,
   .ps-layout-flipped .ps-image-side {
     order: 2 !important;
     flex-shrink: 0;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    position: relative;   /* float card positioned relative to this */
+    overflow: visible;    /* never clip the float card */
   }
 
+  /* Image frame: clips the photo only, not the float card */
   .ps-image-frame {
     width: 100%;
     max-width: 100%;
     aspect-ratio: unset;
     border-radius: 12px;
+    /* clip only the photo inside, not the float card */
+    overflow: hidden;
+    position: relative;
     flex-shrink: 0;
   }
 
-  .ps-body p { display: block !important; }
-
-  .ps-progress-bar {
-    flex-shrink: 0;
-    flex-wrap: nowrap;
-    align-items: center;
-  }
-
+  /* ── KEY FIX: move float card OUT of image-frame clip zone ──
+     Re-position it relative to .ps-image-side instead.
+     We achieve this by overriding position context. */
   .ps-float-card {
+    /* detach from image-frame, attach to image-side */
     position: absolute;
-    bottom: 6px;
-    left: 6px;
-    width: calc(100% - 12px);
+    bottom: 0;
+    left: 0;
+    width: 100%;
     transform: none;
+    /* shift it UP so it overlaps the bottom of the image */
+    bottom: 0;
+    padding: 8px 12px;
+    gap: 8px;
+    border-radius: 0 0 12px 12px;
+    z-index: 10;
+    /* give it a solid backing so it reads clearly over the image */
+    background: #ffffff;
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.10);
   }
 
   .ps-float-text p {
@@ -5031,18 +5045,28 @@ body { font-family: 'Poppins', sans-serif; }
     overflow: hidden;
   }
 
+  /* Dot grid decoration: hide on mobile */
   .ps-image-frame::after { display: none; }
+
+  /* Always show both paragraphs */
+  .ps-body p { display: block !important; }
+
+  /* Progress bar: fixed, never shrinks */
+  .ps-progress-bar {
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
 }
 
 /* ══════════════════════════════════════════════
    iPhone SE — ≤ 390px wide
-   Viewport after 72px nav ≈ 595px tall
+   Available after 72px nav ≈ 595px
 ══════════════════════════════════════════════ */
 @media (max-width: 390px) {
 
   .ps-layout { padding: 0 14px; }
-
-  .ps-text-side { margin-bottom: 10px; }
+  .ps-text-side { margin-bottom: 8px; }
 
   .ps-badge { padding: 3px 10px; font-size: 10px; margin-bottom: 7px; }
 
@@ -5051,7 +5075,6 @@ body { font-family: 'Poppins', sans-serif; }
   .ps-title { margin-bottom: 5px; }
 
   .ps-rule { height: 3px; width: 28px; margin-bottom: 6px; }
-
   .ps-tagline { font-size: 9px; letter-spacing: 0.4px; margin-bottom: 7px; }
 
   .ps-body { font-size: 10.5px; line-height: 1.45; gap: 4px; margin-bottom: 8px; }
@@ -5062,9 +5085,17 @@ body { font-family: 'Poppins', sans-serif; }
   .ps-feat-text strong { font-size: 9.5px; line-height: 1.2; }
   .ps-feat-text span { font-size: 8.5px; line-height: 1.3; }
 
-  .ps-image-frame { height: 140px; }
+  /* Image: the float card is now BELOW the image (attached to bottom)
+     so we need the image-side to be tall enough for both.
+     image-frame height + float-card height (~52px) = image-side height */
+  .ps-image-frame { height: 120px; }
 
-  .ps-float-card { padding: 5px 8px; gap: 6px; border-radius: 7px; }
+  /* Float card sizing for SE */
+  .ps-float-card {
+    padding: 5px 8px;
+    gap: 6px;
+    border-radius: 0 0 10px 10px;
+  }
   .ps-float-icon { width: 24px; height: 24px; }
   .ps-float-icon svg { width: 14px; height: 14px; }
   .ps-float-text strong { font-size: 9.5px; line-height: 1.2; margin-bottom: 1px; }
@@ -5082,15 +5113,13 @@ body { font-family: 'Poppins', sans-serif; }
 }
 
 /* ══════════════════════════════════════════════
-   Samsung S20 Ultra and similar tall phones
-   391px–480px wide, viewport after nav ≈ 750–843px tall
-   Strategy: scale UP everything to fill the tall screen
+   Samsung S20 Ultra — 391px to 480px wide
+   Viewport after nav ≈ 843px tall
 ══════════════════════════════════════════════ */
 @media (min-width: 391px) and (max-width: 480px) {
 
   .ps-layout { padding: 0 18px; }
-
-  .ps-text-side { margin-bottom: 14px; }
+  .ps-text-side { margin-bottom: 12px; }
 
   .ps-badge { padding: 5px 14px; font-size: 11.5px; margin-bottom: 10px; }
 
@@ -5099,7 +5128,6 @@ body { font-family: 'Poppins', sans-serif; }
   .ps-title { margin-bottom: 8px; }
 
   .ps-rule { height: 4px; width: 36px; margin-bottom: 9px; }
-
   .ps-tagline { font-size: 11px; letter-spacing: 0.6px; margin-bottom: 10px; }
 
   .ps-body { font-size: 13px; line-height: 1.6; gap: 6px; margin-bottom: 12px; }
@@ -5110,10 +5138,15 @@ body { font-family: 'Poppins', sans-serif; }
   .ps-feat-text strong { font-size: 12px; line-height: 1.3; }
   .ps-feat-text span { font-size: 10.5px; line-height: 1.4; }
 
-  /* Bigger image to fill the tall screen */
-  .ps-image-frame { height: 220px; }
+  /* Image frame height — float card sits BELOW this via absolute positioning */
+  .ps-image-frame { height: 185px; }
 
-  .ps-float-card { padding: 9px 13px; gap: 9px; border-radius: 11px; }
+  /* Float card sizing for S20 */
+  .ps-float-card {
+    padding: 9px 14px;
+    gap: 10px;
+    border-radius: 0 0 12px 12px;
+  }
   .ps-float-icon { width: 34px; height: 34px; }
   .ps-float-icon svg { width: 20px; height: 20px; }
   .ps-float-text strong { font-size: 12px; margin-bottom: 2px; }
@@ -5130,45 +5163,26 @@ body { font-family: 'Poppins', sans-serif; }
   .ps-nav-arrow { width: 24px; height: 24px; }
 }
 
-/* ══════════════════════════════════════════════
-   Extra-tall phones — any width ≤ 480px but
-   viewport height > 750px (S20 Ultra, Pixel 7 etc.)
-   Boost image height further on very tall screens
-══════════════════════════════════════════════ */
-@media (max-width: 480px) and (min-height: 750px) {
-
-  .ps-image-frame { height: 230px; }
-
-  .ps-body { font-size: 13px; line-height: 1.6; }
-
-  .ps-feat-text strong { font-size: 11.5px; }
-  .ps-feat-text span { font-size: 10.5px; }
-}
-
-@media (max-width: 480px) and (min-height: 850px) {
-
-  .ps-image-frame { height: 250px; }
-
-  .ps-text-side { margin-bottom: 16px; }
-
-  .ps-tagline { margin-bottom: 12px; }
-
+/* Tall screen boost */
+@media (min-width: 391px) and (max-width: 480px) and (min-height: 800px) {
+  .ps-image-frame { height: 200px; }
+  .ps-text-side { margin-bottom: 14px; }
   .ps-body { gap: 7px; margin-bottom: 14px; }
-
   .ps-features { gap: 8px; }
-
   .ps-feat { padding: 10px 12px; }
 }
 
+@media (min-width: 391px) and (max-width: 480px) and (min-height: 880px) {
+  .ps-image-frame { height: 215px; }
+}
+
 /* ══════════════════════════════════════════════
-   Larger phones / small tablets — 481px to 900px
+   Larger phones / tablets — 481px to 900px
 ══════════════════════════════════════════════ */
 @media (min-width: 481px) and (max-width: 900px) {
 
   .ps-layout { padding: 0 22px; }
-
   .ps-text-side { margin-bottom: 14px; }
-
   .ps-badge { margin-bottom: 10px; }
 
   .ps-title-line1,
@@ -5177,7 +5191,6 @@ body { font-family: 'Poppins', sans-serif; }
 
   .ps-rule { margin-bottom: 8px; }
   .ps-tagline { margin-bottom: 10px; }
-
   .ps-body { font-size: 12.5px; gap: 5px; margin-bottom: 12px; }
 
   .ps-features { grid-template-columns: 1fr 1fr; gap: 7px; }
@@ -5186,9 +5199,13 @@ body { font-family: 'Poppins', sans-serif; }
   .ps-feat-text strong { font-size: 10.5px; }
   .ps-feat-text span { font-size: 9.5px; }
 
-  .ps-image-frame { height: 200px; }
+  .ps-image-frame { height: 170px; }
 
-  .ps-float-card { padding: 8px 12px; gap: 9px; }
+  .ps-float-card {
+    padding: 8px 12px;
+    gap: 9px;
+    border-radius: 0 0 12px 12px;
+  }
   .ps-float-text strong { font-size: 11px; }
   .ps-float-text p { font-size: 10.5px; }
 
@@ -5196,21 +5213,18 @@ body { font-family: 'Poppins', sans-serif; }
 }
 
 /* ══════════════════════════════════════════════
-   Landscape / very short screens (height < 600px)
+   Landscape / very short (height < 600px)
 ══════════════════════════════════════════════ */
 @media (max-height: 600px) and (max-width: 900px) {
 
   .ps-sticky { padding-top: 0; }
-
   .ps-layout { padding: 6px 16px 0 16px; }
-
   .ps-text-side { margin-bottom: 6px; }
   .ps-badge { margin-bottom: 4px; }
 
   .ps-title-line1,
   .ps-title-line2 { font-size: 18px; }
   .ps-title { margin-bottom: 3px; }
-
   .ps-rule { margin-bottom: 4px; }
   .ps-tagline { margin-bottom: 4px; }
 
@@ -5221,8 +5235,169 @@ body { font-family: 'Poppins', sans-serif; }
   .ps-feat { padding: 4px 6px; }
   .ps-feat-text span { display: none; }
 
-  .ps-image-frame { height: 100px; }
+  .ps-image-frame { height: 80px; }
+  .ps-float-card { padding: 4px 8px; gap: 6px; }
+  .ps-float-text p { -webkit-line-clamp: 1; }
 
   .ps-progress-bar { padding: 3px 14px 5px 14px; }
 }
+
+/* ══════════════════════════════════════════════
+   S20 ULTRA OVERLAP FIX (391px–480px)
+   Reduces text spacing and increases image frame
+   height so float card never overlaps progress bar
+══════════════════════════════════════════════ */
+@media (min-width: 391px) and (max-width: 480px) {
+
+  /* Tighten text block so image gets more room */
+  .ps-badge { margin-bottom: 6px; }
+  .ps-title { margin-bottom: 4px; }
+  .ps-title-line1,
+  .ps-title-line2 { font-size: 26px; line-height: 1.0; }
+  .ps-rule { margin-bottom: 5px; }
+  .ps-tagline { margin-bottom: 6px; font-size: 10px; }
+  .ps-body { font-size: 11.5px; line-height: 1.5; gap: 4px; margin-bottom: 8px; }
+  .ps-features { gap: 5px; }
+  .ps-feat { padding: 7px 9px; gap: 6px; }
+  .ps-feat-text strong { font-size: 11px; }
+  .ps-feat-text span { font-size: 9.5px; }
+
+  /* Give image frame a bit more height so float card
+     sits fully inside .ps-image-side without touching
+     the progress bar below */
+  .ps-image-frame { height: 160px; }
+
+  /* Float card: snug at bottom of frame */
+  .ps-float-card {
+    padding: 7px 11px;
+    gap: 8px;
+  }
+  .ps-float-icon { width: 28px; height: 28px; }
+  .ps-float-icon svg { width: 16px; height: 16px; }
+  .ps-float-text strong { font-size: 10.5px; margin-bottom: 1px; }
+  .ps-float-text p { font-size: 9.5px; line-height: 1.4; }
+
+  /* Progress bar: a touch more compact */
+  .ps-progress-bar { padding: 6px 18px 10px 18px; }
+}
+
+/* Taller S20 Ultra screens (min-height 800px boost) */
+@media (min-width: 391px) and (max-width: 480px) and (min-height: 800px) {
+  .ps-image-frame { height: 175px; }
+  .ps-body { font-size: 12px; }
+  .ps-feat-text strong { font-size: 11.5px; }
+}
+
+@media (min-width: 391px) and (max-width: 480px) and (min-height: 880px) {
+  .ps-image-frame { height: 190px; }
+}
+
+/* ══════════════════════════════════════════════
+   PROGRESS BAR — CLEAN FINAL FIX
+   Remove all previous progress bar fix blocks
+   and use only this one.
+══════════════════════════════════════════════ */
+
+/* Restore original progress bar layout */
+.ps-progress-bar {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 0 48px 24px 48px;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+/* Restore original track wrap */
+.ps-progress-track-wrap {
+  flex: 1;
+  position: relative;
+  overflow: visible;
+  /* Shrink the track slightly so last dot stays on screen */
+  margin-right: 8px;
+}
+
+/* Restore original track */
+.ps-progress-track {
+  position: relative;
+  height: 3px;
+  background: #e5e7eb;
+  border-radius: 2px;
+  overflow: visible;
+}
+
+/* Restore original fill */
+.ps-progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #1a56db;
+  border-radius: 2px;
+  width: 0%;
+  transition: width 200ms linear;
+}
+
+/* Dots container: original position but 8px narrower on right */
+.ps-progress-dots {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: calc(100% - 2px);
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+/* Restore original dot style */
+.ps-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #d1d5db;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 1.5px #d1d5db;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: background 300ms ease, box-shadow 300ms ease, transform 300ms ease;
+  flex-shrink: 0;
+}
+
+.ps-dot-active {
+  background: #1a56db;
+  box-shadow: 0 0 0 3px rgba(26,86,219,0.2);
+  transform: scale(1.3);
+}
+
+/* Mobile overrides */
+@media (max-width: 900px) {
+  .ps-progress-bar {
+    padding: 8px 18px 12px 18px;
+    gap: 10px;
+    overflow: visible;
+  }
+  .ps-progress-track-wrap {
+    margin-right: 6px;
+  }
+}
+
+@media (max-width: 390px) {
+  .ps-progress-bar {
+    padding: 5px 14px 8px 14px;
+    gap: 8px;
+  }
+  .ps-progress-track-wrap {
+    margin-right: 5px;
+  }
+  .ps-dot {
+    width: 7px;
+    height: 7px;
+  }
+}
+
 
