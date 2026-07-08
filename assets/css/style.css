@@ -4216,6 +4216,7 @@ body { font-family: 'Poppins', sans-serif; }
 
 .ps-body p {
   margin: 0;
+  text-align: justify;
 }
 
 /* Features grid */
