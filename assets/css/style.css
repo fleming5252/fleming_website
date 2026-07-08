@@ -415,9 +415,12 @@ body { font-family: 'Poppins', sans-serif; }
 }
 
 .hero-cta {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  z-index: 1;
   background: #1a56db;
   color: #ffffff;
   font-size: 13px;
@@ -428,12 +431,40 @@ body { font-family: 'Poppins', sans-serif; }
   padding: 18px 44px;
   border-radius: 50px;
   width: fit-content;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition: color 0.35s ease, transform 0.2s ease;
+}
+
+.hero-cta::before,
+.hero-cta::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  z-index: -1;
+  transition: transform 0.35s ease;
+}
+
+.hero-cta::before {
+  clip-path: polygon(0% 0%, 55% 0%, 45% 100%, 0% 100%);
+  transform: translateX(-100%);
+}
+
+.hero-cta::after {
+  clip-path: polygon(55% 0%, 100% 0%, 100% 100%, 45% 100%);
+  transform: translateX(100%);
 }
 
 .hero-cta:hover {
-  background: #1446b8;
+  color: #1a56db;
   transform: translateY(-2px);
+}
+
+.hero-cta:hover::before,
+.hero-cta:hover::after {
+  transform: translateX(0);
 }
 
 .hero-right {
@@ -3480,6 +3511,9 @@ body { font-family: 'Poppins', sans-serif; }
 }
 
 .cf-submit-btn {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -3494,13 +3528,41 @@ body { font-family: 'Poppins', sans-serif; }
   letter-spacing: 1.5px;
   text-transform: uppercase;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition: color 0.35s ease, transform 0.2s ease;
   white-space: nowrap;
 }
 
+.cf-submit-btn::before,
+.cf-submit-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  z-index: -1;
+  transition: transform 0.35s ease;
+}
+
+.cf-submit-btn::before {
+  clip-path: polygon(0% 0%, 55% 0%, 45% 100%, 0% 100%);
+  transform: translateX(-100%);
+}
+
+.cf-submit-btn::after {
+  clip-path: polygon(55% 0%, 100% 0%, 100% 100%, 45% 100%);
+  transform: translateX(100%);
+}
+
 .cf-submit-btn:hover {
-  background: #1446b8;
+  color: #1a56db;
   transform: translateY(-2px);
+}
+
+.cf-submit-btn:hover::before,
+.cf-submit-btn:hover::after {
+  transform: translateX(0);
 }
 
 .cf-privacy {
@@ -3762,6 +3824,9 @@ body { font-family: 'Poppins', sans-serif; }
 }
 
 .cbb-chat-btn {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -3776,13 +3841,42 @@ body { font-family: 'Poppins', sans-serif; }
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: color 0.35s ease, transform 0.2s ease, border-color 0.35s ease;
   flex-shrink: 0;
 }
 
-.cbb-chat-btn:hover {
+.cbb-chat-btn::before,
+.cbb-chat-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: #1a56db;
+  z-index: -1;
+  transition: transform 0.35s ease;
+}
+
+.cbb-chat-btn::before {
+  clip-path: polygon(0% 0%, 55% 0%, 45% 100%, 0% 100%);
+  transform: translateX(-100%);
+}
+
+.cbb-chat-btn::after {
+  clip-path: polygon(55% 0%, 100% 0%, 100% 100%, 45% 100%);
+  transform: translateX(100%);
+}
+
+.cbb-chat-btn:hover {
   color: #ffffff;
+  border-color: transparent;
+  transform: translateY(-2px);
+}
+
+.cbb-chat-btn:hover::before,
+.cbb-chat-btn:hover::after {
+  transform: translateX(0);
 }
 
 /* ══════════════════════════════════════════════

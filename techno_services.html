@@ -1733,31 +1733,33 @@ document.addEventListener('DOMContentLoaded', function() {
     return { trigger: trigger, reset: reset, build: build };
   }
 
-  document.querySelectorAll('.sds-panel').forEach(function(panel) {
-    if (!panel.querySelector('.sds-badge')) return;
+  if (window.innerWidth > 1024) {
+    document.querySelectorAll('.sds-panel').forEach(function(panel) {
+      if (!panel.querySelector('.sds-badge')) return;
 
-    var tl = gsap.timeline({ paused: true });
-    tl.fromTo(panel.querySelector('.sds-badge'),
-        { opacity: 0, y: -15 }, { opacity: 1, y: 0, duration: 0.4 })
-      .fromTo(panel.querySelector('.sds-heading'),
-        { opacity: 0, y: 25 }, { opacity: 1, y: 0, duration: 0.55 }, '-=0.15')
-      .fromTo(panel.querySelector('.sds-desc'),
-        { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.45 }, '-=0.1')
-      .fromTo(panel.querySelectorAll('.sds-highlights li'),
-        { opacity: 0, x: -12 }, { opacity: 1, x: 0, stagger: 0.05, duration: 0.35 }, '-=0.1')
-      .fromTo(panel.querySelector('.sds-btn'),
-        { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.35 }, '-=0.05');
+      var tl = gsap.timeline({ paused: true });
+      tl.fromTo(panel.querySelector('.sds-badge'),
+          { opacity: 0, y: -15 }, { opacity: 1, y: 0, duration: 0.4 })
+        .fromTo(panel.querySelector('.sds-heading'),
+          { opacity: 0, y: 25 }, { opacity: 1, y: 0, duration: 0.55 }, '-=0.15')
+        .fromTo(panel.querySelector('.sds-desc'),
+          { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.45 }, '-=0.1')
+        .fromTo(panel.querySelectorAll('.sds-highlights li'),
+          { opacity: 0, x: -12 }, { opacity: 1, x: 0, stagger: 0.05, duration: 0.35 }, '-=0.1')
+        .fromTo(panel.querySelector('.sds-btn'),
+          { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.35 }, '-=0.05');
 
-    var reveal = createGridReveal(panel.querySelector('.sds-panel-image'));
-    reveal.build();
+      var reveal = createGridReveal(panel.querySelector('.sds-panel-image'));
+      reveal.build();
 
-    ScrollTrigger.create({
-      trigger: panel,
-      start: 'top 75%',
-      onEnter:     function() { tl.play(); setTimeout(function() { reveal.trigger(); }, 350); },
-      onLeaveBack: function() { tl.reverse(); reveal.reset(); },
+      ScrollTrigger.create({
+        trigger: panel,
+        start: 'top 75%',
+        onEnter:     function() { tl.play(); setTimeout(function() { reveal.trigger(); }, 350); },
+        onLeaveBack: function() { tl.reverse(); reveal.reset(); },
+      });
     });
-  });
+  }
 
   // ========== PROGRAMS SECTION ==========
   gsap.fromTo('.programs-eyebrow', { opacity: 0, y: -20 }, {
@@ -1824,34 +1826,39 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!navItems.length || !panels.length) return;
 
     function createGridReveal(container) {
-      if (!container) return { trigger:function(){}, reset:function(){} };
+      if (!container) { console.log('[MOBILE-GRID] no container'); return { trigger:function(){}, reset:function(){} }; }
       var imgEl = container.querySelector('img');
-      if (!imgEl) return { trigger:function(){}, reset:function(){} };
+      if (!imgEl) { console.log('[MOBILE-GRID] no img in container'); return { trigger:function(){}, reset:function(){} }; }
 
       var gridCovers = [];
       var built = false;
       var timer = null;
+      var bgSrc = '';
+      var gridEl = null;
 
       function build() {
         if (built) return;
         built = true;
-        var src = imgEl.getAttribute('src');
+        bgSrc = imgEl.getAttribute('src');
+        console.log('[MOBILE-GRID] build() src=' + bgSrc);
         imgEl.style.display = 'none';
-        var grid = document.createElement('div');
-        grid.className = 'sds-grid-reveal';
-        grid.style.backgroundImage = 'url(' + src + ')';
+        var blob = container.querySelector('.sds-blob');
+        if (blob) blob.style.display = 'none';
+        gridEl = document.createElement('div');
+        gridEl.className = 'sds-grid-reveal';
         var iw = imgEl.naturalWidth, ih = imgEl.naturalHeight;
         if (iw && ih) {
-          grid.style.aspectRatio = iw / ih;
+          gridEl.style.aspectRatio = iw / ih;
         } else {
           var tmp = new Image();
           tmp.onload = function() {
-            grid.style.aspectRatio = tmp.naturalWidth / tmp.naturalHeight;
+            gridEl.style.aspectRatio = tmp.naturalWidth / tmp.naturalHeight;
             tmp.onload = null;
           };
-          tmp.src = src;
+          tmp.src = bgSrc;
         }
-        container.appendChild(grid);
+        container.appendChild(gridEl);
+        console.log('[MOBILE-GRID] gridEl appended');
 
         for (var r = 0; r < 4; r++) {
           for (var c = 0; c < 4; c++) {
@@ -1862,16 +1869,15 @@ document.addEventListener('DOMContentLoaded', function() {
             var cover = document.createElement('div');
             cover.className = 'reveal-tile-cover';
             tile.appendChild(cover);
-            grid.appendChild(tile);
+            gridEl.appendChild(tile);
             gridCovers.push(cover);
           }
         }
+        console.log('[MOBILE-GRID] tiles created count=' + gridCovers.length);
       }
 
-      function trigger() {
-        build();
-        if (gridCovers.length === 0) return;
-        clearTimeout(timer);
+      function animateCovers() {
+        console.log('[MOBILE-GRID] animating covers');
         var cellDur = 400, waveGap = -300;
         var maxDiag = 6, waveStart = 0;
         for (var d = 0; d <= maxDiag; d++) {
@@ -1881,16 +1887,17 @@ document.addEventListener('DOMContentLoaded', function() {
               if (cc >= 0 && cc < 4) {
                 (function(row, col, delay) {
                   setTimeout(function() {
-                    var gridEl = container.querySelector('.sds-grid-reveal');
-                    if (!gridEl) return;
-                    var t = gridEl.querySelector('.reveal-tile[data-r="' + row + '"][data-c="' + col + '"]');
+                    var gEl = container.querySelector('.sds-grid-reveal');
+                    if (!gEl) { console.log('[MOBILE-GRID] tile timeout - no gridEl'); return; }
+                    var t = gEl.querySelector('.reveal-tile[data-r="' + row + '"][data-c="' + col + '"]');
                     if (t) {
                       var cv = t.firstChild;
                       if (cv) {
                         cv.style.transition = 'transform ' + cellDur + 'ms cubic-bezier(0.77, 0, 0.18, 1)';
                         cv.style.transform = 'scaleX(0)';
-                      }
-                    }
+                        console.log('[MOBILE-GRID] tile r=' + row + ' c=' + col + ' animated');
+                      } else { console.log('[MOBILE-GRID] tile r=' + row + ' c=' + col + ' no cover'); }
+                    } else { console.log('[MOBILE-GRID] tile r=' + row + ' c=' + col + ' not found'); }
                   }, delay);
                 })(rr, cc, startDelay);
               }
@@ -1900,7 +1907,31 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
 
+      function trigger() {
+        console.log('[MOBILE-GRID] trigger() called built=' + built + ' covers=' + gridCovers.length);
+        build();
+        if (gridCovers.length === 0) { console.log('[MOBILE-GRID] abort - no covers'); return; }
+        if (gridEl) {
+          gridEl.style.backgroundImage = 'url(' + bgSrc + ')';
+          void gridEl.offsetHeight;
+          console.log('[MOBILE-GRID] bg set');
+        }
+        var preloader = new Image();
+        preloader.onload = function() {
+          console.log('[MOBILE-GRID] preloader loaded');
+          preloader.onload = null;
+          animateCovers();
+        };
+        preloader.onerror = function() {
+          console.log('[MOBILE-GRID] preloader error - animating anyway');
+          preloader.onerror = null;
+          animateCovers();
+        };
+        preloader.src = bgSrc;
+      }
+
       function reset() {
+        console.log('[MOBILE-GRID] reset()');
         clearTimeout(timer);
         gridCovers.forEach(function(cv) {
           cv.style.transition = 'none';
@@ -1922,6 +1953,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var clone = panel.cloneNode(true);
       clone.removeAttribute('id');
       clone.removeAttribute('style');
+      clone.querySelectorAll('.sds-grid-reveal').forEach(function(n){ n.remove(); });
       clone.querySelectorAll('*').forEach(function(el) {
         el.removeAttribute('style');
       });
@@ -2016,6 +2048,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
               item.style.cssText = '';
               item.classList.add('active');
+              console.log('[MOBILE-GRID] click handler trigger');
               reveal.trigger();
 
               if (ghost.parentNode) {
@@ -2037,7 +2070,9 @@ document.addEventListener('DOMContentLoaded', function() {
       var initH = firstAcc.scrollHeight;
       firstAcc.style.maxHeight = initH + 'px';
       setTimeout(function () {
-        if (firstAcc._reveal) firstAcc._reveal.trigger();
+        console.log('[MOBILE-GRID] first accordion auto-trigger');
+        if (firstAcc._reveal) { console.log('[MOBILE-GRID] _reveal exists'); firstAcc._reveal.trigger(); }
+        else { console.log('[MOBILE-GRID] _reveal MISSING'); }
       }, 600);
     }
   }

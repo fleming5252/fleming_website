@@ -14,6 +14,140 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/split-type"></script>
+
+<style>
+/* ═══════════════════════════════════════════════
+   BACK‑TO‑TOP CONTROL
+   Self‑contained (no external CSS/JS modified)
+═══════════════════════════════════════════════ */
+
+/* ── Container ── */
+#bttControl {
+  position: fixed;
+  right: 32px;
+  bottom: 120px;
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition:
+    opacity 0.4s ease-out,
+    transform 0.4s ease-out,
+    visibility 0.4s ease-out,
+    bottom 0.35s ease;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+#bttControl:focus-visible {
+  outline: 2px solid #0b5fa5;
+  outline-offset: 6px;
+  border-radius: 4px;
+}
+
+/* ── Visible state ── */
+#bttControl.btt-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* ── Hover (only when visible) ── */
+#bttControl.btt-visible:hover {
+  transform: translateY(0) translateX(-4px);
+}
+#bttControl.btt-visible:hover .btt-text {
+  color: #083b73;
+}
+
+/* ── FCW open – move up ── */
+#bttControl.btt-fcw-open {
+  bottom: 300px;
+}
+
+/* ── Rotated text ── */
+.btt-text {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #0b5fa5;
+  white-space: nowrap;
+  text-transform: uppercase;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: color 0.25s ease;
+  line-height: 1.2;
+  user-select: none;
+}
+
+/* ── Progress line ── */
+.btt-line-wrap {
+  width: 2px;
+  height: 50px;
+  border-radius: 2px;
+  background: #0b5fa5;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.btt-line-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #083b73;
+  border-radius: inherit;
+  transform-origin: top center;
+  transform: scaleY(0);
+  will-change: transform;
+}
+
+/* ── Tablet ── */
+@media (max-width: 1024px) {
+  #bttControl {
+    right: 24px;
+    bottom: 100px;
+    gap: 8px;
+  }
+  #bttControl.btt-fcw-open {
+    bottom: 280px;
+  }
+  .btt-text {
+    font-size: 12px;
+    letter-spacing: 2.5px;
+  }
+  .btt-line-wrap {
+    height: 44px;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 767px) {
+  #bttControl {
+    right: 20px;
+    bottom: 88px;
+    gap: 6px;
+  }
+  #bttControl.btt-fcw-open {
+    bottom: 250px;
+  }
+  .btt-text {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+  .btt-line-wrap {
+    height: 36px;
+    width: 1.5px;
+  }
+}
+</style>
 </head>
 <body>
 
@@ -1372,6 +1506,14 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<!-- BACK‑TO‑TOP CONTROL -->
+<div id="bttControl" tabindex="0" role="button" aria-label="Back to Top">
+  <span class="btt-text">Back to Top</span>
+  <div class="btt-line-wrap" aria-hidden="true">
+    <div class="btt-line-fill"></div>
+  </div>
+</div>
+
 <!-- FLOATING CONTACT WIDGET -->
 <div class="fcw-wrapper" id="fcwWrapper">
 
@@ -1437,6 +1579,92 @@ document.addEventListener('DOMContentLoaded', function() {
     if (isOpen && !wrapper.contains(e.target)) {
       isOpen = false;
       wrapper.classList.remove('fcw-open');
+    }
+  });
+})();
+</script>
+
+
+<!-- ═══ BACK‑TO‑TOP CONTROL — JAVASCRIPT ═══ -->
+<script>
+(function() {
+  'use strict';
+
+  /* ── DOM refs ── */
+  var btt  = document.getElementById('bttControl');
+  var fill = btt.querySelector('.btt-line-fill');
+  var fcw  = document.getElementById('fcwWrapper');
+  var doc  = document.documentElement;
+
+  /* ── Visibility & progress update ── */
+  function update() {
+    var scrollY  = window.pageYOffset || doc.scrollTop;
+    var max      = Math.max(doc.scrollHeight - window.innerHeight, 1);
+    var progress = Math.min(scrollY / max, 1);
+
+    /* show after 400px */
+    btt.classList.toggle('btt-visible', scrollY > 400);
+
+    /* progress-line fill – dark navy grows from top */
+    fill.style.transform = 'scaleY(' + progress + ')';
+  }
+
+  /* ── RAF‑throttled scroll listener ── */
+  var ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      requestAnimationFrame(function() {
+        update();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  update(); /* initial state */
+
+  /* ── FCW open/close – reposition ── */
+  if (fcw) {
+    var obs = new MutationObserver(function() {
+      btt.classList.toggle('btt-fcw-open', fcw.classList.contains('fcw-open'));
+    });
+    obs.observe(fcw, { attributes: true, attributeFilter: ['class'] });
+  }
+
+  /* ── Custom ease‑in‑out scroll to top ── */
+  function customEase(t) {
+    /* 0 – 0.2 : slow accel */
+    if (t < 0.2) return 2.5 * t * t;
+    /* 0.2 – 0.8 : fast middle */
+    if (t < 0.8) return 0.1 + 0.8 * (t - 0.2) / 0.6;
+    /* 0.8 – 1   : gentle decel */
+    var e = (t - 0.8) / 0.2;
+    return 0.9 + 0.1 * (1 - (1 - e) * (1 - e));
+  }
+
+  function scrollToTop() {
+    var startY = window.pageYOffset || doc.scrollTop;
+    if (startY < 5) return;
+    var t0 = performance.now();
+    var dur = 1200;
+
+    function step(now) {
+      var elapsed = now - t0;
+      var t = Math.min(elapsed / dur, 1);
+      window.scrollTo(0, startY * (1 - customEase(t)));
+      if (t < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  /* ── Click ── */
+  btt.addEventListener('click', scrollToTop);
+
+  /* ── Keyboard ── */
+  btt.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      scrollToTop();
     }
   });
 })();
