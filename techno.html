@@ -504,7 +504,7 @@
           <div class="wcu-feature">
             <div class="wcu-feature-header">
               <div class="wcu-feature-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="20 6 9 17 4 12"/>
                 </svg>
               </div>
@@ -516,7 +516,7 @@
           <div class="wcu-feature">
             <div class="wcu-feature-header">
               <div class="wcu-feature-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="20 6 9 17 4 12"/>
                 </svg>
               </div>
@@ -528,7 +528,7 @@
           <div class="wcu-feature">
             <div class="wcu-feature-header">
               <div class="wcu-feature-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="20 6 9 17 4 12"/>
                 </svg>
               </div>
@@ -1358,16 +1358,35 @@ stickyNav.classList.add('nav-hidden');
   }
 
   // ── Why Choose Us section ──
-  var wcuBadge   = document.querySelector('.wcu-badge');
-  var wcuHeading = document.querySelector('.wcu-heading');
+  var wcuBadge    = document.querySelector('.wcu-badge');
+  var wcuHeading  = document.querySelector('.wcu-heading');
+  var wcuFeatures = document.querySelectorAll('.wcu-feature');
 
   if (wcuBadge) {
-    gsap.fromTo(wcuBadge,
+    // Timeline: badge first, then features slide up staggered
+    var tl = gsap.timeline({
+      scrollTrigger: { trigger: wcuBadge, start: 'top center', toggleActions: 'play none none reverse' }
+    });
+    tl.fromTo(wcuBadge,
       { opacity: 0, y: -20 },
-      { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out',
-        scrollTrigger: { trigger: wcuBadge, start: 'top center', toggleActions: 'play none none reverse' } }
+      { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }
+    );
+    if (wcuFeatures.length > 0) {
+      tl.fromTo(wcuFeatures,
+        { opacity: 0, y: 40 },
+        { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out', stagger: 0.2 },
+        '+=0.2'
+      );
+    }
+  } else if (wcuFeatures.length > 0) {
+    // Fallback: features animate independently
+    gsap.fromTo(wcuFeatures,
+      { opacity: 0, y: 40 },
+      { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out', stagger: 0.2,
+        scrollTrigger: { trigger: wcuFeatures[0], start: 'top 85%', toggleActions: 'play none none reverse' } }
     );
   }
+
   if (wcuHeading) {
     var split2 = new SplitType(wcuHeading, { types: 'chars' });
     var chars2 = split2.chars;
@@ -1440,6 +1459,31 @@ stickyNav.classList.add('nav-hidden');
 </script>
 
 <script>
+/* ── DOMAINS SECTION — image slide-in from left/right ── */
+(function () {
+  var panels = document.querySelectorAll('.dom-panel');
+  if (!panels.length) return;
+  panels.forEach(function (panel, i) {
+    var imgWrap = panel.querySelector('.dom-panel-img-wrap');
+    if (!imgWrap) return;
+    // odd panels = img on left (slide from left), even = img on right (slide from right)
+    var fromX = (i % 2 === 0) ? -100 : 100;
+    gsap.fromTo(imgWrap,
+      { x: fromX, opacity: 0 },
+      {
+        x: 0, opacity: 1, duration: 0.8, ease: 'power3.out',
+        scrollTrigger: {
+          trigger: panel,
+          start: 'top 80%',
+          toggleActions: 'play none none reverse'
+        }
+      }
+    );
+  });
+})();
+</script>
+
+<script>
 /* ── START YOUR JOURNEY SECTION ANIMATIONS ── */
 (function () {
   var badge   = document.querySelector('.ict-eyebrow');
@@ -1486,7 +1530,20 @@ stickyNav.classList.add('nav-hidden');
 
   if (ctaRow) {
     var btns = ctaRow.querySelectorAll('.ict-btn');
-    if (btns.length > 0) {
+    var imgWrapper = document.querySelector('.ict-img-wrapper');
+    if (btns.length > 0 && imgWrapper) {
+      var tl = gsap.timeline({
+        scrollTrigger: { trigger: ctaRow, start: 'top 90%', toggleActions: 'play none none reverse' }
+      });
+      tl.fromTo(btns,
+        { y: 30, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out', stagger: 0.12 }
+      );
+      tl.fromTo(imgWrapper,
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }
+      );
+    } else if (btns.length > 0) {
       gsap.fromTo(btns,
         { y: 30, opacity: 0 },
         { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out', stagger: 0.12,
@@ -1609,6 +1666,8 @@ stickyNav.classList.add('nav-hidden');
       if (!isOpen) {
         item.classList.add('open');
         this.setAttribute('aria-expanded', 'true');
+        var inner = item.querySelector('.dom-accordion-inner');
+        if (inner) animateDomAccordion(inner);
       }
     });
 
@@ -1616,7 +1675,23 @@ stickyNav.classList.add('nav-hidden');
   });
 
   domSection.appendChild(mobileWrap);
+
+  /* animate the first (already open) item */
+  var firstInner = mobileWrap.querySelector('.dom-accordion-item.open .dom-accordion-inner');
+  if (firstInner) animateDomAccordion(firstInner);
 })();
+
+function animateDomAccordion(inner) {
+  var img    = inner.querySelector('.dom-accordion-img');
+  var tag    = inner.querySelector('.dom-accordion-tag');
+  var desc   = inner.querySelector('.dom-accordion-desc');
+  var points = inner.querySelectorAll('.dom-accordion-points li');
+  var tl     = gsap.timeline({ defaults: { ease: 'power2.out' }, delay: 0.55 });
+  tl.fromTo(img,    { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4 },                 0);
+  tl.fromTo(tag,    { y:  25, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35 },                0.05);
+  tl.fromTo(desc,   { y:  25, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35 },                0.1);
+  tl.fromTo(points, { y:  18, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.04, duration: 0.3 },  0.12);
+}
 
 /* ═══════════════════════════════════════════
    2.  DESKTOP: SCROLL-DRIVEN STICKY NAV

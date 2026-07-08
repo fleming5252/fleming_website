@@ -583,19 +583,168 @@
 (function() {
   var items = document.querySelectorAll('.rd-domain-item');
   var contents = document.querySelectorAll('.rd-content');
+  var currentIdx = -1;
 
-  function activate(idx) {
-    items.forEach(function(el) { el.classList.remove('rd-active'); });
-    contents.forEach(function(el) { el.classList.remove('rd-content--active'); });
-    items[idx].classList.add('rd-active');
-    contents[idx].classList.add('rd-content--active');
+  /* ── Pre‑build grid‑reveal overlay for every domain image ── */
+  contents.forEach(function(content) {
+    var rightCol = content.querySelector('.rd-content-right');
+    if (!rightCol) return;
+    var img = rightCol.querySelector('img');
+    if (!img) return;
+
+    /* Wrap img so grid only covers the image area, not the whole container */
+    var wrapper = document.createElement('div');
+    wrapper.style.cssText = 'position:relative;width:100%;height:100%;max-height:420px;';
+    rightCol.insertBefore(wrapper, img);
+    wrapper.appendChild(img);
+
+    var grid = document.createElement('div');
+    grid.style.cssText =
+      'position:absolute;inset:0;' +
+      'display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(4,1fr);' +
+      'display:none;z-index:2;overflow:hidden;';
+
+    var covers = [];
+    var frag = document.createDocumentFragment();
+    for (var r = 0; r < 4; r++) {
+      for (var c = 0; c < 4; c++) {
+        var tile = document.createElement('div');
+        tile.style.cssText = 'position:relative;overflow:hidden;';
+        var cover = document.createElement('div');
+        cover.style.cssText =
+          'position:absolute;inset:-1px;background:#ffffff;' +
+          'transform-origin:right center;transform:scaleX(1);will-change:transform;';
+        tile.appendChild(cover);
+        frag.appendChild(tile);
+        covers.push(cover);
+      }
+    }
+    grid.appendChild(frag);
+    wrapper.appendChild(grid);
+
+    content._rdReveal = { grid: grid, covers: covers };
+  });
+
+  /* ── Mobile layout: reorder to badge → image → title ── */
+  function arrangeMobile() {
+    var isMobile = window.matchMedia('(max-width:1200px)').matches;
+    contents.forEach(function(content) {
+      var leftCol = content.querySelector('.rd-content-left');
+      var rightCol = content.querySelector('.rd-content-right');
+      var badge   = content.querySelector('.rd-content-badge');
+      var title   = content.querySelector('.rd-content-title');
+      var inner   = content.querySelector('.rd-content-inner');
+      if (!leftCol || !rightCol || !badge || !title || !inner) return;
+      var wrapper = rightCol.querySelector('div');
+      if (isMobile) {
+        if (rightCol.parentNode !== leftCol) {
+          leftCol.insertBefore(rightCol, title);
+          if (wrapper) { wrapper.style.height = 'auto'; wrapper.style.maxHeight = ''; }
+        }
+        rightCol.style.padding = '0';
+        rightCol.style.minHeight = '0';
+        rightCol.style.borderTop = 'none';
+      } else {
+        if (rightCol.parentNode !== inner) {
+          inner.appendChild(rightCol);
+          if (wrapper) { wrapper.style.height = ''; wrapper.style.maxHeight = ''; }
+        }
+        rightCol.style.padding = '';
+        rightCol.style.minHeight = '';
+        rightCol.style.borderTop = '';
+      }
+    });
+  }
+  arrangeMobile();
+  window.addEventListener('resize', arrangeMobile);
+
+  /* ── Diagonal‑wave peel ── */
+  function peelGrid(reveal) {
+    if (!reveal) return;
+    var g = reveal.grid, cv = reveal.covers;
+    g.style.display = 'grid';
+    var cell = 400, gap = -250, maxD = 6, d, r, c, delay = 0;
+    for (d = 0; d <= maxD; d++) {
+      for (r = 0; r < 4; r++) {
+        c = d - r;
+        if (c >= 0 && c < 4) {
+          (function(idx, del) {
+            setTimeout(function() {
+              var el = cv[idx];
+              el.style.transition = 'transform ' + cell + 'ms cubic-bezier(0.77,0,0.18,1)';
+              el.style.transform = 'scaleX(0)';
+            }, del);
+          })(r * 4 + c, delay);
+        }
+      }
+      delay += cell + gap;
+    }
   }
 
+  function resetGrid(reveal) {
+    if (!reveal) return;
+    reveal.grid.style.display = 'none';
+    reveal.covers.forEach(function(cv) {
+      cv.style.transition = 'none';
+      cv.style.transform = 'scaleX(1)';
+    });
+  }
+
+  /* ── Activate domain with animation ── */
+  function activate(idx) {
+    if (idx === currentIdx) return;
+
+    var oldContent = currentIdx >= 0 ? contents[currentIdx] : null;
+    var newContent = contents[idx];
+
+    /* Hide old content & reset its grid */
+    if (oldContent) {
+      oldContent.classList.remove('rd-content--active');
+      resetGrid(oldContent._rdReveal);
+    }
+
+    /* Show new content */
+    newContent.classList.add('rd-content--active');
+
+    /* Collect animation targets */
+    var badge    = newContent.querySelector('.rd-content-badge');
+    var title    = newContent.querySelector('.rd-content-title');
+    var desc     = newContent.querySelector('.rd-content-desc');
+    var keyLabel = newContent.querySelector('.rd-content-key-label');
+    var keyItems = newContent.querySelectorAll('.rd-key-item');
+    var hlBar    = newContent.querySelector('.rd-highlight-bar');
+    var reveal   = newContent._rdReveal;
+
+    /* Show grid immediately (white covers block the img) */
+    if (reveal) reveal.grid.style.display = 'grid';
+
+    /* Build timeline */
+    var tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+    tl.fromTo(badge,    { y: -16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35 },                      0);
+    tl.fromTo(title,    { y:  24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45 },                      0.1);
+    tl.fromTo(desc,     { y:  18, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4  },                      0.18);
+    tl.call(function() { peelGrid(reveal); }, null, '>');
+    tl.fromTo(keyLabel, { y:  14, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3  },                     '-=0.05');
+    tl.fromTo(keyItems, { y:  12, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.03, duration: 0.28 },       '-=0.05');
+    tl.fromTo(hlBar,    { y:  12, opacity: 0 }, { y: 0, opacity: 1, duration: 0.28 },                     '-=0.05');
+
+    /* Update active class on sidebar */
+    items.forEach(function(el) { el.classList.remove('rd-active'); });
+    items[idx].classList.add('rd-active');
+
+    currentIdx = idx;
+  }
+
+  /* ── Wire clicks ── */
   items.forEach(function(item) {
     item.addEventListener('click', function() {
       activate(parseInt(this.dataset.domain));
     });
   });
+
+  /* ── Initial activation (script is at </body>, DOM is ready) ── */
+  activate(0);
 })();
 </script>
 

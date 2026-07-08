@@ -1156,7 +1156,7 @@
         <div class="pcp-panel-body">
           <h3 class="pcp-panel-title">
             <span class="pcp-panel-emoji"></span>
-            ML and Deep Learning with I Tools
+            ML and Deep Learning with AI Tools
           </h3>
           <p class="pcp-panel-desc">Dive deep into machine learning and deep learning using industry-standard tools. Build intelligent systems with neural networks, computer vision, NLP, and model deployment techniques.</p>
           <div class="pcp-panel-points">
@@ -1642,6 +1642,97 @@ document.addEventListener('DOMContentLoaded', function() {
     scrollTrigger: { trigger: '.sds-nav-list', start: 'top 80%', toggleActions: 'play none none reverse' }
   });
 
+  function createGridReveal(container) {
+    if (!container) return { trigger:function(){}, reset:function(){} };
+    var imgEl = container.querySelector('img');
+    if (!imgEl) return { trigger:function(){}, reset:function(){} };
+
+    var gridCovers = [];
+    var built = false;
+    var timer = null;
+
+    function build() {
+      if (built) return;
+      built = true;
+      var src = imgEl.getAttribute('src');
+      imgEl.style.display = 'none';
+      var blob = container.querySelector('.sds-blob');
+      if (blob) blob.style.display = 'none';
+
+      var grid = document.createElement('div');
+      grid.className = 'sds-grid-reveal';
+      grid.style.backgroundImage = 'url(' + src + ')';
+      var iw = imgEl.naturalWidth, ih = imgEl.naturalHeight;
+      if (iw && ih) {
+        grid.style.aspectRatio = iw / ih;
+      } else {
+        var tmp = new Image();
+        tmp.onload = function() {
+          grid.style.aspectRatio = tmp.naturalWidth / tmp.naturalHeight;
+          tmp.onload = null;
+        };
+        tmp.src = src;
+      }
+      container.appendChild(grid);
+
+      for (var r = 0; r < 4; r++) {
+        for (var c = 0; c < 4; c++) {
+          var tile = document.createElement('div');
+          tile.className = 'reveal-tile';
+          tile.dataset.r = r;
+          tile.dataset.c = c;
+          var cover = document.createElement('div');
+          cover.className = 'reveal-tile-cover';
+          tile.appendChild(cover);
+          grid.appendChild(tile);
+          gridCovers.push(cover);
+        }
+      }
+    }
+
+    function trigger() {
+      build();
+      if (gridCovers.length === 0) return;
+      clearTimeout(timer);
+      var cellDur = 400, waveGap = -300;
+      var maxDiag = 6, waveStart = 0;
+      for (var d = 0; d <= maxDiag; d++) {
+        (function(diag, startDelay) {
+          for (var rr = 0; rr < 4; rr++) {
+            var cc = diag - rr;
+            if (cc >= 0 && cc < 4) {
+              (function(row, col, delay) {
+                setTimeout(function() {
+                  var gridEl = container.querySelector('.sds-grid-reveal');
+                  if (!gridEl) return;
+                  var t = gridEl.querySelector('.reveal-tile[data-r="' + row + '"][data-c="' + col + '"]');
+                  if (t) {
+                    var cv = t.firstChild;
+                    if (cv) {
+                      cv.style.transition = 'transform ' + cellDur + 'ms cubic-bezier(0.77, 0, 0.18, 1)';
+                      cv.style.transform = 'scaleX(0)';
+                    }
+                  }
+                }, delay);
+              })(rr, cc, startDelay);
+            }
+          }
+        })(d, waveStart);
+        waveStart += cellDur + waveGap;
+      }
+    }
+
+    function reset() {
+      clearTimeout(timer);
+      gridCovers.forEach(function(cv) {
+        cv.style.transition = 'none';
+        cv.style.transform = 'scaleX(1)';
+      });
+    }
+
+    return { trigger: trigger, reset: reset, build: build };
+  }
+
   document.querySelectorAll('.sds-panel').forEach(function(panel) {
     if (!panel.querySelector('.sds-badge')) return;
 
@@ -1655,15 +1746,16 @@ document.addEventListener('DOMContentLoaded', function() {
       .fromTo(panel.querySelectorAll('.sds-highlights li'),
         { opacity: 0, x: -12 }, { opacity: 1, x: 0, stagger: 0.05, duration: 0.35 }, '-=0.1')
       .fromTo(panel.querySelector('.sds-btn'),
-        { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.35 }, '-=0.05')
-      .fromTo(panel.querySelector('.sds-panel-image'),
-        { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.6 }, '-=0.2');
+        { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.35 }, '-=0.05');
+
+    var reveal = createGridReveal(panel.querySelector('.sds-panel-image'));
+    reveal.build();
 
     ScrollTrigger.create({
       trigger: panel,
       start: 'top 75%',
-      onEnter:     function() { tl.play(); },
-      onLeaveBack: function() { tl.reverse(); },
+      onEnter:     function() { tl.play(); setTimeout(function() { reveal.trigger(); }, 350); },
+      onLeaveBack: function() { tl.reverse(); reveal.reset(); },
     });
   });
 
@@ -1731,6 +1823,94 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (!navItems.length || !panels.length) return;
 
+    function createGridReveal(container) {
+      if (!container) return { trigger:function(){}, reset:function(){} };
+      var imgEl = container.querySelector('img');
+      if (!imgEl) return { trigger:function(){}, reset:function(){} };
+
+      var gridCovers = [];
+      var built = false;
+      var timer = null;
+
+      function build() {
+        if (built) return;
+        built = true;
+        var src = imgEl.getAttribute('src');
+        imgEl.style.display = 'none';
+        var grid = document.createElement('div');
+        grid.className = 'sds-grid-reveal';
+        grid.style.backgroundImage = 'url(' + src + ')';
+        var iw = imgEl.naturalWidth, ih = imgEl.naturalHeight;
+        if (iw && ih) {
+          grid.style.aspectRatio = iw / ih;
+        } else {
+          var tmp = new Image();
+          tmp.onload = function() {
+            grid.style.aspectRatio = tmp.naturalWidth / tmp.naturalHeight;
+            tmp.onload = null;
+          };
+          tmp.src = src;
+        }
+        container.appendChild(grid);
+
+        for (var r = 0; r < 4; r++) {
+          for (var c = 0; c < 4; c++) {
+            var tile = document.createElement('div');
+            tile.className = 'reveal-tile';
+            tile.dataset.r = r;
+            tile.dataset.c = c;
+            var cover = document.createElement('div');
+            cover.className = 'reveal-tile-cover';
+            tile.appendChild(cover);
+            grid.appendChild(tile);
+            gridCovers.push(cover);
+          }
+        }
+      }
+
+      function trigger() {
+        build();
+        if (gridCovers.length === 0) return;
+        clearTimeout(timer);
+        var cellDur = 400, waveGap = -300;
+        var maxDiag = 6, waveStart = 0;
+        for (var d = 0; d <= maxDiag; d++) {
+          (function(diag, startDelay) {
+            for (var rr = 0; rr < 4; rr++) {
+              var cc = diag - rr;
+              if (cc >= 0 && cc < 4) {
+                (function(row, col, delay) {
+                  setTimeout(function() {
+                    var gridEl = container.querySelector('.sds-grid-reveal');
+                    if (!gridEl) return;
+                    var t = gridEl.querySelector('.reveal-tile[data-r="' + row + '"][data-c="' + col + '"]');
+                    if (t) {
+                      var cv = t.firstChild;
+                      if (cv) {
+                        cv.style.transition = 'transform ' + cellDur + 'ms cubic-bezier(0.77, 0, 0.18, 1)';
+                        cv.style.transform = 'scaleX(0)';
+                      }
+                    }
+                  }, delay);
+                })(rr, cc, startDelay);
+              }
+            }
+          })(d, waveStart);
+          waveStart += cellDur + waveGap;
+        }
+      }
+
+      function reset() {
+        clearTimeout(timer);
+        gridCovers.forEach(function(cv) {
+          cv.style.transition = 'none';
+          cv.style.transform = 'scaleX(1)';
+        });
+      }
+
+      return { trigger: trigger, reset: reset, build: build };
+    }
+
     navItems.forEach(function (item, index) {
       var panel = panels[index];
       if (!panel) return;
@@ -1749,6 +1929,10 @@ document.addEventListener('DOMContentLoaded', function() {
       acc.appendChild(clone);
       item.parentNode.insertBefore(acc, item.nextSibling);
 
+      var reveal = createGridReveal(clone.querySelector('.sds-panel-image'));
+      reveal.build();
+      acc._reveal = reveal;
+
       item.addEventListener('click', function () {
         var isOpen = acc.style.maxHeight !== '0px' && acc.style.maxHeight !== '';
         var navbarHeight = 80;
@@ -1757,13 +1941,17 @@ document.addEventListener('DOMContentLoaded', function() {
           acc.style.maxHeight = '0px';
           item.classList.remove('active');
           item.style.cssText = '';
+          reveal.reset();
           return;
         }
 
         var allAccs  = document.querySelectorAll('.sds-mobile-acc');
         var allItems = document.querySelectorAll('.sds-nav-item');
 
-        allAccs.forEach(function (a) { a.style.maxHeight = '0px'; });
+        allAccs.forEach(function (a) {
+          a.style.maxHeight = '0px';
+          if (a._reveal) a._reveal.reset();
+        });
         allItems.forEach(function (n) {
           n.classList.remove('active');
           n.style.cssText = '';
@@ -1828,6 +2016,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
               item.style.cssText = '';
               item.classList.add('active');
+              reveal.trigger();
 
               if (ghost.parentNode) {
                 ghost.parentNode.removeChild(ghost);
@@ -1847,6 +2036,9 @@ document.addEventListener('DOMContentLoaded', function() {
       firstAcc.style.maxHeight = 'none';
       var initH = firstAcc.scrollHeight;
       firstAcc.style.maxHeight = initH + 'px';
+      setTimeout(function () {
+        if (firstAcc._reveal) firstAcc._reveal.trigger();
+      }, 600);
     }
   }
 
@@ -1887,6 +2079,101 @@ document.addEventListener('DOMContentLoaded', function() {
     y: 0, opacity: 1, duration: 0.5, ease: 'power3.out', stagger: 0.06,
     scrollTrigger: { trigger: '.pcp-tabs', start: 'top 85%', toggleActions: 'play none none reverse' }
   });
+
+  /* ── Grid reveal for PCP panel images ── */
+  (function() {
+    function createGridReveal(container) {
+      if (!container) return { trigger:function(){}, reset:function(){} };
+      var imgEl = container.querySelector('img');
+      if (!imgEl) return { trigger:function(){}, reset:function(){} };
+      var gridCovers = [], built = false, timer = null;
+      var gridEl = null;
+      function build() {
+        if (built) return;
+        built = true;
+        var src = imgEl.getAttribute('src');
+        container.style.position = 'relative';
+        gridEl = document.createElement('div');
+        gridEl.style.position = 'absolute';
+        gridEl.style.inset = '0';
+        gridEl.style.display = 'grid';
+        gridEl.style.gridTemplateColumns = 'repeat(4,1fr)';
+        gridEl.style.gridTemplateRows = 'repeat(4,1fr)';
+        gridEl.style.overflow = 'hidden';
+        gridEl.style.background = '#ffffff';
+        gridEl.style.backgroundImage = 'url(' + src + ')';
+        gridEl.style.backgroundSize = 'cover';
+        gridEl.style.backgroundPosition = 'center';
+        container.appendChild(gridEl);
+        for (var r = 0; r < 4; r++) {
+          for (var c = 0; c < 4; c++) {
+            var tile = document.createElement('div');
+            tile.style.position = 'relative';
+            tile.style.overflow = 'hidden';
+            tile.dataset.r = r; tile.dataset.c = c;
+            var cover = document.createElement('div');
+            cover.style.position = 'absolute';
+            cover.style.inset = '-1px';
+            cover.style.background = '#ffffff';
+            cover.style.transformOrigin = 'right center';
+            cover.style.transform = 'scaleX(1)';
+            cover.style.willChange = 'transform';
+            tile.appendChild(cover);
+            gridEl.appendChild(tile);
+            gridCovers.push(cover);
+          }
+        }
+      }
+      function trigger() {
+        build();
+        if (gridCovers.length === 0) return;
+        clearTimeout(timer);
+        var cellDur = 400, waveGap = -300, maxDiag = 6, waveStart = 0;
+        for (var d = 0; d <= maxDiag; d++) {
+          (function(diag, startDelay) {
+            for (var rr = 0; rr < 4; rr++) {
+              var cc = diag - rr;
+              if (cc >= 0 && cc < 4) {
+                (function(row, col, delay) {
+                  setTimeout(function() {
+                    if (!gridEl) return;
+                    var t = gridEl.querySelector('[data-r="' + row + '"][data-c="' + col + '"]');
+                    if (t) {
+                      var cv = t.firstChild;
+                      if (cv) {
+                        cv.style.transition = 'transform ' + cellDur + 'ms cubic-bezier(0.77, 0, 0.18, 1)';
+                        cv.style.transform = 'scaleX(0)';
+                      }
+                    }
+                  }, delay);
+                })(rr, cc, startDelay);
+              }
+            }
+          })(d, waveStart);
+          waveStart += cellDur + waveGap;
+        }
+      }
+      function reset() {
+        clearTimeout(timer);
+        gridCovers.forEach(function(cv) {
+          cv.style.transition = 'none';
+          cv.style.transform = 'scaleX(1)';
+        });
+      }
+      return { trigger: trigger, reset: reset, build: build };
+    }
+
+    var pcpPanels = document.querySelectorAll('.pcp-panel');
+    pcpPanels.forEach(function(panel) {
+      var reveal = createGridReveal(panel.querySelector('.pcp-panel-image'));
+      reveal.build();
+      panel._gReveal = reveal;
+    });
+    var firstActive = document.querySelector('.pcp-panel.active');
+    if (firstActive && firstActive._gReveal) {
+      setTimeout(function() { firstActive._gReveal.trigger(); }, 400);
+    }
+  })();
 })();
 </script>
 
@@ -1918,11 +2205,19 @@ document.addEventListener('DOMContentLoaded', function() {
     tab.addEventListener('click', function () {
       var index = Number(tab.dataset.index);
 
+      var oldPanel = document.querySelector('.pcp-panel.active');
+      if (oldPanel && oldPanel._gReveal) oldPanel._gReveal.reset();
+
       tabs.forEach(function (t) { t.classList.remove('active'); });
       panels.forEach(function (p) { p.classList.remove('active'); });
 
       tab.classList.add('active');
       panels[index].classList.add('active');
+
+      var newPanel = panels[index];
+      if (newPanel && newPanel._gReveal) {
+        setTimeout(function() { newPanel._gReveal.trigger(); }, 100);
+      }
 
       if (typeof ScrollTrigger !== 'undefined') {
         ScrollTrigger.refresh();
