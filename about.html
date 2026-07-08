@@ -1648,25 +1648,45 @@ document.addEventListener('DOMContentLoaded', function() {
 
   }
 
-  /* ── MOBILE: Manual slider ── */
+  /* ── MOBILE: Manual slider + auto-advance every 4s ── */
   if (isMobile && track && prevBtn && nextBtn) {
 
     var currentIndex = 0;
     var totalCards   = cards.length;
+    var autoInterval = null;
 
     function updateSlider() {
       var shift = -(currentIndex * 100);
       track.style.transform = 'translateX(' + shift + '%)';
     }
 
-    prevBtn.addEventListener('click', function() {
+    function goNext() {
+      currentIndex = (currentIndex + 1) % totalCards;
+      updateSlider();
+    }
+
+    function goPrev() {
       currentIndex = (currentIndex - 1 + totalCards) % totalCards;
       updateSlider();
+    }
+
+    function startAutoSlide() {
+      autoInterval = setInterval(goNext, 4000);
+    }
+
+    function resetAutoSlide() {
+      clearInterval(autoInterval);
+      startAutoSlide();
+    }
+
+    prevBtn.addEventListener('click', function() {
+      goPrev();
+      resetAutoSlide();
     });
 
     nextBtn.addEventListener('click', function() {
-      currentIndex = (currentIndex + 1) % totalCards;
-      updateSlider();
+      goNext();
+      resetAutoSlide();
     });
 
     /* Swipe support */
@@ -1679,15 +1699,16 @@ document.addEventListener('DOMContentLoaded', function() {
       var deltaX = e.changedTouches[0].clientX - swipeStartX;
       if (Math.abs(deltaX) > 50) {
         if (deltaX < 0) {
-          currentIndex = (currentIndex + 1) % totalCards;
+          goNext();
         } else {
-          currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+          goPrev();
         }
-        updateSlider();
+        resetAutoSlide();
       }
     }, { passive: true });
 
     updateSlider();
+    startAutoSlide();
   }
 
 })();
