@@ -171,7 +171,7 @@
       <h2 class="about-frame-title">
         ENGINEERING SMART SOLUTIONS FOR A CONNECTED FUTURE.
       </h2>
-      <p class="about-frame-desc">Fleming Embedded and Software Solutions is a technology-driven company delivering innovative embedded systems and software solutions for businesses across diverse industries. Backed by over 12 years of experience, we combine engineering excellence with modern software development to create reliable, scalable, and future-ready technology that empowers organizations to innovate, automate, and grow with confidence.</p>
+      <p class="about-frame-desc">Fleming Embedded and Software Solutions is a technology-driven company delivering innovative embedded systems and software solutions for businesses across diverse industries. Backed by over <span id="aboutYears"></span> years of experience, we combine engineering excellence with modern software development to create reliable, scalable, and future-ready technology that empowers organizations to innovate, automate, and grow with confidence.</p>
       
       <!-- Visual Split Row for Cards/Lists -->
       <div class="about-split-row">
@@ -1915,6 +1915,18 @@ document.addEventListener('DOMContentLoaded', function() {
       link.href = 'techno_contact.html';
     });
   }
+})();
+</script>
+
+<script>
+// Dynamic years since October 2013
+(function() {
+  var founded = new Date(2013, 9, 1);
+  var now = new Date();
+  var years = now.getFullYear() - founded.getFullYear();
+  if (now < new Date(now.getFullYear(), 9, 1)) years--;
+  var el = document.getElementById('aboutYears');
+  if (el) el.textContent = years;
 })();
 </script>
 

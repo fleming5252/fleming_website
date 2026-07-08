@@ -1233,7 +1233,8 @@ stickyNav.classList.add('nav-hidden');
 
     clearTimeout(flipTimer);
     clearInterval(autoTimer);
-    allHexes.forEach(function(h){ h.classList.remove('ts-flipped'); });
+    allHexes.forEach(function(h){ h.classList.remove('ts-flipped'); h.classList.remove('ts-show-front'); });
+    hex.classList.remove('ts-show-front');
     hex.classList.add('ts-flipped');
     isFlipped  = true;
     flippedHex = hex;
