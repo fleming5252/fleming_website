@@ -366,7 +366,7 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
   margin-bottom: 22px;
 }
 .footer-logo-img {
-  height: 42px;
+  height: 56px;
   width: auto;
   display: block;
 }
@@ -550,7 +550,7 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
 
 @media (max-width: 480px) {
   .footer-container { padding: 0 16px; }
-  .footer-logo-img { height: 36px; }
+  .footer-logo-img { height: 46px; }
   .social-icon { width: 36px; height: 36px; }
 }
 
@@ -1478,6 +1478,10 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
   /* Flip animation */
   .ts-hex.ts-flipped .ts-hex-front { opacity: 0; }
   .ts-hex.ts-flipped .ts-hex-back  { opacity: 1; }
+
+  /* Force front face visible (overrides stuck :hover on mobile after unflip) */
+  .ts-hex.ts-show-front .ts-hex-front { opacity: 1; }
+  .ts-hex.ts-show-front .ts-hex-back  { opacity: 0; }
 
   /* Hide pulse rings on outer wrapper — they're repositioned inside inner */
   .ts-hex.ts-hex-logo > .ts-pulse-ring {

@@ -1204,19 +1204,30 @@ stickyNav.classList.add('nav-hidden');
   var autoTimer    = null;
 
   /* ── Flip a card: show back for 5 s, auto-close, then 3 s delay before slide ── */
-  var isFlipped = false;
+  var isFlipped  = false;
+  var flippedHex = null;
+
+  function closeFlip(hex, advance) {
+    clearTimeout(flipTimer);
+    allHexes.forEach(function(h){ h.classList.remove('ts-flipped'); });
+    if (hex) hex.classList.add('ts-show-front');
+    isFlipped  = false;
+    var prevHex = hex;
+    flippedHex  = null;
+    if (advance) {
+      flipTimer = setTimeout(function(){
+        if (prevHex) prevHex.classList.remove('ts-show-front');
+        goNext();
+        startAuto();
+      }, 3000);
+    }
+  }
 
   function flipCard(hex) {
     if (hex.classList.contains('ts-hex-logo')) return;
 
     if (isFlipped) {
-      clearTimeout(flipTimer);
-      allHexes.forEach(function(h){ h.classList.remove('ts-flipped'); });
-      isFlipped = false;
-      flipTimer = setTimeout(function(){
-        goNext();
-        startAuto();
-      }, 3000);
+      closeFlip(flippedHex, true);
       return;
     }
 
@@ -1224,11 +1235,15 @@ stickyNav.classList.add('nav-hidden');
     clearInterval(autoTimer);
     allHexes.forEach(function(h){ h.classList.remove('ts-flipped'); });
     hex.classList.add('ts-flipped');
-    isFlipped = true;
+    isFlipped  = true;
+    flippedHex = hex;
     flipTimer = setTimeout(function(){
       hex.classList.remove('ts-flipped');
-      isFlipped = false;
+      hex.classList.add('ts-show-front');
+      isFlipped  = false;
+      flippedHex = null;
       setTimeout(function(){
+        hex.classList.remove('ts-show-front');
         goNext();
         startAuto();
       }, 3000);
@@ -1252,8 +1267,11 @@ stickyNav.classList.add('nav-hidden');
   function resetAuto() { startAuto(); }
 
   /* ── Tap to flip or pulse (logo) ── */
+  var suppressClick = false;
+
   allHexes.forEach(function(hex) {
     hex.addEventListener('click', function(){
+      if (suppressClick) return;
       if (hex.classList.contains('ts-hex-logo')) {
         /* Pulse animation on logo tap */
         hex.classList.remove('ts-pulse-tap');
@@ -1270,14 +1288,26 @@ stickyNav.classList.add('nav-hidden');
   if (prevBtn) prevBtn.addEventListener('click', function(){ goPrev(); resetAuto(); });
   if (nextBtn) nextBtn.addEventListener('click', function(){ goNext(); resetAuto(); });
 
-  /* ── Swipe ── */
+  /* ── Swipe (tap handled by click event) ── */
   var swipeX = 0;
   wrapper.addEventListener('touchstart', function(e){ swipeX = e.touches[0].clientX; }, { passive: true });
   wrapper.addEventListener('touchend', function(e){
     var dx = e.changedTouches[0].clientX - swipeX;
-    if (Math.abs(dx) > 40) { dx < 0 ? goNext() : goPrev(); resetAuto(); }
-    else { flipCard(allHexes[currentIndex]); } /* tap-in-place = flip */
+    if (Math.abs(dx) > 40) {
+      dx < 0 ? goNext() : goPrev();
+      resetAuto();
+      suppressClick = true;
+      setTimeout(function(){ suppressClick = false; }, 500);
+    }
+    /* tap (dx <= 40) is handled by click event on each hex */
   }, { passive: true });
+
+  /* ── Tap anywhere on screen to dismiss flipped card early ── */
+  document.addEventListener('click', function(e) {
+    if (!isFlipped || !flippedHex) return;
+    if (flippedHex.contains(e.target)) return;
+    closeFlip(flippedHex, true);
+  });
 
   goTo(0);
   startAuto();
