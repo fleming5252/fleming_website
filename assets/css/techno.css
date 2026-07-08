@@ -5025,7 +5025,7 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
 @media (max-width: 767px) {
   .lec-container { padding: 0 20px; }
   .lec-heading { font-size: 30px; letter-spacing: -0.5px; }
-  .lec-subtext { font-size: 13px; }
+  .lec-subtext { font-size: 13px; text-align: justify; }
   .lec-cards-wrapper { grid-template-columns: 1fr; gap: 24px; }
   .lec-bottom-bar { grid-template-columns: repeat(2, 1fr); padding: 20px; gap: 16px; }
 }
@@ -5103,6 +5103,7 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
   line-height: 1.28;
   color: #0f172a;
   margin-bottom: 20px;
+  hyphens: none;
 }
 
 .sds-nav-list {
@@ -5767,6 +5768,7 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
   line-height: 1.7;
   max-width: 600px;
   margin: 0 auto;
+  text-align: justify;
 }
 
 /* Tabs */
@@ -5899,6 +5901,7 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
   color: #6b7280;
   line-height: 1.75;
   margin: 0;
+  text-align: justify;
 }
 
 /* Points grid */
