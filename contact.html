@@ -907,6 +907,14 @@ function showFormMessage(msg, success) {
 }
 </script>
 
+<!-- BACK‑TO‑TOP CONTROL -->
+<div id="bttControl" tabindex="0" role="button" aria-label="Back to Top">
+  <span class="btt-text">Back to Top</span>
+  <div class="btt-line-wrap" aria-hidden="true">
+    <div class="btt-line-fill"></div>
+  </div>
+</div>
+
 <!-- FLOATING CONTACT WIDGET -->
 <div class="fcw-wrapper" id="fcwWrapper">
 
@@ -972,6 +980,76 @@ function showFormMessage(msg, success) {
     if (isOpen && !wrapper.contains(e.target)) {
       isOpen = false;
       wrapper.classList.remove('fcw-open');
+    }
+  });
+})();
+</script>
+
+<!-- ═══ BACK‑TO‑TOP CONTROL — JAVASCRIPT ═══ -->
+<script>
+(function() {
+  'use strict';
+  var btt  = document.getElementById('bttControl');
+  var fill = btt.querySelector('.btt-line-fill');
+  var fcw  = document.getElementById('fcwWrapper');
+  var doc  = document.documentElement;
+  function update() {
+    var scrollY  = window.pageYOffset || doc.scrollTop;
+    var max      = Math.max(doc.scrollHeight - window.innerHeight, 1);
+    var progress = Math.min(scrollY / max, 1);
+    btt.classList.toggle('btt-visible', scrollY > 400);
+    fill.style.transform = 'scaleY(' + progress + ')';
+  }
+  var textEl = btt.querySelector('.btt-text');
+  var wrapEl = btt.querySelector('.btt-line-wrap');
+  function syncLineHeight() {
+    if (!textEl || !wrapEl) return;
+    var h = textEl.getBoundingClientRect().height;
+    if (h > 0) wrapEl.style.height = h + 'px';
+  }
+  syncLineHeight();
+  window.addEventListener('resize', syncLineHeight);
+  var ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      requestAnimationFrame(function() {
+        update();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+  update();
+  if (fcw) {
+    var obs = new MutationObserver(function() {
+      btt.classList.toggle('btt-fcw-open', fcw.classList.contains('fcw-open'));
+    });
+    obs.observe(fcw, { attributes: true, attributeFilter: ['class'] });
+  }
+  function customEase(t) {
+    if (t < 0.2) return 2.5 * t * t;
+    if (t < 0.8) return 0.1 + 0.8 * (t - 0.2) / 0.6;
+    var e = (t - 0.8) / 0.2;
+    return 0.9 + 0.1 * (1 - (1 - e) * (1 - e));
+  }
+  function scrollToTop() {
+    var startY = window.pageYOffset || doc.scrollTop;
+    if (startY < 5) return;
+    var t0 = performance.now();
+    var dur = 1200;
+    function step(now) {
+      var elapsed = now - t0;
+      var t = Math.min(elapsed / dur, 1);
+      window.scrollTo(0, startY * (1 - customEase(t)));
+      if (t < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  btt.addEventListener('click', scrollToTop);
+  btt.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      scrollToTop();
     }
   });
 })();

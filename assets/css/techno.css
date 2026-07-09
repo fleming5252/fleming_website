@@ -3597,6 +3597,7 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
   flex-direction: column;
   align-items: center;
   gap: 12px;
+  pointer-events: none;
 }
 
 .fcw-actions {
@@ -3680,6 +3681,7 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
   transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   flex-shrink: 0;
+  pointer-events: auto;
 }
 
 .fcw-toggle:hover {
@@ -6447,4 +6449,88 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
     font-size: 32px;
     text-align: center;
   }
+}
+
+/* ═══════════════════════════════════════════════
+   BACK‑TO‑TOP CONTROL
+═══════════════════════════════════════════════ */
+#bttControl {
+  position: fixed;
+  right: 60px;
+  bottom: 120px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out, visibility 0.4s ease-out, bottom 0.35s ease;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+#bttControl:focus-visible {
+  outline: 2px solid #0b5fa5;
+  outline-offset: 6px;
+  border-radius: 4px;
+}
+#bttControl.btt-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+#bttControl.btt-visible:hover {
+  transform: translateY(0) translateX(-4px);
+}
+#bttControl.btt-visible:hover .btt-text {
+  color: #083b73;
+}
+#bttControl.btt-fcw-open {
+  bottom: 300px;
+}
+.btt-text {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #0b5fa5;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+  transition: color 0.25s ease;
+  line-height: 1.2;
+  user-select: none;
+}
+.btt-line-wrap {
+  width: 4px;
+  height: 0;
+  border-radius: 2px;
+  background: #0b5fa5;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+}
+.btt-line-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #083b73;
+  border-radius: inherit;
+  transform-origin: top center;
+  transform: scaleY(0);
+  will-change: transform;
+}
+@media (max-width: 1024px) {
+  #bttControl { right: 24px; bottom: 100px; gap: 1px; }
+  #bttControl.btt-fcw-open { bottom: 280px; }
+  .btt-text { font-size: 12px; letter-spacing: 2.5px; }
+}
+@media (max-width: 767px) {
+  #bttControl { right: 20px; bottom: 88px; gap: 1px; }
+  #bttControl.btt-fcw-open { bottom: 250px; }
+  .btt-text { font-size: 10px; letter-spacing: 2px; }
 }

@@ -24,12 +24,12 @@
 /* ── Container ── */
 #bttControl {
   position: fixed;
-  right: 32px;
+  right: 60px;
   bottom: 120px;
-  z-index: 9998;
+  z-index: 9999;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 1px;
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
@@ -76,10 +76,9 @@
   font-weight: 600;
   letter-spacing: 3px;
   color: #0b5fa5;
-  white-space: nowrap;
   text-transform: uppercase;
-  transform: rotate(90deg);
-  transform-origin: center;
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
   transition: color 0.25s ease;
   line-height: 1.2;
   user-select: none;
@@ -87,8 +86,8 @@
 
 /* ── Progress line ── */
 .btt-line-wrap {
-  width: 2px;
-  height: 50px;
+  width: 4px;
+  height: 0;
   border-radius: 2px;
   background: #0b5fa5;
   overflow: hidden;
@@ -114,7 +113,7 @@
   #bttControl {
     right: 24px;
     bottom: 100px;
-    gap: 8px;
+    gap: 1px;
   }
   #bttControl.btt-fcw-open {
     bottom: 280px;
@@ -123,9 +122,6 @@
     font-size: 12px;
     letter-spacing: 2.5px;
   }
-  .btt-line-wrap {
-    height: 44px;
-  }
 }
 
 /* ── Mobile ── */
@@ -133,7 +129,7 @@
   #bttControl {
     right: 20px;
     bottom: 88px;
-    gap: 6px;
+    gap: 1px;
   }
   #bttControl.btt-fcw-open {
     bottom: 250px;
@@ -141,10 +137,6 @@
   .btt-text {
     font-size: 10px;
     letter-spacing: 2px;
-  }
-  .btt-line-wrap {
-    height: 36px;
-    width: 1.5px;
   }
 }
 </style>
@@ -1608,6 +1600,19 @@ document.addEventListener('DOMContentLoaded', function() {
     /* progress-line fill – dark navy grows from top */
     fill.style.transform = 'scaleY(' + progress + ')';
   }
+
+  /* ── Sync line height to text height ── */
+  var textEl = btt.querySelector('.btt-text');
+  var wrapEl = btt.querySelector('.btt-line-wrap');
+  function syncLineHeight() {
+    if (!textEl || !wrapEl) return;
+    var h = textEl.getBoundingClientRect().height;
+    if (h > 0) wrapEl.style.height = h + 'px';
+  }
+  syncLineHeight();
+  window.addEventListener('resize', syncLineHeight);
+
+  /* ── (removed alignBttLeft – CSS right: 110px now clears FCW widget) ── */
 
   /* ── RAF‑throttled scroll listener ── */
   var ticking = false;
