@@ -743,6 +743,11 @@
   items.forEach(function(item) {
     item.addEventListener('click', function() {
       activate(parseInt(this.dataset.domain));
+      if (window.innerWidth <= 1200) {
+        var el = document.querySelector('.rd-panel-wrap');
+        var top = el.getBoundingClientRect().top + window.pageYOffset - 40;
+        window.scrollTo({top:top, behavior:'smooth'});
+      }
     });
   });
 
@@ -1222,6 +1227,8 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 </script>
 
+
+
 <script>
 (function() {
   var page = window.location.pathname.split('/').pop() || 'index.html';
@@ -1230,6 +1237,27 @@ document.addEventListener('DOMContentLoaded', function() {
       link.href = 'techno_contact.html';
     });
   }
+})();
+</script>
+
+<script>
+(function() {
+  var copy = document.querySelector('.footer-copyright');
+  if (!copy) return;
+  function update() {
+    var rect = copy.getBoundingClientRect();
+    var vh = window.innerHeight;
+    var threshold = vh - 32;
+    var overlap = 0;
+    if (rect.top < threshold && rect.bottom > 0) {
+      overlap = threshold - rect.top + 24;
+      overlap = Math.min(overlap, 200);
+    }
+    document.documentElement.style.setProperty('--fcw-overlap', overlap + 'px');
+  }
+  window.addEventListener('scroll', function() { requestAnimationFrame(update); }, { passive: true });
+  window.addEventListener('resize', update);
+  update();
 })();
 </script>
 
