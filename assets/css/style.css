@@ -312,7 +312,7 @@ body { font-family: 'Poppins', sans-serif; }
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: url('../images/about_bg.png');
+    background-image: url('../images/about_bg.webp');
     background-repeat: no-repeat;
     background-size: 130% cover;
     background-position: 50% bottom;
@@ -2156,7 +2156,7 @@ body { font-family: 'Poppins', sans-serif; }
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  background-image: url('../images/management_bg.png');
+  background-image: url('../images/management_bg.webp');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;

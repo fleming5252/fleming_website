@@ -2939,7 +2939,7 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: url('../images/about_bg.png');
+    background-image: url('../images/about_bg.webp');
     background-repeat: no-repeat;
     background-size: 130% auto;
     background-position: 50% bottom;
