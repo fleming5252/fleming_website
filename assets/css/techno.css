@@ -5799,6 +5799,7 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
   flex-direction:column;
   justify-content:center;
 }
+.slide-content.hidden{display:none;}
 .slide-eyebrow{
   color:#4338ea;
   font-weight:700;
@@ -5927,6 +5928,136 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
   justify-content:center;
   font-size:11px;
 }
+.btn-view-details{
+  background:transparent;
+  color:#4338ea;
+  border:2px solid #4338ea;
+  padding:12px 24px;
+  border-radius:10px;
+  font-weight:600;
+  font-size:14px;
+  cursor:pointer;
+  transition:all .3s ease;
+}
+.btn-view-details:hover{
+  background:#4338ea;
+  color:#fff;
+}
+
+/* Syllabus panel */
+/* ── Redesigned Syllabus Panel ── */
+.slide-syllabus{
+  padding:40px 48px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  overflow-y:auto;
+}
+.slide-syllabus.hidden{display:none;}
+.syllabus-topics-label{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  font-size:13px;
+  font-weight:700;
+  color:#4338ea;
+  letter-spacing:0.5px;
+  text-transform:uppercase;
+  margin-bottom:14px;
+  padding-bottom:12px;
+  border-bottom:1px solid #e5e7eb;
+}
+.syllabus-topics-label svg{
+  flex-shrink:0;
+  color:#4338ea;
+}
+.syllabus-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+}
+.syllabus-item{
+  background:#f8f9ff;
+  border-radius:8px;
+  padding:11px 16px 11px 40px;
+  font-size:13.5px;
+  color:#374151;
+  border-left:none;
+  position:relative;
+}
+.syllabus-item::before{
+  content:'';
+  position:absolute;
+  left:14px;
+  top:50%;
+  transform:translateY(-50%);
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:#4338ea;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+  background-size:11px;
+  background-repeat:no-repeat;
+  background-position:center;
+  flex-shrink:0;
+}
+.syl-icon{display:none;}
+.syllabus-contact-note{
+  display:flex;
+  align-items:flex-start;
+  gap:8px;
+  font-size:12.5px;
+  color:#6b7280;
+  line-height:1.55;
+  margin:16px 0 0;
+}
+.syllabus-contact-note svg{
+  flex-shrink:0;
+  margin-top:1px;
+  color:#4338ea;
+}
+.syllabus-actions{
+  display:flex;
+  gap:12px;
+  margin-top:16px;
+  flex-wrap:wrap;
+}
+.btn-back{
+  background:#f3f4f6;
+  color:#374151;
+  border:none;
+  padding:10px 20px;
+  border-radius:8px;
+  font-weight:600;
+  font-size:13.5px;
+  cursor:pointer;
+  transition:background .2s ease;
+}
+.btn-back:hover{background:#e5e7eb;}
+.btn-enquiry{
+  background:#4338ea;
+  color:#fff;
+  padding:10px 24px;
+  border-radius:8px;
+  font-weight:600;
+  font-size:13.5px;
+  text-decoration:none;
+  transition:background .2s ease;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+.btn-enquiry:hover{background:#3730d6;}
+.btn-enquiry-outline{
+  background:transparent !important;
+  color:#4338ea !important;
+  border:1.5px solid #4338ea !important;
+}
+.btn-enquiry-outline:hover{
+  background:#4338ea !important;
+  color:#fff !important;
+}
+.syllabus-info{display:none;}
 
 /* Media side — image already contains its own bg color */
 .slide-media{
@@ -6041,6 +6172,8 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
   .slide-media{min-height:280px;order:-1;}
   .programs-features{grid-template-columns:repeat(2,1fr);row-gap:24px;}
   .feature-item{border-right:none;}
+  .slide-syllabus{padding:36px 30px;}
+  .syllabus-grid{grid-template-columns:1fr;}
 }
 @media (max-width:640px){
   .programs-section{padding:80px 36px;}
@@ -6051,6 +6184,10 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
   .slider-arrow.prev{left:-22px;}
   .slider-arrow.next{right:-22px;}
   .lec-subtext,.lec-card-desc,.programs-subtitle{text-align:justify;}
+  .slide-syllabus{padding:28px 20px;}
+  .syllabus-grid{grid-template-columns:1fr;}
+  .syllabus-actions{flex-direction:column;}
+  .btn-back,.btn-enquiry{width:100%;justify-content:center;text-align:center;}
 }
 
 /* ══════════════════════════════════════════════

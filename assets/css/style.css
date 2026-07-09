@@ -254,7 +254,7 @@ body { font-family: 'Poppins', sans-serif; }
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: url('../../assets/images/index_hero_bg.png');
+    background-image: url('../images/index_hero_bg.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% center;

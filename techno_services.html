@@ -691,20 +691,20 @@
         <span class="tab-label">ROS 2<br>Robotics</span>
       </button>
       <button class="program-tab" data-index="3">
-        <span class="tab-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3a5 5 0 00-5 5c0 2 1 3 1 5h8c0-2 1-3 1-5a5 5 0 00-5-5z" stroke="currentColor" stroke-width="1.6"/><path d="M9 16h6M10 19h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
-        <span class="tab-label">AI / ML<br>Artificial Intelligence</span>
-      </button>
-      <button class="program-tab" data-index="4">
         <span class="tab-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="1.6"/></svg></span>
         <span class="tab-label">Cyber<br>Security</span>
       </button>
-      <button class="program-tab" data-index="5">
+      <button class="program-tab" data-index="4">
         <span class="tab-icon"><svg viewBox="0 0 24 24" fill="none">
   <rect x="3" y="12" width="4" height="9" rx="1" stroke="currentColor" stroke-width="1.8"/>
   <rect x="10" y="7" width="4" height="14" rx="1" stroke="currentColor" stroke-width="1.8"/>
   <rect x="17" y="3" width="4" height="18" rx="1" stroke="currentColor" stroke-width="1.8"/>
 </svg></span>
         <span class="tab-label">Data Science<br>& Analytics</span>
+      </button>
+      <button class="program-tab" data-index="5">
+        <span class="tab-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3a5 5 0 00-5 5c0 2 1 3 1 5h8c0-2 1-3 1-5a5 5 0 00-5-5z" stroke="currentColor" stroke-width="1.6"/><path d="M9 16h6M10 19h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+        <span class="tab-label">AI / ML<br>Artificial Intelligence</span>
       </button>
     </div>
 
@@ -728,7 +728,39 @@
               <div class="stat"><span class="stat-icon">🕒</span><div><strong>Alternate Days</strong><small>Practical Learning</small></div></div>
             </div>
             <div class="slide-actions">
-              <a href="techno_contact.html" class="btn-explore">Get Started <span>→</span></a>
+              <button class="btn-view-details" onclick="showSyllabus(0)">View Details</button>
+            </div>
+          </div>
+          <div class="slide-syllabus hidden" data-slide="0">
+            <span class="slide-eyebrow">FEATURED PROGRAM</span>
+            <h3 class="slide-title">Embedded Systems &amp; IoT</h3>
+            <div class="syllabus-topics-label">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 11 12 14 22 4"/>
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+              </svg>
+              MAIN TOPICS COVERED
+            </div>
+            <div class="syllabus-grid">
+              <div class="syllabus-item">STM32 Microcontroller Programming with Embedded C</div>
+              <div class="syllabus-item">Sensor Interfacing &amp; Real-Time Hardware Control</div>
+              <div class="syllabus-item">Raspberry Pi Programming with Python</div>
+              <div class="syllabus-item">Linux Commands &amp; Shell Scripting</div>
+              <div class="syllabus-item">IoT Implementation through Cloud Integration</div>
+              <div class="syllabus-item">Communication Protocols, Motor Control &amp; LCD Interfacing</div>
+              <div class="syllabus-item">Introduction to Edge AI for Embedded Applications</div>
+              <div class="syllabus-item">And Many More...</div>
+            </div>
+            <p class="syllabus-contact-note">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.57 3.42 2 2 0 0 1 3.54 1.25h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.68 2.81a2 2 0 0 1-.45 2.11L7.91 8.75a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.91.33 1.85.55 2.81.68A2 2 0 0 1 21.5 16h.5z"/></svg>
+              For more detailed information about the internship program, please contact our office.
+            </p>
+            <div class="syllabus-actions">
+              <button class="btn-back" onclick="hideSyllabus(0)">← Back</button>
+              <a href="techno_contact.html" class="btn-enquiry btn-enquiry-outline">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Enquiry →
+              </a>
             </div>
           </div>
           <div class="slide-media">
@@ -744,11 +776,43 @@
             <p class="slide-desc">Learn digital hardware design using Verilog HDL, simulation, combinational and sequential logic, finite state machines, and FPGA implementation workflows.</p>
             <div class="slide-stats">
               <div class="stat"><span class="stat-icon">📅</span><div><strong>2 Weeks</strong><small>Program Duration</small></div></div>
-              <div class="stat"><span class="stat-icon">🧩</span><div><strong>Vivado</strong><small>Industry Tool</small></div></div>
-              <div class="stat"><span class="stat-icon">💻</span><div><strong>Simulation-Based</strong><small>Hands-on Learning</small></div></div>
+              <div class="stat"><span class="stat-icon">👥</span><div><strong>6 Sessions</strong><small>Offline Classes</small></div></div>
+              <div class="stat"><span class="stat-icon">🕒</span><div><strong>Alternate Days</strong><small>Practical Learning</small></div></div>
             </div>
             <div class="slide-actions">
-              <a href="techno_contact.html" class="btn-explore">Get Started <span>→</span></a>
+              <button class="btn-view-details" onclick="showSyllabus(1)">View Details</button>
+            </div>
+          </div>
+          <div class="slide-syllabus hidden" data-slide="1">
+            <span class="slide-eyebrow">FEATURED PROGRAM</span>
+            <h3 class="slide-title">FPGA Design</h3>
+            <div class="syllabus-topics-label">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 11 12 14 22 4"/>
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+              </svg>
+              MAIN TOPICS COVERED
+            </div>
+            <div class="syllabus-grid">
+              <div class="syllabus-item">Fundamentals of FPGA &amp; Digital Electronics</div>
+              <div class="syllabus-item">Verilog HDL Programming &amp; Hardware Design</div>
+              <div class="syllabus-item">Combinational Logic Circuit Design &amp; Simulation</div>
+              <div class="syllabus-item">Design of Sequential Circuits, Flip-Flops &amp; Counters</div>
+              <div class="syllabus-item">Finite State Machine (FSM) Design &amp; Implementation</div>
+              <div class="syllabus-item">FPGA Design Flow using Xilinx Vivado</div>
+              <div class="syllabus-item">RTL Design, Synthesis &amp; Timing Analysis</div>
+              <div class="syllabus-item">And Many More...</div>
+            </div>
+            <p class="syllabus-contact-note">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.57 3.42 2 2 0 0 1 3.54 1.25h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.68 2.81a2 2 0 0 1-.45 2.11L7.91 8.75a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.91.33 1.85.55 2.81.68A2 2 0 0 1 21.5 16h.5z"/></svg>
+              For more detailed information about the internship program, please contact our office.
+            </p>
+            <div class="syllabus-actions">
+              <button class="btn-back" onclick="hideSyllabus(1)">← Back</button>
+              <a href="techno_contact.html" class="btn-enquiry btn-enquiry-outline">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Enquiry →
+              </a>
             </div>
           </div>
           <div class="slide-media">
@@ -764,11 +828,43 @@
             <p class="slide-desc">Explore intelligent robotics with ROS2, Raspberry Pi, Linux, robot communication, simulation, and autonomous system development through practical sessions.</p>
             <div class="slide-stats">
               <div class="stat"><span class="stat-icon">📅</span><div><strong>2 Weeks</strong><small>Program Duration</small></div></div>
-              <div class="stat"><span class="stat-icon">🤖</span><div><strong>ROS2 Iron</strong><small>Development Platform</small></div></div>
-              <div class="stat"><span class="stat-icon">🛠️</span><div><strong>Gazebo</strong><small>Robot Simulation</small></div></div>
+              <div class="stat"><span class="stat-icon">👥</span><div><strong>6 Sessions</strong><small>Offline Classes</small></div></div>
+              <div class="stat"><span class="stat-icon">🕒</span><div><strong>Alternate Days</strong><small>Practical Learning</small></div></div>
             </div>
             <div class="slide-actions">
-              <a href="techno_contact.html" class="btn-explore">Get Started <span>→</span></a>
+              <button class="btn-view-details" onclick="showSyllabus(2)">View Details</button>
+            </div>
+          </div>
+          <div class="slide-syllabus hidden" data-slide="2">
+            <span class="slide-eyebrow">FEATURED PROGRAM</span>
+            <h3 class="slide-title">ROS2 Robotics</h3>
+            <div class="syllabus-topics-label">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 11 12 14 22 4"/>
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+              </svg>
+              MAIN TOPICS COVERED
+            </div>
+            <div class="syllabus-grid">
+              <div class="syllabus-item">Linux Environment &amp; Python Programming for Robotics</div>
+              <div class="syllabus-item">RTOS Concepts &amp; ROS2 Communication Architecture</div>
+              <div class="syllabus-item">ROS2 Workspace, Packages &amp; Node Development</div>
+              <div class="syllabus-item">Publisher–Subscriber Communication &amp; Sensor Integration</div>
+              <div class="syllabus-item">UART, SPI, I²C &amp; CAN Communication Protocols</div>
+              <div class="syllabus-item">Multi-Node Robotics Communication &amp; Hardware Integration</div>
+              <div class="syllabus-item">Robot Visualization &amp; Simulation using RViz and Gazebo</div>
+              <div class="syllabus-item">And Many More...</div>
+            </div>
+            <p class="syllabus-contact-note">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.57 3.42 2 2 0 0 1 3.54 1.25h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.68 2.81a2 2 0 0 1-.45 2.11L7.91 8.75a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.91.33 1.85.55 2.81.68A2 2 0 0 1 21.5 16h.5z"/></svg>
+              For more detailed information about the internship program, please contact our office.
+            </p>
+            <div class="syllabus-actions">
+              <button class="btn-back" onclick="hideSyllabus(2)">← Back</button>
+              <a href="techno_contact.html" class="btn-enquiry btn-enquiry-outline">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Enquiry →
+              </a>
             </div>
           </div>
           <div class="slide-media">
@@ -776,39 +872,51 @@
           </div>
         </div>
 
-        <!-- Slide 4 -->
-        <div class="slide" data-index="3">
-          <div class="slide-content">
-            <span class="slide-eyebrow">FEATURED PROGRAM</span>
-            <h3 class="slide-title">AI & Machine Learning</h3>
-            <p class="slide-desc">Discover modern AI concepts through computer vision, OpenCV, deep learning fundamentals, model development, and real-world machine learning applications.</p>
-            <div class="slide-stats">
-              <div class="stat"><span class="stat-icon">📅</span><div><strong>2 Weeks</strong><small>Program Duration</small></div></div>
-              <div class="stat"><span class="stat-icon">👁️</span><div><strong>OpenCV</strong><small>Computer Vision</small></div></div>
-              <div class="stat"><span class="stat-icon">🧪</span><div><strong>Real Projects</strong><small>Hands-on Practice</small></div></div>
-            </div>
-            <div class="slide-actions">
-              <a href="techno_contact.html" class="btn-explore">Get Started <span>→</span></a>
-            </div>
-          </div>
-          <div class="slide-media">
-            <img src="assets/images/techno/internship4.webp" alt="AI & Machine Learning">
-          </div>
-        </div>
-
         <!-- Slide 5 -->
-        <div class="slide" data-index="4">
+        <div class="slide" data-index="3">
           <div class="slide-content">
             <span class="slide-eyebrow">FEATURED PROGRAM</span>
             <h3 class="slide-title">Cyber Security & Machine Learning</h3>
             <p class="slide-desc">Understand modern cybersecurity concepts, ethical security practices, web application security, and machine learning techniques for intelligent threat detection.</p>
             <div class="slide-stats">
               <div class="stat"><span class="stat-icon">📅</span><div><strong>2 Weeks</strong><small>Program Duration</small></div></div>
-              <div class="stat"><span class="stat-icon">🛡️</span><div><strong>Kali Linux</strong><small>Security Tools</small></div></div>
-              <div class="stat"><span class="stat-icon">🧠</span><div><strong>ML-Based</strong><small>Threat Detection</small></div></div>
+              <div class="stat"><span class="stat-icon">👥</span><div><strong>6 Sessions</strong><small>Offline Classes</small></div></div>
+              <div class="stat"><span class="stat-icon">🕒</span><div><strong>Alternate Days</strong><small>Practical Learning</small></div></div>
             </div>
             <div class="slide-actions">
-              <a href="techno_contact.html" class="btn-explore">Get Started <span>→</span></a>
+              <button class="btn-view-details" onclick="showSyllabus(3)">View Details</button>
+            </div>
+          </div>
+          <div class="slide-syllabus hidden" data-slide="3">
+            <span class="slide-eyebrow">FEATURED PROGRAM</span>
+            <h3 class="slide-title">Cyber Security &amp; Machine Learning</h3>
+            <div class="syllabus-topics-label">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 11 12 14 22 4"/>
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+              </svg>
+              MAIN TOPICS COVERED
+            </div>
+            <div class="syllabus-grid">
+              <div class="syllabus-item">Fundamentals of Cyber Security &amp; Security Operations</div>
+              <div class="syllabus-item">Kali Linux Environment &amp; Information Gathering</div>
+              <div class="syllabus-item">Web Application Security &amp; Vulnerability Assessment</div>
+              <div class="syllabus-item">SQL Injection, XSS, Command Injection &amp; Brute Force Attacks</div>
+              <div class="syllabus-item">Machine Learning Applications in Cyber Security</div>
+              <div class="syllabus-item">Network Intrusion Detection Systems (NIDS)</div>
+              <div class="syllabus-item">Cybersecurity Dataset Analysis &amp; Data Preprocessing</div>
+              <div class="syllabus-item">And Many More...</div>
+            </div>
+            <p class="syllabus-contact-note">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.57 3.42 2 2 0 0 1 3.54 1.25h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.68 2.81a2 2 0 0 1-.45 2.11L7.91 8.75a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.91.33 1.85.55 2.81.68A2 2 0 0 1 21.5 16h.5z"/></svg>
+              For more detailed information about the internship program, please contact our office.
+            </p>
+            <div class="syllabus-actions">
+              <button class="btn-back" onclick="hideSyllabus(3)">← Back</button>
+              <a href="techno_contact.html" class="btn-enquiry btn-enquiry-outline">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Enquiry →
+              </a>
             </div>
           </div>
           <div class="slide-media">
@@ -816,23 +924,107 @@
           </div>
         </div>
 
-        <!-- Slide 6 -->
-        <div class="slide" data-index="5">
+        <!-- Slide 5 -->
+        <div class="slide" data-index="4">
           <div class="slide-content">
             <span class="slide-eyebrow">FEATURED PROGRAM</span>
             <h3 class="slide-title">Data Science & Machine Learning</h3>
             <p class="slide-desc">Learn the complete data science workflow, from data preprocessing and visualization to machine learning model development and predictive analytics.</p>
             <div class="slide-stats">
               <div class="stat"><span class="stat-icon">📅</span><div><strong>2 Weeks</strong><small>Program Duration</small></div></div>
-              <div class="stat"><span class="stat-icon">🐍</span><div><strong>Python</strong><small>NumPy & Pandas</small></div></div>
-              <div class="stat"><span class="stat-icon">📊</span><div><strong>ML Models</strong><small>Real Datasets</small></div></div>
+              <div class="stat"><span class="stat-icon">👥</span><div><strong>6 Sessions</strong><small>Offline Classes</small></div></div>
+              <div class="stat"><span class="stat-icon">🕒</span><div><strong>Alternate Days</strong><small>Practical Learning</small></div></div>
             </div>
             <div class="slide-actions">
-              <a href="techno_contact.html" class="btn-explore">Get Started <span>→</span></a>
+              <button class="btn-view-details" onclick="showSyllabus(4)">View Details</button>
+            </div>
+          </div>
+          <div class="slide-syllabus hidden" data-slide="4">
+            <span class="slide-eyebrow">FEATURED PROGRAM</span>
+            <h3 class="slide-title">Data Science &amp; Machine Learning</h3>
+            <div class="syllabus-topics-label">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 11 12 14 22 4"/>
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+              </svg>
+              MAIN TOPICS COVERED
+            </div>
+            <div class="syllabus-grid">
+              <div class="syllabus-item">Data Science &amp; Machine Learning Fundamentals</div>
+              <div class="syllabus-item">Data Collection, Preprocessing &amp; Feature Engineering</div>
+              <div class="syllabus-item">Exploratory Data Analysis (EDA) &amp; Data Visualization</div>
+              <div class="syllabus-item">Regression, Classification &amp; Prediction Systems</div>
+              <div class="syllabus-item">Machine Learning Model Development &amp; Evaluation</div>
+              <div class="syllabus-item">Business Forecasting &amp; Predictive Analytics</div>
+              <div class="syllabus-item">Hyperparameter Tuning &amp; Model Optimization</div>
+              <div class="syllabus-item">And Many More...</div>
+            </div>
+            <p class="syllabus-contact-note">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.57 3.42 2 2 0 0 1 3.54 1.25h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.68 2.81a2 2 0 0 1-.45 2.11L7.91 8.75a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.91.33 1.85.55 2.81.68A2 2 0 0 1 21.5 16h.5z"/></svg>
+              For more detailed information about the internship program, please contact our office.
+            </p>
+            <div class="syllabus-actions">
+              <button class="btn-back" onclick="hideSyllabus(4)">← Back</button>
+              <a href="techno_contact.html" class="btn-enquiry btn-enquiry-outline">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Enquiry →
+              </a>
             </div>
           </div>
           <div class="slide-media">
             <img src="assets/images/techno/internship6.webp" alt="Data Science & Machine Learning">
+          </div>
+        </div>
+
+        <!-- Slide 6 -->
+        <div class="slide" data-index="5">
+          <div class="slide-content">
+            <span class="slide-eyebrow">FEATURED PROGRAM</span>
+            <h3 class="slide-title">AI & Machine Learning</h3>
+            <p class="slide-desc">Discover modern AI concepts through computer vision, OpenCV, deep learning fundamentals, model development, and real-world machine learning applications.</p>
+            <div class="slide-stats">
+              <div class="stat"><span class="stat-icon">📅</span><div><strong>2 Weeks</strong><small>Program Duration</small></div></div>
+              <div class="stat"><span class="stat-icon">👥</span><div><strong>6 Sessions</strong><small>Offline Classes</small></div></div>
+              <div class="stat"><span class="stat-icon">🕒</span><div><strong>Alternate Days</strong><small>Practical Learning</small></div></div>
+            </div>
+            <div class="slide-actions">
+              <button class="btn-view-details" onclick="showSyllabus(5)">View Details</button>
+            </div>
+          </div>
+          <div class="slide-syllabus hidden" data-slide="5">
+            <span class="slide-eyebrow">FEATURED PROGRAM</span>
+            <h3 class="slide-title">AI &amp; Machine Learning</h3>
+            <div class="syllabus-topics-label">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 11 12 14 22 4"/>
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+              </svg>
+              MAIN TOPICS COVERED
+            </div>
+            <div class="syllabus-grid">
+              <div class="syllabus-item">Python for AI/ML</div>
+              <div class="syllabus-item">NumPy &amp; Data Manipulation</div>
+              <div class="syllabus-item">Computer Vision with OpenCV</div>
+              <div class="syllabus-item">Image Processing Techniques</div>
+              <div class="syllabus-item">Deep Learning Fundamentals</div>
+              <div class="syllabus-item">Neural Networks (TensorFlow)</div>
+              <div class="syllabus-item">Model Training &amp; Evaluation</div>
+              <div class="syllabus-item">Project: Vision ML App</div>
+            </div>
+            <p class="syllabus-contact-note">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.57 3.42 2 2 0 0 1 3.54 1.25h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.68 2.81a2 2 0 0 1-.45 2.11L7.91 8.75a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.91.33 1.85.55 2.81.68A2 2 0 0 1 21.5 16h.5z"/></svg>
+              For more detailed information about the internship program, please contact our office.
+            </p>
+            <div class="syllabus-actions">
+              <button class="btn-back" onclick="hideSyllabus(5)">← Back</button>
+              <a href="techno_contact.html" class="btn-enquiry btn-enquiry-outline">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Enquiry →
+              </a>
+            </div>
+          </div>
+          <div class="slide-media">
+            <img src="assets/images/techno/internship4.webp" alt="AI & Machine Learning">
           </div>
         </div>
 
@@ -1555,6 +1747,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if(index < 0) index = slides.length - 1;
     if(index >= slides.length) index = 0;
     current = index;
+    slides.forEach(s => {
+      s.querySelector('.slide-syllabus')?.classList.add('hidden');
+      s.querySelector('.slide-content')?.classList.remove('hidden');
+    });
     slides.forEach((s,i)=> s.classList.toggle('active', i === current));
     tabs.forEach((t,i)=> t.classList.toggle('active', i === current));
     dots.forEach((d,i)=> d.classList.toggle('active', i === current));
@@ -1565,6 +1761,21 @@ document.addEventListener('DOMContentLoaded', function() {
   tabs.forEach(tab => tab.addEventListener('click', ()=> goTo(Number(tab.dataset.index))));
   dots.forEach(dot => dot.addEventListener('click', ()=> goTo(Number(dot.dataset.index))));
 })();
+</script>
+
+<script>
+function showSyllabus(index){
+  var slide = document.querySelector('.slide[data-index="'+index+'"]');
+  if(!slide) return;
+  slide.querySelector('.slide-content').classList.add('hidden');
+  slide.querySelector('.slide-syllabus').classList.remove('hidden');
+}
+function hideSyllabus(index){
+  var slide = document.querySelector('.slide[data-index="'+index+'"]');
+  if(!slide) return;
+  slide.querySelector('.slide-syllabus').classList.add('hidden');
+  slide.querySelector('.slide-content').classList.remove('hidden');
+}
 </script>
 
 <script>
