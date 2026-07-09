@@ -1998,5 +1998,21 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 </script>
 
+<!-- ═══ ICT SCROLL TRAP FIX ═══ -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var ictSection = document.querySelector('.ict-section');
+  var ictRight = document.querySelector('.ict-right');
+  var ictContainer = document.querySelector('.ict-container');
+
+  [ictSection, ictRight, ictContainer].forEach(function(el) {
+    if (!el) return;
+    el.addEventListener('touchmove', function(e) {
+      e.stopPropagation();
+    }, { passive: true });
+  });
+});
+</script>
+
 </body>
 </html>
