@@ -1,170 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- 1. Basic Metadata -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fleming Embedded & Software Solutions</title>
+  <title>Fleming Embedded & Software Solutions | Embedded Systems & IT Services Kerala</title>
+  <meta name="description" content="Fleming Embedded and Software Solutions empowers businesses with custom web & mobile applications, ERP software, embedded systems, AI/ML engineering, cyber security, and blockchain innovation in Kerala." />
+  <meta name="keywords" content="Fleming Embedded, Software Solutions, Embedded Systems Kerala, Web Applications Ernakulam, ERP Software, Mobile App Development, AI Machine Learning, Cyber Security Training, Blockchain dApps, IT Solutions India, Fleming Ernakulam" />
+  <meta name="author" content="Fleming Embedded & Software Solutions" />
+  <meta name="theme-color" content="#0b5fa5" />
+
+  <!-- 2. Robots Control -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- 3. Favicon Configuration (Standard & Apple Touch) -->
+  <link rel="icon" type="image/png" href="assets/images/logo.webp" />
+  <link rel="apple-touch-icon" href="assets/images/logo.webp" />
+
+  <!-- 4. Social Media Metadata (Open Graph / Facebook) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Fleming Embedded & Software Solutions | Embedded Systems & IT Services" />
+  <meta property="og:description" content="Empowering businesses through cutting-edge embedded hardware, custom software development, and specialized tech consulting. Your trusted technology partner." />
+  <meta property="og:url" content="https://www.fleming.co.in/" /> 
+  <meta property="og:image" content="https://www.fleming.co.in/assets/images/logo.webp" /> 
+  <meta property="og:site_name" content="Fleming Embedded & Software Solutions" />
+
+  <!-- 5. Social Media Metadata (Twitter Card) -->
+  <meta name="twitter:card" content="summary" /> 
+  <meta name="twitter:title" content="Fleming Embedded & Software Solutions | Embedded Systems & IT Services" />
+  <meta name="twitter:description" content="Empowering businesses through cutting-edge embedded hardware, custom software development, and specialized tech consulting." />
+  <meta name="twitter:image" content="https://www.fleming.co.in/assets/images/logo.webp" />
+
+  <!-- Your existing preconnect and font links continue below -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="icon" type="image/png" href="assets/images/logo.png" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/split-type"></script>
 
-<style>
-/* ═══════════════════════════════════════════════
-   BACK‑TO‑TOP CONTROL
-   Self‑contained (no external CSS/JS modified)
-═══════════════════════════════════════════════ */
 
-/* ── Container ── */
-#bttControl {
-  position: fixed;
-  right: 60px;
-  bottom: 120px;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  gap: 1px;
-  cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(20px);
-  transition:
-    opacity 0.4s ease-out,
-    transform 0.4s ease-out,
-    visibility 0.4s ease-out,
-    bottom 0.35s ease;
-  -webkit-tap-highlight-color: transparent;
-  outline: none;
-}
-#bttControl:focus-visible {
-  outline: 2px solid #0b5fa5;
-  outline-offset: 6px;
-  border-radius: 4px;
-}
-
-/* ── Visible state ── */
-#bttControl.btt-visible {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-/* ── Hover (only when visible) ── */
-#bttControl.btt-visible:hover {
-  transform: translateY(0) translateX(-4px);
-}
-#bttControl.btt-visible:hover .btt-text {
-  color: #083b73;
-}
-
-/* ── FCW open – move up ── */
-#bttControl.btt-fcw-open {
-  bottom: 300px;
-}
-
-/* ── Rotated text ── */
-.btt-text {
-  display: block;
-  font-family: 'Poppins', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 3px;
-  color: #0b5fa5;
-  text-transform: uppercase;
-  writing-mode: vertical-rl;
-  text-orientation: sideways;
-  transition: color 0.25s ease;
-  line-height: 1.2;
-  user-select: none;
-}
-
-/* ── Progress line ── */
-.btt-line-wrap {
-  width: 4px;
-  height: 0;
-  border-radius: 2px;
-  background: #0b5fa5;
-  overflow: hidden;
-  flex-shrink: 0;
-  position: relative;
-}
-
-.btt-line-fill {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #083b73;
-  border-radius: inherit;
-  transform-origin: top center;
-  transform: scaleY(0);
-  will-change: transform;
-}
-
-/* ── Tablet ── */
-@media (max-width: 1024px) {
-  #bttControl {
-    right: 24px;
-    bottom: 100px;
-    gap: 1px;
-  }
-  #bttControl.btt-fcw-open {
-    bottom: 280px;
-  }
-  .btt-text {
-    font-size: 12px;
-    letter-spacing: 2.5px;
-  }
-}
-
-/* ── Mobile ── */
-@media (max-width: 767px) {
-  #bttControl {
-    right: 20px;
-    bottom: 88px;
-    gap: 1px;
-  }
-  #bttControl.btt-fcw-open {
-    bottom: 250px;
-  }
-  .btt-text {
-    font-size: 10px;
-    letter-spacing: 2px;
-  }
-}
-</style>
 </head>
 <body>
 
 <div class="site-preloader-overlay" id="loadingScreen">
-  <style>
-    .site-preloader-overlay{position:fixed;top:0;left:0;width:100vw;height:100vh;background-color:#0b5fa5 !important;display:flex !important;justify-content:center !important;align-items:center !important;z-index:999999 !important;opacity:1;visibility:visible;transition:opacity 0.4s cubic-bezier(0.25,1,0.5,1),visibility 0.4s ease;perspective:1000px}
-    .site-preloader-overlay.loader-hidden{opacity:0 !important;visibility:hidden !important;pointer-events:none !important}
-    .loader-wrapper-master{position:relative;width:165px;height:165px;display:flex;justify-content:center;align-items:center;transform-style:preserve-3d}
-    .loader-wrapper{position:absolute;width:90px;height:90px;display:flex;justify-content:center;align-items:center;transform-style:preserve-3d;animation:global-spin 5s infinite linear}
-    .site-preloader-overlay .circle{position:absolute;border-radius:50%;border:3px dashed rgba(255,255,255,0.9) !important;transform-style:preserve-3d;box-sizing:border-box}
-    .loader-wrapper .circle{width:100%;height:100%}
-    .r-z{transform:rotateY(0deg)}.r-y{transform:rotateY(90deg)}.r-x{transform:rotateX(90deg)}
-    .r-4-outer,.r-5-outer{width:130px;height:130px}
-    .r-4-outer{animation:spin-outer-horizontal 3.8s infinite linear}
-    .r-5-outer{animation:spin-outer-vertical 2.7s infinite linear}
-    .r-6-outer,.r-7-outer{width:165px;height:165px}
-    .r-6-outer{animation:rotate-flat-clockwise 4s infinite linear}
-    .r-7-outer{animation:rotate-flat-counter 3.2s infinite linear}
-    .site-preloader-overlay .logo{position:absolute;width:65px;height:auto;user-select:none;transform:translateZ(2px);filter:brightness(0) invert(1) !important}
-    @keyframes global-spin{0%{transform:rotateX(45deg) rotateY(0deg) rotateZ(0deg)}100%{transform:rotateX(45deg) rotateY(360deg) rotateZ(360deg)}}
-    @keyframes spin-outer-horizontal{0%{transform:rotateX(15deg) rotateY(40deg)}100%{transform:rotateX(15deg) rotateY(400deg)}}
-    @keyframes spin-outer-vertical{0%{transform:rotateY(-30deg) rotateX(85deg)}100%{transform:rotateY(-30deg) rotateX(445deg)}}
-    @keyframes rotate-flat-clockwise{0%{transform:rotateX(45deg) rotateZ(0deg)}100%{transform:rotateX(45deg) rotateZ(360deg)}}
-    @keyframes rotate-flat-counter{0%{transform:rotateY(45deg) rotateZ(360deg)}100%{transform:rotateY(45deg) rotateZ(0deg)}}
-  </style>
   <div class="loader-wrapper-master">
     <div class="circle r-6-outer"></div>
     <div class="circle r-7-outer"></div>
@@ -174,7 +56,7 @@
       <div class="circle r-z"></div>
       <div class="circle r-y"></div>
       <div class="circle r-x"></div>
-      <img src="assets/images/logo1.png" class="logo" alt="Loading...">
+      <img src="assets/images/logo1.webp" class="logo" alt="Loading...">
     </div>
   </div>
   <script>document.body.style.overflow='hidden';window.addEventListener('load',function(){var e=document.getElementById('loadingScreen');if(e){e.classList.add('loader-hidden');document.body.style.overflow=''}})</script>
@@ -186,7 +68,7 @@
 
     <div class="nav-logo">
       <a href="#">
-        <img src="assets/images/logo.png" alt="Logo" class="nav-logo-img" />
+        <img src="assets/images/logo.webp" alt="Logo" class="nav-logo-img" />
       </a>
     </div>
 
@@ -222,7 +104,7 @@
 
     <div class="nav-logo">
       <a href="#">
-        <img src="assets/images/logo.png" alt="Logo" class="nav-logo-img" />
+        <img src="assets/images/logo.webp" alt="Logo" class="nav-logo-img" />
       </a>
     </div>
 
@@ -289,7 +171,7 @@
 
     <div class="hero-right">
 
-      <img src="assets/images/hero_img.png" alt="Hero" class="hero-person-img" />
+      <img src="assets/images/hero_img.webp" alt="Hero" class="hero-person-img" />
 
     </div>
 
@@ -311,80 +193,80 @@
     <div class="tech-slider-window">
       <div class="tech-slider-track" id="techSliderTrack">
         
-        <div class="tech-slide-card" style="background-image: url('assets/images/solidity_bg.png')">
-          <img class="tech-tile-icon tech-tile-icon-solidity" src="assets/images/solidity.png" alt="Solidity icon" />
+        <div class="tech-slide-card" style="background-image: url('assets/images/solidity_bg.webp')">
+          <img class="tech-tile-icon tech-tile-icon-solidity" src="assets/images/solidity.webp" alt="Solidity icon" />
           <div class="tech-icon-placeholder"></div>
           <div class="tech-slide-content">
             <span class="tech-slide-title">Solidity</span>
             <p class="tech-slide-desc">Solidity is the leading programming language for developing secure smart contracts on blockchain platforms such as Ethereum. It enables the creation of decentralized applications (DApps), digital assets, decentralized finance (DeFi) solutions, NFTs, and automated business processes. Our expertise focuses on building reliable, scalable, and secure blockchain applications that deliver transparency, trust, and efficiency across various industries.</p>
           </div>
         </div>
-        <div class="tech-slide-card" style="background-image: url('assets/images/springboot_bg.png')">
-          <img class="tech-tile-icon tech-tile-icon-springboot" src="assets/images/springboot.png" alt="Spring Boot icon" />
+        <div class="tech-slide-card" style="background-image: url('assets/images/springboot_bg.webp')">
+          <img class="tech-tile-icon tech-tile-icon-springboot" src="assets/images/springboot.webp" alt="Spring Boot icon" />
           <div class="tech-icon-placeholder"></div>
           <div class="tech-slide-content">
             <span class="tech-slide-title">Spring Boot</span>
             <p class="tech-slide-desc">Spring Boot is a powerful Java-based framework used to develop enterprise-grade web applications and RESTful APIs with speed and reliability. It simplifies backend development by providing robust security, seamless database integration, microservices architecture, and high-performance application management. We leverage Spring Boot to build scalable, secure, and maintainable business solutions tailored to modern organizational needs.</p>
           </div>
         </div>
-        <div class="tech-slide-card" style="background-image: url('assets/images/reactnative_bg.png')">
-          <img class="tech-tile-icon tech-tile-icon-reactnative" src="assets/images/reactnative.png" alt="React Native icon" />
+        <div class="tech-slide-card" style="background-image: url('assets/images/reactnative_bg.webp')">
+          <img class="tech-tile-icon tech-tile-icon-reactnative" src="assets/images/reactnative.webp" alt="React Native icon" />
           <div class="tech-icon-placeholder"></div>
           <div class="tech-slide-content">
             <span class="tech-slide-title">React Native</span>
             <p class="tech-slide-desc">React Native enables the development of high-quality mobile applications for both Android and iOS using a single codebase. It combines native performance with rapid development, allowing businesses to reduce costs while maintaining exceptional user experiences. Our React Native solutions focus on responsive interfaces, smooth performance, and scalable architecture for modern mobile applications.</p>
           </div>
         </div>
-        <div class="tech-slide-card" style="background-image: url('assets/images/java_bg.png')">
-          <img class="tech-tile-icon tech-tile-icon-java" src="assets/images/java.png" alt="Java icon" />
+        <div class="tech-slide-card" style="background-image: url('assets/images/java_bg.webp')">
+          <img class="tech-tile-icon tech-tile-icon-java" src="assets/images/java.webp" alt="Java icon" />
           <div class="tech-icon-placeholder"></div>
           <div class="tech-slide-content">
             <span class="tech-slide-title">Java</span>
             <p class="tech-slide-desc">Java remains one of the world's most trusted programming languages for enterprise software, web applications, financial systems, and large-scale distributed platforms. Its platform independence, strong security, and exceptional reliability make it ideal for mission-critical applications. We utilize Java to create robust, scalable, and efficient software solutions that support long-term business growth.</p>
           </div>
         </div>
-        <div class="tech-slide-card" style="background-image: url('assets/images/android_bg.png')">
-          <img class="tech-tile-icon tech-tile-icon-android" src="assets/images/android.png" alt="Android icon" />
+        <div class="tech-slide-card" style="background-image: url('assets/images/android_bg.webp')">
+          <img class="tech-tile-icon tech-tile-icon-android" src="assets/images/android.webp" alt="Android icon" />
           <div class="tech-icon-placeholder"></div>
           <div class="tech-slide-content">
             <span class="tech-slide-title">Android</span>
             <p class="tech-slide-desc">Android application development allows businesses to reach millions of users through powerful, intuitive, and feature-rich mobile experiences. We develop native Android applications that deliver high performance, seamless user interfaces, secure data management, and excellent device compatibility. Our solutions are designed to provide reliability, scalability, and an engaging experience across the Android ecosystem.</p>
           </div>
         </div>
-        <div class="tech-slide-card" style="background-image: url('assets/images/python_bg.png')">
-          <img class="tech-tile-icon tech-tile-icon-python" src="assets/images/python.png" alt="Python icon" />
+        <div class="tech-slide-card" style="background-image: url('assets/images/python_bg.webp')">
+          <img class="tech-tile-icon tech-tile-icon-python" src="assets/images/python.webp" alt="Python icon" />
           <div class="tech-icon-placeholder"></div>
           <div class="tech-slide-content">
             <span class="tech-slide-title">Python</span>
             <p class="tech-slide-desc">Python is a versatile programming language widely adopted for artificial intelligence, machine learning, automation, web development, and data analytics. Its extensive ecosystem of libraries accelerates innovation while simplifying complex problem-solving. We use Python to develop intelligent applications, automate business processes, and build scalable software solutions that enhance productivity and decision-making.</p>
           </div>
         </div>
-        <div class="tech-slide-card" style="background-image: url('assets/images/php_bg.png')">
-          <img class="tech-tile-icon tech-tile-icon-php" src="assets/images/php.png" alt="PHP icon" />
+        <div class="tech-slide-card" style="background-image: url('assets/images/php_bg.webp')">
+          <img class="tech-tile-icon tech-tile-icon-php" src="assets/images/php.webp" alt="PHP icon" />
           <div class="tech-icon-placeholder"></div>
           <div class="tech-slide-content">
             <span class="tech-slide-title">PHP</span>
             <p class="tech-slide-desc">PHP continues to be one of the most reliable server-side technologies for creating dynamic websites, business portals, and custom web applications. With excellent database connectivity and flexible backend capabilities, PHP powers countless enterprise solutions worldwide. Our PHP development services focus on secure architecture, optimized performance, and scalable web platforms tailored to client requirements.</p>
           </div>
         </div>
-        <div class="tech-slide-card" style="background-image: url('assets/images/flutter_bg.png')">
-          <img class="tech-tile-icon tech-tile-icon-flutter" src="assets/images/flutter.png" alt="Flutter icon" />
+        <div class="tech-slide-card" style="background-image: url('assets/images/flutter_bg.webp')">
+          <img class="tech-tile-icon tech-tile-icon-flutter" src="assets/images/flutter.webp" alt="Flutter icon" />
           <div class="tech-icon-placeholder"></div>
           <div class="tech-slide-content">
             <span class="tech-slide-title">Flutter</span>
             <p class="tech-slide-desc">Flutter is Google's modern UI framework for building visually appealing and high-performance applications from a single codebase. It enables rapid cross-platform development for Android, iOS, desktop, and web while maintaining native-like performance. Our Flutter solutions emphasize elegant user interfaces, smooth interactions, fast deployment, and scalable application architecture for diverse business needs.</p>
           </div>
         </div>
-        <div class="tech-slide-card" style="background-image: url('assets/images/embedded_bg.png')">
-          <img class="tech-tile-icon tech-tile-icon-embedded" src="assets/images/embedded.png" alt="Embedded icon" />
+        <div class="tech-slide-card" style="background-image: url('assets/images/embedded_bg.webp')">
+          <img class="tech-tile-icon tech-tile-icon-embedded" src="assets/images/embedded.webp" alt="Embedded icon" />
           <div class="tech-icon-placeholder"></div>
           <div class="tech-slide-content">
             <span class="tech-slide-title">Embedded</span>
             <p class="tech-slide-desc">Embedded Systems combine hardware and software to create intelligent electronic devices capable of dedicated real-time functions. Our expertise spans firmware development, microcontroller programming, hardware interfacing, communication protocols, and system optimization. We develop reliable embedded solutions that power industrial automation, consumer electronics, medical devices, automotive systems, and smart technologies.</p>
           </div>
         </div>
-        <div class="tech-slide-card" style="background-image: url('assets/images/iot_bg.png')">
-          <img class="tech-tile-icon tech-tile-icon-iot" src="assets/images/iot.png" alt="IoT icon" />
+        <div class="tech-slide-card" style="background-image: url('assets/images/iot_bg.webp')">
+          <img class="tech-tile-icon tech-tile-icon-iot" src="assets/images/iot.webp" alt="IoT icon" />
           <div class="tech-icon-placeholder"></div>
           <div class="tech-slide-content">
             <span class="tech-slide-title">IoT</span>
@@ -431,7 +313,7 @@
         <p class="card-teaser">Web or cloud-based applications are like the backbone of a business, helping it run smoothly...</p>
         <span class="read-more-hint">Hover to explore +</span>
       </div>
-      <img class="card-hover-image" src="assets/images/service1.png" alt="Web Applications" />
+      <img class="card-hover-image" src="assets/images/service1.webp" alt="Web Applications" />
       <div class="card-hover-overlay">
         <p class="card-full-desc">Web or cloud-based applications are like the backbone of a business, helping it run smoothly and grow steadily. We focus on providing user-friendly applications that bring joy to our customers. By using simple yet effective technology, we aim to make tasks easier and more efficient, ensuring our clients' businesses thrive and flourish.</p>
       </div>
@@ -444,7 +326,7 @@
         <p class="card-teaser">Operating a business in the competitive modern market leaves no room for minor oversights...</p>
         <span class="read-more-hint">Hover to explore +</span>
       </div>
-      <img class="card-hover-image" src="assets/images/service2.png" alt="ERP Softwares" />
+      <img class="card-hover-image" src="assets/images/service2.webp" alt="ERP Softwares" />
       <div class="card-hover-overlay">
         <p class="card-full-desc">Operating a business in the fiercely competitive modern market leaves no room for even minor oversights, which can lead to significant losses. Partnering with Fleming Embedding And Software Solutions ensures your company remains fully equipped to face competition, thanks to our expertly crafted and thoughtfully developed ERPs. Our solutions are designed with precision and care to guarantee your business excels and prospers.</p>
       </div>
@@ -457,7 +339,7 @@
         <p class="card-teaser">Achieving top-notch services with just a touch is a universal aspiration. We achieve this...</p>
         <span class="read-more-hint">Hover to explore +</span>
       </div>
-      <img class="card-hover-image" src="assets/images/service3.png" alt="Mobile Applications" />
+      <img class="card-hover-image" src="assets/images/service3.webp" alt="Mobile Applications" />
       <div class="card-hover-overlay">
         <p class="card-full-desc">Achieving top-notch services with just a touch is a universal aspiration. We achieve this by offering expert mobile application development and reliable support services. This means creating user-friendly, efficient applications that meet the highest standards. We're committed to making technology accessible and impactful for our clients, helping them reach new heights in their endeavors.</p>
       </div>
@@ -470,7 +352,7 @@
         <p class="card-teaser">Fleming Embedded and Software Solutions understands the pivotal role that embedded technology plays...</p>
         <span class="read-more-hint">Hover to explore +</span>
       </div>
-      <img class="card-hover-image" src="assets/images/service4.png" alt="Embedded Solutions" />
+      <img class="card-hover-image" src="assets/images/service4.webp" alt="Embedded Solutions" />
       <div class="card-hover-overlay">
         <p class="card-full-desc">Fleming Embedded and Software Solutions understands the pivotal role that embedded technology plays in shaping our connected world. Our dedicated team of experts is committed to delivering solutions that exceed expectations, providing you with a competitive edge in today's fast-paced technological landscape. We offer a wide range of embedded solutions tailored to meet the specific needs of your projects.</p>
       </div>
@@ -483,7 +365,7 @@
         <p class="card-teaser">Dive into the transformative world of Artificial Intelligence (AI) and Machine Learning...</p>
         <span class="read-more-hint">Hover to explore +</span>
       </div>
-      <img class="card-hover-image" src="assets/images/service5.png" alt="AI & Machine Learning" />
+      <img class="card-hover-image" src="assets/images/service5.webp" alt="AI & Machine Learning" />
       <div class="card-hover-overlay">
         <p class="card-full-desc">Dive into the transformative world of Artificial Intelligence (AI) and Machine Learning (ML) with Fleming Embedded and Software Solutions. Whether you're a student eager to grasp AI/ML fundamentals or a professional seeking advanced applications, we're your trusted partner. Our dedicated team is here to simplify complex concepts, offer expert guidance, and empower you to harness AI and ML's potential for innovation.</p>
       </div>
@@ -496,7 +378,7 @@
         <p class="card-teaser">We specialize in guiding students through hands-on Cyber Security projects, providing expertise...</p>
         <span class="read-more-hint">Hover to explore +</span>
       </div>
-      <img class="card-hover-image" src="assets/images/service6.png" alt="Cyber Security" />
+      <img class="card-hover-image" src="assets/images/service6.webp" alt="Cyber Security" />
       <div class="card-hover-overlay">
         <p class="card-full-desc">We specialize in guiding students through hands-on Cyber Security projects, providing expertise in critical areas like intrusion detection, cryptography, and proficiency in utilizing platforms such as Ubuntu and Kali Linux. Our approach emphasizes practical skills and real-world applications, ensuring students gain valuable experience in tackling cyber threats and securing systems effectively. This hands-on learning approach sets a solid foundation for future success in the field of Cyber Security.</p>
       </div>
@@ -509,7 +391,7 @@
         <p class="card-teaser">Blockchain is a revolutionary technology that ensures secure, transparent, and tamper-proof...</p>
         <span class="read-more-hint">Hover to explore +</span>
       </div>
-      <img class="card-hover-image" src="assets/images/service7.png" alt="Blockchain" />
+      <img class="card-hover-image" src="assets/images/service7.webp" alt="Blockchain" />
       <div class="card-hover-overlay">
         <p class="card-full-desc">Blockchain is a revolutionary technology that ensures secure, transparent, and tamper-proof transactions. It forms the backbone of cryptocurrencies like Bitcoin, but its applications extend far beyond digital currencies. We specialize in guiding students through the intricacies of Ethereum-related decentralized applications (dApps), covering areas such as smart contracts and their implementation on the Ethereum platform.</p>
       </div>
@@ -522,7 +404,7 @@
         <p class="card-teaser">Our expertise in data mining involves the adept application of advanced algorithms...</p>
         <span class="read-more-hint">Hover to explore +</span>
       </div>
-      <img class="card-hover-image" src="assets/images/service8.png" alt="Data Mining" />
+      <img class="card-hover-image" src="assets/images/service8.webp" alt="Data Mining" />
       <div class="card-hover-overlay">
         <p class="card-full-desc">Our expertise in data mining involves the adept application of advanced algorithms and sophisticated statistical techniques to extract valuable insights from intricate datasets. We go beyond mere analysis, providing comprehensive guidance and support throughout the process. This empowers you to not only make well-informed decisions but also to innovate.</p>
       </div>
@@ -535,7 +417,7 @@
         <p class="card-teaser">Seeking expert guidance for your research projects? Look no further. We offer comprehensive...</p>
         <span class="read-more-hint">Hover to explore +</span>
       </div>
-      <img class="card-hover-image" src="assets/images/service9.png" alt="Research Guidance" />
+      <img class="card-hover-image" src="assets/images/service9.webp" alt="Research Guidance" />
       <div class="card-hover-overlay">
         <p class="card-full-desc">Seeking expert guidance for your research projects? Look no further. We offer comprehensive project assistance and academic guidance to ensure you're not just on the right track, but also equipped with the necessary tools to conduct thorough research. Our experienced team is dedicated to providing a curated selection of the most pertinent and timely topics, along with the support needed to help you excel in your academic endeavors.</p>
       </div>
@@ -545,7 +427,7 @@
 </section>
 
 <section class="management-section">
-  <div class="management-parallax-bg" style="background-image: url('assets/images/management_bg.png');"></div>
+  <div class="management-parallax-bg" style="background-image: url('assets/images/management_bg.webp');"></div>
 <div class="management-shape-1"></div>
 <div class="management-shape-2"></div>
 <div class="management-shape-3"></div>
@@ -620,25 +502,25 @@
 
     <div class="client-logo-box">
       <div class="logo-wrapper">
-        <img src="assets/images/client1.png" alt="Client Logo 1" class="client-logo" />
+        <img src="assets/images/client1.webp" alt="Client Logo 1" class="client-logo" />
       </div>
     </div>
 
     <div class="client-logo-box">
       <div class="logo-wrapper">
-        <img src="assets/images/client2.png" alt="Client Logo 2" class="client-logo" />
+        <img src="assets/images/client2.webp" alt="Client Logo 2" class="client-logo" />
       </div>
     </div>
 
     <div class="client-logo-box">
       <div class="logo-wrapper">
-        <img src="assets/images/client3.png" alt="Client Logo 3" class="client-logo" />
+        <img src="assets/images/client3.webp" alt="Client Logo 3" class="client-logo" />
       </div>
     </div>
 
     <div class="client-logo-box">
       <div class="logo-wrapper">
-        <img src="assets/images/client4.png" alt="Client Logo 4" class="client-logo" />
+        <img src="assets/images/client4.webp" alt="Client Logo 4" class="client-logo" />
       </div>
     </div>
 
@@ -671,7 +553,7 @@
       <div class="footer-col footer-col-brand">
         <div class="footer-logo">
           <a href="#">
-            <img src="assets/images/logo.png" alt="Logo" class="footer-logo-img" />
+            <img src="assets/images/logo.webp" alt="Logo" class="footer-logo-img" />
           </a>
         </div>
         <p class="footer-brand-desc">

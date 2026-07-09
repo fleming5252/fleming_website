@@ -4,13 +4,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fleming Techno Solutions</title>
+
+  <!-- Complete Meta Data -->
+  <meta name="description" content="Fleming Techno Solutions in Kaloor, Ernakulam provides industry-focused training, real-time internships, and complete project or research support for B.Tech, M.Tech, MS, and PhD students." />
+  <meta name="keywords" content="Fleming Techno Solutions, engineering internships Kochi, B.Tech project support Ernakulam, M.Tech thesis guidance Kerala, software training Kaloor, PhD research support, embedded systems training, python full stack course" />
+  <meta name="author" content="Fleming Embedded & Software Solutions" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0b5fa5" />
+  
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Fleming Techno Solutions | Training, Internships & Project Support" />
+  <meta property="og:description" content="Fleming Techno Solutions in Kaloor, Ernakulam provides industry-focused training, real-time internships, and complete project or research support for B.Tech, M.Tech, MS, and PhD students." />
+  <meta property="og:url" content="https://fleming.co.in/techno.html" />
+  <meta property="og:image" content="https://fleming.co.in/assets/images/logo.webp" />
+
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content="Fleming Techno Solutions | Training, Internships & Project Support" />
+  <meta property="twitter:description" content="Fleming Techno Solutions in Kaloor, Ernakulam provides industry-focused training, real-time internships, and complete project or research support for B.Tech, M.Tech, MS, and PhD students." />
+  <meta property="twitter:image" content="https://fleming.co.in/assets/images/logo.webp" />
+  <!-- End of Meta Data -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/techno.css" />
-  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+  <link rel="icon" type="image/png" href="assets/images/logo.webp" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -19,27 +39,7 @@
 <body>
 
 <div class="site-preloader-overlay" id="loadingScreen">
-  <style>
-    .site-preloader-overlay{position:fixed;top:0;left:0;width:100vw;height:100vh;background-color:#0b5fa5 !important;display:flex !important;justify-content:center !important;align-items:center !important;z-index:999999 !important;opacity:1;visibility:visible;transition:opacity 0.4s cubic-bezier(0.25,1,0.5,1),visibility 0.4s ease;perspective:1000px}
-    .site-preloader-overlay.loader-hidden{opacity:0 !important;visibility:hidden !important;pointer-events:none !important}
-    .loader-wrapper-master{position:relative;width:165px;height:165px;display:flex;justify-content:center;align-items:center;transform-style:preserve-3d}
-    .loader-wrapper{position:absolute;width:90px;height:90px;display:flex;justify-content:center;align-items:center;transform-style:preserve-3d;animation:global-spin 5s infinite linear}
-    .site-preloader-overlay .circle{position:absolute;border-radius:50%;border:3px dashed rgba(255,255,255,0.9) !important;transform-style:preserve-3d;box-sizing:border-box}
-    .loader-wrapper .circle{width:100%;height:100%}
-    .r-z{transform:rotateY(0deg)}.r-y{transform:rotateY(90deg)}.r-x{transform:rotateX(90deg)}
-    .r-4-outer,.r-5-outer{width:130px;height:130px}
-    .r-4-outer{animation:spin-outer-horizontal 3.8s infinite linear}
-    .r-5-outer{animation:spin-outer-vertical 2.7s infinite linear}
-    .r-6-outer,.r-7-outer{width:165px;height:165px}
-    .r-6-outer{animation:rotate-flat-clockwise 4s infinite linear}
-    .r-7-outer{animation:rotate-flat-counter 3.2s infinite linear}
-    .site-preloader-overlay .logo{position:absolute;width:65px;height:auto;user-select:none;transform:translateZ(2px);filter:brightness(0) invert(1) !important}
-    @keyframes global-spin{0%{transform:rotateX(45deg) rotateY(0deg) rotateZ(0deg)}100%{transform:rotateX(45deg) rotateY(360deg) rotateZ(360deg)}}
-    @keyframes spin-outer-horizontal{0%{transform:rotateX(15deg) rotateY(40deg)}100%{transform:rotateX(15deg) rotateY(400deg)}}
-    @keyframes spin-outer-vertical{0%{transform:rotateY(-30deg) rotateX(85deg)}100%{transform:rotateY(-30deg) rotateX(445deg)}}
-    @keyframes rotate-flat-clockwise{0%{transform:rotateX(45deg) rotateZ(0deg)}100%{transform:rotateX(45deg) rotateZ(360deg)}}
-    @keyframes rotate-flat-counter{0%{transform:rotateY(45deg) rotateZ(360deg)}100%{transform:rotateY(45deg) rotateZ(0deg)}}
-  </style>
+
   <div class="loader-wrapper-master">
     <div class="circle r-6-outer"></div>
     <div class="circle r-7-outer"></div>
@@ -49,7 +49,7 @@
       <div class="circle r-z"></div>
       <div class="circle r-y"></div>
       <div class="circle r-x"></div>
-      <img src="assets/images/logo1.png" class="logo" alt="Loading...">
+      <img src="assets/images/logo1.webp" class="logo" alt="Loading...">
     </div>
   </div>
   <script>document.body.style.overflow='hidden';window.addEventListener('load',function(){var e=document.getElementById('loadingScreen');if(e){e.classList.add('loader-hidden');document.body.style.overflow=''}})</script>
@@ -60,7 +60,7 @@
   <div class="nav-container">
     <div class="nav-logo">
       <a href="#">
-        <img src="assets/images/logo.png" alt="Logo" class="nav-logo-img" />
+        <img src="assets/images/logo.webp" alt="Logo" class="nav-logo-img" />
       </a>
     </div>
     <nav class="nav-capsule">
@@ -87,7 +87,7 @@
   <div class="nav-container">
     <div class="nav-logo">
       <a href="#">
-        <img src="assets/images/logo.png" alt="Logo" class="nav-logo-img" />
+        <img src="assets/images/logo.webp" alt="Logo" class="nav-logo-img" />
       </a>
     </div>
     <nav class="nav-capsule">
@@ -204,7 +204,7 @@
 
         <!-- Hero photo -->
         <img
-          src="assets/images/techno/hero_img1.png"
+          src="assets/images/techno/hero_img1.webp"
           alt="Student working on embedded systems"
           class="hero-student-img"
         />
@@ -220,37 +220,37 @@
         <!-- Orbit bubbles -->
         <div class="orbit-bubble" style="top:2%; left:44%;">
           <div class="orbit-bubble-inner">
-            <img src="assets/images/techno/embeded.png" alt="Embedded" style="margin-top: 12px;" />
+            <img src="assets/images/techno/embeded.webp" alt="Embedded" style="margin-top: 12px;" />
           </div>
         </div>
 
         <div class="orbit-bubble" style="top:10%; left:76%;">
           <div class="orbit-bubble-inner">
-            <img src="assets/images/techno/aiml.png" alt="AI & ML" style="margin-top: 12px;" />
+            <img src="assets/images/techno/aiml.webp" alt="AI & ML" style="margin-top: 12px;" />
           </div>
         </div>
 
         <div class="orbit-bubble" style="top:41%; left:83%;">
           <div class="orbit-bubble-inner">
-            <img src="assets/images/techno/iot.png" alt="IoT" />
+            <img src="assets/images/techno/iot.webp" alt="IoT" />
           </div>
         </div>
 
         <div class="orbit-bubble" style="top:70%; left:76%;">
           <div class="orbit-bubble-inner">
-            <img src="assets/images/techno/robotics.png" alt="Robotics" />
+            <img src="assets/images/techno/robotics.webp" alt="Robotics" />
           </div>
         </div>
 
         <div class="orbit-bubble" style="top:55%; left:3%;">
           <div class="orbit-bubble-inner">
-            <img src="assets/images/techno/python.png" alt="Python" />
+            <img src="assets/images/techno/python.webp" alt="Python" />
           </div>
         </div>
 
         <div class="orbit-bubble" style="top:22%; left:3%;">
           <div class="orbit-bubble-inner">
-            <img src="assets/images/techno/web.png" alt="Web & App Dev" />
+            <img src="assets/images/techno/web.webp" alt="Web & App Dev" />
           </div>
         </div>
 
@@ -372,7 +372,7 @@
                 <polyline points="0,192 115,250 230,192" />
               </svg>
               <div class="ts-hex-inner ts-hex-logo-inner">
-                <img src="assets/images/techno/logo.png" alt="Fleming Logo" class="ts-logo-img" />
+                <img src="assets/images/techno/logo.webp" alt="Fleming Logo" class="ts-logo-img" />
                 <div class="ts-logo-title">FLEMING</div>
                 <div class="ts-logo-sub">Embedded &amp; Software<br>Solutions</div>
               </div>
@@ -618,7 +618,7 @@
       <!-- Central student image -->
       <div class="ict-img-wrapper">
         <img
-          src="assets/images/techno/img2.png"
+          src="assets/images/techno/img2.webp"
           alt="Student ready for internship"
           class="ict-student-img"
         />
@@ -732,7 +732,7 @@
       <!-- PANEL 0: Cloud Computing -->
       <div class="dom-panel" data-index="0">
         <div class="dom-panel-img-wrap">
-          <img src="assets/images/techno/cloud.png" alt="Cloud Computing" class="dom-panel-img" />
+          <img src="assets/images/techno/cloud.webp" alt="Cloud Computing" class="dom-panel-img" />
           <div class="dom-panel-img-glow"></div>
         </div>
         <div class="dom-panel-body">
@@ -754,7 +754,7 @@
       <!-- PANEL 1: Networking -->
       <div class="dom-panel" data-index="1">
         <div class="dom-panel-img-wrap">
-          <img src="assets/images/techno/networking.png" alt="Networking" class="dom-panel-img" />
+          <img src="assets/images/techno/networking.webp" alt="Networking" class="dom-panel-img" />
           <div class="dom-panel-img-glow"></div>
         </div>
         <div class="dom-panel-body">
@@ -776,7 +776,7 @@
       <!-- PANEL 2: Data Mining -->
       <div class="dom-panel" data-index="2">
         <div class="dom-panel-img-wrap">
-          <img src="assets/images/techno/datamining.png" alt="Data Mining" class="dom-panel-img" />
+          <img src="assets/images/techno/datamining.webp" alt="Data Mining" class="dom-panel-img" />
           <div class="dom-panel-img-glow"></div>
         </div>
         <div class="dom-panel-body">
@@ -798,7 +798,7 @@
       <!-- PANEL 3: Mobile Computing -->
       <div class="dom-panel" data-index="3">
         <div class="dom-panel-img-wrap">
-          <img src="assets/images/techno/mobilecomputing.png" alt="Mobile Computing" class="dom-panel-img" />
+          <img src="assets/images/techno/mobilecomputing.webp" alt="Mobile Computing" class="dom-panel-img" />
           <div class="dom-panel-img-glow"></div>
         </div>
         <div class="dom-panel-body">
@@ -820,7 +820,7 @@
       <!-- PANEL 4: Internet Technologies -->
       <div class="dom-panel" data-index="4">
         <div class="dom-panel-img-wrap">
-          <img src="assets/images/techno/internet.png" alt="Internet Technologies" class="dom-panel-img" />
+          <img src="assets/images/techno/internet.webp" alt="Internet Technologies" class="dom-panel-img" />
           <div class="dom-panel-img-glow"></div>
         </div>
         <div class="dom-panel-body">
@@ -842,7 +842,7 @@
       <!-- PANEL 5: Data Security -->
       <div class="dom-panel" data-index="5">
         <div class="dom-panel-img-wrap">
-          <img src="assets/images/techno/datasecuirity.png" alt="Data Security" class="dom-panel-img" />
+          <img src="assets/images/techno/datasecuirity.webp" alt="Data Security" class="dom-panel-img" />
           <div class="dom-panel-img-glow"></div>
         </div>
         <div class="dom-panel-body">
@@ -864,7 +864,7 @@
       <!-- PANEL 6: Embedded Systems -->
       <div class="dom-panel" data-index="6">
         <div class="dom-panel-img-wrap">
-          <img src="assets/images/techno/embeddedsystem.png" alt="Embedded Systems" class="dom-panel-img" />
+          <img src="assets/images/techno/embeddedsystem.webp" alt="Embedded Systems" class="dom-panel-img" />
           <div class="dom-panel-img-glow"></div>
         </div>
         <div class="dom-panel-body">
@@ -886,7 +886,7 @@
       <!-- PANEL 7: And Several More -->
       <div class="dom-panel dom-panel--more" data-index="7">
         <div class="dom-panel-img-wrap">
-          <img src="assets/images/techno/other.png" alt="And Many More" class="dom-panel-img" />
+          <img src="assets/images/techno/other.webp" alt="And Many More" class="dom-panel-img" />
           <div class="dom-panel-img-glow"></div>
         </div>
         <div class="dom-panel-body">
@@ -934,7 +934,7 @@
       <div class="footer-col footer-col-brand">
         <div class="footer-logo">
           <a href="#">
-            <img src="assets/images/logo.png" alt="Logo" class="footer-logo-img" />
+            <img src="assets/images/logo.webp" alt="Logo" class="footer-logo-img" />
           </a>
         </div>
         <p class="footer-brand-desc">
@@ -1600,28 +1600,28 @@ stickyNav.classList.add('nav-hidden');
   if (!domSection) return;
 
   var domains = [
-    { label: 'Cloud Computing', tag: '☁ Cloud & Infrastructure', img: 'assets/images/techno/cloud.png',
+    { label: 'Cloud Computing', tag: '☁ Cloud & Infrastructure', img: 'assets/images/techno/cloud.webp',
       desc: 'Learn modern cloud technologies and deployment models, including SaaS, PaaS, and IaaS. Build scalable, secure, and high-performance cloud solutions while improving productivity and resource management.',
       points: ['Cloud Architecture & Deployment', 'Scalable Infrastructure Design', 'AWS, Azure & GCP Platforms'], tags: null },
-    { label: 'Networking', tag: '🌐 Networks & Protocols', img: 'assets/images/techno/networking.png',
+    { label: 'Networking', tag: '🌐 Networks & Protocols', img: 'assets/images/techno/networking.webp',
       desc: 'Understand the principles of computer networking, communication protocols, routing, switching, and secure data exchange between connected systems across local and global networks.',
       points: ['Routing & Switching Fundamentals', 'Network Security & Firewalls', 'TCP/IP, DNS & Communication Protocols'], tags: null },
-    { label: 'Data Mining', tag: '📊 Data & Analytics', img: 'assets/images/techno/datamining.png',
+    { label: 'Data Mining', tag: '📊 Data & Analytics', img: 'assets/images/techno/datamining.webp',
       desc: 'Explore intelligent techniques for collecting, organizing, analyzing, compressing, and extracting meaningful insights from large volumes of structured and unstructured data.',
       points: ['Pattern Recognition & Clustering', 'Big Data Processing Pipelines', 'Predictive Analytics & Modeling'], tags: null },
-    { label: 'Mobile Computing', tag: '📱 Mobile & App Dev', img: 'assets/images/techno/mobilecomputing.png',
+    { label: 'Mobile Computing', tag: '📱 Mobile & App Dev', img: 'assets/images/techno/mobilecomputing.webp',
       desc: 'Develop innovative mobile applications and communication solutions while learning modern technologies that enhance accessibility, performance, and user experience across mobile platforms.',
       points: ['Android & iOS Development', 'Cross-Platform with Flutter', 'Mobile UX & Performance Optimisation'], tags: null },
-    { label: 'Internet Technologies', tag: '🌍 Web & Internet', img: 'assets/images/techno/internet.png',
+    { label: 'Internet Technologies', tag: '🌍 Web & Internet', img: 'assets/images/techno/internet.webp',
       desc: 'Build web-based applications, automation tools, web crawlers, APIs, and intelligent internet-enabled solutions that simplify digital interactions and online services.',
       points: ['Full-Stack Web Development', 'RESTful APIs & Web Services', 'Web Automation & Crawling'], tags: null },
-    { label: 'Data Security', tag: '🔒 Security & Cryptography', img: 'assets/images/techno/datasecuirity.png',
+    { label: 'Data Security', tag: '🔒 Security & Cryptography', img: 'assets/images/techno/datasecuirity.webp',
       desc: 'Learn advanced cryptographic methods, secure communication techniques, authentication mechanisms, and cybersecurity practices to protect digital information and systems.',
       points: ['Cryptography & Encryption', 'Ethical Hacking & Penetration Testing', 'Secure System Architecture'], tags: null },
-    { label: 'Embedded Systems', tag: '⚙ Hardware & IoT', img: 'assets/images/techno/embeddedsystem.png',
+    { label: 'Embedded Systems', tag: '⚙ Hardware & IoT', img: 'assets/images/techno/embeddedsystem.webp',
       desc: 'Gain practical experience in microcontrollers, IoT devices, embedded Linux, real-time systems, sensor integration, robotics, and hardware-software co-design through industry-oriented projects.',
       points: ['Microcontrollers & RTOS', 'IoT Sensor Integration & Robotics', 'Hardware-Software Co-Design'], tags: null },
-    { label: 'And Several More...', tag: '🚀 Expanding Horizons', img: 'assets/images/techno/other.png',
+    { label: 'And Several More...', tag: '🚀 Expanding Horizons', img: 'assets/images/techno/other.webp',
       desc: 'Our expertise extends beyond these domains, covering Artificial Intelligence, Machine Learning, Computer Vision, ROS, Edge AI, Python, Flutter, Web Development and many other emerging technologies tailored to industry needs.',
       points: null, tags: ['Artificial Intelligence', 'Machine Learning', 'Computer Vision', 'ROS', 'Edge AI', 'Flutter', 'Python'] }
   ];
