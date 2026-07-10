@@ -804,14 +804,24 @@ document.addEventListener('DOMContentLoaded', function() {
   /* ─── SCROLL HANDLER ────────────────────────────────────────── */
   let prevScrollY = window.scrollY;
   let isLockedAtProduct6 = false;
+  let cachedSectionTop = null;
+
+  /* Cache sectionTop on load and resize only — not on every scroll.
+     This prevents nav bar appearance/disappearance from shifting the
+     calculated sectionTop mid-scroll and causing layout jumps. */
+  function cacheSectionTop() {
+    cachedSectionTop = section.getBoundingClientRect().top + window.scrollY;
+  }
+  cacheSectionTop();
+  window.addEventListener('resize', cacheSectionTop);
 
   window.addEventListener('scroll', onScroll, { passive: false });
 
   function onScroll() {
     if (window._psScrollDisabled) return;
 
-    const sectionTop = section.getBoundingClientRect().top + window.scrollY;
-    const scrollInSection = window.scrollY - sectionTop;
+    /* Use cached sectionTop — immune to nav bar layout shifts */
+    const scrollInSection = window.scrollY - cachedSectionTop;
     const product6Start = (PRODUCTS.length - 1) * SCROLL_PER;
     const scrollingUp = window.scrollY < prevScrollY;
     prevScrollY = window.scrollY;
@@ -821,12 +831,11 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
 
-    /* ── Entering product 6 zone from below (scrolling up from footer) ── */
+    /* ── Product 6 zone lock ── */
     if (scrollInSection >= product6Start) {
       if (!isLockedAtProduct6) {
-        /* First time entering — lock scroll position once, no repeated calls */
         isLockedAtProduct6 = true;
-        const lockY = sectionTop + product6Start;
+        const lockY = cachedSectionTop + product6Start;
         window.scrollTo(0, lockY);
       }
       if (current !== PRODUCTS.length - 1 && !isAnimating) {
@@ -836,7 +845,7 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
 
-    /* ── Once inside product 6 zone, only release lock on deliberate downward scroll ── */
+    /* ── Release product 6 lock on deliberate downward scroll ── */
     if (isLockedAtProduct6) {
       if (!scrollingUp) {
         isLockedAtProduct6 = false;
@@ -847,10 +856,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     /* ── Normal products 1–5 logic ── */
     const rawIndex = scrollInSection / SCROLL_PER;
+
+    /* Clamp targetIndex to 0–4 (products 1–5 only, 6 handled above) */
     const targetIndex = Math.min(Math.floor(rawIndex), PRODUCTS.length - 2);
 
-    const fillPct = (rawIndex / (PRODUCTS.length - 1)) * 100;
-    progressFill.style.width = Math.min(fillPct, 100) + '%';
+    /* Progress bar: clamp fill to exact product slot boundaries.
+       Map product index 0–4 to 0–80% (product 6 = 100% handled above).
+       This prevents fast scrolling from overshooting the fill. */
+    const clampedFill = (targetIndex / (PRODUCTS.length - 1)) * 100;
+    const rawFill = (rawIndex / (PRODUCTS.length - 1)) * 100;
+    /* Use raw for smooth movement but never exceed next product's boundary */
+    const maxFill = ((targetIndex + 1) / (PRODUCTS.length - 1)) * 100;
+    progressFill.style.width = Math.min(rawFill, maxFill) + '%';
 
     if (targetIndex !== current && !isAnimating) {
       transitionTo(targetIndex);
