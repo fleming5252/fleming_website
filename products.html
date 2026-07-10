@@ -810,6 +810,7 @@ document.addEventListener('DOMContentLoaded', function() {
     /* Build mobile slides */
     if (isMobile()) {
       buildMobileSlides();
+      initMobileScroll();
     }
 
     applyProduct(0, false);
@@ -1331,8 +1332,125 @@ document.addEventListener('DOMContentLoaded', function() {
       d.addEventListener('click', () => goToSlide(parseInt(d.dataset.idx)));
     });
 
+    /* Listen for programmatic slide changes from scroll hijack */
+    document.addEventListener('ps-goto', function(e) {
+      goToSlide(e.detail);
+    });
+
     /* Initial position */
     goToSlide(0);
+  }
+
+  /* ─── MOBILE SCROLL HIJACK ──────────────────────────────── */
+  function initMobileScroll() {
+    if (window.innerWidth > 900) return;
+
+    var section      = document.getElementById('productsSection');
+    var totalSlides  = PRODUCTS.length;
+    var scrollLocked = false;
+    var cooldownMs   = 600;
+    var lastSwitch   = 0;
+    var touchStartY  = 0;
+    var touchLastY   = 0;
+    var inSection    = false;
+
+    /* How far the section top is from document top */
+    function getSectionTop() {
+      return section.getBoundingClientRect().top + window.scrollY;
+    }
+
+    /* Give the section enough scroll height to accommodate all slides */
+    function setSectionHeight() {
+      section.style.minHeight = (totalSlides * window.innerHeight) + 'px';
+    }
+    setSectionHeight();
+    window.addEventListener('resize', setSectionHeight);
+
+    /* The sticky pane is already position:sticky in CSS — 
+       we just need to control which slide is shown and when
+       scrolling is released */
+
+    function isInsideSection() {
+      var rect = section.getBoundingClientRect();
+      return rect.top <= 72 && rect.bottom > window.innerHeight;
+    }
+
+    function canSwitch() {
+      return Date.now() - lastSwitch > cooldownMs;
+    }
+
+    function advanceSlide(direction) {
+      /* direction: +1 = forward (scroll down), -1 = backward (scroll up) */
+      var next = current + direction;
+      if (next < 0 || next >= totalSlides) return false;
+
+      /* goToSlide is defined inside initSwipe — we need a shared reference.
+         We'll dispatch a custom event instead */
+      document.dispatchEvent(new CustomEvent('ps-goto', { detail: next }));
+      lastSwitch = Date.now();
+      return true;
+    }
+
+    /* Scroll handler */
+    window.addEventListener('scroll', function() {
+      if (!isInsideSection()) return;
+
+      var scrollY     = window.scrollY;
+      var sectionTop  = getSectionTop();
+      var scrollInto  = scrollY - sectionTop;
+
+      /* Which slide index the scroll position maps to */
+      var targetIdx = Math.round(scrollInto / window.innerHeight);
+      targetIdx = Math.max(0, Math.min(totalSlides - 1, targetIdx));
+
+      if (targetIdx !== current) {
+        document.dispatchEvent(new CustomEvent('ps-goto', { detail: targetIdx }));
+        lastSwitch = Date.now();
+      }
+    }, { passive: true });
+
+    /* Touch handler — detects direction, advances slide, 
+       prevents page scroll while inside section */
+    document.addEventListener('touchstart', function(e) {
+      touchStartY = e.touches[0].clientY;
+      touchLastY  = touchStartY;
+      inSection   = isInsideSection();
+    }, { passive: true });
+
+    document.addEventListener('touchmove', function(e) {
+      if (!inSection) return;
+
+      var dy = touchLastY - e.touches[0].clientY;
+      touchLastY = e.touches[0].clientY;
+
+      /* At first slide scrolling up — release */
+      if (current === 0 && dy < 0) return;
+      /* At last slide scrolling down — release */
+      if (current === totalSlides - 1 && dy > 0) return;
+
+      /* Otherwise prevent default page scroll */
+      e.preventDefault();
+    }, { passive: false });
+
+    document.addEventListener('touchend', function(e) {
+      if (!inSection) return;
+      if (!canSwitch()) return;
+
+      var dy = touchStartY - e.changedTouches[0].clientY;
+      if (Math.abs(dy) < 30) return; /* too small */
+
+      var direction = dy > 0 ? +1 : -1;
+
+      /* Boundary: at edges, let page scroll naturally */
+      if (direction === -1 && current === 0) return;
+      if (direction === +1 && current === totalSlides - 1) return;
+
+      advanceSlide(direction);
+
+      /* Snap scroll position to keep sticky in place */
+      var sectionTop = getSectionTop();
+      window.scrollTo({ top: sectionTop + current * window.innerHeight, behavior: 'instant' });
+    }, { passive: true });
   }
 
   /* ─── START ─────────────────────────────────────────────────── */
