@@ -819,6 +819,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function onScroll() {
     if (window._psScrollDisabled) return;
+    if (isTouching) return;
 
     /* Use cached sectionTop — immune to nav bar layout shifts */
     const scrollInSection = window.scrollY - cachedSectionTop;
@@ -1107,13 +1108,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
   /* ─── TOUCH / SWIPE ─────────────────────────────────────────── */
   let touchStartY = 0;
-  sticky.addEventListener('touchstart', (e) => { touchStartY = e.touches[0].clientY; }, { passive: true });
+  let isTouching = false;
+
+  sticky.addEventListener('touchstart', (e) => {
+    touchStartY = e.touches[0].clientY;
+    isTouching = true;
+  }, { passive: true });
+
   sticky.addEventListener('touchend', (e) => {
     const dy = touchStartY - e.changedTouches[0].clientY;
     if (Math.abs(dy) > 40) {
       if (dy > 0) jumpTo(Math.min(current + 1, PRODUCTS.length - 1));
       else        jumpTo(Math.max(current - 1, 0));
     }
+    /* Block scroll handler for 800ms after touch ends —
+       this covers the entire browser momentum scroll period */
+    setTimeout(() => { isTouching = false; }, 800);
   }, { passive: true });
 
   /* ─── START ─────────────────────────────────────────────────── */
