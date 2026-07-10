@@ -1548,6 +1548,30 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
   .ts-hex.ts-show-front .ts-hex-front { opacity: 1; }
   .ts-hex.ts-show-front .ts-hex-back  { opacity: 0; }
 
+  .ts-hex .ts-hex-title {
+    font-size: 17px;
+    letter-spacing: 0.4px;
+    line-height: 1.35;
+    text-align: center;
+  }
+
+  .ts-hex .ts-hex-desc {
+    font-size: 13.5px;
+    line-height: 1.7;
+    text-align: justify;
+  }
+
+  .ts-hex .ts-hex-icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 16px;
+  }
+
+  .ts-hex .ts-hex-icon svg {
+    width: 30px;
+    height: 30px;
+  }
+
   /* Hide pulse rings on outer wrapper — they're repositioned inside inner */
   .ts-hex.ts-hex-logo > .ts-pulse-ring {
     display: none;
@@ -1632,6 +1656,34 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
     background: #1a56db;
     color: #fff;
   }
+
+  .ts-honeycomb,
+  #tsMobileTrack,
+  .ts-hex,
+  .ts-hex-inner,
+  .ts-hex-front,
+  .ts-hex-back,
+  .ts-hex-logo,
+  .ts-arrow-btn {
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  /* Heartbeat fires on the inner hex when card is tapped (JS adds .ts-tapped) */
+  .ts-hex.ts-tapped .ts-hex-inner {
+    animation: tsMobileHeartbeat 0.6s ease-in-out;
+  }
+
+  @keyframes tsMobileHeartbeat {
+    0%   { transform: scale(1); }
+    20%  { transform: scale(1.06); }
+    40%  { transform: scale(1); }
+    60%  { transform: scale(1.06); }
+    80%  { transform: scale(1); }
+    100% { transform: scale(1); }
+  }
 }
 
 @media (max-width: 480px) {
@@ -1640,8 +1692,16 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
   .ts-heading { font-size: 36px; }
   .ts-desc { font-size: 13px; }
   .ts-hex { width: 190px; min-width: 100%; height: 210px; }
-  .ts-hex-title { font-size: 13px; }
-  .ts-hex-desc { font-size: 11px; }
+  .ts-hex-title { font-size: 15px; }
+  .ts-hex-desc  { font-size: 12.5px; }
+}
+
+.ts-hex,
+.ts-honeycomb-scale,
+.ts-right {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 /* ── CENTER LOGO HEX ── */
@@ -1780,6 +1840,12 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
   will-change: transform;
 }
 
+.reveal-tile,
+.reveal-tile-cover {
+  touch-action: pan-y;
+  pointer-events: none;
+}
+
 /* ── Right Content ── */
 .wcu-content-col {
   flex: 1;
@@ -1798,6 +1864,7 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
 
 /* Stepped card — overlaps the image by pulling left */
 .wcu-card {
+  overflow: hidden;
   background: #1e2128;
   padding: 44px 52px 52px 52px;
   margin-left: -200px;
@@ -1911,7 +1978,7 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
   .wcu-image-col    { flex: 0 0 auto; height: 240px; width: 100%; }
   .wcu-image-col,
   .wcu-grid-reveal {
-    touch-action: none;
+    touch-action: pan-y;
     pointer-events: none;
   }
   .wcu-card         { margin-left: 0; padding: 28px 20px; }
