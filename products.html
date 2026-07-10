@@ -860,9 +860,9 @@ document.addEventListener('DOMContentLoaded', function() {
     /* Clamp targetIndex to 0–4 (products 1–5 only, 6 handled above) */
     const targetIndex = Math.min(Math.floor(rawIndex), PRODUCTS.length - 2);
 
-    /* Progress fill tracks the active product index exactly.
-       Never uses rawIndex — so fast swipes cannot overshoot. */
-    progressFill.style.width = (targetIndex / (PRODUCTS.length - 1)) * 100 + '%';
+    const rawFill = (rawIndex / (PRODUCTS.length - 1)) * 100;
+    const maxFill = ((targetIndex + 1) / (PRODUCTS.length - 1)) * 100;
+    progressFill.style.width = Math.min(rawFill, maxFill) + '%';
 
     if (targetIndex !== current && !isAnimating) {
       transitionTo(targetIndex);
