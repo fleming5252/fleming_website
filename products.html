@@ -589,11 +589,23 @@ document.addEventListener('DOMContentLoaded', function() {
     if (startY < 5) return;
     var t0 = performance.now();
     var dur = 1200;
+
+    /* Disable the products scroll handler during animation */
+    window._psScrollDisabled = true;
+
     function step(now) {
       var elapsed = now - t0;
       var t = Math.min(elapsed / dur, 1);
       window.scrollTo(0, startY * (1 - customEase(t)));
-      if (t < 1) requestAnimationFrame(step);
+      if (t < 1) {
+        requestAnimationFrame(step);
+      } else {
+        /* Animation done — reset product to 1 then re-enable handler */
+        if (typeof window._psReset === 'function') {
+          window._psReset();
+        }
+        window._psScrollDisabled = false;
+      }
     }
     requestAnimationFrame(step);
   }
@@ -790,19 +802,58 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   /* ─── SCROLL HANDLER ────────────────────────────────────────── */
-  window.addEventListener('scroll', onScroll, { passive: true });
+  let prevScrollY = window.scrollY;
+  let lockedAtProduct6 = false;
+  let product6LockY = 0;
+
+  window.addEventListener('scroll', onScroll, { passive: false });
 
   function onScroll() {
+    if (window._psScrollDisabled) return;
     const sectionTop = section.getBoundingClientRect().top + window.scrollY;
     const scrollInSection = window.scrollY - sectionTop;
     const maxScroll = PRODUCTS.length * SCROLL_PER;
+    const scrollingUp = window.scrollY < prevScrollY;
 
-    if (scrollInSection < 0 || scrollInSection > maxScroll) return;
+    /* ── If we are locked at product 6, hold the scroll position ── */
+    if (lockedAtProduct6) {
+      if (scrollingUp) {
+        /* User is still trying to scroll up — keep forcing position back */
+        window.scrollTo(0, product6LockY);
+        prevScrollY = window.scrollY;
+        return;
+      } else {
+        /* User scrolled down — release the lock */
+        lockedAtProduct6 = false;
+      }
+    }
+
+    prevScrollY = window.scrollY;
+
+    if (scrollInSection < 0) return;
+
+    /* Entering from below (footer area) scrolling up — lock here */
+    if (scrollInSection >= maxScroll && scrollingUp) {
+      lockedAtProduct6 = true;
+      product6LockY = window.scrollY;
+      if (current !== PRODUCTS.length - 1 && !isAnimating) {
+        transitionTo(PRODUCTS.length - 1);
+        progressFill.style.width = '100%';
+      }
+      return;
+    }
+
+    /* Below section scrolling down — just show product 6 */
+    if (scrollInSection >= maxScroll) {
+      if (current !== PRODUCTS.length - 1 && !isAnimating) {
+        transitionTo(PRODUCTS.length - 1);
+        progressFill.style.width = '100%';
+      }
+      return;
+    }
 
     const rawIndex = scrollInSection / SCROLL_PER;
     const targetIndex = Math.min(Math.floor(rawIndex), PRODUCTS.length - 1);
-
-    const slotProgress = rawIndex - Math.floor(rawIndex);
 
     const fillPct = (rawIndex / (PRODUCTS.length - 1)) * 100;
     progressFill.style.width = Math.min(fillPct, 100) + '%';
@@ -1061,6 +1112,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   /* ─── START ─────────────────────────────────────────────────── */
   init();
+
+  /* Expose reset for back-to-top */
+  window._psReset = function() {
+    lockedAtProduct6 = false;
+    current = -1;
+    applyProduct(0, false);
+  };
 
 })();
 </script>
