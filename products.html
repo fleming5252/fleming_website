@@ -803,39 +803,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
   /* ─── SCROLL HANDLER ────────────────────────────────────────── */
   let prevScrollY = window.scrollY;
-  let lockedAtProduct6 = false;
-  let product6LockY = 0;
+  let isLockedAtProduct6 = false;
 
   window.addEventListener('scroll', onScroll, { passive: false });
 
   function onScroll() {
     if (window._psScrollDisabled) return;
+
     const sectionTop = section.getBoundingClientRect().top + window.scrollY;
     const scrollInSection = window.scrollY - sectionTop;
-    const maxScroll = PRODUCTS.length * SCROLL_PER;
+    const product6Start = (PRODUCTS.length - 1) * SCROLL_PER;
     const scrollingUp = window.scrollY < prevScrollY;
-
-    /* ── If we are locked at product 6, hold the scroll position ── */
-    if (lockedAtProduct6) {
-      if (scrollingUp) {
-        /* User is still trying to scroll up — keep forcing position back */
-        window.scrollTo(0, product6LockY);
-        prevScrollY = window.scrollY;
-        return;
-      } else {
-        /* User scrolled down — release the lock */
-        lockedAtProduct6 = false;
-      }
-    }
-
     prevScrollY = window.scrollY;
 
-    if (scrollInSection < 0) return;
+    if (scrollInSection < 0) {
+      isLockedAtProduct6 = false;
+      return;
+    }
 
-    /* Entering from below (footer area) scrolling up — lock here */
-    if (scrollInSection >= maxScroll && scrollingUp) {
-      lockedAtProduct6 = true;
-      product6LockY = window.scrollY;
+    /* ── Entering product 6 zone from below (scrolling up from footer) ── */
+    if (scrollInSection >= product6Start) {
+      if (!isLockedAtProduct6) {
+        /* First time entering — lock scroll position once, no repeated calls */
+        isLockedAtProduct6 = true;
+        const lockY = sectionTop + product6Start;
+        window.scrollTo(0, lockY);
+      }
       if (current !== PRODUCTS.length - 1 && !isAnimating) {
         transitionTo(PRODUCTS.length - 1);
         progressFill.style.width = '100%';
@@ -843,17 +836,18 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
 
-    /* Below section scrolling down — just show product 6 */
-    if (scrollInSection >= maxScroll) {
-      if (current !== PRODUCTS.length - 1 && !isAnimating) {
-        transitionTo(PRODUCTS.length - 1);
-        progressFill.style.width = '100%';
+    /* ── Once inside product 6 zone, only release lock on deliberate downward scroll ── */
+    if (isLockedAtProduct6) {
+      if (!scrollingUp) {
+        isLockedAtProduct6 = false;
+      } else {
+        return;
       }
-      return;
     }
 
+    /* ── Normal products 1–5 logic ── */
     const rawIndex = scrollInSection / SCROLL_PER;
-    const targetIndex = Math.min(Math.floor(rawIndex), PRODUCTS.length - 1);
+    const targetIndex = Math.min(Math.floor(rawIndex), PRODUCTS.length - 2);
 
     const fillPct = (rawIndex / (PRODUCTS.length - 1)) * 100;
     progressFill.style.width = Math.min(fillPct, 100) + '%';
@@ -1115,7 +1109,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   /* Expose reset for back-to-top */
   window._psReset = function() {
-    lockedAtProduct6 = false;
+    isLockedAtProduct6 = false;
     current = -1;
     applyProduct(0, false);
   };
