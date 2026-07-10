@@ -1845,6 +1845,7 @@ body { font-family: 'Poppins', sans-serif; }
   .tech-slide-card {
     flex: 0 0 100%;
     height: 380px;
+    border-radius: 20px;
   }
   .tech-arrow-btn {
     width: 44px;
@@ -1859,13 +1860,15 @@ body { font-family: 'Poppins', sans-serif; }
   .mobile-expanded .tech-slide-title {
     writing-mode: horizontal-tb;
     transform: rotate(0deg);
-    font-size: 24px;
+    font-size: 18px;
+    transition: none;
   }
 
   .mobile-expanded .tech-slide-desc {
     display: block;
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
+    transition: none;
   }
 
   .mobile-expanded .tech-tile-icon {
@@ -4630,57 +4633,7 @@ body { font-family: 'Poppins', sans-serif; }
   }
 }
 
-@media (max-width: 900px) {
-  .ps-sticky {
-    height: auto;
-    min-height: 100svh;
-    position: sticky;
-  }
 
-  .ps-layout {
-    grid-template-columns: 1fr;
-    padding: 72px 24px 12px 24px;
-    gap: 24px;
-    align-items: start;
-  }
-
-  .ps-text-side,
-  .ps-layout-flipped .ps-text-side {
-    order: 1 !important;
-    padding: 0;
-  }
-  .ps-image-side,
-  .ps-layout-flipped .ps-image-side {
-    order: 2 !important;
-  }
-
-  .ps-image-frame {
-    max-width: 100%;
-    aspect-ratio: 16/9;
-  }
-
-  .ps-badge {
-    top: 20px;
-    left: 24px;
-  }
-
-  .ps-progress-bar {
-    padding: 0 24px 16px 24px;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-
-  .ps-progress-track-wrap {
-    order: 3;
-    width: 100%;
-    flex: none;
-  }
-
-  .ps-nav-btn {
-    order: 2;
-    margin-left: auto;
-  }
-}
 
 @media (max-width: 600px) {
   .ps-title-line1,
@@ -4903,39 +4856,7 @@ body { font-family: 'Poppins', sans-serif; }
   }
 }
 
-@media (max-width: 900px) {
-  /* On mobile, let it scroll naturally — remove fixed vh */
-  .ps-sticky {
-    height: auto;
-    min-height: 100svh;
-  }
 
-  .ps-layout {
-    grid-template-columns: 1fr;
-    padding: 60px 20px 8px 20px;
-    gap: 16px;
-    align-items: start;
-  }
-
-  .ps-image-frame {
-    height: clamp(200px, 40vw, 280px);
-  }
-
-  .ps-title-line1,
-  .ps-title-line2 {
-    font-size: clamp(26px, 6vw, 40px);
-  }
-
-  .ps-badge {
-    top: 16px;
-    left: 20px;
-  }
-
-  .ps-progress-bar {
-    padding: 6px 20px 12px 20px;
-    gap: 10px;
-  }
-}
 
 @media (max-width: 600px) {
   .ps-title-line1,
@@ -5011,19 +4932,7 @@ body { font-family: 'Poppins', sans-serif; }
   }
 }
 
-@media (max-width: 900px) {
-  .ps-image-frame {
-    width: 100%;
-    max-width: 100%;
-    height: clamp(200px, 38vw, 280px);
-  }
-  .ps-image-side {
-    justify-content: center;
-  }
-  .ps-layout {
-    padding-top: 64px;
-  }
-}
+
 
 /* ── Badge: in-flow, not absolutely positioned ── */
 .ps-badge {
@@ -5049,115 +4958,7 @@ body { font-family: 'Poppins', sans-serif; }
 /* ══════════════════════════════════════════════
    ALL MOBILE (≤ 900px) — shared base
 ══════════════════════════════════════════════ */
-@media (max-width: 900px) {
 
-  .ps-sticky {
-    height: 100vh;
-    height: 100dvh;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    padding-top: 72px;
-    box-sizing: border-box;
-  }
-
-  .ps-badge {
-    position: static;
-    top: auto;
-    left: auto;
-    width: fit-content;
-    flex-shrink: 0;
-  }
-
-  .ps-layout {
-    grid-template-columns: 1fr;
-    padding: 0 16px;
-    gap: 0;
-    flex: 1;
-    min-height: 0;
-    /* KEY: must NOT clip children — float card lives here */
-    overflow: visible;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: stretch;
-  }
-
-  .ps-text-side,
-  .ps-layout-flipped .ps-text-side {
-    order: 1 !important;
-    padding: 0 !important;
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
-    overflow: visible;
-  }
-
-  /* Image side: a positioning context for the float card */
-  .ps-image-side,
-  .ps-layout-flipped .ps-image-side {
-    order: 2 !important;
-    flex-shrink: 0;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    position: relative;   /* float card positioned relative to this */
-    overflow: visible;    /* never clip the float card */
-  }
-
-  /* Image frame: clips the photo only, not the float card */
-  .ps-image-frame {
-    width: 100%;
-    max-width: 100%;
-    aspect-ratio: unset;
-    border-radius: 12px;
-    /* clip only the photo inside, not the float card */
-    overflow: hidden;
-    position: relative;
-    flex-shrink: 0;
-  }
-
-  /* ── KEY FIX: move float card OUT of image-frame clip zone ──
-     Re-position it relative to .ps-image-side instead.
-     We achieve this by overriding position context. */
-  .ps-float-card {
-    /* detach from image-frame, attach to image-side */
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    transform: none;
-    /* shift it UP so it overlaps the bottom of the image */
-    bottom: 0;
-    padding: 8px 12px;
-    gap: 8px;
-    border-radius: 0 0 12px 12px;
-    z-index: 10;
-    /* give it a solid backing so it reads clearly over the image */
-    background: #ffffff;
-    box-shadow: 0 -2px 12px rgba(0,0,0,0.10);
-  }
-
-  .ps-float-text p {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  /* Dot grid decoration: hide on mobile */
-  .ps-image-frame::after { display: none; }
-
-  /* Always show both paragraphs */
-  .ps-body p { display: block !important; }
-
-  /* Progress bar: fixed, never shrinks */
-  .ps-progress-bar {
-    flex-shrink: 0;
-    flex-wrap: nowrap;
-    align-items: center;
-  }
-}
 
 /* ══════════════════════════════════════════════
    iPhone SE — ≤ 390px wide
@@ -5279,68 +5080,12 @@ body { font-family: 'Poppins', sans-serif; }
 /* ══════════════════════════════════════════════
    Larger phones / tablets — 481px to 900px
 ══════════════════════════════════════════════ */
-@media (min-width: 481px) and (max-width: 900px) {
 
-  .ps-layout { padding: 0 22px; }
-  .ps-text-side { margin-bottom: 14px; }
-  .ps-badge { margin-bottom: 10px; }
-
-  .ps-title-line1,
-  .ps-title-line2 { font-size: clamp(26px, 5vw, 38px); line-height: 1.05; }
-  .ps-title { margin-bottom: 8px; }
-
-  .ps-rule { margin-bottom: 8px; }
-  .ps-tagline { margin-bottom: 10px; }
-  .ps-body { font-size: 12.5px; gap: 5px; margin-bottom: 12px; }
-
-  .ps-features { grid-template-columns: 1fr 1fr; gap: 7px; }
-  .ps-feat { padding: 8px 10px; gap: 7px; }
-  .ps-feat-icon { font-size: 14px; }
-  .ps-feat-text strong { font-size: 10.5px; }
-  .ps-feat-text span { font-size: 9.5px; }
-
-  .ps-image-frame { height: 170px; }
-
-  .ps-float-card {
-    padding: 8px 12px;
-    gap: 9px;
-    border-radius: 0 0 12px 12px;
-  }
-  .ps-float-text strong { font-size: 11px; }
-  .ps-float-text p { font-size: 10.5px; }
-
-  .ps-progress-bar { padding: 7px 22px 11px 22px; gap: 10px; }
-}
 
 /* ══════════════════════════════════════════════
    Landscape / very short (height < 600px)
 ══════════════════════════════════════════════ */
-@media (max-height: 600px) and (max-width: 900px) {
 
-  .ps-sticky { padding-top: 0; }
-  .ps-layout { padding: 6px 16px 0 16px; }
-  .ps-text-side { margin-bottom: 6px; }
-  .ps-badge { margin-bottom: 4px; }
-
-  .ps-title-line1,
-  .ps-title-line2 { font-size: 18px; }
-  .ps-title { margin-bottom: 3px; }
-  .ps-rule { margin-bottom: 4px; }
-  .ps-tagline { margin-bottom: 4px; }
-
-  .ps-body { font-size: 10px; gap: 2px; margin-bottom: 5px; }
-  .ps-body p:nth-child(n+2) { display: none !important; }
-
-  .ps-features { gap: 3px; }
-  .ps-feat { padding: 4px 6px; }
-  .ps-feat-text span { display: none; }
-
-  .ps-image-frame { height: 80px; }
-  .ps-float-card { padding: 4px 8px; gap: 6px; }
-  .ps-float-text p { -webkit-line-clamp: 1; }
-
-  .ps-progress-bar { padding: 3px 14px 5px 14px; }
-}
 
 /* ══════════════════════════════════════════════
    S20 ULTRA OVERLAP FIX (391px–480px)
@@ -5475,17 +5220,6 @@ body { font-family: 'Poppins', sans-serif; }
 }
 
 /* Mobile overrides */
-@media (max-width: 900px) {
-  .ps-progress-bar {
-    padding: 8px 18px 12px 18px;
-    gap: 10px;
-    overflow: visible;
-  }
-  .ps-progress-track-wrap {
-    margin-right: 6px;
-  }
-}
-
 @media (max-width: 390px) {
   .ps-progress-bar {
     padding: 5px 14px 8px 14px;
@@ -5676,4 +5410,646 @@ body { font-family: 'Poppins', sans-serif; }
 @keyframes rotate-flat-counter {
   0% { transform: rotateY(45deg) rotateZ(360deg); }
   100% { transform: rotateY(45deg) rotateZ(0deg); }
+}
+
+/* ══════════════════════════════════════════════
+   PRODUCTS — MOBILE SWIPE CAROUSEL (FINAL)
+══════════════════════════════════════════════ */
+
+@media (max-width: 900px) {
+
+  /* 1. Sticky pane: full viewport, flex column */
+  .ps-sticky {
+    position: sticky !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    min-height: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    padding-top: 72px !important;
+    background: #ffffff;
+  }
+
+  /* 2. Glow stays behind everything */
+  .ps-glow {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  /* 3. Carousel wrapper: fills remaining space, clips track */
+  .ps-carousel-wrapper {
+    position: relative !important;
+    flex: 1 !important;
+    min-height: 0 !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    z-index: 2;
+  }
+
+  /* 4. Track: 600% wide, slides left/right */
+  #psLayout {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 600% !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    grid-template-columns: unset !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    will-change: transform;
+    max-width: none !important;
+  }
+
+  /* 5. Each slide: 1/6 of track = 100vw */
+  .ps-slide {
+    width: calc(100% / 6) !important;
+    height: 100% !important;
+    flex-shrink: 0 !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 10px 18px 0 18px !important;
+    overflow: hidden !important;
+    gap: 0 !important;
+  }
+
+  /* 6. Hide the original desktop HTML elements */
+  #psTextSide,
+  #psImageSide {
+    display: none !important;
+  }
+
+  /* 7. Text block inside slide */
+  .ps-slide-text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  /* 8. Badge */
+  .ps-slide .ps-badge {
+    position: static !important;
+    width: fit-content;
+    margin-bottom: 2px;
+    flex-shrink: 0;
+    padding: 4px 12px;
+    font-size: 11px;
+  }
+
+  /* 9. Title */
+  .ps-slide .ps-title-line1,
+  .ps-slide .ps-title-line2 {
+    font-size: clamp(22px, 5.5vw, 32px) !important;
+    line-height: 1.05 !important;
+  }
+
+  /* 10. Body */
+  .ps-slide .ps-body {
+    font-size: 11.5px;
+    line-height: 1.5;
+    gap: 4px;
+  }
+
+  /* 11. Features */
+  .ps-slide .ps-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    margin-top: 4px;
+  }
+
+  .ps-slide .ps-feat {
+    padding: 7px 9px;
+    gap: 6px;
+    border-radius: 10px;
+  }
+
+  .ps-slide .ps-feat-icon { font-size: 14px; }
+  .ps-slide .ps-feat-text strong { font-size: 10.5px; }
+  .ps-slide .ps-feat-text span { font-size: 9.5px; }
+
+  /* 12. Image block */
+  .ps-slide-image {
+    flex-shrink: 0;
+    position: relative;
+    margin-top: 8px;
+  }
+
+  /* 13. Image frame */
+  .ps-slide .ps-image-frame {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: clamp(130px, 26vw, 190px) !important;
+    aspect-ratio: unset !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    position: relative !important;
+  }
+
+  /* 14. Float card — inside image frame, at bottom */
+  .ps-slide .ps-float-card {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    transform: none !important;
+    border-radius: 0 0 12px 12px !important;
+    padding: 7px 11px !important;
+    gap: 8px !important;
+    z-index: 10;
+    background: #ffffff;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.10);
+  }
+
+  .ps-slide .ps-float-icon { width: 28px; height: 28px; }
+  .ps-slide .ps-float-icon svg { width: 16px; height: 16px; }
+  .ps-slide .ps-float-text strong { font-size: 10.5px; }
+  .ps-slide .ps-float-text p {
+    font-size: 9.5px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* 15. Progress bar: outside carousel, at bottom */
+  .ps-progress-bar {
+    flex-shrink: 0 !important;
+    padding: 7px 18px 11px 18px !important;
+    gap: 10px !important;
+    z-index: 10;
+  }
+
+  /* 16. Dot sizes */
+  .ps-dot { width: 8px; height: 8px; }
+}
+
+/* Tall phones (S20 Ultra etc) get taller images */
+@media (min-width: 391px) and (max-width: 900px) and (min-height: 750px) {
+  .ps-slide .ps-image-frame { height: clamp(160px, 28vw, 210px) !important; }
+  .ps-slide .ps-body { font-size: 12px; }
+}
+
+/* Small phones (SE) */
+@media (max-width: 390px) {
+  .ps-slide { padding: 8px 14px 0 14px !important; }
+  .ps-slide .ps-title-line1,
+  .ps-slide .ps-title-line2 { font-size: 20px !important; }
+  .ps-slide .ps-body { font-size: 10.5px; }
+  .ps-slide .ps-image-frame { height: 115px !important; }
+  .ps-progress-bar { padding: 5px 14px 8px 14px !important; }
+  .ps-dot { width: 7px !important; height: 7px !important; }
+}
+
+/* ══════════════════════════════════════════════
+   iPHONE SE FIX — ≤390px
+   Tightens text so image frame has correct height
+══════════════════════════════════════════════ */
+@media (max-width: 390px) {
+
+  /* Slide: tighter top padding */
+  .ps-slide {
+    padding: 6px 14px 0 14px !important;
+    gap: 0 !important;
+  }
+
+  .ps-slide-text {
+    gap: 3px !important;
+    flex-shrink: 0 !important;
+    flex-grow: 0 !important;
+  }
+
+  /* Badge */
+  .ps-slide .ps-badge {
+    font-size: 9.5px !important;
+    padding: 3px 9px !important;
+    margin-bottom: 2px !important;
+  }
+
+  /* Title */
+  .ps-slide .ps-title-line1,
+  .ps-slide .ps-title-line2 {
+    font-size: 19px !important;
+    line-height: 1.0 !important;
+  }
+  .ps-slide .ps-title {
+    margin-bottom: 2px !important;
+  }
+
+  /* Rule */
+  .ps-slide .ps-rule {
+    height: 2px !important;
+    width: 24px !important;
+    margin-bottom: 2px !important;
+  }
+
+  /* Tagline */
+  .ps-slide .ps-tagline {
+    font-size: 8px !important;
+    letter-spacing: 0.2px !important;
+    margin-bottom: 2px !important;
+  }
+
+  /* Body — ONLY first paragraph, very compact */
+  .ps-slide .ps-body {
+    font-size: 9.5px !important;
+    line-height: 1.35 !important;
+    gap: 0 !important;
+    margin-bottom: 3px !important;
+  }
+
+
+  /* Features — 2 columns, very tight */
+  .ps-slide .ps-features {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 3px !important;
+    margin-top: 0 !important;
+  }
+  .ps-slide .ps-feat {
+    padding: 4px 5px !important;
+    gap: 4px !important;
+    border-radius: 7px !important;
+    align-items: center !important;
+  }
+  .ps-slide .ps-feat-icon {
+    font-size: 11px !important;
+    line-height: 1 !important;
+  }
+  .ps-slide .ps-feat-text strong {
+    font-size: 8.5px !important;
+    line-height: 1.15 !important;
+  }
+  .ps-slide .ps-feat-text span {
+    /* Hide description on SE to save space */
+    display: none !important;
+  }
+
+  /* Image block — flex grow fills remaining space */
+  .ps-slide-image {
+    flex: 1 1 0 !important;
+    min-height: 0 !important;
+    margin-top: 5px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+  }
+
+  /* Image frame — fills image block, max capped */
+  .ps-slide .ps-image-frame {
+    flex: 1 1 0 !important;
+    height: 0 !important;
+    min-height: 90px !important;
+    max-height: 160px !important;   /* cap so it never pushes float card off */
+    width: 100% !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    position: relative !important;
+  }
+
+  /* Float card — compact */
+  .ps-slide .ps-float-card {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    transform: none !important;
+    border-radius: 0 0 10px 10px !important;
+    padding: 5px 8px !important;
+    gap: 6px !important;
+    z-index: 10 !important;
+    background: #ffffff !important;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.10) !important;
+  }
+  .ps-slide .ps-float-icon {
+    width: 22px !important;
+    height: 22px !important;
+    flex-shrink: 0 !important;
+  }
+  .ps-slide .ps-float-icon svg {
+    width: 13px !important;
+    height: 13px !important;
+  }
+  .ps-slide .ps-float-text strong {
+    font-size: 9px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1px !important;
+    display: block !important;
+  }
+  .ps-slide .ps-float-text p {
+    font-size: 8px !important;
+    line-height: 1.3 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+
+  /* Progress bar — minimal */
+  .ps-progress-bar {
+    padding: 4px 14px 6px 14px !important;
+    gap: 8px !important;
+    flex-shrink: 0 !important;
+  }
+  .ps-progress-label { font-size: 8px !important; }
+  .ps-progress-counter { height: 16px !important; }
+  .ps-counter-current { height: 16px !important; }
+  .ps-counter-digit { font-size: 13px !important; line-height: 16px !important; }
+  .ps-counter-of { font-size: 8.5px !important; }
+  .ps-dot { width: 6px !important; height: 6px !important; }
+}
+
+/* ══════════════════════════════════════════════
+   iPHONE SE — FULL CONTENT FIX
+   Show both paragraphs + all feature descriptions
+══════════════════════════════════════════════ */
+@media (max-width: 390px) {
+
+  /* Show both body paragraphs */
+  .ps-slide .ps-body p:nth-child(n+2) {
+    display: block !important;
+  }
+
+  /* Show feature descriptions */
+  .ps-slide .ps-feat-text span {
+    display: block !important;
+    font-size: 8px !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Tighten everything to make room */
+  .ps-slide {
+    padding: 5px 12px 0 12px !important;
+  }
+
+  .ps-slide-text {
+    gap: 2px !important;
+  }
+
+  .ps-slide .ps-badge {
+    font-size: 9px !important;
+    padding: 2px 8px !important;
+    margin-bottom: 1px !important;
+  }
+
+  .ps-slide .ps-title-line1,
+  .ps-slide .ps-title-line2 {
+    font-size: 17px !important;
+    line-height: 1.0 !important;
+  }
+
+  .ps-slide .ps-title {
+    margin-bottom: 1px !important;
+  }
+
+  .ps-slide .ps-rule {
+    height: 2px !important;
+    width: 22px !important;
+    margin-bottom: 2px !important;
+  }
+
+  .ps-slide .ps-tagline {
+    font-size: 7.5px !important;
+    letter-spacing: 0.2px !important;
+    margin-bottom: 2px !important;
+  }
+
+  .ps-slide .ps-body {
+    font-size: 8.5px !important;
+    line-height: 1.3 !important;
+    gap: 2px !important;
+    margin-bottom: 3px !important;
+  }
+
+  .ps-slide .ps-features {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 3px !important;
+    margin-top: 2px !important;
+  }
+
+  .ps-slide .ps-feat {
+    padding: 4px 5px !important;
+    gap: 4px !important;
+    border-radius: 7px !important;
+  }
+
+  .ps-slide .ps-feat-icon {
+    font-size: 11px !important;
+  }
+
+  .ps-slide .ps-feat-text strong {
+    font-size: 8.5px !important;
+    line-height: 1.15 !important;
+  }
+
+  /* Image block shrinks to whatever remains */
+  .ps-slide-image {
+    flex: 1 1 0 !important;
+    min-height: 0 !important;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   S20 ULTRA ONLY — IMAGE FILL GAP FIX
+══════════════════════════════════════════════ */
+@media (min-width: 391px) and (max-width: 480px) {
+
+  /* Slide must be full height of wrapper */
+  .ps-slide {
+    height: 100% !important;
+    justify-content: flex-start !important;
+  }
+
+  /* Text block: fixed, never grows */
+  .ps-slide-text {
+    flex-shrink: 0 !important;
+    flex-grow: 0 !important;
+  }
+
+  /* Image block: takes ALL remaining space */
+  .ps-slide-image {
+    flex: 1 1 0 !important;
+    min-height: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    margin-top: 8px !important;
+  }
+
+  /* Image frame: fills image block completely */
+  .ps-slide .ps-image-frame {
+    flex: 1 1 0 !important;
+    height: 0 !important;
+    min-height: 80px !important;
+    max-height: none !important;
+    width: 100% !important;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   BOTH DEVICES — FILL GAP FIX
+   Remove image height cap, scale up fonts
+══════════════════════════════════════════════ */
+
+/* ── iPhone SE (≤390px) ── */
+@media (max-width: 390px) {
+
+  /* Slightly bigger fonts since we have space */
+  .ps-slide .ps-body {
+    font-size: 10px !important;
+    line-height: 1.45 !important;
+  }
+
+  .ps-slide .ps-feat-text strong {
+    font-size: 9.5px !important;
+  }
+
+  .ps-slide .ps-feat-text span {
+    font-size: 8.5px !important;
+    display: block !important;
+  }
+
+  .ps-slide .ps-tagline {
+    font-size: 8.5px !important;
+  }
+
+  .ps-slide .ps-title-line1,
+  .ps-slide .ps-title-line2 {
+    font-size: 20px !important;
+  }
+
+  /* Remove the height cap — let image fill remaining space */
+  .ps-slide .ps-image-frame {
+    max-height: none !important;   /* was 120px, now uncapped */
+    min-height: 80px !important;
+    flex: 1 1 0 !important;
+    height: 0 !important;
+  }
+
+  .ps-slide-image {
+    flex: 1 1 0 !important;
+    min-height: 0 !important;
+  }
+}
+
+/* ── Samsung S20 Ultra (391px–480px) ── */
+@media (min-width: 391px) and (max-width: 480px) {
+
+  /* Slightly bigger fonts */
+  .ps-slide .ps-body {
+    font-size: 12.5px !important;
+    line-height: 1.55 !important;
+  }
+
+  .ps-slide .ps-feat-text strong {
+    font-size: 11px !important;
+  }
+
+  .ps-slide .ps-feat-text span {
+    font-size: 9.5px !important;
+  }
+
+  .ps-slide .ps-tagline {
+    font-size: 10.5px !important;
+  }
+
+  .ps-slide .ps-title-line1,
+  .ps-slide .ps-title-line2 {
+    font-size: 28px !important;
+  }
+
+  /* Remove any height cap — let image fill remaining space */
+  .ps-slide .ps-image-frame {
+    max-height: none !important;
+    min-height: 100px !important;
+    flex: 1 1 0 !important;
+    height: 0 !important;
+  }
+
+  .ps-slide-image {
+    flex: 1 1 0 !important;
+    min-height: 0 !important;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   S20 ULTRA ONLY — IMAGE FILL GAP FIX
+══════════════════════════════════════════════ */
+@media (min-width: 391px) and (max-width: 480px) {
+
+  /* Slide must be full height of wrapper */
+  .ps-slide {
+    height: 100% !important;
+    justify-content: flex-start !important;
+  }
+
+  /* Text block: fixed, never grows */
+  .ps-slide-text {
+    flex-shrink: 0 !important;
+    flex-grow: 0 !important;
+  }
+
+  /* Image block: takes ALL remaining space */
+  .ps-slide-image {
+    flex: 1 1 0 !important;
+    min-height: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    margin-top: 8px !important;
+  }
+
+  /* Image frame: fills image block completely */
+  .ps-slide .ps-image-frame {
+    flex: 1 1 0 !important;
+    height: 0 !important;
+    min-height: 80px !important;
+    max-height: none !important;
+    width: 100% !important;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   S20 ULTRA — FLOAT CARD TEXT SIZE FIX
+══════════════════════════════════════════════ */
+@media (min-width: 391px) and (max-width: 480px) {
+
+  .ps-slide .ps-float-card {
+    padding: 10px 14px !important;
+    gap: 10px !important;
+  }
+
+  .ps-slide .ps-float-icon {
+    width: 32px !important;
+    height: 32px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .ps-slide .ps-float-icon svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  .ps-slide .ps-float-text strong {
+    font-size: 12px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 3px !important;
+  }
+
+  .ps-slide .ps-float-text p {
+    font-size: 11px !important;
+    line-height: 1.5 !important;
+    -webkit-line-clamp: 2 !important;
+  }
 }

@@ -159,6 +159,7 @@
     <div class="ps-glow" id="psGlow"></div>
 
     <!-- ── MAIN CONTENT AREA ── -->
+    <div class="ps-carousel-wrapper" id="psCarouselWrapper">
     <div class="ps-layout" id="psLayout">
 
       <!-- TEXT SIDE (alternates left / right) -->
@@ -219,6 +220,7 @@
       </div><!-- /ps-image-side -->
 
     </div><!-- /ps-layout -->
+    </div><!-- /ps-carousel-wrapper -->
 
     <!-- ── BOTTOM PROGRESS BAR ── -->
     <div class="ps-progress-bar" id="psProgressBar">
@@ -788,7 +790,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
   /* ─── INIT ──────────────────────────────────────────────────── */
   function init() {
-    section.style.minHeight = (PRODUCTS.length * SCROLL_PER + window.innerHeight) + 'px';
+    const isMobile = () => window.innerWidth <= 900;
+
+    /* Desktop: keep original scroll spacer */
+    if (!isMobile()) {
+      section.style.minHeight = (PRODUCTS.length * SCROLL_PER + window.innerHeight) + 'px';
+    } else {
+      section.style.minHeight = '';
+    }
 
     PRODUCTS.forEach((_, i) => {
       const d = document.createElement('div');
@@ -798,85 +807,132 @@ document.addEventListener('DOMContentLoaded', function() {
       progressDots.appendChild(d);
     });
 
+    /* Build mobile slides */
+    if (isMobile()) {
+      buildMobileSlides();
+    }
+
     applyProduct(0, false);
+
+    /* Rebuild on resize crossing breakpoint */
+    let lastMobile = isMobile();
+    window.addEventListener('resize', () => {
+      const nowMobile = window.innerWidth <= 900;
+      if (nowMobile !== lastMobile) {
+        lastMobile = nowMobile;
+        location.reload();
+      }
+    });
   }
 
-  /* ─── SCROLL HANDLER ────────────────────────────────────────── */
+  /* ─── STATE-BASED SCROLL SYSTEM ─────────────────────────────── */
+  let cachedSectionTop = null;
+  let cooldown = false;
   let prevScrollY = window.scrollY;
   let isLockedAtProduct6 = false;
-  let cachedSectionTop = null;
 
-  /* Cache sectionTop on load and resize only — not on every scroll.
-     This prevents nav bar appearance/disappearance from shifting the
-     calculated sectionTop mid-scroll and causing layout jumps. */
   function cacheSectionTop() {
     cachedSectionTop = section.getBoundingClientRect().top + window.scrollY;
   }
   cacheSectionTop();
   window.addEventListener('resize', cacheSectionTop);
 
-  window.addEventListener('scroll', onScroll, { passive: false });
+  /* ── Core: move one step in a direction ── */
+  function stepProduct(direction) {
+    if (cooldown || window._psScrollDisabled) return;
 
-  function onScroll() {
-    if (window._psScrollDisabled) return;
-    if (isTouching) return;
+    const next = current + direction;
 
-    /* Use cached sectionTop — immune to nav bar layout shifts */
-    const scrollInSection = window.scrollY - cachedSectionTop;
-    const product6Start = (PRODUCTS.length - 1) * SCROLL_PER;
-    const scrollingUp = window.scrollY < prevScrollY;
-    prevScrollY = window.scrollY;
+    /* At first product scrolling up — let page scroll naturally */
+    if (next < 0) return;
 
-    if (scrollInSection < 0) {
+    /* At last product scrolling down — release lock and let page
+       scroll naturally to footer, don't step back */
+    if (next >= PRODUCTS.length) {
       isLockedAtProduct6 = false;
       return;
     }
 
-    /* ── Product 6 zone lock ── */
-    if (scrollInSection >= product6Start) {
+    transitionTo(next);
+
+    /* Cooldown: 900ms covers animation + 200ms pause */
+    cooldown = true;
+    setTimeout(() => { cooldown = false; }, 900);
+  }
+
+  /* ── Scroll handler: desktop only ── */
+  if (window.innerWidth > 900) {
+    window.addEventListener('scroll', onScroll, { passive: false });
+  }
+
+  function onScroll() {
+    if (window._psScrollDisabled) return;
+
+    const scrollingUp = window.scrollY < prevScrollY;
+    prevScrollY = window.scrollY;
+
+    const scrollInSection = window.scrollY - cachedSectionTop;
+    const product6Start = (PRODUCTS.length - 1) * SCROLL_PER;
+    const sectionEnd = PRODUCTS.length * SCROLL_PER;
+
+    /* Above section — reset and let page scroll freely */
+    if (scrollInSection < 0) {
+      isLockedAtProduct6 = false;
+      cooldown = false;
+      return;
+    }
+
+    /* Below section — let page scroll freely to footer */
+    if (scrollInSection >= sectionEnd) {
+      isLockedAtProduct6 = false;
+      return;
+    }
+
+    /* Entering product 6 zone from below scrolling up — lock once */
+    if (scrollInSection >= product6Start && scrollingUp) {
       if (!isLockedAtProduct6) {
         isLockedAtProduct6 = true;
-        const lockY = cachedSectionTop + product6Start;
-        window.scrollTo(0, lockY);
-      }
-      if (current !== PRODUCTS.length - 1 && !isAnimating) {
-        transitionTo(PRODUCTS.length - 1);
-        progressFill.style.width = '100%';
+        window.scrollTo(0, cachedSectionTop + product6Start);
+        if (current !== PRODUCTS.length - 1 && !cooldown) {
+          transitionTo(PRODUCTS.length - 1);
+          cooldown = true;
+          setTimeout(() => { cooldown = false; }, 900);
+        }
       }
       return;
     }
 
-    /* ── Release product 6 lock on deliberate downward scroll ── */
-    if (isLockedAtProduct6) {
-      if (!scrollingUp) {
-        isLockedAtProduct6 = false;
-      } else {
-        return;
+    /* In product 6 zone scrolling down — release lock, go to footer */
+    if (scrollInSection >= product6Start && !scrollingUp) {
+      isLockedAtProduct6 = false;
+      return;
+    }
+
+    /* Inside section products 1–5 — one step per scroll */
+    if (scrollingUp) {
+      stepProduct(-1);
+    } else {
+      stepProduct(+1);
+    }
+  }
+
+  /* ── Touch handler: desktop only ── */
+  if (window.innerWidth > 900) {
+    let touchStartY = 0;
+    sticky.addEventListener('touchstart', (e) => {
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    sticky.addEventListener('touchend', (e) => {
+      const dy = touchStartY - e.changedTouches[0].clientY;
+      if (Math.abs(dy) > 40) {
+        if (dy > 0) stepProduct(+1);
+        else        stepProduct(-1);
       }
-    }
-
-    /* ── Normal products 1–5 logic ── */
-    const rawIndex = scrollInSection / SCROLL_PER;
-
-    /* Clamp targetIndex to 0–4 (products 1–5 only, 6 handled above) */
-    const targetIndex = Math.min(Math.floor(rawIndex), PRODUCTS.length - 2);
-
-    const rawFill = (rawIndex / (PRODUCTS.length - 1)) * 100;
-    const maxFill = ((targetIndex + 1) / (PRODUCTS.length - 1)) * 100;
-    progressFill.style.width = Math.min(rawFill, maxFill) + '%';
-
-    if (targetIndex !== current && !isAnimating) {
-      transitionTo(targetIndex);
-    }
+    }, { passive: true });
   }
 
-  /* ─── JUMP ──────────────────────────────────────────────────── */
-  function jumpTo(idx) {
-    if (idx === current || isAnimating) return;
-    const sectionTop = section.getBoundingClientRect().top + window.scrollY;
-    const targetScroll = sectionTop + idx * SCROLL_PER;
-    window.scrollTo({ top: targetScroll, behavior: 'smooth' });
-  }
+
 
   /* ─── TRANSITION ────────────────────────────────────────────── */
   function transitionTo(nextIdx) {
@@ -938,6 +994,9 @@ document.addEventListener('DOMContentLoaded', function() {
     current = idx;
 
     badgeNum.textContent = p.num;
+
+    /* Progress fill — always driven from applyProduct, never from stepProduct */
+    progressFill.style.width = (idx / (PRODUCTS.length - 1)) * 100 + '%';
 
     animateCounter(p.num);
 
@@ -1106,25 +1165,175 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  /* ─── TOUCH / SWIPE ─────────────────────────────────────────── */
-  let touchStartY = 0;
-  let isTouching = false;
+  /* ─── JUMP (dot clicks) ─────────────────────────────────────── */
+  function jumpTo(idx) {
+    if (idx === current || cooldown) return;
+    transitionTo(idx);
+    progressFill.style.width = (idx / (PRODUCTS.length - 1)) * 100 + '%';
+    cooldown = true;
+    setTimeout(() => { cooldown = false; }, 900);
+  }
 
-  sticky.addEventListener('touchstart', (e) => {
-    touchStartY = e.touches[0].clientY;
-    isTouching = true;
-  }, { passive: true });
+  /* ─── MOBILE SLIDE BUILDER ──────────────────────────────── */
+  function buildMobileSlides() {
+    const track = document.getElementById('psLayout');
+    track.innerHTML = '';
 
-  sticky.addEventListener('touchend', (e) => {
-    const dy = touchStartY - e.changedTouches[0].clientY;
-    if (Math.abs(dy) > 40) {
-      if (dy > 0) jumpTo(Math.min(current + 1, PRODUCTS.length - 1));
-      else        jumpTo(Math.max(current - 1, 0));
+    PRODUCTS.forEach((p, i) => {
+      const slide = document.createElement('div');
+      slide.className = 'ps-slide';
+      slide.dataset.idx = i;
+
+      /* ── TEXT BLOCK ── */
+      const textDiv = document.createElement('div');
+      textDiv.className = 'ps-slide-text';
+
+      /* Badge */
+      const badge = document.createElement('div');
+      badge.className = 'ps-badge';
+      badge.innerHTML = `<span class="ps-badge-num">${p.num}</span><span class="ps-badge-label">OUR PRODUCTS</span>`;
+      textDiv.appendChild(badge);
+
+      /* Title */
+      const title = document.createElement('h2');
+      title.className = 'ps-title';
+      title.innerHTML = `<span class="ps-title-line1">${p.line1}</span><span class="ps-title-line2">${p.line2}</span>`;
+      textDiv.appendChild(title);
+
+      /* Rule */
+      const rule = document.createElement('div');
+      rule.className = 'ps-rule';
+      textDiv.appendChild(rule);
+
+      /* Tagline */
+      const tagline = document.createElement('p');
+      tagline.className = 'ps-tagline';
+      tagline.innerHTML = p.tagline;
+      textDiv.appendChild(tagline);
+
+      /* Body */
+      const body = document.createElement('div');
+      body.className = 'ps-body';
+      body.innerHTML = p.body;
+      textDiv.appendChild(body);
+
+      /* Features */
+      const feats = document.createElement('div');
+      feats.className = 'ps-features';
+      p.features.forEach(f => {
+        const feat = document.createElement('div');
+        feat.className = 'ps-feat';
+        feat.innerHTML = `<div class="ps-feat-icon">${f.icon}</div>
+                          <div class="ps-feat-text">
+                            <strong>${f.title}</strong>
+                            <span>${f.desc}</span>
+                          </div>`;
+        feats.appendChild(feat);
+      });
+      textDiv.appendChild(feats);
+
+      slide.appendChild(textDiv);
+
+      /* ── IMAGE BLOCK ── */
+      const imgDiv = document.createElement('div');
+      imgDiv.className = 'ps-slide-image';
+
+      const frame = document.createElement('div');
+      frame.className = 'ps-image-frame';
+
+      const img = document.createElement('img');
+      img.src = `assets/images/product${i + 1}.webp`;
+      img.className = 'ps-img ps-img-active';
+      img.alt = p.line1;
+      img.loading = 'lazy';
+      frame.appendChild(img);
+
+      /* Float card */
+      const fc = document.createElement('div');
+      fc.className = 'ps-float-card';
+      fc.innerHTML = `<div class="ps-float-icon">${p.floatIconSvg}</div>
+                      <div class="ps-float-text">
+                        <strong>${p.floatTitle}</strong>
+                        <p>${p.floatBody}</p>
+                      </div>`;
+      frame.appendChild(fc);
+
+      imgDiv.appendChild(frame);
+      slide.appendChild(imgDiv);
+
+      track.appendChild(slide);
+    });
+
+    /* Swipe logic */
+    initSwipe(track);
+  }
+
+  /* ─── SWIPE HANDLER ─────────────────────────────────────── */
+  function initSwipe(track) {
+    let startX = 0, startY = 0, isDragging = false, isHorizConfirmed = false;
+
+    function goToSlide(idx) {
+      if (idx < 0 || idx >= PRODUCTS.length) return;
+      current = idx;
+
+      /* Slide the track */
+      const wrapperWidth = track.parentElement.offsetWidth;
+      track.style.transform = `translateX(${-idx * wrapperWidth}px)`;
+
+      /* Progress fill */
+      progressFill.style.width = (idx / (PRODUCTS.length - 1)) * 100 + '%';
+
+      /* Counter digit roller */
+      animateCounter(PRODUCTS[idx].num);
+
+      /* Dots */
+      document.querySelectorAll('.ps-dot').forEach((d, i) => {
+        d.classList.toggle('ps-dot-active', i === idx);
+      });
+
+      /* Glow */
+      glowEl.style.background = `radial-gradient(ellipse 60% 60% at 60% 50%, ${PRODUCTS[idx].glow}, transparent 70%)`;
     }
-    /* Block scroll handler for 800ms after touch ends —
-       this covers the entire browser momentum scroll period */
-    setTimeout(() => { isTouching = false; }, 800);
-  }, { passive: true });
+
+    track.addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      isDragging = true;
+      isHorizConfirmed = false;
+    }, { passive: true });
+
+    track.addEventListener('touchmove', e => {
+      if (!isDragging) return;
+      const dx = e.touches[0].clientX - startX;
+      const dy = e.touches[0].clientY - startY;
+      if (!isHorizConfirmed) {
+        if (Math.abs(dx) > Math.abs(dy) + 5) {
+          isHorizConfirmed = true;
+        } else if (Math.abs(dy) > Math.abs(dx) + 5) {
+          isDragging = false; /* vertical scroll wins */
+          return;
+        }
+      }
+      if (isHorizConfirmed) e.preventDefault();
+    }, { passive: false });
+
+    track.addEventListener('touchend', e => {
+      if (!isDragging || !isHorizConfirmed) return;
+      isDragging = false;
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 40) {
+        goToSlide(dx < 0 ? current + 1 : current - 1);
+      }
+    }, { passive: true });
+
+    /* Dot clicks still work — wire them to goToSlide */
+    document.querySelectorAll('.ps-dot').forEach((d) => {
+      d.addEventListener('click', () => goToSlide(parseInt(d.dataset.idx)));
+    });
+
+    /* Initial position */
+    goToSlide(0);
+  }
 
   /* ─── START ─────────────────────────────────────────────────── */
   init();
@@ -1132,7 +1341,9 @@ document.addEventListener('DOMContentLoaded', function() {
   /* Expose reset for back-to-top */
   window._psReset = function() {
     isLockedAtProduct6 = false;
+    cooldown = false;
     current = -1;
+    progressFill.style.width = '0%';
     applyProduct(0, false);
   };
 
