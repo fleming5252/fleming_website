@@ -5286,7 +5286,7 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
   color: #555e75;
   line-height: 1.7;
   margin: 0 0 18px;
-  text-align: center;
+  text-align: justify;
 }
 
 .lec-card-list {

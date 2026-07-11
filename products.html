@@ -198,12 +198,13 @@
 
         <!-- Image stack — all 6 images stacked, JS controls which is visible -->
         <div class="ps-image-frame" id="psImageFrame">
-          <img loading="lazy" src="assets/images/product1.webp"     class="ps-img ps-img-active" data-idx="0" alt="Payroll Management" />
-          <img loading="lazy" src="assets/images/product2.webp"     class="ps-img"               data-idx="1" alt="Newspaper Billing" />
-          <img loading="lazy" src="assets/images/product3.webp"     class="ps-img"               data-idx="2" alt="Education Fees" />
-          <img loading="lazy" src="assets/images/product4.webp"     class="ps-img"               data-idx="3" alt="E-Commerce" />
-          <img loading="lazy" src="assets/images/product5.webp"     class="ps-img"               data-idx="4" alt="Attendance" />
-          <img loading="lazy" src="assets/images/product6.webp"     class="ps-img"               data-idx="5" alt="E-Learning" />
+          <img loading="lazy" src="assets/images/product7.webp"     class="ps-img ps-img-active" data-idx="0" alt="GeoTag Attendance" />
+          <img loading="lazy" src="assets/images/product1.webp"     class="ps-img"               data-idx="1" alt="Payroll Management" />
+          <img loading="lazy" src="assets/images/product2.webp"     class="ps-img"               data-idx="2" alt="Newspaper Billing" />
+          <img loading="lazy" src="assets/images/product3.webp"     class="ps-img"               data-idx="3" alt="Education Fees" />
+          <img loading="lazy" src="assets/images/product6.webp"     class="ps-img"               data-idx="4" alt="E-Learning" />
+          <img loading="lazy" src="assets/images/product5.webp"     class="ps-img"               data-idx="5" alt="Attendance" />
+          <img loading="lazy" src="assets/images/product4.webp"     class="ps-img"               data-idx="6" alt="E-Commerce" />
 
           <!-- Floating info card -->
           <div class="ps-float-card" id="psFloatCard">
@@ -231,7 +232,7 @@
           <span class="ps-counter-current" id="psCounterCurrent">
             <span class="ps-counter-digit" id="psCounterDigit">01</span>
           </span>
-          <span class="ps-counter-of">OF 06</span>
+          <span class="ps-counter-of">OF 07</span>
         </div>
       </div>
 
@@ -591,27 +592,17 @@ document.addEventListener('DOMContentLoaded', function() {
     if (startY < 5) return;
     var t0 = performance.now();
     var dur = 1200;
-
-    /* Disable the products scroll handler during animation */
-    window._psScrollDisabled = true;
-
     function step(now) {
       var elapsed = now - t0;
       var t = Math.min(elapsed / dur, 1);
       window.scrollTo(0, startY * (1 - customEase(t)));
-      if (t < 1) {
-        requestAnimationFrame(step);
-      } else {
-        /* Animation done — reset product to 1 then re-enable handler */
-        if (typeof window._psReset === 'function') {
-          window._psReset();
-        }
-        window._psScrollDisabled = false;
-      }
+      if (t < 1) requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
   }
-  btt.addEventListener('click', scrollToTop);
+  btt.addEventListener('click', function() {
+    scrollToTop();
+  });
   btt.addEventListener('keydown', function(e) {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
@@ -645,6 +636,25 @@ document.addEventListener('DOMContentLoaded', function() {
   const PRODUCTS = [
     {
       num: '01',
+      line1: 'GeoTag',
+      line2: 'Attendance System',
+      tagline: 'MARK ATTENDANCE. <span class="ps-tagline-blue">RIGHT WHERE YOU ARE.</span>',
+      body: `<p>Fleming's GeoTag Attendance System is a smart mobile application that enables companies to track and manage employee attendance based on real-time geo-location, ensuring accuracy and eliminating proxy attendance.</p>
+             <p>Employees can mark attendance only when they are physically within the company's defined geo-boundary. The app also supports leave applications, approvals, attendance history, and comprehensive reporting for management.</p>`,
+      features: [
+        { icon: '📍', title: 'Geo-Fenced Attendance',  desc: 'Employees can only mark attendance within the defined company location.' },
+        { icon: '📋', title: 'Leave Management',        desc: 'Simplify leave management with digital leave applications and status tracking.' },
+        { icon: '📊', title: 'Attendance History',      desc: 'View detailed attendance and leave balance history anytime.' },
+        { icon: '📈', title: 'Management Reports',      desc: 'Project-wise, weekly, monthly and yearly attendance reports.' },
+      ],
+      floatTitle: 'Location-Verified. Hassle-Free. Accurate.',
+      floatBody:  'GeoTag ensures your workforce attendance is verified by location, with seamless leave management and powerful reporting tools for decision-makers.',
+      floatIconSvg: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
+      glow: 'rgba(16,185,129,0.12)',
+      layout: 'text-left',
+    },
+    {
+      num: '02',
       line1: 'Payroll',
       line2: 'Management',
       tagline: 'SIMPLIFY PAYROLL. <span class="ps-tagline-blue">EMPOWER PEOPLE.</span>',
@@ -663,7 +673,7 @@ document.addEventListener('DOMContentLoaded', function() {
       layout: 'text-left',
     },
     {
-      num: '02',
+      num: '03',
       line1: 'Newspaper',
       line2: 'Agent Billing Software',
       tagline: 'SMART BILLING. <span class="ps-tagline-blue">STRONG RELATIONSHIPS.</span>',
@@ -682,7 +692,7 @@ document.addEventListener('DOMContentLoaded', function() {
       layout: 'text-right',
     },
     {
-      num: '03',
+      num: '04',
       line1: 'Educational',
       line2: 'Institution Fees Management',
       tagline: 'SIMPLIFY FEES. <span class="ps-tagline-blue">EMPOWER EDUCATION.</span>',
@@ -701,26 +711,26 @@ document.addEventListener('DOMContentLoaded', function() {
       layout: 'text-left',
     },
     {
-      num: '04',
-      line1: 'E-Commerce',
+      num: '05',
+      line1: 'E-Learning',
       line2: 'Management',
-      tagline: 'SELL SMARTER. <span class="ps-tagline-blue">MANAGE BETTER.</span>',
-      body: `<p>Selling and managing products is one of the most basic needs for the successful operation of an organization.</p>
-             <p>We make sure that this basic need is carried out smoothly for every client that joins hands with us as we provide an e-commerce application that helps our clients sell and manage products in a straightforward and organized manner.</p>`,
+      tagline: 'LEARN <span class="ps-tagline-blue">ANYTIME. ANYWHERE.</span>',
+      body: `<p>We have developed an e-learning application that helps educational institutions deliver quality education in a digital and interactive manner.</p>
+             <p>The platform is designed to manage courses, students, lessons, assignments, exams and performance — all in one place. It empowers both educators and learners with a smooth and engaging learning experience.</p>`,
       features: [
-        { icon: '🛒', title: 'Product Management',        desc: 'Add, update and manage products with ease.' },
-        { icon: '📦', title: 'Order & Inventory Tracking', desc: 'Track orders and inventory in real-time seamlessly.' },
-        { icon: '💳', title: 'Secure Payments',            desc: 'Multiple payment gateways for safe transactions.' },
-        { icon: '📈', title: 'Sales Analytics',            desc: 'Get insights into sales performance and grow your business.' },
+        { icon: '📚', title: 'Course Management',     desc: 'Organize and manage courses, lessons and study materials.' },
+        { icon: '👥', title: 'Student Management',    desc: 'Add and manage students, batches and enrollments with ease.' },
+        { icon: '📝', title: 'Assignments & Exams',   desc: 'Create assignments, quizzes and exams with automated evaluation.' },
+        { icon: '📈', title: 'Progress Tracking',     desc: 'Track student performance and generate insightful reports.' },
       ],
-      floatTitle: 'Build. Sell. Grow Online.',
-      floatBody:  'Our e-commerce solution empowers you to manage products, track orders, accept payments, and grow your business — all from one powerful platform.',
-      floatIconSvg: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>`,
-      glow: 'rgba(234,179,8,0.10)',
-      layout: 'text-right',
+      floatTitle: 'Empowering Education. Enriching Futures.',
+      floatBody:  'Our e-learning solution makes digital education simple, interactive, and effective for both teachers and students.',
+      floatIconSvg: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`,
+      glow: 'rgba(239,68,68,0.10)',
+      layout: 'text-left',
     },
     {
-      num: '05',
+      num: '06',
       line1: 'Attendance',
       line2: 'Management',
       tagline: 'MARK ATTENDANCE. <span class="ps-tagline-blue">ANYWHERE. ACCURATELY.</span>',
@@ -739,22 +749,22 @@ document.addEventListener('DOMContentLoaded', function() {
       layout: 'text-left',
     },
     {
-      num: '06',
-      line1: 'E-Learning',
+      num: '07',
+      line1: 'E-Commerce',
       line2: 'Management',
-      tagline: 'LEARN <span class="ps-tagline-blue">ANYTIME. ANYWHERE.</span>',
-      body: `<p>We have developed an e-learning application that helps educational institutions deliver quality education in a digital and interactive manner.</p>
-             <p>The platform is designed to manage courses, students, lessons, assignments, exams and performance — all in one place. It empowers both educators and learners with a smooth and engaging learning experience.</p>`,
+      tagline: 'SELL SMARTER. <span class="ps-tagline-blue">MANAGE BETTER.</span>',
+      body: `<p>Selling and managing products is one of the most basic needs for the successful operation of an organization.</p>
+             <p>We make sure that this basic need is carried out smoothly for every client that joins hands with us as we provide an e-commerce application that helps our clients sell and manage products in a straightforward and organized manner.</p>`,
       features: [
-        { icon: '📚', title: 'Course Management',     desc: 'Organize and manage courses, lessons and study materials.' },
-        { icon: '👥', title: 'Student Management',    desc: 'Add and manage students, batches and enrollments with ease.' },
-        { icon: '📝', title: 'Assignments & Exams',   desc: 'Create assignments, quizzes and exams with automated evaluation.' },
-        { icon: '📈', title: 'Progress Tracking',     desc: 'Track student performance and generate insightful reports.' },
+        { icon: '🛒', title: 'Product Management',        desc: 'Add, update and manage products with ease.' },
+        { icon: '📦', title: 'Order & Inventory Tracking', desc: 'Track orders and inventory in real-time seamlessly.' },
+        { icon: '💳', title: 'Secure Payments',            desc: 'Multiple payment gateways for safe transactions.' },
+        { icon: '📈', title: 'Sales Analytics',            desc: 'Get insights into sales performance and grow your business.' },
       ],
-      floatTitle: 'Empowering Education. Enriching Futures.',
-      floatBody:  'Our e-learning solution makes digital education simple, interactive, and effective for both teachers and students.',
-      floatIconSvg: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`,
-      glow: 'rgba(239,68,68,0.10)',
+      floatTitle: 'Build. Sell. Grow Online.',
+      floatBody:  'Our e-commerce solution empowers you to manage products, track orders, accept payments, and grow your business — all from one powerful platform.',
+      floatIconSvg: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>`,
+      glow: 'rgba(234,179,8,0.10)',
       layout: 'text-right',
     },
   ];
@@ -788,11 +798,10 @@ document.addEventListener('DOMContentLoaded', function() {
   let isAnimating  = false;
   const SCROLL_PER = 600;
 
+  const isMobile = () => window.innerWidth <= 900;
+
   /* ─── INIT ──────────────────────────────────────────────────── */
   function init() {
-    const isMobile = () => window.innerWidth <= 900;
-
-    /* Desktop: keep original scroll spacer */
     if (!isMobile()) {
       section.style.minHeight = (PRODUCTS.length * SCROLL_PER + window.innerHeight) + 'px';
     } else {
@@ -807,7 +816,6 @@ document.addEventListener('DOMContentLoaded', function() {
       progressDots.appendChild(d);
     });
 
-    /* Build mobile slides */
     if (isMobile()) {
       buildMobileSlides();
       initMobileScroll();
@@ -815,7 +823,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     applyProduct(0, false);
 
-    /* Rebuild on resize crossing breakpoint */
     let lastMobile = isMobile();
     window.addEventListener('resize', () => {
       const nowMobile = window.innerWidth <= 900;
@@ -826,114 +833,46 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  /* ─── STATE-BASED SCROLL SYSTEM ─────────────────────────────── */
-  let cachedSectionTop = null;
-  let cooldown = false;
-  let prevScrollY = window.scrollY;
-  let isLockedAtProduct6 = false;
-
-  function cacheSectionTop() {
-    cachedSectionTop = section.getBoundingClientRect().top + window.scrollY;
-  }
-  cacheSectionTop();
-  window.addEventListener('resize', cacheSectionTop);
-
-  /* ── Core: move one step in a direction ── */
-  function stepProduct(direction) {
-    if (cooldown || window._psScrollDisabled) return;
-
-    const next = current + direction;
-
-    /* At first product scrolling up — let page scroll naturally */
-    if (next < 0) return;
-
-    /* At last product scrolling down — release lock and let page
-       scroll naturally to footer, don't step back */
-    if (next >= PRODUCTS.length) {
-      isLockedAtProduct6 = false;
-      return;
-    }
-
-    transitionTo(next);
-
-    /* Cooldown: 900ms covers animation + 200ms pause */
-    cooldown = true;
-    setTimeout(() => { cooldown = false; }, 900);
-  }
-
-  /* ── Scroll handler: desktop only ── */
-  if (window.innerWidth > 900) {
-    window.addEventListener('scroll', onScroll, { passive: false });
+  /* ─── DESKTOP SCROLL HANDLER ────────────────────────────────── */
+  if (!isMobile()) {
+    window.addEventListener('scroll', onScroll, { passive: true });
   }
 
   function onScroll() {
-    if (window._psScrollDisabled) return;
+    const sectionTop      = section.getBoundingClientRect().top + window.scrollY;
+    const scrollInSection = window.scrollY - sectionTop;
+    const maxScroll       = PRODUCTS.length * SCROLL_PER;
 
-    const scrollingUp = window.scrollY < prevScrollY;
-    prevScrollY = window.scrollY;
-
-    const scrollInSection = window.scrollY - cachedSectionTop;
-    const product6Start = (PRODUCTS.length - 1) * SCROLL_PER;
-    const sectionEnd = PRODUCTS.length * SCROLL_PER;
-
-    /* Above section — reset and let page scroll freely */
+    // Reset to slide 1 whenever scroll is above the section
     if (scrollInSection < 0) {
-      isLockedAtProduct6 = false;
-      cooldown = false;
-      return;
-    }
-
-    /* Below section — let page scroll freely to footer */
-    if (scrollInSection >= sectionEnd) {
-      isLockedAtProduct6 = false;
-      return;
-    }
-
-    /* Entering product 6 zone from below scrolling up — lock once */
-    if (scrollInSection >= product6Start && scrollingUp) {
-      if (!isLockedAtProduct6) {
-        isLockedAtProduct6 = true;
-        window.scrollTo(0, cachedSectionTop + product6Start);
-        if (current !== PRODUCTS.length - 1 && !cooldown) {
-          transitionTo(PRODUCTS.length - 1);
-          cooldown = true;
-          setTimeout(() => { cooldown = false; }, 900);
-        }
+      if (current !== 0) {
+        isAnimating = false;   // cancel any in-progress animation
+        progressFill.style.width = '0%';
+        applyProduct(0, false); // instant reset, no animation
       }
       return;
     }
 
-    /* In product 6 zone scrolling down — release lock, go to footer */
-    if (scrollInSection >= product6Start && !scrollingUp) {
-      isLockedAtProduct6 = false;
-      return;
-    }
+    if (scrollInSection > maxScroll) return;
 
-    /* Inside section products 1–5 — one step per scroll */
-    if (scrollingUp) {
-      stepProduct(-1);
-    } else {
-      stepProduct(+1);
+    const rawIndex    = scrollInSection / SCROLL_PER;
+    const targetIndex = Math.min(Math.floor(rawIndex), PRODUCTS.length - 1);
+
+    const fillPct = (rawIndex / (PRODUCTS.length - 1)) * 100;
+    progressFill.style.width = Math.min(fillPct, 100) + '%';
+
+    if (targetIndex !== current && !isAnimating) {
+      transitionTo(targetIndex);
     }
   }
 
-  /* ── Touch handler: desktop only ── */
-  if (window.innerWidth > 900) {
-    let touchStartY = 0;
-    sticky.addEventListener('touchstart', (e) => {
-      touchStartY = e.touches[0].clientY;
-    }, { passive: true });
-
-    sticky.addEventListener('touchend', (e) => {
-      const dy = touchStartY - e.changedTouches[0].clientY;
-      if (Math.abs(dy) > 40) {
-        if (dy > 0) stepProduct(+1);
-        else        stepProduct(-1);
-      }
-    }, { passive: true });
+  /* ─── JUMP ──────────────────────────────────────────────────── */
+  function jumpTo(idx) {
+    if (idx === current || isAnimating) return;
+    const sectionTop   = section.getBoundingClientRect().top + window.scrollY;
+    const targetScroll = sectionTop + idx * SCROLL_PER;
+    window.scrollTo({ top: targetScroll, behavior: 'smooth' });
   }
-
-
 
   /* ─── TRANSITION ────────────────────────────────────────────── */
   function transitionTo(nextIdx) {
@@ -995,9 +934,6 @@ document.addEventListener('DOMContentLoaded', function() {
     current = idx;
 
     badgeNum.textContent = p.num;
-
-    /* Progress fill — always driven from applyProduct, never from stepProduct */
-    progressFill.style.width = (idx / (PRODUCTS.length - 1)) * 100 + '%';
 
     animateCounter(p.num);
 
@@ -1166,16 +1102,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  /* ─── JUMP (dot clicks) ─────────────────────────────────────── */
-  function jumpTo(idx) {
-    if (idx === current || cooldown) return;
-    transitionTo(idx);
-    progressFill.style.width = (idx / (PRODUCTS.length - 1)) * 100 + '%';
-    cooldown = true;
-    setTimeout(() => { cooldown = false; }, 900);
-  }
-
-  /* ─── MOBILE SLIDE BUILDER ──────────────────────────────── */
+  /* ─── MOBILE SLIDE BUILDER ──────────────────────────────────── */
   function buildMobileSlides() {
     const track = document.getElementById('psLayout');
     track.innerHTML = '';
@@ -1185,40 +1112,33 @@ document.addEventListener('DOMContentLoaded', function() {
       slide.className = 'ps-slide';
       slide.dataset.idx = i;
 
-      /* ── TEXT BLOCK ── */
       const textDiv = document.createElement('div');
       textDiv.className = 'ps-slide-text';
 
-      /* Badge */
       const badge = document.createElement('div');
       badge.className = 'ps-badge';
       badge.innerHTML = `<span class="ps-badge-num">${p.num}</span><span class="ps-badge-label">OUR PRODUCTS</span>`;
       textDiv.appendChild(badge);
 
-      /* Title */
       const title = document.createElement('h2');
       title.className = 'ps-title';
       title.innerHTML = `<span class="ps-title-line1">${p.line1}</span><span class="ps-title-line2">${p.line2}</span>`;
       textDiv.appendChild(title);
 
-      /* Rule */
       const rule = document.createElement('div');
       rule.className = 'ps-rule';
       textDiv.appendChild(rule);
 
-      /* Tagline */
       const tagline = document.createElement('p');
       tagline.className = 'ps-tagline';
       tagline.innerHTML = p.tagline;
       textDiv.appendChild(tagline);
 
-      /* Body */
       const body = document.createElement('div');
       body.className = 'ps-body';
       body.innerHTML = p.body;
       textDiv.appendChild(body);
 
-      /* Features */
       const feats = document.createElement('div');
       feats.className = 'ps-features';
       p.features.forEach(f => {
@@ -1232,10 +1152,8 @@ document.addEventListener('DOMContentLoaded', function() {
         feats.appendChild(feat);
       });
       textDiv.appendChild(feats);
-
       slide.appendChild(textDiv);
 
-      /* ── IMAGE BLOCK ── */
       const imgDiv = document.createElement('div');
       imgDiv.className = 'ps-slide-image';
 
@@ -1243,13 +1161,13 @@ document.addEventListener('DOMContentLoaded', function() {
       frame.className = 'ps-image-frame';
 
       const img = document.createElement('img');
-      img.src = `assets/images/product${i + 1}.webp`;
+      const imgMap = [7, 1, 2, 3, 6, 5, 4];
+      img.src = `assets/images/product${imgMap[i]}.webp`;
       img.className = 'ps-img ps-img-active';
       img.alt = p.line1;
       img.loading = 'lazy';
       frame.appendChild(img);
 
-      /* Float card */
       const fc = document.createElement('div');
       fc.className = 'ps-float-card';
       fc.innerHTML = `<div class="ps-float-icon">${p.floatIconSvg}</div>
@@ -1261,15 +1179,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
       imgDiv.appendChild(frame);
       slide.appendChild(imgDiv);
-
       track.appendChild(slide);
     });
 
-    /* Swipe logic */
     initSwipe(track);
   }
 
-  /* ─── SWIPE HANDLER ─────────────────────────────────────── */
+  /* ─── SWIPE HANDLER ─────────────────────────────────────────── */
   function initSwipe(track) {
     let startX = 0, startY = 0, isDragging = false, isHorizConfirmed = false;
 
@@ -1277,22 +1193,16 @@ document.addEventListener('DOMContentLoaded', function() {
       if (idx < 0 || idx >= PRODUCTS.length) return;
       current = idx;
 
-      /* Slide the track */
       const wrapperWidth = track.parentElement.offsetWidth;
       track.style.transform = `translateX(${-idx * wrapperWidth}px)`;
 
-      /* Progress fill */
       progressFill.style.width = (idx / (PRODUCTS.length - 1)) * 100 + '%';
-
-      /* Counter digit roller */
       animateCounter(PRODUCTS[idx].num);
 
-      /* Dots */
       document.querySelectorAll('.ps-dot').forEach((d, i) => {
         d.classList.toggle('ps-dot-active', i === idx);
       });
 
-      /* Glow */
       glowEl.style.background = `radial-gradient(ellipse 60% 60% at 60% 50%, ${PRODUCTS[idx].glow}, transparent 70%)`;
     }
 
@@ -1311,7 +1221,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (Math.abs(dx) > Math.abs(dy) + 5) {
           isHorizConfirmed = true;
         } else if (Math.abs(dy) > Math.abs(dx) + 5) {
-          isDragging = false; /* vertical scroll wins */
+          isDragging = false;
           return;
         }
       }
@@ -1327,51 +1237,41 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }, { passive: true });
 
-    /* Dot clicks still work — wire them to goToSlide */
     document.querySelectorAll('.ps-dot').forEach((d) => {
       d.addEventListener('click', () => goToSlide(parseInt(d.dataset.idx)));
     });
 
-    /* Listen for programmatic slide changes from scroll hijack */
     document.addEventListener('ps-goto', function(e) {
       goToSlide(e.detail);
     });
 
-    /* Initial position */
     goToSlide(0);
   }
 
-  /* ─── MOBILE SCROLL HIJACK ──────────────────────────────── */
+  /* ─── MOBILE SCROLL HIJACK ──────────────────────────────────── */
   function initMobileScroll() {
     if (window.innerWidth > 900) return;
 
-    var section      = document.getElementById('productsSection');
+    var mSection     = document.getElementById('productsSection');
     var totalSlides  = PRODUCTS.length;
-    var scrollLocked = false;
     var cooldownMs   = 600;
     var lastSwitch   = 0;
     var touchStartY  = 0;
     var touchLastY   = 0;
     var inSection    = false;
 
-    /* How far the section top is from document top */
     function getSectionTop() {
-      return section.getBoundingClientRect().top + window.scrollY;
+      return mSection.getBoundingClientRect().top + window.scrollY;
     }
 
-    /* Give the section enough scroll height to accommodate all slides */
     function setSectionHeight() {
-      section.style.minHeight = (totalSlides * window.innerHeight) + 'px';
+      mSection.style.minHeight = (totalSlides * window.innerHeight) + 'px';
     }
     setSectionHeight();
     window.addEventListener('resize', setSectionHeight);
 
-    /* The sticky pane is already position:sticky in CSS — 
-       we just need to control which slide is shown and when
-       scrolling is released */
-
     function isInsideSection() {
-      var rect = section.getBoundingClientRect();
+      var rect = mSection.getBoundingClientRect();
       return rect.top <= 72 && rect.bottom > window.innerHeight;
     }
 
@@ -1380,26 +1280,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function advanceSlide(direction) {
-      /* direction: +1 = forward (scroll down), -1 = backward (scroll up) */
       var next = current + direction;
       if (next < 0 || next >= totalSlides) return false;
-
-      /* goToSlide is defined inside initSwipe — we need a shared reference.
-         We'll dispatch a custom event instead */
       document.dispatchEvent(new CustomEvent('ps-goto', { detail: next }));
       lastSwitch = Date.now();
       return true;
     }
 
-    /* Scroll handler */
     window.addEventListener('scroll', function() {
       if (!isInsideSection()) return;
 
-      var scrollY     = window.scrollY;
-      var sectionTop  = getSectionTop();
-      var scrollInto  = scrollY - sectionTop;
+      var scrollY    = window.scrollY;
+      var sectionTop = getSectionTop();
+      var scrollInto = scrollY - sectionTop;
 
-      /* Which slide index the scroll position maps to */
       var targetIdx = Math.round(scrollInto / window.innerHeight);
       targetIdx = Math.max(0, Math.min(totalSlides - 1, targetIdx));
 
@@ -1409,8 +1303,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }, { passive: true });
 
-    /* Touch handler — detects direction, advances slide, 
-       prevents page scroll while inside section */
     document.addEventListener('touchstart', function(e) {
       touchStartY = e.touches[0].clientY;
       touchLastY  = touchStartY;
@@ -1419,51 +1311,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.addEventListener('touchmove', function(e) {
       if (!inSection) return;
-
       var dy = touchLastY - e.touches[0].clientY;
       touchLastY = e.touches[0].clientY;
-
-      /* At first slide scrolling up — release */
       if (current === 0 && dy < 0) return;
-      /* At last slide scrolling down — release */
       if (current === totalSlides - 1 && dy > 0) return;
-
-      /* Otherwise prevent default page scroll */
       e.preventDefault();
     }, { passive: false });
 
     document.addEventListener('touchend', function(e) {
       if (!inSection) return;
       if (!canSwitch()) return;
-
       var dy = touchStartY - e.changedTouches[0].clientY;
-      if (Math.abs(dy) < 30) return; /* too small */
-
+      if (Math.abs(dy) < 30) return;
       var direction = dy > 0 ? +1 : -1;
-
-      /* Boundary: at edges, let page scroll naturally */
       if (direction === -1 && current === 0) return;
       if (direction === +1 && current === totalSlides - 1) return;
-
       advanceSlide(direction);
-
-      /* Snap scroll position to keep sticky in place */
-      var sectionTop = getSectionTop();
-      window.scrollTo({ top: sectionTop + current * window.innerHeight, behavior: 'instant' });
+      var sTop = getSectionTop();
+      window.scrollTo({ top: sTop + current * window.innerHeight, behavior: 'instant' });
     }, { passive: true });
   }
 
   /* ─── START ─────────────────────────────────────────────────── */
   init();
-
-  /* Expose reset for back-to-top */
-  window._psReset = function() {
-    isLockedAtProduct6 = false;
-    cooldown = false;
-    current = -1;
-    progressFill.style.width = '0%';
-    applyProduct(0, false);
-  };
 
 })();
 </script>
