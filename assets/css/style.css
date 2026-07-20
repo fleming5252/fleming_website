@@ -327,10 +327,10 @@ body { font-family: 'Poppins', sans-serif; }
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: url('../images/about_bg.webp');
+    background-image: url('../images/about_mobile.webp');
     background-repeat: no-repeat;
-    background-size: auto 100%;
-    background-position: 50% bottom;
+    background-size: 160% auto;
+    background-position: center center;
     overflow: hidden;
     transition: background-position 0.2s ease-out;
 }
@@ -338,7 +338,7 @@ body { font-family: 'Poppins', sans-serif; }
 .about-bg .about-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.25);
     z-index: 1;
 }
 
@@ -380,21 +380,25 @@ body { font-family: 'Poppins', sans-serif; }
     color: #ffffff;
 }
 
+.page-services .about-bg { background-image: url('../images/services_mobile.webp'); }
+.page-products .about-bg { background-image: url('../images/product_mobile.webp'); }
+.page-contact .about-bg { background-image: url('../images/contact_mobile.webp'); }
+
 @media (max-width: 767px) {
-  .about-bg { min-height: 350px; background-image: url('../images/about_mobile.webp'); }
+  .about-bg { min-height: 350px; background-size: cover; }
   .about-bg .about-overlay { background: rgba(0, 0, 0, 0.25); }
   .about-bg h1 { font-size: 3.75rem; letter-spacing: 1px; word-break: break-word; }
   .about-bg .about-breadcrumbs { font-size: 0.85rem; }
-  .page-services .about-bg { background-image: url('../images/services_mobile.webp'); }
-  .page-products .about-bg { background-image: url('../images/product_mobile.webp'); }
-  .page-contact .about-bg { background-image: url('../images/contact_mobile.webp'); }
+  .page-services .about-bg { background-image: url('../images/services_mobile.webp'); background-size: cover; }
+  .page-products .about-bg { background-image: url('../images/product_mobile.webp'); background-size: cover; }
+  .page-contact .about-bg { background-image: url('../images/contact_mobile.webp'); background-size: cover; }
 }
 
 @media (max-width: 480px) {
-  .about-bg { min-height: 320px; background-image: url('../images/about_mobile.webp'); }
-  .page-services .about-bg { background-image: url('../images/services_mobile.webp'); }
-  .page-products .about-bg { background-image: url('../images/product_mobile.webp'); }
-  .page-contact .about-bg { background-image: url('../images/contact_mobile.webp'); }
+  .about-bg { min-height: 320px; background-size: cover; background-image: url('../images/about_mobile.webp'); }
+  .page-services .about-bg { background-image: url('../images/services_mobile.webp'); background-size: cover; }
+  .page-products .about-bg { background-image: url('../images/product_mobile.webp'); background-size: cover; }
+  .page-contact .about-bg { background-image: url('../images/contact_mobile.webp'); background-size: cover; }
   .about-bg h1 { font-size: 2.7rem; }
   .about-bg .about-breadcrumbs { font-size: 0.75rem; }
 }

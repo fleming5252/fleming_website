@@ -262,15 +262,20 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
   }
 }
 
+.page-contact .about-bg { background-image: url('../images/contact_mobile.webp'); background-size: 120% auto; background-position: center center; }
+.page-techno-services .about-bg { background-image: url('../images/techno/services_mobile.webp'); background-size: 120% auto; }
+.page-techno-rd .about-bg { background-image: url('../images/techno/r_d_mobile.webp'); background-size: 120% auto; }
+.page-techno-careers .about-bg { background-image: url('../images/techno/careers_mobile.webp'); background-size: 120% auto; }
+
 @media (max-width: 767px) {
   .nav-logo-img {
     height: 56px;
   }
   .about-bg .about-overlay { background: rgba(0, 0, 0, 0.25); }
   .page-contact .about-bg { background-image: url('../images/contact_mobile.webp'); background-size: cover; background-position: center center; }
-  .page-techno-services .about-bg { background-image: url('../images/techno/services_mobile.webp'); }
-  .page-techno-rd .about-bg { background-image: url('../images/techno/r_d_mobile.webp'); }
-  .page-techno-careers .about-bg { background-image: url('../images/techno/careers_mobile.webp'); }
+  .page-techno-services .about-bg { background-image: url('../images/techno/services_mobile.webp'); background-size: cover; }
+  .page-techno-rd .about-bg { background-image: url('../images/techno/r_d_mobile.webp'); background-size: cover; }
+  .page-techno-careers .about-bg { background-image: url('../images/techno/careers_mobile.webp'); background-size: cover; }
 }
 
 /* ══════════════════════════════════════════════
@@ -3072,7 +3077,7 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
 .about-bg .about-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.25);
     z-index: 1;
 }
 
@@ -4361,10 +4366,10 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
     min-height: 320px;
   }
   .about-bg .about-overlay { background: rgba(0, 0, 0, 0.25); }
-  .page-contact .about-bg { background-image: url('../images/contact_mobile.webp'); }
-  .page-techno-services .about-bg { background-image: url('../images/techno/services_mobile.webp'); }
-  .page-techno-rd .about-bg { background-image: url('../images/techno/r_d_mobile.webp'); }
-  .page-techno-careers .about-bg { background-image: url('../images/techno/careers_mobile.webp'); }
+  .page-contact .about-bg { background-image: url('../images/contact_mobile.webp'); background-size: cover; }
+  .page-techno-services .about-bg { background-image: url('../images/techno/services_mobile.webp'); background-size: cover; }
+  .page-techno-rd .about-bg { background-image: url('../images/techno/r_d_mobile.webp'); background-size: cover; }
+  .page-techno-careers .about-bg { background-image: url('../images/techno/careers_mobile.webp'); background-size: cover; }
 }
 
 /* ══════════════════════════════════════════════
