@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>404 – Page Not Found | Fleming Embedded & Software Solutions</title>
+  <style>
+    html { visibility: hidden; }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.documentElement.style.visibility = 'visible';
+    });
+  </script>
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap"></noscript>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      overflow: hidden;
+      height: 100%;
+    }
+
+    @font-face {
+      font-family: 'Poppins';
+      font-display: block;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      font-display: block;
+      background: #0b0d14;
+      color: #ffffff;
+      min-height: 100vh;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* ── Starfield ── */
+    .stars {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .star {
+      position: absolute;
+      border-radius: 50%;
+      animation: twinkle var(--d, 3s) ease-in-out infinite alternate;
+      opacity: var(--o, 0.6);
+      box-shadow: 0 0 var(--glow, 3px) var(--color, #ffffff);
+    }
+    .star::before,
+    .star::after {
+      content: '';
+      position: absolute;
+      background: var(--color, #ffffff);
+      border-radius: 2px;
+      opacity: 0.9;
+    }
+    /* Horizontal arm */
+    .star::before {
+      width: 140%;
+      height: 30%;
+      top: 35%;
+      left: -20%;
+    }
+    /* Vertical arm */
+    .star::after {
+      width: 30%;
+      height: 140%;
+      top: -20%;
+      left: 35%;
+    }
+    @keyframes twinkle {
+      from { opacity: var(--o, 0.6); }
+      to   { opacity: 0.1; }
+    }
+
+    /* ── Main container ── */
+    .container {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      max-width: 960px;
+      width: 100%;
+    }
+
+    /* ── 404 number group ── */
+    .num-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 24px;
+      user-select: none;
+    }
+
+    /* The two 4s — smaller */
+    .num {
+      display: inline-block;
+      font-size: 14vw;
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 1;
+      letter-spacing: -2px;
+      will-change: auto;
+    }
+
+    /* ── Zero — bigger than the 4s ── */
+    .zero-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: visible;
+    }
+
+    .num-zero {
+      display: inline-block;
+      font-size: 21vw;
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: -2px;
+      color: #1a56db;
+      -webkit-text-stroke: 1.2vw #1a56db;
+      paint-order: stroke fill;
+      will-change: auto;
+    }
+
+    /* Astronaut sits inside/below the 0 */
+    .astronaut-wrap {
+      position: absolute;
+      bottom: -4vw;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 29vw;
+      animation: float 4s ease-in-out infinite;
+      z-index: 2;
+      will-change: transform;
+    }
+    .astronaut-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 8px 28px rgba(26,86,219,0.4));
+    }
+
+    /* question mark — top right of astronaut head */
+    .question-mark {
+      position: absolute;
+      top: 8%;
+      right: -18px;
+      font-size: clamp(18px, 2.5vw, 28px);
+      color: #1a56db;
+      font-weight: 900;
+      animation: blink 1.6s ease-in-out infinite;
+      z-index: 3;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(-16px); }
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0; }
+    }
+
+    /* ── Saturn — bottom right, clearly visible ── */
+    .saturn {
+      position: fixed;
+      bottom: 5%;
+      right: 4%;
+      width: 500px;
+      animation: orbitSaturn 6s ease-in-out infinite alternate;
+      animation-delay: -3s;
+      z-index: 1;
+    }
+    .saturn img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 0 16px rgba(26,86,219,0.4));
+    }
+    @keyframes orbitSaturn {
+      from { transform: translateY(0) rotate(-5deg); }
+      to   { transform: translateY(-22px) rotate(5deg); }
+    }
+
+    /* ── Rocket ── */
+    .rocket {
+      position: fixed;
+      left: 6%;
+      bottom: 20%;
+      width: 500px;
+      z-index: 1;
+      animation: rocketFloat 8.4s ease-in-out infinite;
+      animation-delay: -4.2s;
+    }
+    .rocket img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transform: rotate(-35deg);
+      filter: drop-shadow(0 0 12px rgba(26,86,219,0.55));
+    }
+    @keyframes rocketFloat {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-28px); }
+    }
+
+    /* ── Text ── */
+    .headline {
+      font-size: 3.5vw;
+      font-weight: 700;
+      margin-bottom: 14px;
+      line-height: 1.25;
+      margin-top: 5vw;
+    }
+    .headline span { color: #1a56db; }
+
+    .subtext {
+      font-size: 1.5vw;
+      color: #9aa3b8;
+      max-width: 480px;
+      line-height: 1.75;
+      margin-bottom: 36px;
+    }
+
+    /* ── Buttons ── */
+    .btn-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.6px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: #1a56db;
+      color: #ffffff;
+      border: 2px solid #1a56db;
+      box-shadow: 0 4px 24px rgba(26,86,219,0.35);
+    }
+    .btn-primary:hover {
+      background: #1648c0;
+      box-shadow: 0 8px 32px rgba(26,86,219,0.5);
+    }
+    .btn-outline {
+      background: transparent;
+      color: #ffffff;
+      border: 2px solid rgba(255,255,255,0.22);
+    }
+    .btn-outline:hover {
+      border-color: #1a56db;
+      color: #1a56db;
+    }
+    .btn svg { flex-shrink: 0; }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      body { overflow-x: hidden; }
+
+      .num-group { gap: 6px; margin-bottom: 16px; }
+
+      .num      { font-size: 26vw; }
+      .num-zero { font-size: 40vw; -webkit-text-stroke: clamp(10px, 2vw, 14px) #1a56db; }
+
+      .astronaut-wrap {
+        width: 56vw;
+        bottom: -40px;
+      }
+
+      .rocket {
+        width: 72vw;
+        left: 0;
+        bottom: unset;
+        top: 2%;
+      }
+
+      .saturn {
+        width: 72vw;
+        right: 0;
+        bottom: 8%;
+      }
+
+      .headline { margin-top: 80px; }
+    }
+
+    @media (max-width: 480px) {
+      body { overflow-x: hidden; }
+
+      .num-group { gap: 4px; }
+
+      .num      { font-size: 28vw; }
+      .num-zero { font-size: 42vw; -webkit-text-stroke: 8px #1a56db; }
+
+      .astronaut-wrap {
+        width: 60vw;
+        bottom: -36px;
+      }
+
+      .rocket {
+        width: 76vw;
+        left: 0;
+        bottom: unset;
+        top: 2%;
+      }
+      .saturn {
+        width: 76vw;
+        right: 0;
+        bottom: 6%;
+      }
+
+      .headline { font-size: 20px; margin-top: 90px; }
+      .subtext  { font-size: 13px; margin-bottom: 28px; }
+      .btn      { padding: 12px 22px; font-size: 13px; }
+      .question-mark { font-size: 28px; right: -20px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .astronaut-wrap, .saturn, .star { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Starfield -->
+  <div class="stars" id="stars"></div>
+
+  <div class="rocket">
+    <img src="assets/images/404_2.webp" alt="Rocket"/>
+  </div>
+
+  <!-- Saturn -->
+  <div class="saturn">
+    <img src="assets/images/404_3.webp" alt="Saturn"/>
+  </div>
+
+  <!-- Main content -->
+  <div class="container">
+
+    <div class="num-group">
+      <span class="num">4</span>
+
+      <div class="zero-wrap">
+        <span class="num-zero">0</span>
+        <div class="astronaut-wrap">
+          <span class="question-mark">?</span>
+          <img src="assets/images/404_1.webp" alt="Lost astronaut"/>
+        </div>
+      </div>
+
+      <span class="num">4</span>
+    </div>
+
+    <h1 class="headline"><span>Oops!</span> Page Not Found</h1>
+    <p class="subtext">The page you're looking for doesn't exist or has been moved. Let's get you back on track.</p>
+
+    <div class="btn-group">
+      <a href="/" class="btn btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+        </svg>
+        GO TO HOME
+      </a>
+    </div>
+
+  </div>
+
+  <script>
+    const starsEl = document.getElementById('stars');
+    for (let i = 0; i < 240; i++) {
+      const s = document.createElement('div');
+      s.className = 'star';
+      const size = Math.random() * 3 + 1.2; /* was 5+2, reduced by 40% → 3+1.2 */
+      const isBlue = i % 2 === 0;
+      const color = isBlue
+        ? `hsl(${Math.floor(Math.random()*30+210)}, 80%, ${Math.floor(Math.random()*20+60)}%)`
+        : '#ffffff';
+      const glowSize = (size * 0.8).toFixed(1);
+      s.style.cssText = `
+        width:${size}px; height:${size}px;
+        top:${Math.random()*100}%;
+        left:${Math.random()*100}%;
+        --color:${color};
+        --glow:${glowSize}px;
+        background:${color};
+        --d:${(Math.random()*4+1.5).toFixed(1)}s;
+        --o:${(Math.random()*0.6+0.2).toFixed(2)};
+        animation-delay:${(Math.random()*5).toFixed(1)}s;
+      `;
+      starsEl.appendChild(s);
+    }
+  </script>
+</body>
+</html>

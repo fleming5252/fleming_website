@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -8,17 +8,22 @@
   <!-- INSERT THE NEW META DATA HERE -->
   <meta name="description" content="Explore Fleming's custom software products in Kerala, including Payroll Management, Newspaper Agent Billing, Fees Management, E-Commerce, F Track Attendance, and E-Learning apps." />
   <meta name="keywords" content="Fleming products, payroll management software, newspaper billing app, fees management system, e-commerce applications, F track attendance app, e-learning software, custom software Kerala" />
+  <meta name="author" content="Fleming Embedded & Software Solutions" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0b5fa5" />
   
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Products | Fleming Embedded & Software Solutions" />
   <meta property="og:description" content="Explore Fleming's custom software products in Kerala, including Payroll Management, Newspaper Agent Billing, Fees Management, E-Commerce, F Track Attendance, and E-Learning apps." />
-  <meta property="og:url" content="https://fleming.co.in/products.html" />
-  <meta property="og:image" content="https://fleming.co.in/assets/images/logo.webp" />
+  <meta property="og:url" content="https://www.fleming.co.in/products" />
+  <meta property="og:image" content="https://www.fleming.co.in/assets/images/logo.webp" />
+  <meta property="og:site_name" content="Fleming Embedded & Software Solutions" />
+  <link rel="canonical" href="https://www.fleming.co.in/products" />
 
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:title" content="Products | Fleming Embedded & Software Solutions" />
-  <meta property="twitter:description" content="Explore Fleming's custom software products in Kerala, including Payroll Management, Newspaper Agent Billing, Fees Management, E-Commerce, F Track Attendance, and E-Learning apps." />
-  <meta property="twitter:image" content="https://fleming.co.in/assets/images/logo.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Products | Fleming Embedded & Software Solutions" />
+  <meta name="twitter:description" content="Explore Fleming's custom software products in Kerala, including Payroll Management, Newspaper Agent Billing, Fees Management, E-Commerce, F Track Attendance, and E-Learning apps." />
+  <meta name="twitter:image" content="https://www.fleming.co.in/assets/images/logo.webp" />
   <!-- END OF NEW META DATA -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,11 +33,97 @@
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="icon" type="image/png" href="assets/images/logo.webp" />
+  <link rel="preload" as="image" href="assets/images/logo1.webp" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/split-type"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": "https://www.fleming.co.inproducts.html#webpage",
+    "url": "https://www.fleming.co.in/products",
+    "name": "Products | Fleming Embedded & Software Solutions",
+    "description": "Explore Fleming's custom software products in Kerala, including Payroll Management, Newspaper Agent Billing, Fees Management, E-Commerce, F Track Attendance, and E-Learning apps.",
+    "isPartOf": {
+      "@id": "https://www.fleming.co.in/#website"
+    },
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://www.fleming.co.in/assets/images/logo.webp"
+    },
+    "breadcrumb": {
+      "@id": "https://www.fleming.co.inproducts.html#breadcrumb"
+    },
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": "Fleming Software Products",
+      "itemListElement": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Payroll Management System",
+          "applicationCategory": "BusinessApplication",
+          "description": "Custom payroll management software for streamlining employee salary processing and compliance."
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Newspaper Agent Billing",
+          "applicationCategory": "BusinessApplication",
+          "description": "Billing and subscription management software for newspaper distribution agents."
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Fees Management System",
+          "applicationCategory": "BusinessApplication",
+          "description": "Institutional fee collection and management software for educational organizations."
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "E-Commerce Platform",
+          "applicationCategory": "ShoppingApplication",
+          "description": "Custom e-commerce application development for online retail businesses."
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "F Track Attendance",
+          "applicationCategory": "BusinessApplication",
+          "description": "Employee and student attendance tracking system with real-time monitoring."
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "E-Learning Platform",
+          "applicationCategory": "EducationalApplication",
+          "description": "Online learning management system for educational content delivery and tracking."
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://www.fleming.co.inproducts.html#breadcrumb",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.fleming.co.in/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Products",
+        "item": "https://www.fleming.co.in/products"
+      }
+    ]
+  }
+  </script>
+
 </head>
-<body>
+<body class="page-products">
 
 <div class="site-preloader-overlay" id="loadingScreen">
   <div class="loader-wrapper-master">
@@ -44,10 +135,36 @@
       <div class="circle r-z"></div>
       <div class="circle r-y"></div>
       <div class="circle r-x"></div>
-      <img loading="lazy" src="assets/images/logo1.webp" class="logo" alt="f">
+      <div class="logo-placeholder" id="logoPlaceholder">F</div>
+      <img src="assets/images/logo1.webp" class="logo" id="loaderLogo" alt="f" style="display:none;" />
     </div>
   </div>
-  <script>document.body.style.overflow='hidden';window.addEventListener('load',function(){var e=document.getElementById('loadingScreen');if(e){e.classList.add('loader-hidden');document.body.style.overflow=''}})</script>
+  <script>
+    document.body.style.overflow = 'hidden';
+    var loaderImg = document.getElementById('loaderLogo');
+    var placeholder = document.getElementById('logoPlaceholder');
+    function showLogo() {
+      if (placeholder) placeholder.style.display = 'none';
+      if (loaderImg) loaderImg.style.display = 'block';
+    }
+    if (loaderImg) {
+      if (loaderImg.complete && loaderImg.naturalWidth > 0) {
+        showLogo();
+      } else {
+        loaderImg.addEventListener('load', showLogo);
+        loaderImg.addEventListener('error', function() {
+          if (placeholder) placeholder.style.display = 'flex';
+        });
+      }
+    }
+    window.addEventListener('load', function() {
+      var e = document.getElementById('loadingScreen');
+      if (e) {
+        e.classList.add('loader-hidden');
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
 </div>
 
 <!-- HERO NAV -->
@@ -144,6 +261,61 @@
             <span class="active-page">PRODUCTS</span>
         </p>
     </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     MOBILE INTRO BLOCK
+     ═══════════════════════════════════════════ -->
+<div id="psIntroBlock">
+  <div class="ps-intro-badge"><span class="badge-dot"></span> WHAT WE BUILD</div>
+  <h2 class="ps-intro-heading">Innovative Software<br><span class="ps-intro-heading-blue">Solutions</span></h2>
+  <div class="ps-intro-rule"></div>
+  <p class="ps-intro-text">From payroll systems to e-commerce platforms, Fleming builds powerful software tailored for real business needs across Kerala and beyond.</p>
+  <div class="ps-intro-chips">
+    <span class="ps-intro-chip">7+ Products</span>
+    <span class="ps-intro-chip"><span id="psYearsCount">12</span>+ Years</span>
+    <span class="ps-intro-chip">100+ Clients</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     MOBILE AUTO-SCROLLING IMAGE SLIDER
+     ═══════════════════════════════════════════ -->
+<section id="psSliderSection">
+  <div class="ps-slider-container">
+    <div class="ps-slider-track" id="psSliderTrack"></div>
+  </div>
+  <div class="ps-slider-dots" id="psSliderDots"></div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     MOBILE SELECTOR LABEL
+     ═══════════════════════════════════════════ -->
+<div id="psSelectorLabel">
+  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 11V6a2 2 0 0 0-4 0v5"/>
+    <path d="M14 10V4a2 2 0 0 0-4 0v6"/>
+    <path d="M10 10.5V6a2 2 0 0 0-4 0v8"/>
+    <path d="M6 14a4 4 0 0 0 4 4h4a4 4 0 0 0 4-4v-2.5"/>
+  </svg>
+  <div class="ps-selector-heading-row">
+    <span class="ps-selector-pulse"></span>
+    <span class="ps-selector-heading">Choose a Product</span>
+  </div>
+  <p class="ps-selector-subtext">Tap any slide to explore its full details below</p>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     MOBILE PRODUCT CARDS
+     ═══════════════════════════════════════════ -->
+<section id="psCardsSection">
+  <div id="psCardsHeading">
+    <div class="ps-cards-badge"><span class="badge-dot"></span> SELECTED PRODUCT</div>
+    <h2 class="ps-cards-title"><span id="psCardsProductName">GeoTag Attendance System</span></h2>
+    <div class="ps-cards-rule"></div>
+    <p class="ps-cards-subtitle">Tap any product in the slider above to switch</p>
+  </div>
+  <div class="ps-cards-container" id="psCardsContainer"></div>
 </section>
 
 <!-- ═══════════════════════════════════════════
@@ -280,23 +452,23 @@
           Your trusted technology partner in Kerala.
         </p>
         <div class="footer-socials">
-          <a href="https://www.facebook.com/ieeeprojectskochi?mibextid=YMEMSu" class="social-icon" aria-label="Facebook" target="_blank">
+          <a href="https://www.facebook.com/ieeeprojectskochi?mibextid=YMEMSu" class="social-icon" aria-label="Facebook">
             <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
               <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
             </svg>
           </a>
-          <a href="https://www.youtube.com/@flemingembeddedandsoftware7876" class="social-icon" aria-label="YouTube" target="_blank">
+          <a href="https://www.youtube.com/@flemingembeddedandsoftware7876" class="social-icon" aria-label="YouTube">
             <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
               <path d="M23.5 6.19A3.02 3.02 0 0 0 21.36 4.2c-1.9-.5-9.35-.5-9.35-.5s-7.46 0-9.36.5A3.02 3.02 0 0 0 .5 6.19C0 8.1 0 12 0 12s0 3.9.5 5.81a3.02 3.02 0 0 0 2.15 1.99c1.9.5 9.35.5 9.35.5s7.46 0 9.36-.5a3.02 3.02 0 0 0 2.14-1.99C24 15.9 24 12 24 12s0-3.9-.5-5.81zM9.5 15.57V8.43L16.18 12z"/>
             </svg>
           </a>
-          <a href="https://in.linkedin.com/company/fleming-embedded-software-solutions" class="social-icon" aria-label="LinkedIn" target="_blank">
+          <a href="https://in.linkedin.com/company/fleming-embedded-software-solutions" class="social-icon" aria-label="LinkedIn">
             <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
               <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/>
               <circle cx="4" cy="4" r="2"/>
             </svg>
           </a>
-          <a href="https://www.instagram.com/fleming_kochi/" class="social-icon" aria-label="Instagram" target="_blank">
+          <a href="https://www.instagram.com/fleming_kochi/" class="social-icon" aria-label="Instagram">
             <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
               <circle cx="12" cy="12" r="4"/>
@@ -333,7 +505,7 @@
               </svg>
             </span>
             <div class="contact-info-group">
-              <a href="tel:04844045252" class="contact-link">+91-484-4045252</a>
+              <a href="tel:9745205252" class="contact-link">+91-9745205252</a>
               <a href="tel:9745205252" class="contact-link">+91-9745205252</a>
             </div>
           </li>
@@ -357,14 +529,27 @@
                 <circle cx="12" cy="10" r="3"/>
               </svg>
             </span>
-            <a href="https://www.google.com/maps?ll=9.996532,76.295951&z=17&t=m&hl=en&gl=IN&mapclient=embed&cid=2057725792007139428" target="_blank" class="contact-link" style="display:inline-block;">
+            <a href="https://www.google.com/maps?ll=9.996532,76.295951&z=17&t=m&hl=en&gl=IN&mapclient=embed&cid=2057725792007139428" class="contact-link" style="display:inline-block;">
               <span class="contact-info-text">
                 Fleming Embedded and Software Solutions<br>
-                #37/3956, 2nd Floor, Bank Road,<br>
+                #37/3956, Bank Road,<br>
                 Kaloor, Ernakulam — 682017
               </span>
             </a>
           </li>
+
+          <li class="footer-contact-item">
+            <span class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </span>
+            <span class="contact-info-text">Mon – Sat &nbsp;|&nbsp; 9:30 AM – 6:30 PM</span>
+          </li>
+
         </ul>
       </div>
     </div>
@@ -372,7 +557,7 @@
       <div class="footer-divider"></div>
       <p class="footer-copyright">
         &copy; 2026 All Rights Reserved by
-        <span class="footer-brand-name">Fleming Embedded and Software Solutions</span>
+        <span class="footer-brand-name">FLEMING EMBEDDED & SOFTWARE SOLUTIONS LLP</span>
       </p>
     </div>
   </div>
@@ -397,13 +582,8 @@ window.addEventListener('scroll', function() {
   if (inHeroZone) {
     stickyNav.classList.remove('nav-visible');
     stickyNav.classList.add('nav-hidden');
-    if (scrollingUp) {
-      heroNav.classList.remove('nav-hidden');
-      heroNav.classList.add('nav-visible');
-    } else {
-      heroNav.classList.remove('nav-visible');
-      heroNav.classList.add('nav-hidden');
-    }
+    heroNav.classList.remove('nav-hidden');
+    heroNav.classList.add('nav-visible');
   } else {
     heroNav.classList.remove('nav-visible');
     heroNav.classList.add('nav-hidden');
@@ -474,7 +654,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   <div class="fcw-actions" id="fcwActions">
 
-    <a href="https://wa.me/919745205252" target="_blank" class="fcw-btn fcw-whatsapp" aria-label="WhatsApp">
+    <a href="https://wa.me/919745205252" class="fcw-btn fcw-whatsapp" aria-label="WhatsApp">
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
       </svg>
@@ -522,6 +702,11 @@ document.addEventListener('DOMContentLoaded', function() {
   var actions = document.getElementById('fcwActions');
   var isOpen  = false;
 
+  function closeFcw() {
+    isOpen = false;
+    wrapper.classList.remove('fcw-open');
+  }
+
   toggle.addEventListener('click', function() {
     isOpen = !isOpen;
     if (isOpen) {
@@ -531,12 +716,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  document.addEventListener('click', function(e) {
+  document.addEventListener('pointerdown', function(e) {
     if (isOpen && !wrapper.contains(e.target)) {
-      isOpen = false;
-      wrapper.classList.remove('fcw-open');
+      closeFcw();
     }
   });
+
+  window.addEventListener('scroll', function() {
+    if (isOpen) closeFcw();
+  }, { passive: true });
 })();
 </script>
 
@@ -612,19 +800,168 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 </script>
 
+<!-- ═══════════════════════════════════════════
+     MOBILE INTRO + CARDS HEADING ANIMATIONS
+     ═══════════════════════════════════════════ -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.innerWidth > 900) return;
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+  gsap.registerPlugin(ScrollTrigger);
 
+  /* ── Dynamic years since October 2013 ── */
+  var founded = new Date(2013, 9, 1);
+  var now = new Date();
+  var years = now.getFullYear() - founded.getFullYear();
+  if (now < new Date(now.getFullYear(), 9, 1)) years--;
+  var yearsEl = document.getElementById('psYearsCount');
+  if (yearsEl) yearsEl.textContent = years;
 
+  var introBadge   = document.querySelector('#psIntroBlock .ps-intro-badge');
+  var introHeading = document.querySelector('#psIntroBlock .ps-intro-heading');
+  var introRule    = document.querySelector('#psIntroBlock .ps-intro-rule');
+  var introText    = document.querySelector('#psIntroBlock .ps-intro-text');
+  var introChips   = document.querySelector('#psIntroBlock .ps-intro-chips');
+
+  /* ── Badge: keep 50% ── */
+  if (introBadge) {
+    gsap.set(introBadge, { opacity: 0, y: -20 });
+    gsap.to(introBadge, {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: introBadge,
+        start: 'top 50%',
+        toggleActions: 'play none none reverse'
+      }
+    });
+  }
+
+  /* ── Heading: keep 50% scrub ── */
+  if (introHeading) {
+    var split = new SplitType(introHeading, { types: 'chars' });
+    var chars = split.chars;
+    if (chars && chars.length) {
+      gsap.set(chars, { opacity: 0.15 });
+      gsap.to(chars, {
+        scrollTrigger: {
+          trigger: introHeading,
+          start: 'top 50%',
+          end: 'bottom 20%',
+          scrub: true,
+          invalidateOnRefresh: true
+        },
+        opacity: 1,
+        stagger: 0.08,
+        ease: 'none'
+      });
+    }
+  }
+
+  /* ── Rule: back to 85% ── */
+  if (introRule) {
+    gsap.set(introRule, { scaleX: 0 });
+    gsap.to(introRule, {
+      scaleX: 1,
+      duration: 0.5,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: introRule,
+        start: 'top 85%',
+        toggleActions: 'play none none reverse'
+      }
+    });
+  }
+
+  /* ── Intro text: back to 85% ── */
+  if (introText) {
+    gsap.set(introText, { y: 20, opacity: 0 });
+    gsap.to(introText, {
+      y: 0,
+      opacity: 1,
+      duration: 0.8,
+      ease: 'power4.out',
+      scrollTrigger: {
+        trigger: introText,
+        start: 'top 85%',
+        toggleActions: 'play none none reverse'
+      }
+    });
+  }
+
+  /* ── Chips: back to 85% ── */
+  if (introChips) {
+    gsap.set(introChips, { y: 20, opacity: 0 });
+    gsap.to(introChips, {
+      y: 0,
+      opacity: 1,
+      duration: 0.8,
+      ease: 'power4.out',
+      delay: 0.15,
+      scrollTrigger: {
+        trigger: introChips,
+        start: 'top 85%',
+        toggleActions: 'play none none reverse'
+      }
+    });
+  }
+
+  /* ── Selector label: back to 85% ── */
+  var selectorLabel = document.getElementById('psSelectorLabel');
+  if (selectorLabel) {
+    gsap.set(selectorLabel, { opacity: 0, y: -20 });
+    gsap.to(selectorLabel, {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: selectorLabel,
+        start: 'top 85%',
+        toggleActions: 'play none none reverse'
+      }
+    });
+  }
+
+  /* ── Cards heading: back to 85% ── */
+  var cardsHeading = document.getElementById('psCardsHeading');
+  if (cardsHeading) {
+    gsap.set(cardsHeading, { opacity: 0, y: -20 });
+    gsap.fromTo(cardsHeading,
+      { opacity: 0, y: -20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power4.out',
+        scrollTrigger: {
+          trigger: cardsHeading,
+          start: 'top 85%',
+          toggleActions: 'play none none reverse'
+        }
+      }
+    );
+  }
+
+  setTimeout(function() {
+    ScrollTrigger.refresh();
+  }, 100);
+});
+</script>
 <script>
 (function() {
-  var page = window.location.pathname.split('/').pop() || 'index.html';
-  if (page === 'techno.html') {
+  var page = window.location.pathname.split('/').pop() || '/';
+  if (page === 'techno-solutions') {
     document.querySelectorAll('.nav-item a[href="contact.html"]').forEach(function(link) {
-      link.href = 'techno_contact.html';
+      link.href = '/techno-solutions/contact';
     });
   }
 })();
 </script>
 
+<!-- ═══════════════════════════════════════════
 <!-- ═══════════════════════════════════════════
      PRODUCTS JAVASCRIPT
      ═══════════════════════════════════════════ -->
@@ -632,7 +969,6 @@ document.addEventListener('DOMContentLoaded', function() {
 (function () {
   'use strict';
 
-  /* ─── PRODUCT DATA ─────────────────────────────────────────── */
   const PRODUCTS = [
     {
       num: '01',
@@ -662,7 +998,7 @@ document.addEventListener('DOMContentLoaded', function() {
              <p>Our application is designed with user-friendly features, providing a seamless experience for payroll processing. With just a few clicks, organizations can efficiently handle all payroll-related tasks, ensuring smooth operations.</p>`,
       features: [
         { icon: '📄', title: 'Accurate Processing',   desc: 'Ensure precise salary calculations every time.' },
-        { icon: '🛡️', title: 'Streamlined Payroll',        desc: 'Process employee payroll quickly and efficiently.' },
+        { icon: '🛡️', title: 'Streamlined Payroll',   desc: 'Process employee payroll quickly and efficiently.' },
         { icon: '👥', title: 'Employee Management',   desc: 'Manage employee data, roles and payroll history.' },
         { icon: '📊', title: 'Real-time Reports',     desc: 'Generate insightful reports and analytics instantly.' },
       ],
@@ -705,7 +1041,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { icon: '🔔', title: 'Reminders & Notifications',  desc: 'Automated reminders reduce delays and improve collections.' },
       ],
       floatTitle: 'Smarter Fee Management. Better Education.',
-      floatBody:  'Our solution brings transparency, accuracy, and efficiency to fee management — so institutions can focus on what truly matters: students and learning.',
+      floatBody:  'Our solution brings transparency, accuracy, and efficiency to fee management — so institutions can focus on what truly matters.',
       floatIconSvg: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`,
       glow: 'rgba(139,92,246,0.12)',
       layout: 'text-left',
@@ -716,7 +1052,7 @@ document.addEventListener('DOMContentLoaded', function() {
       line2: 'Management',
       tagline: 'LEARN <span class="ps-tagline-blue">ANYTIME. ANYWHERE.</span>',
       body: `<p>We have developed an e-learning application that helps educational institutions deliver quality education in a digital and interactive manner.</p>
-             <p>The platform is designed to manage courses, students, lessons, assignments, exams and performance — all in one place. It empowers both educators and learners with a smooth and engaging learning experience.</p>`,
+             <p>The platform is designed to manage courses, students, lessons, assignments, exams and performance — all in one place.</p>`,
       features: [
         { icon: '📚', title: 'Course Management',     desc: 'Organize and manage courses, lessons and study materials.' },
         { icon: '👥', title: 'Student Management',    desc: 'Add and manage students, batches and enrollments with ease.' },
@@ -735,7 +1071,7 @@ document.addEventListener('DOMContentLoaded', function() {
       line2: 'Management',
       tagline: 'MARK ATTENDANCE. <span class="ps-tagline-blue">ANYWHERE. ACCURATELY.</span>',
       body: `<p>We have developed a location-based attendance management mobile app, F track, which allows the employees of a particular organization to mark their attendance in an easy and user-friendly manner.</p>
-             <p>The mobile app is designed such that employees can only mark their attendance from a specific location, which can be decided by the employer. The app is available on both Android and iOS.</p>`,
+             <p>The mobile app is designed such that employees can only mark their attendance from a specific location, which can be decided by the employer. Available on Android and iOS.</p>`,
       features: [
         { icon: '📍', title: 'Location Based',      desc: 'Mark attendance only within the employer defined location.' },
         { icon: '✅', title: 'Accurate & Reliable',  desc: 'Ensure accurate attendance records with real-time sync.' },
@@ -743,7 +1079,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { icon: '📊', title: 'Reports & Analytics', desc: 'Get detailed insights and export reports effortlessly.' },
       ],
       floatTitle: 'Right Person. Right Place. Right Time.',
-      floatBody:  'Our location-based attendance system ensures accuracy, prevents fraud, and helps organizations track workforce productivity in real-time.',
+      floatBody:  'Our location-based attendance system ensures accuracy, prevents fraud, and helps organizations track workforce productivity.',
       floatIconSvg: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
       glow: 'rgba(34,197,94,0.12)',
       layout: 'text-left',
@@ -754,53 +1090,47 @@ document.addEventListener('DOMContentLoaded', function() {
       line2: 'Management',
       tagline: 'SELL SMARTER. <span class="ps-tagline-blue">MANAGE BETTER.</span>',
       body: `<p>Selling and managing products is one of the most basic needs for the successful operation of an organization.</p>
-             <p>We make sure that this basic need is carried out smoothly for every client that joins hands with us as we provide an e-commerce application that helps our clients sell and manage products in a straightforward and organized manner.</p>`,
+             <p>We provide an e-commerce application that helps our clients sell and manage products in a straightforward and organized manner.</p>`,
       features: [
-        { icon: '🛒', title: 'Product Management',        desc: 'Add, update and manage products with ease.' },
-        { icon: '📦', title: 'Order & Inventory Tracking', desc: 'Track orders and inventory in real-time seamlessly.' },
-        { icon: '💳', title: 'Secure Payments',            desc: 'Multiple payment gateways for safe transactions.' },
-        { icon: '📈', title: 'Sales Analytics',            desc: 'Get insights into sales performance and grow your business.' },
+        { icon: '🛒', title: 'Product Management',         desc: 'Add, update and manage products with ease.' },
+        { icon: '📦', title: 'Order & Inventory Tracking',  desc: 'Track orders and inventory in real-time seamlessly.' },
+        { icon: '💳', title: 'Secure Payments',             desc: 'Multiple payment gateways for safe transactions.' },
+        { icon: '📈', title: 'Sales Analytics',             desc: 'Get insights into sales performance and grow your business.' },
       ],
       floatTitle: 'Build. Sell. Grow Online.',
-      floatBody:  'Our e-commerce solution empowers you to manage products, track orders, accept payments, and grow your business — all from one powerful platform.',
+      floatBody:  'Our e-commerce solution empowers you to manage products, track orders, accept payments, and grow your business.',
       floatIconSvg: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>`,
       glow: 'rgba(234,179,8,0.10)',
       layout: 'text-right',
     },
   ];
 
-  /* ─── DOM REFS ──────────────────────────────────────────────── */
-  const section       = document.getElementById('productsSection');
-  const sticky        = document.getElementById('psSticky');
-  const spacer        = section; // section itself is the scroll spacer
-  const glowEl        = document.getElementById('psGlow');
-  const badgeNum      = document.getElementById('psBadgeNum');
-  const layout        = document.getElementById('psLayout');
-  const textSide      = document.getElementById('psTextSide');
-  const imageSide     = document.getElementById('psImageSide');
-  const titleL1       = document.getElementById('psTitleL1');
-  const titleL2       = document.getElementById('psTitleL2');
-  const taglineEl     = document.getElementById('psTagline');
-  const bodyEl        = document.getElementById('psBody');
-  const featuresEl    = document.getElementById('psFeatures');
-  const floatCard     = document.getElementById('psFloatCard');
-  const floatIcon     = document.getElementById('psFloatIcon');
-  const floatTitle    = document.getElementById('psFloatTitle');
-  const floatBody     = document.getElementById('psFloatBody');
-  const progressFill  = document.getElementById('psProgressFill');
-  const progressDots  = document.getElementById('psProgressDots');
-  const counterDigit  = document.getElementById('psCounterDigit');
+  /* ─── DOM REFS ── */
+  const section      = document.getElementById('productsSection');
+  const stickyEl     = document.getElementById('psSticky');
+  const glowEl       = document.getElementById('psGlow');
+  const badgeNum     = document.getElementById('psBadgeNum');
+  const layout       = document.getElementById('psLayout');
+  const titleL1      = document.getElementById('psTitleL1');
+  const titleL2      = document.getElementById('psTitleL2');
+  const taglineEl    = document.getElementById('psTagline');
+  const bodyEl       = document.getElementById('psBody');
+  const featuresEl   = document.getElementById('psFeatures');
+  const floatCard    = document.getElementById('psFloatCard');
+  const floatIcon    = document.getElementById('psFloatIcon');
+  const floatTitle   = document.getElementById('psFloatTitle');
+  const floatBody    = document.getElementById('psFloatBody');
+  const progressFill = document.getElementById('psProgressFill');
+  const progressDots = document.getElementById('psProgressDots');
+  const counterDigit = document.getElementById('psCounterDigit');
+  const images       = document.querySelectorAll('.ps-img');
 
-  const images        = document.querySelectorAll('.ps-img');
-
-  /* ─── STATE ─────────────────────────────────────────────────── */
-  let current      = 0;
-  let isAnimating  = false;
+  let current     = 0;
+  let isAnimating = false;
   const SCROLL_PER = 600;
+  const isMobile   = () => window.innerWidth <= 900;
 
-  const isMobile = () => window.innerWidth <= 900;
-
-  /* ─── INIT ──────────────────────────────────────────────────── */
+  /* ─── INIT ── */
   function init() {
     if (!isMobile()) {
       section.style.minHeight = (PRODUCTS.length * SCROLL_PER + window.innerHeight) + 'px';
@@ -812,13 +1142,13 @@ document.addEventListener('DOMContentLoaded', function() {
       const d = document.createElement('div');
       d.className = 'ps-dot' + (i === 0 ? ' ps-dot-active' : '');
       d.dataset.idx = i;
-      d.addEventListener('click', () => jumpTo(i));
+      d.addEventListener('click', () => !isMobile() && jumpTo(i));
       progressDots.appendChild(d);
     });
 
     if (isMobile()) {
       buildMobileSlides();
-      initMobileScroll();
+      initMobileFixed();
     }
 
     applyProduct(0, false);
@@ -826,14 +1156,11 @@ document.addEventListener('DOMContentLoaded', function() {
     let lastMobile = isMobile();
     window.addEventListener('resize', () => {
       const nowMobile = window.innerWidth <= 900;
-      if (nowMobile !== lastMobile) {
-        lastMobile = nowMobile;
-        location.reload();
-      }
+      if (nowMobile !== lastMobile) { lastMobile = nowMobile; location.reload(); }
     });
   }
 
-  /* ─── DESKTOP SCROLL HANDLER ────────────────────────────────── */
+  /* ─── DESKTOP SCROLL ── */
   if (!isMobile()) {
     window.addEventListener('scroll', onScroll, { passive: true });
   }
@@ -843,122 +1170,68 @@ document.addEventListener('DOMContentLoaded', function() {
     const scrollInSection = window.scrollY - sectionTop;
     const maxScroll       = PRODUCTS.length * SCROLL_PER;
 
-    // Reset to slide 1 whenever scroll is above the section
     if (scrollInSection < 0) {
-      if (current !== 0) {
-        isAnimating = false;   // cancel any in-progress animation
-        progressFill.style.width = '0%';
-        applyProduct(0, false); // instant reset, no animation
-      }
+      if (current !== 0) { isAnimating = false; progressFill.style.width = '0%'; applyProduct(0, false); }
       return;
     }
-
     if (scrollInSection > maxScroll) return;
 
     const rawIndex    = scrollInSection / SCROLL_PER;
     const targetIndex = Math.min(Math.floor(rawIndex), PRODUCTS.length - 1);
-
-    const fillPct = (rawIndex / (PRODUCTS.length - 1)) * 100;
-    progressFill.style.width = Math.min(fillPct, 100) + '%';
-
-    if (targetIndex !== current && !isAnimating) {
-      transitionTo(targetIndex);
-    }
+    progressFill.style.width = Math.min((rawIndex / (PRODUCTS.length - 1)) * 100, 100) + '%';
+    if (targetIndex !== current && !isAnimating) transitionTo(targetIndex);
   }
 
-  /* ─── JUMP ──────────────────────────────────────────────────── */
   function jumpTo(idx) {
     if (idx === current || isAnimating) return;
-    const sectionTop   = section.getBoundingClientRect().top + window.scrollY;
-    const targetScroll = sectionTop + idx * SCROLL_PER;
-    window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+    const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({ top: sectionTop + idx * SCROLL_PER, behavior: 'smooth' });
   }
 
-  /* ─── TRANSITION ────────────────────────────────────────────── */
+  /* ─── TRANSITION (desktop) ── */
   function transitionTo(nextIdx) {
     if (isAnimating) return;
     isAnimating = true;
-
-    const next    = PRODUCTS[nextIdx];
     const isForward = nextIdx > current;
 
     titleL1.style.transition = 'transform 320ms ease, opacity 320ms ease';
     titleL1.style.transform  = isForward ? 'translateY(-28px)' : 'translateY(28px)';
     titleL1.style.opacity    = '0';
-
-    setTimeout(() => {
-      titleL2.style.transition = 'transform 320ms ease, opacity 320ms ease';
-      titleL2.style.transform  = isForward ? 'translateY(-28px)' : 'translateY(28px)';
-      titleL2.style.opacity    = '0';
-    }, 80);
-
-    setTimeout(() => {
-      taglineEl.style.transition = 'opacity 250ms ease';
-      taglineEl.style.opacity    = '0';
-    }, 140);
-
-    setTimeout(() => {
-      bodyEl.style.transition = 'opacity 250ms ease';
-      bodyEl.style.opacity    = '0';
-    }, 180);
-
-    const featureItems = featuresEl.querySelectorAll('.ps-feat');
-    featureItems.forEach((f, i) => {
-      setTimeout(() => {
-        f.style.transition = 'opacity 200ms ease, transform 200ms ease';
-        f.style.opacity    = '0';
-        f.style.transform  = 'translateY(-10px)';
-      }, i * 60);
+    setTimeout(() => { titleL2.style.transition = 'transform 320ms ease, opacity 320ms ease'; titleL2.style.transform = isForward ? 'translateY(-28px)' : 'translateY(28px)'; titleL2.style.opacity = '0'; }, 80);
+    setTimeout(() => { taglineEl.style.transition = 'opacity 250ms ease'; taglineEl.style.opacity = '0'; }, 140);
+    setTimeout(() => { bodyEl.style.transition = 'opacity 250ms ease'; bodyEl.style.opacity = '0'; }, 180);
+    featuresEl.querySelectorAll('.ps-feat').forEach((f, i) => {
+      setTimeout(() => { f.style.transition = 'opacity 200ms ease, transform 200ms ease'; f.style.opacity = '0'; f.style.transform = 'translateY(-10px)'; }, i * 60);
     });
-
     floatCard.style.transition = 'transform 360ms cubic-bezier(0.4,0,0.2,1), opacity 300ms ease';
-    floatCard.style.transform  = 'translateY(24px)';
-    floatCard.style.opacity    = '0';
-
-    const currentImg = document.querySelector('.ps-img-active');
-    if (currentImg) {
-      currentImg.style.transition = 'transform 500ms ease, opacity 450ms ease';
-      currentImg.style.transform  = 'scale(1.07)';
-      currentImg.style.opacity    = '0';
-    }
-
-    setTimeout(() => {
-      applyProduct(nextIdx, true);
-    }, 420);
+    floatCard.style.transform  = 'translateY(24px)'; floatCard.style.opacity = '0';
+    const cur = document.querySelector('.ps-img-active');
+    if (cur) { cur.style.transition = 'transform 500ms ease, opacity 450ms ease'; cur.style.transform = 'scale(1.07)'; cur.style.opacity = '0'; }
+    setTimeout(() => applyProduct(nextIdx, true), 420);
   }
 
-  /* ─── APPLY PRODUCT ─────────────────────────────────────────── */
+  /* ─── APPLY PRODUCT ── */
   function applyProduct(idx, animated) {
     const p = PRODUCTS[idx];
     const prevIdx = current;
     current = idx;
 
     badgeNum.textContent = p.num;
-
     animateCounter(p.num);
-
     glowEl.style.background = `radial-gradient(ellipse 60% 60% at 60% 50%, ${p.glow}, transparent 70%)`;
+    if (p.layout === 'text-right') layout.classList.add('ps-layout-flipped');
+    else layout.classList.remove('ps-layout-flipped');
 
-    if (p.layout === 'text-right') {
-      layout.classList.add('ps-layout-flipped');
-    } else {
-      layout.classList.remove('ps-layout-flipped');
-    }
-
-    titleL1.textContent    = p.line1;
-    titleL2.innerHTML      = p.line2;
-    taglineEl.innerHTML    = p.tagline;
-    bodyEl.innerHTML       = p.body;
+    titleL1.textContent = p.line1;
+    titleL2.innerHTML   = p.line2;
+    taglineEl.innerHTML = p.tagline;
+    bodyEl.innerHTML    = p.body;
 
     featuresEl.innerHTML = '';
-    p.features.forEach((f) => {
+    p.features.forEach(f => {
       const div = document.createElement('div');
       div.className = 'ps-feat';
-      div.innerHTML = `<div class="ps-feat-icon">${f.icon}</div>
-                       <div class="ps-feat-text">
-                         <strong>${f.title}</strong>
-                         <span>${f.desc}</span>
-                       </div>`;
+      div.innerHTML = `<div class="ps-feat-icon">${f.icon}</div><div class="ps-feat-text"><strong>${f.title}</strong><span>${f.desc}</span></div>`;
       featuresEl.appendChild(div);
     });
 
@@ -966,147 +1239,82 @@ document.addEventListener('DOMContentLoaded', function() {
     floatTitle.textContent = p.floatTitle;
     floatBody.textContent  = p.floatBody;
 
-    images.forEach(img => {
-      img.classList.remove('ps-img-active');
-      img.style.transition = '';
-      img.style.transform  = '';
-      img.style.opacity    = '';
-    });
+    images.forEach(img => { img.classList.remove('ps-img-active'); img.style.transition = img.style.transform = img.style.opacity = ''; });
     const nextImg = document.querySelector(`.ps-img[data-idx="${idx}"]`);
     if (nextImg) nextImg.classList.add('ps-img-active');
 
-    document.querySelectorAll('.ps-dot').forEach((d, i) => {
-      d.classList.toggle('ps-dot-active', i === idx);
-    });
+    document.querySelectorAll('.ps-dot').forEach((d, i) => d.classList.toggle('ps-dot-active', i === idx));
 
     if (animated) {
       const isForward = idx > prevIdx;
+      titleL1.style.transition = titleL2.style.transition = 'none';
+      titleL1.style.transform  = titleL2.style.transform = isForward ? 'translateY(28px)' : 'translateY(-28px)';
+      titleL1.style.opacity    = titleL2.style.opacity = taglineEl.style.opacity = bodyEl.style.opacity = '0';
 
-      titleL1.style.transition = 'none';
-      titleL1.style.transform  = isForward ? 'translateY(28px)' : 'translateY(-28px)';
-      titleL1.style.opacity    = '0';
-      titleL2.style.transition = 'none';
-      titleL2.style.transform  = isForward ? 'translateY(28px)' : 'translateY(-28px)';
-      titleL2.style.opacity    = '0';
-      taglineEl.style.opacity  = '0';
-      bodyEl.style.opacity     = '0';
-
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          titleL1.style.transition = 'transform 380ms cubic-bezier(0.34,1.1,0.64,1), opacity 340ms ease';
-          titleL1.style.transform  = 'translateY(0)';
-          titleL1.style.opacity    = '1';
-
-          setTimeout(() => {
-            titleL2.style.transition = 'transform 380ms cubic-bezier(0.34,1.1,0.64,1), opacity 340ms ease';
-            titleL2.style.transform  = 'translateY(0)';
-            titleL2.style.opacity    = '1';
-          }, 80);
-
-          setTimeout(() => {
-            taglineEl.style.transition = 'opacity 300ms ease';
-            taglineEl.style.opacity    = '1';
-          }, 160);
-
-          setTimeout(() => {
-            bodyEl.style.transition = 'opacity 300ms ease';
-            bodyEl.style.opacity    = '1';
-          }, 220);
-
-          const newFeats = featuresEl.querySelectorAll('.ps-feat');
-          newFeats.forEach((f, i) => {
-            f.style.opacity   = '0';
-            f.style.transform = 'translateY(14px)';
-            setTimeout(() => {
-              f.style.transition = 'opacity 280ms ease, transform 280ms cubic-bezier(0.34,1.1,0.64,1)';
-              f.style.opacity    = '1';
-              f.style.transform  = 'translateY(0)';
-            }, 280 + i * 70);
-          });
-
-          floatCard.style.transform = 'translateY(24px)';
-          floatCard.style.opacity   = '0';
-          setTimeout(() => {
-            floatCard.style.transition = 'transform 420ms cubic-bezier(0.34,1.1,0.64,1), opacity 380ms ease';
-            floatCard.style.transform  = 'translateY(0)';
-            floatCard.style.opacity    = '1';
-          }, 200);
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        titleL1.style.transition = 'transform 380ms cubic-bezier(0.34,1.1,0.64,1), opacity 340ms ease';
+        titleL1.style.transform  = 'translateY(0)'; titleL1.style.opacity = '1';
+        setTimeout(() => { titleL2.style.transition = 'transform 380ms cubic-bezier(0.34,1.1,0.64,1), opacity 340ms ease'; titleL2.style.transform = 'translateY(0)'; titleL2.style.opacity = '1'; }, 80);
+        setTimeout(() => { taglineEl.style.transition = 'opacity 300ms ease'; taglineEl.style.opacity = '1'; }, 160);
+        setTimeout(() => { bodyEl.style.transition = 'opacity 300ms ease'; bodyEl.style.opacity = '1'; }, 220);
+        featuresEl.querySelectorAll('.ps-feat').forEach((f, i) => {
+          f.style.opacity = '0'; f.style.transform = 'translateY(14px)';
+          setTimeout(() => { f.style.transition = 'opacity 280ms ease, transform 280ms cubic-bezier(0.34,1.1,0.64,1)'; f.style.opacity = '1'; f.style.transform = 'translateY(0)'; }, 280 + i * 70);
         });
-      });
+        floatCard.style.transform = 'translateY(24px)'; floatCard.style.opacity = '0';
+        setTimeout(() => { floatCard.style.transition = 'transform 420ms cubic-bezier(0.34,1.1,0.64,1), opacity 380ms ease'; floatCard.style.transform = 'translateY(0)'; floatCard.style.opacity = '1'; }, 200);
+      }));
 
       if (nextImg) {
-        nextImg.style.transition = 'none';
-        nextImg.style.transform  = 'scale(1.06)';
-        nextImg.style.opacity    = '0';
-        setTimeout(() => {
-          nextImg.style.transition = 'transform 600ms cubic-bezier(0.4,0,0.2,1), opacity 500ms ease';
-          nextImg.style.transform  = 'scale(1)';
-          nextImg.style.opacity    = '1';
-        }, 60);
+        nextImg.style.transition = 'none'; nextImg.style.transform = 'scale(1.06)'; nextImg.style.opacity = '0';
+        setTimeout(() => { nextImg.style.transition = 'transform 600ms cubic-bezier(0.4,0,0.2,1), opacity 500ms ease'; nextImg.style.transform = 'scale(1)'; nextImg.style.opacity = '1'; }, 60);
       }
-
       setTimeout(() => { isAnimating = false; }, 700);
     } else {
-      titleL1.style.cssText  = '';
-      titleL2.style.cssText  = '';
-      taglineEl.style.cssText= '';
-      bodyEl.style.cssText   = '';
-      floatCard.style.cssText= '';
+      [titleL1, titleL2, taglineEl, bodyEl, floatCard].forEach(el => { el.style.cssText = ''; });
       featuresEl.querySelectorAll('.ps-feat').forEach(f => { f.style.cssText = ''; });
       isAnimating = false;
     }
   }
 
-  /* ─── COUNTER ROLLER ────────────────────────────────────────── */
   function animateCounter(numStr) {
     const el = counterDigit;
     el.style.transition = 'transform 300ms cubic-bezier(0.4,0,0.2,1), opacity 300ms ease';
-    el.style.transform  = 'translateY(-100%)';
-    el.style.opacity    = '0';
+    el.style.transform  = 'translateY(-100%)'; el.style.opacity = '0';
     setTimeout(() => {
-      el.style.transition = 'none';
-      el.style.transform  = 'translateY(100%)';
-      el.textContent      = numStr;
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          el.style.transition = 'transform 320ms cubic-bezier(0.34,1.1,0.64,1), opacity 280ms ease';
-          el.style.transform  = 'translateY(0)';
-          el.style.opacity    = '1';
-        });
-      });
+      el.style.transition = 'none'; el.style.transform = 'translateY(100%)'; el.textContent = numStr;
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        el.style.transition = 'transform 320ms cubic-bezier(0.34,1.1,0.64,1), opacity 280ms ease';
+        el.style.transform  = 'translateY(0)'; el.style.opacity = '1';
+      }));
     }, 300);
   }
 
-  /* ─── KEYBOARD ──────────────────────────────────────────────── */
-  document.addEventListener('keydown', (e) => {
-    const sTop = section.getBoundingClientRect().top;
-    const sBot = section.getBoundingClientRect().bottom;
+  document.addEventListener('keydown', e => {
+    const sTop = section.getBoundingClientRect().top, sBot = section.getBoundingClientRect().bottom;
     if (sTop > window.innerHeight || sBot < 0) return;
     if (e.key === 'ArrowDown' || e.key === 'ArrowRight') jumpTo(Math.min(current + 1, PRODUCTS.length - 1));
     if (e.key === 'ArrowUp'   || e.key === 'ArrowLeft')  jumpTo(Math.max(current - 1, 0));
   });
 
-    // CTA scroll reveal
-  gsap.set(".cta-container", { opacity: 0, y: 80 });
+  gsap.set('.cta-container', { opacity: 0, y: 80 });
   ScrollTrigger.create({
-    trigger: ".cta-dark-section",
-    start: "top 85%",
-    onEnter: function() {
-      gsap.to(".cta-container", { opacity: 1, y: 0, duration: 1.2, ease: "power4.out" });
-    },
-    onLeaveBack: function() {
-      gsap.to(".cta-container", { opacity: 0, y: 80, duration: 0.6, ease: "power3.in" });
-    },
-    onEnterBack: function() {
-      gsap.to(".cta-container", { opacity: 1, y: 0, duration: 1.2, ease: "power4.out" });
-    }
+    trigger: '.cta-dark-section', start: 'top 85%',
+    onEnter:     () => gsap.to('.cta-container', { opacity: 1, y: 0, duration: 1.2, ease: 'power4.out' }),
+    onLeaveBack: () => gsap.to('.cta-container', { opacity: 0, y: 80, duration: 0.6, ease: 'power3.in' }),
+    onEnterBack: () => gsap.to('.cta-container', { opacity: 1, y: 0, duration: 1.2, ease: 'power4.out' }),
   });
 
-  /* ─── MOBILE SLIDE BUILDER ──────────────────────────────────── */
+  /* ══════════════════════════════════════════════
+     MOBILE: FIXED PANEL + PURE HORIZONTAL SWIPE
+     Zero vertical interception. Zero scrollTo calls.
+     Panel goes fixed when section enters viewport,
+     reverts to static when section exits.
+  ══════════════════════════════════════════════ */
+
   function buildMobileSlides() {
     const track = document.getElementById('psLayout');
     track.innerHTML = '';
-
     PRODUCTS.forEach((p, i) => {
       const slide = document.createElement('div');
       slide.className = 'ps-slide';
@@ -1114,229 +1322,417 @@ document.addEventListener('DOMContentLoaded', function() {
 
       const textDiv = document.createElement('div');
       textDiv.className = 'ps-slide-text';
-
-      const badge = document.createElement('div');
-      badge.className = 'ps-badge';
-      badge.innerHTML = `<span class="ps-badge-num">${p.num}</span><span class="ps-badge-label">OUR PRODUCTS</span>`;
-      textDiv.appendChild(badge);
-
-      const title = document.createElement('h2');
-      title.className = 'ps-title';
-      title.innerHTML = `<span class="ps-title-line1">${p.line1}</span><span class="ps-title-line2">${p.line2}</span>`;
-      textDiv.appendChild(title);
-
-      const rule = document.createElement('div');
-      rule.className = 'ps-rule';
-      textDiv.appendChild(rule);
-
-      const tagline = document.createElement('p');
-      tagline.className = 'ps-tagline';
-      tagline.innerHTML = p.tagline;
-      textDiv.appendChild(tagline);
-
-      const body = document.createElement('div');
-      body.className = 'ps-body';
-      body.innerHTML = p.body;
-      textDiv.appendChild(body);
+      textDiv.innerHTML = `
+        <div class="ps-badge"><span class="ps-badge-num">${p.num}</span><span class="ps-badge-label">OUR PRODUCTS</span></div>
+        <h2 class="ps-title"><span class="ps-title-line1">${p.line1}</span><span class="ps-title-line2">${p.line2}</span></h2>
+        <div class="ps-rule"></div>
+        <p class="ps-tagline">${p.tagline}</p>
+        <div class="ps-body">${p.body}</div>`;
 
       const feats = document.createElement('div');
       feats.className = 'ps-features';
       p.features.forEach(f => {
-        const feat = document.createElement('div');
-        feat.className = 'ps-feat';
-        feat.innerHTML = `<div class="ps-feat-icon">${f.icon}</div>
-                          <div class="ps-feat-text">
-                            <strong>${f.title}</strong>
-                            <span>${f.desc}</span>
-                          </div>`;
-        feats.appendChild(feat);
+        feats.innerHTML += `<div class="ps-feat"><div class="ps-feat-icon">${f.icon}</div><div class="ps-feat-text"><strong>${f.title}</strong><span>${f.desc}</span></div></div>`;
       });
       textDiv.appendChild(feats);
       slide.appendChild(textDiv);
 
       const imgDiv = document.createElement('div');
       imgDiv.className = 'ps-slide-image';
-
       const frame = document.createElement('div');
       frame.className = 'ps-image-frame';
-
-      const img = document.createElement('img');
       const imgMap = [7, 1, 2, 3, 6, 5, 4];
-      img.src = `assets/images/product${imgMap[i]}.webp`;
-      img.className = 'ps-img ps-img-active';
-      img.alt = p.line1;
-      img.loading = 'lazy';
-      frame.appendChild(img);
-
-      const fc = document.createElement('div');
-      fc.className = 'ps-float-card';
-      fc.innerHTML = `<div class="ps-float-icon">${p.floatIconSvg}</div>
-                      <div class="ps-float-text">
-                        <strong>${p.floatTitle}</strong>
-                        <p>${p.floatBody}</p>
-                      </div>`;
-      frame.appendChild(fc);
-
+      frame.innerHTML = `
+        <img loading="lazy" src="assets/images/product${imgMap[i]}.webp" class="ps-img ps-img-active" alt="${p.line1}" />
+        <div class="ps-float-card">
+          <div class="ps-float-icon">${p.floatIconSvg}</div>
+          <div class="ps-float-text"><strong>${p.floatTitle}</strong><p>${p.floatBody}</p></div>
+        </div>`;
       imgDiv.appendChild(frame);
       slide.appendChild(imgDiv);
       track.appendChild(slide);
     });
-
-    initSwipe(track);
   }
 
-  /* ─── SWIPE HANDLER ─────────────────────────────────────────── */
-  function initSwipe(track) {
-    let startX = 0, startY = 0, isDragging = false, isHorizConfirmed = false;
+  function initMobileFixed() {
+    if (window.innerWidth > 900) return;
 
+    const sticky     = document.getElementById('psSticky');
+    const mSection   = document.getElementById('productsSection');
+    const track      = document.getElementById('psLayout');
+    const total      = PRODUCTS.length;
+
+    /* ── Lock viewport height ONCE on load (immune to address bar resize) ── */
+    function lockHeight() {
+      const h = window.innerHeight;
+      document.documentElement.style.setProperty('--ps-vh', h + 'px');
+      mSection.style.minHeight = h + 'px';
+    }
+    lockHeight();
+
+    /* Re-lock only on true orientation change, not address bar hide/show */
+    let lastOrientation = window.innerWidth > window.innerHeight ? 'landscape' : 'portrait';
+    window.addEventListener('resize', () => {
+      const nowOrientation = window.innerWidth > window.innerHeight ? 'landscape' : 'portrait';
+      if (nowOrientation !== lastOrientation) {
+        lastOrientation = nowOrientation;
+        lockHeight();
+      }
+    }, { passive: true });
+
+    /* ── goToSlide ── */
     function goToSlide(idx) {
-      if (idx < 0 || idx >= PRODUCTS.length) return;
+      if (idx < 0 || idx >= total) return;
       current = idx;
-
-      const wrapperWidth = track.parentElement.offsetWidth;
-      track.style.transform = `translateX(${-idx * wrapperWidth}px)`;
-
-      progressFill.style.width = (idx / (PRODUCTS.length - 1)) * 100 + '%';
+      const w = track.parentElement.offsetWidth;
+      track.style.transform = `translateX(${-idx * w}px)`;
+      progressFill.style.width = (idx / (total - 1)) * 100 + '%';
       animateCounter(PRODUCTS[idx].num);
-
-      document.querySelectorAll('.ps-dot').forEach((d, i) => {
-        d.classList.toggle('ps-dot-active', i === idx);
-      });
-
-      glowEl.style.background = `radial-gradient(ellipse 60% 60% at 60% 50%, ${PRODUCTS[idx].glow}, transparent 70%)`;
+      document.querySelectorAll('.ps-dot').forEach((d, i) =>
+        d.classList.toggle('ps-dot-active', i === idx));
+      glowEl.style.background =
+        `radial-gradient(ellipse 60% 60% at 60% 50%, ${PRODUCTS[idx].glow}, transparent 70%)`;
     }
 
+    document.addEventListener('ps-goto', e => goToSlide(e.detail));
+    document.querySelectorAll('.ps-dot').forEach(d => {
+      d.addEventListener('click', () => goToSlide(parseInt(d.dataset.idx)));
+    });
+    goToSlide(0);
+
+    /* ── AUTO-SCROLL ── */
+    const AUTO_INTERVAL = 4000; // ms between slides
+    let autoTimer       = null;
+    let isPaused        = false;
+
+    function startAuto() {
+      stopAuto();
+      autoTimer = setInterval(() => {
+        if (!isPaused) {
+          goToSlide(current < total - 1 ? current + 1 : 0);
+        }
+      }, AUTO_INTERVAL);
+    }
+
+    function stopAuto() {
+      if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+    }
+
+    function pauseAuto()  { isPaused = true; }
+    function resumeAuto() { isPaused = false; }
+
+    startAuto();
+
+    /* ── HORIZONTAL SWIPE + PRESS-AND-HOLD PAUSE ── */
+    let swipeStartX = 0, swipeStartY = 0;
+    let swipeDir    = null, swipeLocked = false;
+    let holdTimer   = null;
+    const HOLD_MS   = 180; // ms before treating touch as a hold
+
     track.addEventListener('touchstart', e => {
-      startX = e.touches[0].clientX;
-      startY = e.touches[0].clientY;
-      isDragging = true;
-      isHorizConfirmed = false;
+      swipeStartX = e.touches[0].clientX;
+      swipeStartY = e.touches[0].clientY;
+      swipeDir    = null;
+      swipeLocked = false;
+
+      /* Start hold timer — if finger stays still, pause auto-scroll */
+      holdTimer = setTimeout(() => { pauseAuto(); }, HOLD_MS);
     }, { passive: true });
 
     track.addEventListener('touchmove', e => {
-      if (!isDragging) return;
-      const dx = e.touches[0].clientX - startX;
-      const dy = e.touches[0].clientY - startY;
-      if (!isHorizConfirmed) {
-        if (Math.abs(dx) > Math.abs(dy) + 5) {
-          isHorizConfirmed = true;
-        } else if (Math.abs(dy) > Math.abs(dx) + 5) {
-          isDragging = false;
-          return;
-        }
+      if (swipeLocked) return;
+
+      /* Cancel hold if finger moves */
+      if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; }
+
+      const dx = e.touches[0].clientX - swipeStartX;
+      const dy = e.touches[0].clientY - swipeStartY;
+      if (Math.abs(dx) < 6 && Math.abs(dy) < 6) return;
+
+      if (swipeDir === null) {
+        swipeDir = Math.abs(dx) >= Math.abs(dy) ? 'h' : 'v';
       }
-      if (isHorizConfirmed) e.preventDefault();
+
+      if (swipeDir === 'h') {
+        e.preventDefault();
+        swipeLocked = true;
+        pauseAuto(); // also pause during active swipe
+      } else {
+        swipeLocked = true;
+      }
     }, { passive: false });
 
     track.addEventListener('touchend', e => {
-      if (!isDragging || !isHorizConfirmed) return;
-      isDragging = false;
-      const dx = e.changedTouches[0].clientX - startX;
-      if (Math.abs(dx) > 40) {
-        goToSlide(dx < 0 ? current + 1 : current - 1);
+      if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; }
+
+      if (swipeDir === 'h') {
+        const dx = e.changedTouches[0].clientX - swipeStartX;
+        if (Math.abs(dx) > 40) {
+          goToSlide(dx < 0 ? current + 1 : current - 1);
+        }
       }
+
+      /* Resume after a short delay so user can read before next tick */
+      setTimeout(() => resumeAuto(), 600);
     }, { passive: true });
 
-    document.querySelectorAll('.ps-dot').forEach((d) => {
-      d.addEventListener('click', () => goToSlide(parseInt(d.dataset.idx)));
-    });
+    track.addEventListener('touchcancel', () => {
+      if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; }
+      resumeAuto();
+    }, { passive: true });
 
-    document.addEventListener('ps-goto', function(e) {
-      goToSlide(e.detail);
-    });
+    /* ── FIXED PANEL TOGGLE (scroll-based) ── */
+    const sentinelTop = document.createElement('div');
+    sentinelTop.style.cssText =
+      'position:absolute;top:0;left:0;width:1px;height:1px;pointer-events:none;';
+    const sentinelBot = document.createElement('div');
+    sentinelBot.style.cssText =
+      'position:absolute;bottom:0;left:0;width:1px;height:1px;pointer-events:none;';
+    mSection.style.position = 'relative';
+    mSection.appendChild(sentinelTop);
+    mSection.appendChild(sentinelBot);
 
-    goToSlide(0);
-  }
-
-  /* ─── MOBILE SCROLL HIJACK ──────────────────────────────────── */
-  function initMobileScroll() {
-    if (window.innerWidth > 900) return;
-
-    var mSection     = document.getElementById('productsSection');
-    var totalSlides  = PRODUCTS.length;
-    var cooldownMs   = 600;
-    var lastSwitch   = 0;
-    var touchStartY  = 0;
-    var touchLastY   = 0;
-    var inSection    = false;
-
-    function getSectionTop() {
-      return mSection.getBoundingClientRect().top + window.scrollY;
-    }
-
-    function setSectionHeight() {
-      mSection.style.minHeight = (totalSlides * window.innerHeight) + 'px';
-    }
-    setSectionHeight();
-    window.addEventListener('resize', setSectionHeight);
-
-    function isInsideSection() {
-      var rect = mSection.getBoundingClientRect();
-      return rect.top <= 72 && rect.bottom > window.innerHeight;
-    }
-
-    function canSwitch() {
-      return Date.now() - lastSwitch > cooldownMs;
-    }
-
-    function advanceSlide(direction) {
-      var next = current + direction;
-      if (next < 0 || next >= totalSlides) return false;
-      document.dispatchEvent(new CustomEvent('ps-goto', { detail: next }));
-      lastSwitch = Date.now();
-      return true;
-    }
-
-    window.addEventListener('scroll', function() {
-      if (!isInsideSection()) return;
-
-      var scrollY    = window.scrollY;
-      var sectionTop = getSectionTop();
-      var scrollInto = scrollY - sectionTop;
-
-      var targetIdx = Math.round(scrollInto / window.innerHeight);
-      targetIdx = Math.max(0, Math.min(totalSlides - 1, targetIdx));
-
-      if (targetIdx !== current) {
-        document.dispatchEvent(new CustomEvent('ps-goto', { detail: targetIdx }));
-        lastSwitch = Date.now();
+    function updateFixedState() {
+      const rect   = mSection.getBoundingClientRect();
+      const inside = rect.top < 72 && rect.bottom > window.innerHeight;
+      if (inside) {
+        sticky.style.position = 'fixed';
+        sticky.style.top      = '0';
+        sticky.style.left     = '0';
+        sticky.style.width    = '100%';
+        sticky.style.zIndex   = '50';
+        startAuto();   // resume auto when panel is in view
+      } else {
+        sticky.style.position = '';
+        sticky.style.top      = '';
+        sticky.style.left     = '';
+        sticky.style.width    = '';
+        sticky.style.zIndex   = '';
+        stopAuto();    // stop auto when panel is out of view
       }
-    }, { passive: true });
+    }
 
-    document.addEventListener('touchstart', function(e) {
-      touchStartY = e.touches[0].clientY;
-      touchLastY  = touchStartY;
-      inSection   = isInsideSection();
-    }, { passive: true });
+    window.addEventListener('scroll', updateFixedState, { passive: true });
+    updateFixedState();
 
-    document.addEventListener('touchmove', function(e) {
-      if (!inSection) return;
-      var dy = touchLastY - e.touches[0].clientY;
-      touchLastY = e.touches[0].clientY;
-      if (current === 0 && dy < 0) return;
-      if (current === totalSlides - 1 && dy > 0) return;
-      e.preventDefault();
-    }, { passive: false });
-
-    document.addEventListener('touchend', function(e) {
-      if (!inSection) return;
-      if (!canSwitch()) return;
-      var dy = touchStartY - e.changedTouches[0].clientY;
-      if (Math.abs(dy) < 30) return;
-      var direction = dy > 0 ? +1 : -1;
-      if (direction === -1 && current === 0) return;
-      if (direction === +1 && current === totalSlides - 1) return;
-      advanceSlide(direction);
-      var sTop = getSectionTop();
-      window.scrollTo({ top: sTop + current * window.innerHeight, behavior: 'instant' });
+    window.addEventListener('resize', () => {
+      updateFixedState();
     }, { passive: true });
   }
 
-  /* ─── START ─────────────────────────────────────────────────── */
   init();
-
 })();
 </script>
+<!-- ═══════════════════════════════════════════
+     MOBILE SLIDER + CARDS (new IIFE)
+     ═══════════════════════════════════════════ -->
+<script>
+(function () {
+  'use strict';
+  if (window.innerWidth > 900) return;
+
+  var MOBILE_PRODUCTS = [
+    { num:'01', line1:'GeoTag', line2:'Attendance System', tagline:'MARK ATTENDANCE. RIGHT WHERE YOU ARE.', body:["Fleming's GeoTag Attendance System is a smart mobile application that enables companies to track and manage employee attendance based on real-time geo-location, ensuring accuracy and eliminating proxy attendance.","Employees can mark attendance only when they are physically within the company's defined geo-boundary. The app also supports leave applications, approvals, attendance history, and comprehensive reporting for management."], features:[{icon:'📍',title:'Geo-Fenced Attendance',desc:'Employees can only mark attendance within the defined company location.'},{icon:'📋',title:'Leave Management',desc:'Simplify leave management with digital leave applications and status tracking.'},{icon:'📊',title:'Attendance History',desc:'View detailed attendance and leave balance history anytime.'},{icon:'📈',title:'Management Reports',desc:'Project-wise, weekly, monthly and yearly attendance reports.'}] },
+    { num:'02', line1:'Payroll', line2:'Management', tagline:'SIMPLIFY PAYROLL. EMPOWER PEOPLE.', body:["Fleming makes sure that managing the payrolls of the employees of an organisation is a cakewalk, as we have developed a web application that allows organisations to effortlessly take care of the payroll of their employees.","Our application is designed with user-friendly features, providing a seamless experience for payroll processing. With just a few clicks, organizations can efficiently handle all payroll-related tasks, ensuring smooth operations."], features:[{icon:'📄',title:'Accurate Processing',desc:'Ensure precise salary calculations every time.'},{icon:'🛡️',title:'Streamlined Payroll',desc:'Process employee payroll quickly and efficiently.'},{icon:'👥',title:'Employee Management',desc:'Manage employee data, roles and payroll history.'},{icon:'📊',title:'Real-time Reports',desc:'Generate insightful reports and analytics instantly.'}] },
+    { num:'03', line1:'Newspaper', line2:'Agent Billing Software', tagline:'SMART BILLING. STRONG RELATIONSHIPS.', body:["Billing is one of the most important aspects of the sale of products, and it is imperative for every company to have a proper system to make sure that all activities associated with billing take place smoothly.","We have developed a web and mobile application that assists our clients in carrying out the billing associated with their organization effortlessly. The mobile app is available on both Android and iOS."], features:[{icon:'🧾',title:'Easy Billing',desc:'Generate bills quickly and accurately.'},{icon:'👥',title:'Agent Management',desc:'Manage agents, territories and customers with ease.'},{icon:'📊',title:'Collection Tracking',desc:'Track payments and outstanding in real-time.'},{icon:'📋',title:'Detailed Reports',desc:'Get insights with comprehensive billing reports.'}] },
+    { num:'04', line1:'Educational', line2:'Institution Fees Management', tagline:'SIMPLIFY FEES. EMPOWER EDUCATION.', body:["One of the most time-consuming and tedious processes in an educational institution is the management of fees.","We at Fleming make sure that this process becomes one of the easiest and most hassle-free with our Educational Institution Fees Management App."], features:[{icon:'₹',title:'Online Fee Collection',desc:'Collect fees securely through multiple online modes.'},{icon:'📅',title:'Fee Structure Management',desc:'Create and manage flexible fee structures with ease.'},{icon:'📊',title:'Reports & Analytics',desc:'Generate detailed reports and get real-time insights.'},{icon:'🔔',title:'Reminders & Notifications',desc:'Automated reminders reduce delays and improve collections.'}] },
+    { num:'05', line1:'E-Learning', line2:'Management', tagline:'LEARN ANYTIME. ANYWHERE.', body:["We have developed an e-learning application that helps educational institutions deliver quality education in a digital and interactive manner.","The platform is designed to manage courses, students, lessons, assignments, exams and performance — all in one place."], features:[{icon:'📚',title:'Course Management',desc:'Organize and manage courses, lessons and study materials.'},{icon:'👥',title:'Student Management',desc:'Add and manage students, batches and enrollments with ease.'},{icon:'📝',title:'Assignments & Exams',desc:'Create assignments, quizzes and exams with automated evaluation.'},{icon:'📈',title:'Progress Tracking',desc:'Track student performance and generate insightful reports.'}] },
+    { num:'06', line1:'Attendance', line2:'Management', tagline:'MARK ATTENDANCE. ANYWHERE. ACCURATELY.', body:["We have developed a location-based attendance management mobile app, F track, which allows the employees of a particular organization to mark their attendance in an easy and user-friendly manner.","The mobile app is designed such that employees can only mark their attendance from a specific location, which can be decided by the employer. Available on Android and iOS."], features:[{icon:'📍',title:'Location Based',desc:'Mark attendance only within the employer defined location.'},{icon:'✅',title:'Accurate & Reliable',desc:'Ensure accurate attendance records with real-time sync.'},{icon:'🕐',title:'Real-time Tracking',desc:'Track employee attendance and working hours live.'},{icon:'📊',title:'Reports & Analytics',desc:'Get detailed insights and export reports effortlessly.'}] },
+    { num:'07', line1:'E-Commerce', line2:'Management', tagline:'SELL SMARTER. MANAGE BETTER.', body:["Selling and managing products is one of the most basic needs for the successful operation of an organization.","We provide an e-commerce application that helps our clients sell and manage products in a straightforward and organized manner."], features:[{icon:'🛒',title:'Product Management',desc:'Add, update and manage products with ease.'},{icon:'📦',title:'Order & Inventory Tracking',desc:'Track orders and inventory in real-time seamlessly.'},{icon:'💳',title:'Secure Payments',desc:'Multiple payment gateways for safe transactions.'},{icon:'📈',title:'Sales Analytics',desc:'Get insights into sales performance and grow your business.'}] },
+  ];
+
+  var imgMap = [7, 1, 2, 3, 6, 5, 4];
+  var total  = MOBILE_PRODUCTS.length;
+
+  var track    = document.getElementById('psSliderTrack');
+  var dotsWrap = document.getElementById('psSliderDots');
+  var cardsC   = document.getElementById('psCardsContainer');
+  var nameEl   = document.getElementById('psCardsProductName');
+
+  /* ─── BUILD SLIDES ──────────────────────────────────────── */
+  MOBILE_PRODUCTS.forEach(function (p, i) {
+    var wrap = document.createElement('div');
+    wrap.className = 'ps-slide-wrapper';
+    wrap.dataset.idx = i;
+    wrap.innerHTML =
+      '<div class="ps-s-slide">' +
+        '<img loading="lazy" src="assets/images/product' + imgMap[i] + '.webp" class="ps-s-img" alt="' + p.line1 + ' ' + p.line2 + '" />' +
+        '<div class="ps-s-gradient"></div>' +
+        '<div class="ps-s-badge">' + p.num + '</div>' +
+        '<div class="ps-s-info">' +
+          '<div class="ps-s-title">' + p.line1 + ' ' + p.line2 + '</div>' +
+          '<div class="ps-s-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>' +
+        '</div>' +
+        '<div class="ps-slide-viewing-badge">&#10003; Viewing</div>' +
+      '</div>';
+    track.appendChild(wrap);
+
+    var dot = document.createElement('div');
+    dot.className = 'ps-s-dot' + (i === 0 ? ' ps-s-dot-active' : '');
+    dot.dataset.idx = i;
+    dotsWrap.appendChild(dot);
+  });
+
+  /* ─── BUILD CARDS ───────────────────────────────────────── */
+  MOBILE_PRODUCTS.forEach(function (p, i) {
+    var card = document.createElement('div');
+    card.className = 'ps-c-card ps-product-card' + (i === 0 ? ' ps-card-active' : '');
+    card.id = 'product-card-' + i;
+
+    var featsHtml = '';
+    p.features.forEach(function (f) {
+      featsHtml +=
+        '<div class="ps-c-feat">' +
+          '<div class="ps-c-feat-icon">' + f.icon + '</div>' +
+          '<div class="ps-c-feat-title">' + f.title + '</div>' +
+          '<div class="ps-c-feat-desc">' + f.desc + '</div>' +
+        '</div>';
+    });
+
+    var bodyHtml = '';
+    p.body.forEach(function (b) { bodyHtml += '<p>' + b + '</p>'; });
+
+    card.innerHTML =
+      '<div class="ps-c-image">' +
+        '<img loading="lazy" src="assets/images/product' + imgMap[i] + '.webp" alt="' + p.line1 + ' ' + p.line2 + '" />' +
+      '</div>' +
+      '<div class="ps-c-body">' +
+        '<div class="ps-c-badge"><span class="ps-c-badge-num">' + p.num + '</span> · OUR PRODUCTS</div>' +
+        '<h3 class="ps-c-title">' + p.line1 + '</h3>' +
+        '<h3 class="ps-c-title ps-c-title-blue">' + p.line2 + '</h3>' +
+        '<div class="ps-c-rule"></div>' +
+        '<p class="ps-c-tagline">' + p.tagline + '</p>' +
+        '<div class="ps-c-divider"></div>' +
+        '<div class="ps-c-text">' + bodyHtml + '</div>' +
+        '<div class="ps-c-divider"></div>' +
+        '<div class="ps-c-feats-heading">KEY FEATURES</div>' +
+        '<div class="ps-c-feats">' + featsHtml + '</div>' +
+        '<button class="ps-back-to-slider" type="button">&uarr; Browse Other Products</button>' +
+      '</div>';
+    cardsC.appendChild(card);
+  });
+
+  /* ─── SELECTED PRODUCT INDEX ────────────────────────────── */
+  var selectedIdx = 0;
+
+  /* ─── SELECT CARD ───────────────────────────────────────── */
+  function selectCard(idx) {
+    selectedIdx = idx;
+    var allCards = cardsC.querySelectorAll('.ps-product-card');
+    allCards.forEach(function (c) { c.classList.remove('ps-card-active'); });
+    var target = document.getElementById('product-card-' + idx);
+    if (target) {
+      target.classList.add('ps-card-active');
+      /* force re-trigger animation */
+      target.style.animation = 'none';
+      target.offsetHeight;
+      target.style.animation = '';
+    }
+    /* update heading */
+    if (nameEl) nameEl.textContent = MOBILE_PRODUCTS[idx].line1 + ' ' + MOBILE_PRODUCTS[idx].line2;
+    /* update slider badge */
+    var wrappers = track.querySelectorAll('.ps-slide-wrapper');
+    wrappers.forEach(function (w, i) { w.classList.toggle('ps-slide-selected', i === idx); });
+    /* scroll to cards section */
+    var section = document.getElementById('psCardsSection');
+    if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  /* ─── SLIDER LOGIC ──────────────────────────────────────── */
+  var currentSlide = 0;
+  var wrappers     = track.querySelectorAll('.ps-slide-wrapper');
+  var dots         = dotsWrap.querySelectorAll('.ps-s-dot');
+  var AUTO_DELAY   = 3000;
+  var autoTimer    = null;
+  var isPaused     = false;
+
+  function goTo(idx) {
+    if (idx < 0) idx = total - 1;
+    if (idx >= total) idx = 0;
+    currentSlide = idx;
+    track.style.transform = 'translateX(' + (-idx * 100) + '%)';
+    dots.forEach(function (d, i) { d.classList.toggle('ps-s-dot-active', i === idx); });
+  }
+
+  function startAuto() {
+    stopAuto();
+    autoTimer = setInterval(function () {
+      if (!isPaused) goTo(currentSlide + 1);
+    }, AUTO_DELAY);
+  }
+
+  function stopAuto() {
+    if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+  }
+
+  startAuto();
+
+  /* ─── TOUCH / SWIPE ─────────────────────────────────────── */
+  var sx = 0, sy = 0, held = false, moved = false, holdTimer = null;
+
+  track.addEventListener('touchstart', function (e) {
+    sx = e.touches[0].clientX;
+    sy = e.touches[0].clientY;
+    held = false;
+    moved = false;
+    isPaused = true;
+    holdTimer = setTimeout(function () { held = true; }, 300);
+  }, { passive: true });
+
+  track.addEventListener('touchmove', function (e) {
+    var dx = e.touches[0].clientX - sx;
+    var dy = e.touches[0].clientY - sy;
+    if (Math.abs(dx) > 10 || Math.abs(dy) > 10) {
+      if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; }
+    }
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 10) {
+      e.preventDefault();
+      moved = true;
+    }
+  }, { passive: false });
+
+  track.addEventListener('touchend', function (e) {
+    if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; }
+    var dx = e.changedTouches[0].clientX - sx;
+    if (!moved && held) {
+      /* long press — just pause briefly */
+      setTimeout(function () { isPaused = false; }, 2000);
+    } else if (moved) {
+      if (dx < -40) goTo(currentSlide + 1);
+      else if (dx > 40) goTo(currentSlide - 1);
+      setTimeout(function () { isPaused = false; }, 2000);
+    }
+    isPaused = false;
+    startAuto();
+  }, { passive: true });
+
+  /* ─── TAP → SELECT CARD ─────────────────────────────────── */
+  track.addEventListener('click', function (e) {
+    if (moved) return;
+    selectCard(currentSlide);
+  });
+
+  /* ─── DOTS ──────────────────────────────────────────────── */
+  dots.forEach(function (d) {
+    d.addEventListener('click', function () {
+      goTo(parseInt(d.dataset.idx));
+    });
+  });
+
+  /* ─── BACK-TO-SLIDER BUTTONS ────────────────────────────── */
+  cardsC.addEventListener('click', function (e) {
+    if (e.target.closest('.ps-back-to-slider')) {
+      document.getElementById('psSliderSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+
+  /* ─── INIT ──────────────────────────────────────────────── */
+  goTo(0);
+  selectCard(0);
+})();
+</script>
+
+
 
 <script>
 (function() {
@@ -1359,5 +1755,92 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 </script>
 
+<script>
+(function() {
+  'use strict';
+  if (!window.matchMedia('(hover: none) and (pointer: coarse)').matches) return;
+
+  function tapInternal(sel, cls) {
+    document.querySelectorAll(sel).forEach(function(el) {
+      el.addEventListener('click', function(e) {
+        e.preventDefault();
+        var s = this;
+        s.classList.add(cls);
+        setTimeout(function() { s.classList.remove(cls); window.location.href = s.href; }, 400);
+      });
+    });
+  }
+
+  function tapExternal(sel, cls) {
+    document.querySelectorAll(sel).forEach(function(el) {
+      el.addEventListener('click', function(e) {
+        e.preventDefault();
+        var s = this;
+        s.classList.add(cls);
+        setTimeout(function() { s.classList.remove(cls); window.location.href = s.href; }, 400);
+      });
+    });
+  }
+
+  function tapVisual(sel, cls) {
+    document.querySelectorAll(sel).forEach(function(el) {
+      el.addEventListener('click', function() {
+        var s = this;
+        s.classList.add(cls);
+        setTimeout(function() { s.classList.remove(cls); }, 400);
+      });
+    });
+  }
+
+  tapInternal('.hero-cta', 'hero-cta-tapped');
+  tapInternal('.hero-cta-btn--primary', 'hero-primary-tapped');
+  tapInternal('.hero-cta-btn--outline', 'hero-outline-tapped');
+  tapInternal('.cta-brush-link', 'cta-brush-link-tapped');
+  tapInternal('.footer-links a', 'footer-link-tapped');
+  tapInternal('.rnd-cta-btn', 'rnd-cta-btn-tapped');
+  tapInternal('.sds-btn', 'sds-btn-tapped');
+  tapInternal('.ict-btn-primary', 'ict-primary-tapped');
+  tapInternal('.ict-btn-outline', 'ict-outline-tapped');
+  tapInternal('.aps-cta-btn', 'aps-cta-btn-tapped');
+  tapInternal('.pcp-btn', 'pcp-btn-tapped');
+  tapInternal('.btn-explore', 'btn-explore-tapped');
+  tapInternal('.btn-view-details', 'btn-view-details-tapped');
+  tapInternal('.btn-enquire-outline', 'btn-enquire-tapped');
+
+  tapExternal('.social-icon', 'social-icon-tapped');
+  tapExternal('.fcw-btn:not(.fcw-whatsapp):not(.fcw-call)', 'fcw-btn-tapped');
+  tapInternal('.fcw-whatsapp, .fcw-call', 'fcw-btn-tapped');
+  tapInternal('.cbb-chat-btn', 'cbb-chat-btn-tapped');
+
+  tapVisual('.cf-submit-btn', 'cf-submit-btn-tapped');
+  tapVisual('.newsletter-btn', 'newsletter-btn-tapped');
+
+  document.querySelectorAll('.contact-link').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      e.preventDefault();
+      var s = this;
+      s.classList.add('contact-link-tapped');
+      setTimeout(function() {
+        s.classList.remove('contact-link-tapped');
+        if (s.target === '_blank') window.open(s.href, '_blank');
+        else window.location.href = s.href;
+      }, 400);
+    });
+  });
+
+  var btt = document.getElementById('bttControl');
+  if (btt) {
+    btt.addEventListener('click', function(e) {
+      e.preventDefault();
+      var s = this;
+      s.classList.add('btt-tapped');
+      setTimeout(function() {
+        s.classList.remove('btt-tapped');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 400);
+    });
+  }
+})();
+</script>
 </body>
 </html>
