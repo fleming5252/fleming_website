@@ -17,8 +17,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://unpkg.com/split-type"></script>
 <style>
-.page-payroll .about-bg{background-image:url('/assets/images/product_desktop.webp');background-size:auto 100%;background-position:center bottom}
-@media(max-width:767px){.page-payroll .about-bg{background-size:cover;background-image:url('/assets/images/product_mobile.webp')}}
+.page-payroll .about-bg{background-image:url('assets/images/product_desktop.webp');background-size:auto 100%;background-position:center bottom}
+@media(max-width:767px){.page-payroll .about-bg{background-size:cover;background-image:url('assets/images/product_mobile.webp')}}
 .pr{--ink:#0c1a2e;--blue:#1a56db;--deep:#0b3d91;--mint:#12b76a;--amber:#f59e0b;--mist:#eef4ff;--line:#dde7f5;--tx:#2b3f5c;--mu:#64788f;--sh:0 24px 60px rgba(12,26,46,.14);font-family:'Poppins',sans-serif;color:var(--tx);background:#fff;overflow-x:clip}
 .pr *,.pr *::before,.pr *::after{box-sizing:border-box}
 .pr h2,.pr h3,.pr h4,.pr p,.pr ul{margin:0;padding:0}.pr ul{list-style:none}.pr button,.pr select{font-family:inherit}
@@ -41,7 +41,7 @@
 .pr-tick li{display:flex;gap:10px;font-size:15px;line-height:1.55;margin-top:12px}.pr-tick li::before{content:'✓';color:var(--mint);font-weight:700}
 
 /* hero */
-.pr-hero{padding:96px 0 104px;background:#f6f9ff url('/assets/images/payrollbg.png') center/cover}
+.pr-hero{padding:96px 0 104px;background:#f6f9ff url('assets/images/payrollbg.webp') center/cover}
 .pr-hero>.pr-w>div{max-width:640px}.pr-hero .pr-h{font-size:clamp(28px,3.6vw,40px)}.pr-hero .pr-lead{padding-right:40px;text-align:justify}.pr-hero-mobile-img{display:none}
 .pr-pname{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:var(--blue);margin-bottom:22px}
 .pr-pname span{width:36px;height:36px;border-radius:11px;background:var(--blue);display:grid;place-items:center;font-size:18px;box-shadow:0 8px 20px rgba(26,86,219,.35)}
@@ -162,7 +162,7 @@
 .pr details[open] summary::after{transform:rotate(45deg)}.pr details p{padding:0 4px 22px;font-size:14.5px;line-height:1.75;color:var(--mu);max-width:62ch}
 .pr summary:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
 @media(max-width:1000px){.pr-split,.pr-idx,.pr-ben,.pr-close,.pr-fg{grid-template-columns:1fr;gap:46px}.pr-pv,.pr-ben-t{position:static}.pr-pv{display:none}.pr-r p{max-height:none;opacity:1;margin-top:6px}.pr-r strong{color:var(--ink)}.pr-slip{right:14px}}
-@media(max-width:700px){.pr-s{padding:70px 0}.pr-w{padding:0 24px}.pr-hero{padding:64px 0 72px;background-image:url('/assets/images/productmobilebg.png')}.pr-hero-mobile-img{display:block;width:100%;max-width:640px;height:auto;margin-top:30px}.pr-hero .pr-lead{padding-right:0}.pr-row .pr-btn{width:100%;justify-content:center}
+@media(max-width:700px){.pr-s{padding:70px 0}.pr-w{padding:0 24px}.pr-hero{padding:64px 0 72px;background-image:url('assets/images/productmobilebg.webp')}.pr-hero-mobile-img{display:block;width:100%;max-width:640px;height:auto;margin-top:30px}.pr-hero .pr-lead{padding-right:0}.pr-row .pr-btn{width:100%;justify-content:center}
 .pr-cg,.pr-kp,.pr-bl{grid-template-columns:1fr}.pr-bl li:nth-child(even){padding-left:0;border-left:0}.pr-slipwrap>img{height:380px}.pr-slip{left:14px;right:14px;width:auto}.pr-close{padding:44px 24px;border-radius:22px}.pr-calc,.pr-br{padding:22px}}
 @media(prefers-reduced-motion:reduce){.pr *{transition:none!important}}
 
@@ -351,21 +351,21 @@
 
 <!-- NAV (same as other product pages) -->
 <header class="site-nav" id="siteNav"><div class="nav-container">
-<div class="nav-logo"><a href="/"><img src="assets/images/logoembeddedandsoftware.webp" alt="Fleming Embedded & Software Solutions logo" class="nav-logo-img" /></a></div>
+<div class="nav-logo"><a href="index.html"><img src="assets/images/logoembeddedandsoftware.webp" alt="Fleming Embedded & Software Solutions logo" class="nav-logo-img" /></a></div>
 <nav class="nav-capsule" aria-label="Main navigation"><ul class="nav-links">
-<li class="nav-item"><a href="/">HOME</a></li><li class="nav-item"><a href="/about">ABOUT</a></li><li class="nav-item"><a href="/services">SERVICES</a></li>
-<li class="nav-item active"><a href="/products"><span class="active-dot"></span>Products</a></li>
-<li class="nav-item"><a href="/techno-solutions">Training Division</a></li><li class="nav-item"><a href="/contact">Contact</a></li>
+<li class="nav-item"><a href="index.html">HOME</a></li><li class="nav-item"><a href="about.html">ABOUT</a></li><li class="nav-item"><a href="services.html">SERVICES</a></li>
+<li class="nav-item active"><a href="products.html"><span class="active-dot"></span>Products</a></li>
+<li class="nav-item"><a href="techno.html">Training Division</a></li><li class="nav-item"><a href="contact.html">Contact</a></li>
 <li class="nav-item"><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank" rel="noopener noreferrer">Blog</a></li></ul></nav>
 <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button></div></header>
 <div class="mobile-menu-overlay" id="mobileMenuOverlay"><button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
-<ul class="mobile-nav-links"><li class="nav-item"><a href="/">HOME</a></li><li class="nav-item"><a href="/about">ABOUT</a></li><li class="nav-item"><a href="/services">SERVICES</a></li>
-<li class="nav-item active"><a href="/products"><span class="active-dot"></span>Products</a></li><li class="nav-item"><a href="/techno-solutions">Training Division</a></li>
-<li class="nav-item"><a href="/contact">Contact</a></li><li class="nav-item"><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank" rel="noopener noreferrer">Blog</a></li></ul></div>
+<ul class="mobile-nav-links"><li class="nav-item"><a href="index.html">HOME</a></li><li class="nav-item"><a href="about.html">ABOUT</a></li><li class="nav-item"><a href="services.html">SERVICES</a></li>
+<li class="nav-item active"><a href="products.html"><span class="active-dot"></span>Products</a></li><li class="nav-item"><a href="techno.html">Training Division</a></li>
+<li class="nav-item"><a href="contact.html">Contact</a></li><li class="nav-item"><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank" rel="noopener noreferrer">Blog</a></li></ul></div>
 
 <section class="about-bg" id="parallaxHero" aria-labelledby="products-hero-heading"><div class="about-overlay"></div>
 <div class="about-content"><h1 id="products-hero-heading">PRODUCTS</h1>
-<p class="about-breadcrumbs"><a href="/">HOME</a><span class="dot">•</span><a href="/products">PRODUCTS</a><span class="dot">•</span><span class="active-page">PAYROLL</span></p></div></section>
+<p class="about-breadcrumbs"><a href="index.html">HOME</a><span class="dot">•</span><a href="products.html">PRODUCTS</a><span class="dot">•</span><span class="active-page">PAYROLL</span></p></div></section>
 
 <main class="pr">
 
@@ -377,7 +377,7 @@
 <ul class="pr-pills"><li>Preview before you finalise</li><li>PDF payslips on mobile</li><li>Multi-branch payroll</li><li>Role-based approvals</li></ul>
 <div class="pr-row"><a href="https://wa.me/919745205252?text=I%20would%20like%20to%20request%20a%20demonstration%20of%20the%20Payroll%20Management%20System.%20Please%20share%20a%20convenient%20time." class="pr-btn">Request a demonstration →</a><a href="#pr-build" class="pr-btn o">Try the salary builder</a></div>
 </div>
-<img class="pr-hero-mobile-img" src="assets/images/payrollmobilebg.png" alt="Payroll dashboard on mobile" loading="lazy" />
+<img class="pr-hero-mobile-img" src="assets/images/payrollmobilebg.webp" alt="Payroll dashboard on mobile" loading="lazy" />
 </div></section>
 
 <!-- 1 SALARY BUILDER -->
@@ -424,7 +424,7 @@
 <!-- 3 PAYSLIP -->
 <section class="pr-s"><div class="pr-w pr-split pr-split-slip">
 <div class="pr-slipwrap" id="prTilt">
-<img class="pr-img" src="/assets/images/payrollimage1.png" width="1254" height="1254" alt="Employee checking salary details" loading="lazy" />
+<img class="pr-img" src="assets/images/payrollimage1.webp" width="1254" height="1254" alt="Employee checking salary details" loading="lazy" />
 <div class="pr-slip" id="prSlip"><div class="pr-slip-h"><b>Anjana R.</b><span>November payslip</span></div>
 <dl><div><dt>Basic</dt><dd>₹30,000</dd></div><div><dt>Allowances</dt><dd>₹13,600</dd></div><div><dt>Deductions</dt><dd>₹2,000</dd></div></dl>
 <div class="pr-slip-n"><span>Net pay</span><b>₹41,600</b></div><button class="pr-dl" id="prDl">Download PDF payslip</button></div>
@@ -468,7 +468,7 @@
 
 <!-- FAQ -->
 <section class="pr-s"><div class="pr-w pr-fg">
-<div><p class="pr-eye">FAQ</p><h2 class="pr-h">Questions <em>we hear most</em></h2><p class="pr-lead">Something not covered? Our team will walk you through it.</p><div class="pr-row"><a href="/contact" class="pr-btn o">Ask our team</a></div></div>
+<div><p class="pr-eye">FAQ</p><h2 class="pr-h">Questions <em>we hear most</em></h2><p class="pr-lead">Something not covered? Our team will walk you through it.</p><div class="pr-row"><a href="contact.html" class="pr-btn o">Ask our team</a></div></div>
 <div>
 <details open><summary>How is the monthly payroll calculated?</summary><p>Payroll is calculated from each employee's assigned salary structure plus any recorded adjustments. You review the preview, verify the numbers and only then finalise and lock the cycle.</p></details>
 <details><summary>Can I change a salary structure after it is assigned?</summary><p>Yes. Update allowances, deductions or incentives at any time — every revision is kept in history so past payroll stays traceable.</p></details>
@@ -482,15 +482,15 @@
 <section class="pr-s" style="padding-top:48px"><div class="pr-w"><div class="pr-close">
 <div><h2 class="pr-h" style="color:#fff">Run your next payroll <em style="color:#7fb0ff">with confidence.</em></h2>
 <p class="pr-lead" style="color:#93a9c4">See how the Payroll Management System fits your branches, roles and salary policies.</p>
-<div class="pr-row"><a href="https://wa.me/919745205252?text=I%20would%20like%20to%20request%20a%20demonstration%20of%20the%20Payroll%20Management%20System.%20Please%20share%20a%20convenient%20time." class="pr-btn">Request a demonstration →</a><a href="/contact" class="pr-btn g">Enquire now</a></div></div>
-<div class="pr-ct"><a href="tel:+919745205252"><small>Call us</small>+91-9745205252</a><a href="mailto:helpdesk@fleminggroup.in"><small>Email</small>helpdesk@fleminggroup.in</a><a href="/contact"><small>Visit</small>Kaloor, Ernakulam</a></div>
+<div class="pr-row"><a href="https://wa.me/919745205252?text=I%20would%20like%20to%20request%20a%20demonstration%20of%20the%20Payroll%20Management%20System.%20Please%20share%20a%20convenient%20time." class="pr-btn">Request a demonstration →</a><a href="contact.html" class="pr-btn g">Enquire now</a></div></div>
+<div class="pr-ct"><a href="tel:+919745205252"><small>Call us</small>+91-9745205252</a><a href="mailto:helpdesk@fleminggroup.in"><small>Email</small>helpdesk@fleminggroup.in</a><a href="contact.html"><small>Visit</small>Kaloor, Ernakulam</a></div>
 </div></div></section>
 </main>
 
 <!-- CTA (same as other pages) -->
 <section class="cta-dark-section" aria-labelledby="cta-heading"><div class="cta-container">
 <div class="cta-content-left"><h2 class="cta-main-title" id="cta-heading">Let's make something great together</h2></div>
-<div class="cta-action-right"><a href="/contact" class="cta-brush-link">Get Started <span class="cta-arrow">↗</span></a></div></div></section>
+<div class="cta-action-right"><a href="contact.html" class="cta-brush-link">Get Started <span class="cta-arrow">↗</span></a></div></div></section>
 
 <!-- FOOTER -->
 <footer class="site-footer">
@@ -499,7 +499,7 @@
   <div class="footer-container">
     <div class="footer-columns">
       <div class="footer-col footer-col-brand">
-        <div class="footer-logo"><a href="/"><img loading="lazy" src="assets/images/logoembeddedandsoftware.webp" alt="Fleming Embedded & Software Solutions logo" class="footer-logo-img" /></a></div>
+        <div class="footer-logo"><a href="index.html"><img loading="lazy" src="assets/images/logoembeddedandsoftware.webp" alt="Fleming Embedded & Software Solutions logo" class="footer-logo-img" /></a></div>
         <p class="footer-brand-desc">Empowering businesses through embedded systems, software solutions, and cutting-edge IT services. Your trusted technology partner in Kerala.</p>
         <div class="footer-socials">
           <a href="https://www.facebook.com/ieeeprojectskochi?mibextid=YMEMSu" class="social-icon" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
@@ -508,8 +508,8 @@
           <a href="https://www.instagram.com/fleming_kochi/" class="social-icon" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
         </div>
       </div>
-      <div class="footer-col footer-col-links"><h4 class="footer-col-heading">Quick Links</h4><ul class="footer-links"><li><a href="/services">Services</a></li><li><a href="/techno-solutions">Training Division</a></li><li><a href="/products">Products</a></li><li><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank">Blog</a></li></ul></div>
-      <div class="footer-col footer-col-about"><h4 class="footer-col-heading">About Us</h4><ul class="footer-links"><li><a href="/about">Who We Are</a></li><li><a href="/contact">Contact</a></li></ul></div>
+      <div class="footer-col footer-col-links"><h4 class="footer-col-heading">Quick Links</h4><ul class="footer-links"><li><a href="services.html">Services</a></li><li><a href="techno.html">Training Division</a></li><li><a href="products.html">Products</a></li><li><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank">Blog</a></li></ul></div>
+      <div class="footer-col footer-col-about"><h4 class="footer-col-heading">About Us</h4><ul class="footer-links"><li><a href="about.html">Who We Are</a></li><li><a href="contact.html">Contact</a></li></ul></div>
       <div class="footer-col footer-col-contact">
         <h4 class="footer-col-heading">Reach Us</h4>
         <ul class="footer-contact-list">
@@ -532,7 +532,7 @@
   <div class="fcw-actions" id="fcwActions">
     <a href="https://wa.me/919745205252" class="fcw-btn fcw-whatsapp" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span class="fcw-tooltip">WhatsApp</span></a>
     <a href="tel:04844045252" class="fcw-btn fcw-call" aria-label="Call Us"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.57 3.42 2 2 0 0 1 3.54 1.25h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.68 2.81a2 2 0 0 1-.45 2.11L7.91 8.75a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.91.33 1.85.55 2.81.68A2 2 0 0 1 21.5 16h.5z"/></svg><span class="fcw-tooltip">Call Us</span></a>
-    <a href="/contact" class="fcw-btn fcw-message" aria-label="Contact"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span class="fcw-tooltip">Contact Us</span></a>
+    <a href="contact.html" class="fcw-btn fcw-message" aria-label="Contact"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span class="fcw-tooltip">Contact Us</span></a>
   </div>
   <button class="fcw-toggle" id="fcwToggle" aria-label="Contact options"><span class="fcw-icon-chat"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><span class="fcw-icon-close"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></button>
 </div>

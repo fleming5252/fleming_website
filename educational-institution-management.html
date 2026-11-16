@@ -34,8 +34,8 @@
 /* ═══════════════════════════════════════════════════════════
    EDUCATION ERP PAGE — all styles live here (no inline CSS)
    ═══════════════════════════════════════════════════════════ */
-.page-education-erp .about-bg{background-image:url('/assets/images/product_desktop.webp');background-size:auto 100%;background-position:center bottom}
-@media(max-width:767px){.page-education-erp .about-bg{background-size:cover;background-image:url('/assets/images/product_mobile.webp')}}
+.page-education-erp .about-bg{background-image:url('assets/images/product_desktop.webp');background-size:auto 100%;background-position:center bottom}
+@media(max-width:767px){.page-education-erp .about-bg{background-size:cover;background-image:url('assets/images/product_mobile.webp')}}
 
 /* ── tokens ── */
 .ee{--ink:#0a1a33;--blue:#1a56db;--deep:#0b3d91;--sky:#0b5fa5;--mist:#eef4ff;--soft:#f6f9ff;--line:#dde7f5;--tx:#2b3f5c;--mu:#64788f;--amber:#f5a623;--green:#16a34a;--red:#e5484d;--sh:0 24px 60px rgba(10,26,51,.13);font-family:'Poppins',sans-serif;color:var(--tx);background:#fff;overflow-x:clip}
@@ -90,7 +90,7 @@
 .ee-bars i.w::after{background:linear-gradient(90deg,var(--amber),#ffc766)}
 
 /* ═════════ 1 · HERO ═════════ */
-.ee-hero{position:relative;padding:96px 0 110px;background:var(--soft) url('assets/images/educationalmanagementbg.png') center/cover no-repeat;overflow:hidden}
+.ee-hero{position:relative;padding:96px 0 110px;background:var(--soft) url('assets/images/educationalmanagementbg.webp') center/cover no-repeat;overflow:hidden}
 .ee-hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.02fr 1fr;gap:56px;align-items:center}
 .ee-hero-mobile-img{display:none}
 .ee-pname{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:var(--blue);margin-bottom:22px}
@@ -326,7 +326,7 @@
   .ee-st div{display:block}
 }
 @media(max-width:700px){
-  .ee-s{padding:70px 0}.ee-w{padding:0 24px}.ee-hero{padding:64px 0 76px;background-image:url('assets/images/productmobilebg.png')}
+  .ee-s{padding:70px 0}.ee-w{padding:0 24px}.ee-hero{padding:64px 0 76px;background-image:url('assets/images/productmobilebg.webp')}
   .ee-hero::before{display:none}
   .ee-hero-mobile-img{display:block;width:100%;max-width:640px;height:auto}
   .ee-hero .ee-lead{text-align:left;padding-right:0}
@@ -519,22 +519,22 @@
 
 <!-- NAV (same as other product pages) -->
 <header class="site-nav" id="siteNav"><div class="nav-container">
-<div class="nav-logo"><a href="/"><img src="assets/images/logoembeddedandsoftware.webp" alt="Fleming Embedded & Software Solutions logo" class="nav-logo-img" /></a></div>
+<div class="nav-logo"><a href="index.html"><img src="assets/images/logoembeddedandsoftware.webp" alt="Fleming Embedded & Software Solutions logo" class="nav-logo-img" /></a></div>
 <nav class="nav-capsule" aria-label="Main navigation"><ul class="nav-links">
-<li class="nav-item"><a href="/">HOME</a></li><li class="nav-item"><a href="/about">ABOUT</a></li><li class="nav-item"><a href="/services">SERVICES</a></li>
-<li class="nav-item active"><a href="/products"><span class="active-dot"></span>Products</a></li>
-<li class="nav-item"><a href="/techno-solutions">Training Division</a></li><li class="nav-item"><a href="/contact">Contact</a></li>
+<li class="nav-item"><a href="index.html">HOME</a></li><li class="nav-item"><a href="about.html">ABOUT</a></li><li class="nav-item"><a href="services.html">SERVICES</a></li>
+<li class="nav-item active"><a href="products.html"><span class="active-dot"></span>Products</a></li>
+<li class="nav-item"><a href="techno.html">Training Division</a></li><li class="nav-item"><a href="contact.html">Contact</a></li>
 <li class="nav-item"><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank" rel="noopener noreferrer">Blog</a></li></ul></nav>
 <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button></div></header>
 <div class="mobile-menu-overlay" id="mobileMenuOverlay"><button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
-<ul class="mobile-nav-links"><li class="nav-item"><a href="/">HOME</a></li><li class="nav-item"><a href="/about">ABOUT</a></li><li class="nav-item"><a href="/services">SERVICES</a></li>
-<li class="nav-item active"><a href="/products"><span class="active-dot"></span>Products</a></li><li class="nav-item"><a href="/techno-solutions">Training Division</a></li>
-<li class="nav-item"><a href="/contact">Contact</a></li><li class="nav-item"><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank" rel="noopener noreferrer">Blog</a></li></ul></div>
+<ul class="mobile-nav-links"><li class="nav-item"><a href="index.html">HOME</a></li><li class="nav-item"><a href="about.html">ABOUT</a></li><li class="nav-item"><a href="services.html">SERVICES</a></li>
+<li class="nav-item active"><a href="products.html"><span class="active-dot"></span>Products</a></li><li class="nav-item"><a href="techno.html">Training Division</a></li>
+<li class="nav-item"><a href="contact.html">Contact</a></li><li class="nav-item"><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank" rel="noopener noreferrer">Blog</a></li></ul></div>
 
 <!-- PRODUCTS HERO (unchanged site hero) -->
 <section class="about-bg" id="parallaxHero" aria-labelledby="products-hero-heading"><div class="about-overlay"></div>
 <div class="about-content"><h1 id="products-hero-heading">PRODUCTS</h1>
-<p class="about-breadcrumbs"><a href="/">HOME</a><span class="dot">•</span><a href="/products">PRODUCTS</a><span class="dot">•</span><span class="active-page">EDUCATION ERP</span></p></div></section>
+<p class="about-breadcrumbs"><a href="index.html">HOME</a><span class="dot">•</span><a href="products.html">PRODUCTS</a><span class="dot">•</span><span class="active-page">EDUCATION ERP</span></p></div></section>
 
 <!-- ╔════════════ NEW CONTENT STARTS HERE ════════════╗
      Every <img> below uses a public placeholder photo.
@@ -551,7 +551,7 @@
       <ul class="ee-pills"><li>11 dedicated user roles</li><li>Web + Android + iOS</li><li>24 integrated modules</li><li>Multi-branch management</li></ul>
       <div class="ee-row"><a href="https://wa.me/919745205252?text=I%20would%20like%20to%20request%20a%20demonstration%20of%20the%20Educational%20ERP.%20Please%20share%20a%20convenient%20time." class="ee-btn">Request a Demonstration →</a><a href="#ee-overview" class="ee-btn o">Explore the Features</a></div>
     </div>
-    <img class="ee-hero-mobile-img" src="assets/images/educationalmanagementmobilebg.png" alt="Educational ERP dashboard on mobile" loading="lazy" />
+    <img class="ee-hero-mobile-img" src="assets/images/educationalmanagementmobilebg.webp" alt="Educational ERP dashboard on mobile" loading="lazy" />
   </div>
 </section>
 
@@ -575,10 +575,10 @@
     <p class="ee-lead">Designed for schools, colleges, coaching centres and training institutes, the platform adapts to different institutional structures, workflows and administrative requirements.</p></div>
   </div>
   <div class="ee-g4">
-    <article class="ee-icard rv"><img src="assets/images/educationalimage1.png" width="1086" height="1448" alt="Administrator at a central desk" loading="lazy" /><span class="n">🧭</span><div class="cap"><h3>Centralised Management</h3><p>Manage institutional activities from one integrated platform.</p></div></article>
-    <article class="ee-icard rv d1"><img src="assets/images/educationalimage2.png" width="1086" height="1448" alt="Configurable classroom setup" loading="lazy" /><span class="n">🧩</span><div class="cap"><h3>Customisable Structure</h3><p>Configure departments, courses, branches and academic sessions.</p></div></article>
-    <article class="ee-icard rv d2"><img src="assets/images/educationalimage3.png" width="1086" height="1448" alt="Students using mobile devices" loading="lazy" /><span class="n">📱</span><div class="cap"><h3>Connected Applications</h3><p>Access shared information through web and mobile applications.</p></div></article>
-    <article class="ee-icard rv d3"><img src="assets/images/educationalimage4.png" width="1086" height="1448" alt="Multiple school campuses" loading="lazy" /><span class="n">🏢</span><div class="cap"><h3>Multi-Branch Operations</h3><p>Manage multiple campuses with controlled access.</p></div></article>
+    <article class="ee-icard rv"><img src="assets/images/educationalimage1.webp" width="1086" height="1448" alt="Administrator at a central desk" loading="lazy" /><span class="n">🧭</span><div class="cap"><h3>Centralised Management</h3><p>Manage institutional activities from one integrated platform.</p></div></article>
+    <article class="ee-icard rv d1"><img src="assets/images/educationalimage2.webp" width="1086" height="1448" alt="Configurable classroom setup" loading="lazy" /><span class="n">🧩</span><div class="cap"><h3>Customisable Structure</h3><p>Configure departments, courses, branches and academic sessions.</p></div></article>
+    <article class="ee-icard rv d2"><img src="assets/images/educationalimage3.webp" width="1086" height="1448" alt="Students using mobile devices" loading="lazy" /><span class="n">📱</span><div class="cap"><h3>Connected Applications</h3><p>Access shared information through web and mobile applications.</p></div></article>
+    <article class="ee-icard rv d3"><img src="assets/images/educationalimage4.webp" width="1086" height="1448" alt="Multiple school campuses" loading="lazy" /><span class="n">🏢</span><div class="cap"><h3>Multi-Branch Operations</h3><p>Manage multiple campuses with controlled access.</p></div></article>
   </div>
 </div></section>
 
@@ -658,7 +658,7 @@
 
   <div class="ee-life">
     <div class="ee-photo rv">
-      <img src="assets/images/educationalimage5.png" width="1161" height="1354" alt="Students on campus" loading="lazy" />
+      <img src="assets/images/educationalimage5.webp" width="1161" height="1354" alt="Students on campus" loading="lazy" />
       <div class="ee-idc" aria-hidden="true">
         <div class="ee-idc-top"><span class="ee-idc-av">AR</span><div><b>Anjana R.</b><small>Class 8 · Div B</small></div></div>
         <div class="ee-qr"></div>
@@ -746,7 +746,7 @@
 <!-- ═══════ 7 · STAFF & PAYROLL ═══════ -->
 <section class="ee-s" id="ee-staff"><div class="ee-w ee-staff">
   <div class="ee-photo rv">
-    <img src="assets/images/educationalimage6.png" width="1222" height="1287" alt="Teachers working together in a staff room" loading="lazy" />
+    <img src="assets/images/educationalimage6.webp" width="1222" height="1287" alt="Teachers working together in a staff room" loading="lazy" />
     <div class="ee-slip" aria-hidden="true">
       <div class="ee-slip-h"><span>Digital payslip</span><span>Sample</span></div>
       <dl><div><dt>Basic</dt><dd>₹22,000</dd></div><div><dt>Allowances</dt><dd>₹6,000</dd></div><div><dt>Deductions</dt><dd>₹2,400</dd></div></dl>
@@ -880,7 +880,7 @@
 
 <!-- ═══════ 11 · FAQ ═══════ -->
 <section class="ee-s"><div class="ee-w ee-fg">
-  <div><p class="ee-eye">FAQ</p><h2 class="ee-h">Questions <em>we hear most</em></h2><p class="ee-lead">Something not covered? Our team will walk you through it.</p><div class="ee-row"><a href="/contact" class="ee-btn o">Ask our team</a></div></div>
+  <div><p class="ee-eye">FAQ</p><h2 class="ee-h">Questions <em>we hear most</em></h2><p class="ee-lead">Something not covered? Our team will walk you through it.</p><div class="ee-row"><a href="contact.html" class="ee-btn o">Ask our team</a></div></div>
   <div>
     <details open><summary>Which institutions is it designed for?</summary><p>Schools, colleges, coaching centres and training institutes. The platform adapts to different institutional structures, workflows and administrative requirements.</p></details>
     <details><summary>Which devices and platforms are supported?</summary><p>A web application for administration, plus dedicated mobile applications for Android and iOS.</p></details>
@@ -896,8 +896,8 @@
 <section class="ee-s ee-closewrap"><div class="ee-w"><div class="ee-close">
   <div><h2 class="ee-h"><span style="color:#fff">Bring your entire institution</span> <em>to one platform.</em></h2>
   <p class="ee-lead">Simplify administration, connect every department and make institutional management more efficient with a comprehensive education ERP designed to grow with your requirements.</p>
-  <div class="ee-row"><a href="https://wa.me/919745205252?text=I%20would%20like%20to%20request%20a%20demonstration%20of%20the%20Educational%20ERP.%20Please%20share%20a%20convenient%20time." class="ee-btn a">Request a Demonstration →</a><a href="/contact" class="ee-btn g">Enquire now</a></div></div>
-  <div class="ee-ct"><a href="tel:+919745205252"><small>Call us</small>+91-9745205252</a><a href="mailto:helpdesk@fleminggroup.in"><small>Email</small>helpdesk@fleminggroup.in</a><a href="/contact"><small>Visit</small>Kaloor, Ernakulam</a></div>
+  <div class="ee-row"><a href="https://wa.me/919745205252?text=I%20would%20like%20to%20request%20a%20demonstration%20of%20the%20Educational%20ERP.%20Please%20share%20a%20convenient%20time." class="ee-btn a">Request a Demonstration →</a><a href="contact.html" class="ee-btn g">Enquire now</a></div></div>
+  <div class="ee-ct"><a href="tel:+919745205252"><small>Call us</small>+91-9745205252</a><a href="mailto:helpdesk@fleminggroup.in"><small>Email</small>helpdesk@fleminggroup.in</a><a href="contact.html"><small>Visit</small>Kaloor, Ernakulam</a></div>
 </div></div></section>
 
 </main>
@@ -906,7 +906,7 @@
 <!-- CTA (same as other pages) -->
 <section class="cta-dark-section" aria-labelledby="cta-heading"><div class="cta-container">
 <div class="cta-content-left"><h2 class="cta-main-title" id="cta-heading">Let's make something great together</h2></div>
-<div class="cta-action-right"><a href="/contact" class="cta-brush-link">Get Started <span class="cta-arrow">↗</span></a></div></div></section>
+<div class="cta-action-right"><a href="contact.html" class="cta-brush-link">Get Started <span class="cta-arrow">↗</span></a></div></div></section>
 
 <!-- FOOTER -->
 <footer class="site-footer">
@@ -916,7 +916,7 @@
     <div class="footer-columns">
       <div class="footer-col footer-col-brand">
         <div class="footer-logo">
-          <a href="/">
+          <a href="index.html">
             <img loading="lazy" src="assets/images/logoembeddedandsoftware.webp" alt="Fleming Embedded & Software Solutions logo" class="footer-logo-img" />
           </a>
         </div>
@@ -954,17 +954,17 @@
       <div class="footer-col footer-col-links">
         <h4 class="footer-col-heading">Quick Links</h4>
         <ul class="footer-links">
-          <li><a href="/services">Services</a></li>
-          <li><a href="/techno-solutions">Training Division</a></li>
-          <li><a href="/products">Products</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="techno.html">Training Division</a></li>
+          <li><a href="products.html">Products</a></li>
           <li><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank">Blog</a></li>
         </ul>
       </div>
       <div class="footer-col footer-col-about">
         <h4 class="footer-col-heading">About Us</h4>
         <ul class="footer-links">
-          <li><a href="/about">Who We Are</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><a href="about.html">Who We Are</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col footer-col-contact">
@@ -1060,7 +1060,7 @@
       </svg>
       <span class="fcw-tooltip">Call Us</span>
     </a>
-    <a href="/contact" class="fcw-btn fcw-message" aria-label="Contact">
+    <a href="contact.html" class="fcw-btn fcw-message" aria-label="Contact">
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
         <polyline points="22,6 12,13 2,6"/>

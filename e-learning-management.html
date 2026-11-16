@@ -17,8 +17,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://unpkg.com/split-type"></script>
 <style>
-.page-elearning .about-bg{background-image:url('/assets/images/product_desktop.webp');background-size:auto 100%;background-position:center bottom}
-@media(max-width:767px){.page-elearning .about-bg{background-size:cover;background-image:url('/assets/images/product_mobile.webp')}}
+.page-elearning .about-bg{background-image:url('assets/images/product_desktop.webp');background-size:auto 100%;background-position:center bottom}
+@media(max-width:767px){.page-elearning .about-bg{background-size:cover;background-image:url('assets/images/product_mobile.webp')}}
 .el{--ink:#0c1a2e;--blue:#1a56db;--deep:#0b3d91;--mist:#eef4ff;--line:#dde7f5;--tx:#2b3f5c;--mu:#64788f;--orange:#f97316;--green:#16a34a;--sh:0 24px 60px rgba(12,26,46,.13);font-family:'Poppins',sans-serif;color:var(--tx);background:#fff;overflow-x:clip}
 .el *,.el *::before,.el *::after{box-sizing:border-box}
 .el h2,.el h3,.el h4,.el p,.el ul{margin:0;padding:0}.el ul{list-style:none}
@@ -43,7 +43,7 @@
 .el-bd{display:inline-block;font-size:11px;font-weight:500;padding:3px 10px;border-radius:100px;background:#dcfce7;color:#15803d}
 .el-bd.o{background:#ffedd5;color:#c2410c}.el-bd.b{background:var(--mist);color:var(--blue)}
 /* hero */
-.el-hero{padding:92px 0 100px;position:relative;background:#f6f9ff url('/assets/images/elearningbg1.png') center/cover}
+.el-hero{padding:92px 0 100px;position:relative;background:#f6f9ff url('assets/images/elearningbg1.webp') center/cover}
 .el-hero>.el-w>div{max-width:640px}.el-hero-mobile-img{display:none}
 .el-hero h2{font-size:36px}
 .el-pname{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:18px;color:var(--blue);margin-bottom:22px}
@@ -127,7 +127,7 @@
 @media(max-width:1000px){.el-split,.el-game,.el-fg,.el-pipe,.el-close{grid-template-columns:1fr;gap:44px}.el-g4{grid-template-columns:1fr 1fr}.el-g3{grid-template-columns:1fr 1fr}
 .el-tabs{grid-template-columns:1fr 1fr}.el-stats-g{grid-template-columns:1fr 1fr}.el-stat:nth-child(3){border:0;padding:0}.el-admin{grid-template-columns:1fr 1fr}
 .el-admin li:not(:nth-child(3n+1)){padding-left:0;border-left:0}.el-admin li:nth-child(even){padding-left:28px;border-left:1px solid var(--line)}}
-@media(max-width:700px){.el-s{padding:68px 0}.el-w{padding:0 24px}.el-hero{padding:64px 0 72px;background-image:url('/assets/images/productmobilebg.png')}.el-hero h2{font-size:28px}.el-hero .el-lead{padding-right:0;font-size:15px}
+@media(max-width:700px){.el-s{padding:68px 0}.el-w{padding:0 24px}.el-hero{padding:64px 0 72px;background-image:url('assets/images/productmobilebg.webp')}.el-hero h2{font-size:28px}.el-hero .el-lead{padding-right:0;font-size:15px}
 .el-hero-mobile-img{display:block;width:100%;max-width:640px;height:auto;margin-top:30px}
 .el-g4,.el-g3,.el-tabs,.el-admin{grid-template-columns:1fr}.el-admin li:nth-child(even){padding-left:0;border-left:0}.el-pane{grid-template-columns:1fr;padding:26px}.el-ph{margin:0 auto}
 .el-row .el-btn{width:100%;justify-content:center}.el-close{padding:44px 24px;border-radius:22px}.el-tree{flex-direction:column;align-items:flex-start}.el-arr{transform:rotate(90deg)}}
@@ -360,21 +360,21 @@
 
 <!-- NAV (same as products page) -->
 <header class="site-nav" id="siteNav"><div class="nav-container">
-<div class="nav-logo"><a href="/"><img src="assets/images/logoembeddedandsoftware.webp" alt="Fleming Embedded & Software Solutions logo" class="nav-logo-img" /></a></div>
+<div class="nav-logo"><a href="index.html"><img src="assets/images/logoembeddedandsoftware.webp" alt="Fleming Embedded & Software Solutions logo" class="nav-logo-img" /></a></div>
 <nav class="nav-capsule" aria-label="Main navigation"><ul class="nav-links">
-<li class="nav-item"><a href="/">HOME</a></li><li class="nav-item"><a href="/about">ABOUT</a></li><li class="nav-item"><a href="/services">SERVICES</a></li>
-<li class="nav-item active"><a href="/products"><span class="active-dot"></span>Products</a></li>
-<li class="nav-item"><a href="/techno-solutions">Training Division</a></li><li class="nav-item"><a href="/contact">Contact</a></li>
+<li class="nav-item"><a href="index.html">HOME</a></li><li class="nav-item"><a href="about.html">ABOUT</a></li><li class="nav-item"><a href="services.html">SERVICES</a></li>
+<li class="nav-item active"><a href="products.html"><span class="active-dot"></span>Products</a></li>
+<li class="nav-item"><a href="techno.html">Training Division</a></li><li class="nav-item"><a href="contact.html">Contact</a></li>
 <li class="nav-item"><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank" rel="noopener noreferrer">Blog</a></li></ul></nav>
 <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button></div></header>
 <div class="mobile-menu-overlay" id="mobileMenuOverlay"><button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
-<ul class="mobile-nav-links"><li class="nav-item"><a href="/">HOME</a></li><li class="nav-item"><a href="/about">ABOUT</a></li><li class="nav-item"><a href="/services">SERVICES</a></li>
-<li class="nav-item active"><a href="/products"><span class="active-dot"></span>Products</a></li><li class="nav-item"><a href="/techno-solutions">Training Division</a></li>
-<li class="nav-item"><a href="/contact">Contact</a></li><li class="nav-item"><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank" rel="noopener noreferrer">Blog</a></li></ul></div>
+<ul class="mobile-nav-links"><li class="nav-item"><a href="index.html">HOME</a></li><li class="nav-item"><a href="about.html">ABOUT</a></li><li class="nav-item"><a href="services.html">SERVICES</a></li>
+<li class="nav-item active"><a href="products.html"><span class="active-dot"></span>Products</a></li><li class="nav-item"><a href="techno.html">Training Division</a></li>
+<li class="nav-item"><a href="contact.html">Contact</a></li><li class="nav-item"><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank" rel="noopener noreferrer">Blog</a></li></ul></div>
 
 <section class="about-bg" id="parallaxHero" aria-labelledby="products-hero-heading"><div class="about-overlay"></div>
 <div class="about-content"><h1 id="products-hero-heading">PRODUCTS</h1>
-<p class="about-breadcrumbs"><a href="/">HOME</a><span class="dot">•</span><a href="/products">PRODUCTS</a><span class="dot">•</span><span class="active-page">E-LEARNING</span></p></div></section>
+<p class="about-breadcrumbs"><a href="index.html">HOME</a><span class="dot">•</span><a href="products.html">PRODUCTS</a><span class="dot">•</span><span class="active-page">E-LEARNING</span></p></div></section>
 
 <main class="el">
 
@@ -384,9 +384,9 @@
 <h2 class="el-h">A complete<br>digital classroom<br><em>for every institution.</em></h2>
 <p class="el-lead j">Courses, video and audio lessons, live classes, tests, daily games and student reports in one platform, with a web admin panel and Android and iOS apps for learners.</p>
 <ul class="el-pills"><li>Department and course structure</li><li>Five ways to learn</li><li>Tests, contests and leaderboards</li><li>Subject and topic analytics</li></ul>
-<div class="el-row"><a href="/contact" class="el-btn">Request a demonstration →</a><a href="#el-modes" class="el-btn o">Explore the features</a></div>
+<div class="el-row"><a href="contact.html" class="el-btn">Request a demonstration →</a><a href="#el-modes" class="el-btn o">Explore the features</a></div>
 </div>
-<img class="el-hero-mobile-img" src="assets/images/elearningmobilebg1.png" alt="E-learning platform dashboard on mobile" loading="lazy" />
+<img class="el-hero-mobile-img" src="assets/images/elearningmobilebg1.webp" alt="E-learning platform dashboard on mobile" loading="lazy" />
 </div></section>
 
 <section class="el-stats" aria-label="Highlights"><div class="el-w el-stats-g">
@@ -401,10 +401,10 @@
 <p class="el-lead j">Set up departments, add courses under each, and arrange content in a clear hierarchy. Rearrange or update it whenever the syllabus changes.</p></div>
 <div class="el-tree rv" aria-label="Content hierarchy"><span class="el-node">Department</span><span class="el-arr">→</span><span class="el-node">Course</span><span class="el-arr">→</span><span class="el-node">Subject</span><span class="el-arr">→</span><span class="el-node">Topic</span><span class="el-arr">→</span><span class="el-node">Subtopic</span><span class="el-arr">→</span><span class="el-node">Chapter</span></div>
 <div class="el-g4 el-ic">
-<article class="el-icard rv"><img class="el-img" src="assets/images/elearningimage1.png" width="600" height="800" alt="Students in a department" loading="lazy" /><span class="n">🏫</span><div class="cap"><h3>Departments and courses</h3><p>Create and manage multiple departments and the courses under each.</p></div></article>
-<article class="el-icard rv" style="--d:.1s"><img class="el-img" src="assets/images/elearningimage2.png" width="600" height="800" alt="Organised study materials" loading="lazy" /><span class="n">🗂️</span><div class="cap"><h3>Hierarchical content</h3><p>Subjects, topics, subtopics and chapters keep materials easy to find.</p></div></article>
-<article class="el-icard rv" style="--d:.2s"><img class="el-img" src="assets/images/elearningimage3.png" width="600" height="800" alt="Teacher updating lessons" loading="lazy" /><span class="n">✏️</span><div class="cap"><h3>Flexible editing</h3><p>Add, edit, rearrange and update educational materials at any time.</p></div></article>
-<article class="el-icard rv" style="--d:.3s"><img class="el-img" src="assets/images/elearningimage4.png" width="600" height="800" alt="Exam preparation" loading="lazy" /><span class="n">❓</span><div class="cap"><h3>Question bank</h3><p>One central collection of questions that feeds different assessments.</p></div></article>
+<article class="el-icard rv"><img class="el-img" src="assets/images/elearningimage1.webp" width="600" height="800" alt="Students in a department" loading="lazy" /><span class="n">🏫</span><div class="cap"><h3>Departments and courses</h3><p>Create and manage multiple departments and the courses under each.</p></div></article>
+<article class="el-icard rv" style="--d:.1s"><img class="el-img" src="assets/images/elearningimage2.webp" width="600" height="800" alt="Organised study materials" loading="lazy" /><span class="n">🗂️</span><div class="cap"><h3>Hierarchical content</h3><p>Subjects, topics, subtopics and chapters keep materials easy to find.</p></div></article>
+<article class="el-icard rv" style="--d:.2s"><img class="el-img" src="assets/images/elearningimage3.webp" width="600" height="800" alt="Teacher updating lessons" loading="lazy" /><span class="n">✏️</span><div class="cap"><h3>Flexible editing</h3><p>Add, edit, rearrange and update educational materials at any time.</p></div></article>
+<article class="el-icard rv" style="--d:.3s"><img class="el-img" src="assets/images/elearningimage4.webp" width="600" height="800" alt="Exam preparation" loading="lazy" /><span class="n">❓</span><div class="cap"><h3>Question bank</h3><p>One central collection of questions that feeds different assessments.</p></div></article>
 </div></div></section>
 
 <!-- 3 MODES -->
@@ -463,8 +463,8 @@
 <div class="el-bars"><div><span>Physics</span><i style="--w:82%"></i><b>82%</b></div><div><span>Chemistry</span><i style="--w:68%"></i><b>68%</b></div><div><span>Biology</span><i style="--w:91%"></i><b>91%</b></div><div><span>Mathematics</span><i class="w" style="--w:44%"></i><b>44%</b></div></div>
 <p class="el-note">Weak area: Mathematics · Algebra. Suggested: revision mode on 2 chapters.</p>
 <ul class="el-list"><li>Overall marks, accuracy and learning activity</li><li>Topic and chapter reports with weekly and monthly trends</li></ul></div>
-<article class="el-tile b rv" style="--d:.1s"><img class="el-img" src="assets/images/elearningimage5.png" width="1341" height="1173" alt="Students reading news" loading="lazy" /><div class="cap"><h3>News and announcements</h3><p>Current affairs, career news, editorials and important learning updates.</p></div></article>
-<article class="el-tile c rv"><img class="el-img" src="assets/images/elearningimage6.png" width="1341" height="1173" alt="Live online class" loading="lazy" /><div class="live"><span class="el-pulse">Live class</span></div><div class="cap"><h3>Live classes</h3><p>Schedule sessions, alert students and share recordings where available.</p></div></article>
+<article class="el-tile b rv" style="--d:.1s"><img class="el-img" src="assets/images/elearningimage5.webp" width="1341" height="1173" alt="Students reading news" loading="lazy" /><div class="cap"><h3>News and announcements</h3><p>Current affairs, career news, editorials and important learning updates.</p></div></article>
+<article class="el-tile c rv"><img class="el-img" src="assets/images/elearningimage6.webp" width="1341" height="1173" alt="Live online class" loading="lazy" /><div class="live"><span class="el-pulse">Live class</span></div><div class="cap"><h3>Live classes</h3><p>Schedule sessions, alert students and share recordings where available.</p></div></article>
 <div class="el-panel d rv" style="--d:.1s" aria-label="Sample subscription plans"><h4>Subscription plans <span class="el-tag">Configurable</span></h4>
 <div class="el-plans"><div class="el-plan"><b>Basic</b><span>Reading<br>Tests</span></div><div class="el-plan on"><b>Standard</b><span>+ Video<br>+ Audio</span></div><div class="el-plan"><b>Premium</b><span>+ Live classes<br>+ Contests</span></div></div>
 <ul class="el-list"><li>Control access to courses, chapters, video, audio and live sessions</li><li>Monitor subscription status and validity</li></ul></div>
@@ -474,7 +474,7 @@
 <section class="el-s"><div class="el-w">
 <div class="el-head rv"><p class="el-eye">Administration</p><h2 class="el-h">Your institution. <em>Your rules.</em></h2>
 <p class="el-lead j">Authorised administrators manage the whole learning environment from one web panel, and can change structure, content, tests and settings as needs evolve.</p></div>
-<div class="el-banner rv"><img class="el-img" src="assets/images/elearningimage7.png" width="1600" height="700" alt="Administrator managing the platform" loading="lazy" /><span class="el-bch">📊 Results at a glance</span><span class="el-bch">📥 Bulk Excel upload</span><span class="el-bch">🔔 Announcements</span></div>
+<div class="el-banner rv"><img class="el-img" src="assets/images/elearningimage7.webp" width="1600" height="700" alt="Administrator managing the platform" loading="lazy" /><span class="el-bch">📊 Results at a glance</span><span class="el-bch">📥 Bulk Excel upload</span><span class="el-bch">🔔 Announcements</span></div>
 <ul class="el-admin">
 <li>Manage departments, courses, subjects, topics and chapters</li><li>Upload video, audio, image and document resources</li><li>Create tests, contests and question banks</li>
 <li>Upload questions in bulk with Excel templates</li><li>Create image-based questions</li><li>Manage student registrations and information</li>
@@ -491,7 +491,7 @@
 
 <!-- 9 FAQ + CLOSE -->
 <section class="el-s"><div class="el-w el-fg">
-<div><p class="el-eye">FAQ</p><h2 class="el-h">Questions <em>we hear most</em></h2><p class="el-lead">Something not covered? Our team will walk you through it.</p><div class="el-row"><a href="/contact" class="el-btn o">Ask our team</a></div></div>
+<div><p class="el-eye">FAQ</p><h2 class="el-h">Questions <em>we hear most</em></h2><p class="el-lead">Something not covered? Our team will walk you through it.</p><div class="el-row"><a href="contact.html" class="el-btn o">Ask our team</a></div></div>
 <div>
 <details open><summary>Which devices do students use?</summary><p>Students use dedicated Android and iOS apps. Administrators manage everything through a web-based panel.</p></details>
 <details><summary>Can students learn without internet?</summary><p>Yes, for supported video lessons. Students can download them for offline viewing.</p></details>
@@ -505,15 +505,15 @@
 <section class="el-s" style="padding-top:0"><div class="el-w"><div class="el-close">
 <div><h2 class="el-h" style="color:#fff">Build a learning environment <em>that fits your institution</em></h2>
 <p class="el-lead">Bring courses, students, assessments and learning activities together in one connected platform.</p>
-<div class="el-row"><a href="https://wa.me/919745205252?text=I%20would%20like%20to%20request%20a%20demonstration%20of%20the%20E-Learning%20Management%20Platform.%20Please%20share%20a%20convenient%20time." class="el-btn a">Request a demonstration →</a><a href="/contact" class="el-btn g">Enquire now</a></div></div>
-<div class="el-ct"><a href="tel:+919745205252"><small>Call us</small>+91-9745205252</a><a href="mailto:helpdesk@fleminggroup.in"><small>Email</small>helpdesk@fleminggroup.in</a><a href="/contact"><small>Visit</small>Kaloor, Ernakulam</a></div>
+<div class="el-row"><a href="https://wa.me/919745205252?text=I%20would%20like%20to%20request%20a%20demonstration%20of%20the%20E-Learning%20Management%20Platform.%20Please%20share%20a%20convenient%20time." class="el-btn a">Request a demonstration →</a><a href="contact.html" class="el-btn g">Enquire now</a></div></div>
+<div class="el-ct"><a href="tel:+919745205252"><small>Call us</small>+91-9745205252</a><a href="mailto:helpdesk@fleminggroup.in"><small>Email</small>helpdesk@fleminggroup.in</a><a href="contact.html"><small>Visit</small>Kaloor, Ernakulam</a></div>
 </div></div></section>
 </main>
 
 <!-- CTA (same as products page) -->
 <section class="cta-dark-section" aria-labelledby="cta-heading"><div class="cta-container">
 <div class="cta-content-left"><h2 class="cta-main-title" id="cta-heading">Let's make something great together</h2></div>
-<div class="cta-action-right"><a href="/contact" class="cta-brush-link">Get Started <span class="cta-arrow">↗</span></a></div></div></section>
+<div class="cta-action-right"><a href="contact.html" class="cta-brush-link">Get Started <span class="cta-arrow">↗</span></a></div></div></section>
 
 <!-- FOOTER -->
 <footer class="site-footer">
@@ -523,7 +523,7 @@
     <div class="footer-columns">
       <div class="footer-col footer-col-brand">
         <div class="footer-logo">
-          <a href="/">
+          <a href="index.html">
             <img loading="lazy" src="assets/images/logoembeddedandsoftware.webp" alt="Fleming Embedded & Software Solutions logo" class="footer-logo-img" />
           </a>
         </div>
@@ -561,17 +561,17 @@
       <div class="footer-col footer-col-links">
         <h4 class="footer-col-heading">Quick Links</h4>
         <ul class="footer-links">
-          <li><a href="/services">Services</a></li>
-          <li><a href="/techno-solutions">Training Division</a></li>
-          <li><a href="/products">Products</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="techno.html">Training Division</a></li>
+          <li><a href="products.html">Products</a></li>
           <li><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank">Blog</a></li>
         </ul>
       </div>
       <div class="footer-col footer-col-about">
         <h4 class="footer-col-heading">About Us</h4>
         <ul class="footer-links">
-          <li><a href="/about">Who We Are</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><a href="about.html">Who We Are</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col footer-col-contact">
@@ -671,7 +671,7 @@
       <span class="fcw-tooltip">Call Us</span>
     </a>
 
-    <a href="/contact" class="fcw-btn fcw-message" aria-label="Contact">
+    <a href="contact.html" class="fcw-btn fcw-message" aria-label="Contact">
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
         <polyline points="22,6 12,13 2,6"/>
