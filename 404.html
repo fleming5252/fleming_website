@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -180,8 +180,7 @@
       0%, 100% { opacity: 1; }
       50%       { opacity: 0; }
     }
-
-    /* ── Saturn — bottom right, clearly visible ── */
+    /* ── Saturn ── */
     .saturn {
       position: fixed;
       bottom: 5%;
@@ -196,6 +195,34 @@
       height: auto;
       display: block;
       filter: drop-shadow(0 0 16px rgba(26,86,219,0.4));
+    }
+    @keyframes orbitSaturn {
+      from { transform: translateY(0) rotate(-5deg); }
+      to   { transform: translateY(-22px) rotate(5deg); }
+    }
+
+    @media (max-width: 768px) {
+      .saturn {
+        width: 200px;
+        right: -30px;
+        bottom: 5%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .saturn {
+        width: 160px;
+        right: -20px;
+        bottom: 5%;
+      }
+    }
+
+    @media (max-width: 480px) and (max-height: 700px) {
+      .saturn {
+        width: 140px;
+        right: -20px;
+        bottom: 3%;
+      }
     }
     @keyframes orbitSaturn {
       from { transform: translateY(0) rotate(-5deg); }
@@ -307,12 +334,6 @@
         top: 2%;
       }
 
-      .saturn {
-        width: 72vw;
-        right: 0;
-        bottom: 8%;
-      }
-
       .headline { margin-top: 80px; }
     }
 
@@ -335,11 +356,6 @@
         bottom: unset;
         top: 2%;
       }
-      .saturn {
-        width: 76vw;
-        right: 0;
-        bottom: 6%;
-      }
 
       .headline { font-size: 20px; margin-top: 90px; }
       .subtext  { font-size: 13px; margin-bottom: 28px; }
@@ -347,23 +363,49 @@
       .question-mark { font-size: 28px; right: -20px; }
     }
 
+    /* Specifically targets short viewports like iPhone SE */
+    @media (max-width: 480px) and (max-height: 700px) {
+      .saturn {
+        position: fixed;
+        bottom: 12px;
+        right: -18vw;
+        width: 55vw;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .astronaut-wrap, .saturn, .star { animation: none; }
     }
   </style>
-</head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1845686676804278');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1845686676804278&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code --></head>
 <body>
 
   <!-- Starfield -->
   <div class="stars" id="stars"></div>
 
   <div class="rocket">
-    <img src="assets/images/404_2.webp" alt="Rocket"/>
+    <img src="/assets/images/404_2.webp" alt="Rocket"/>
   </div>
 
   <!-- Saturn -->
   <div class="saturn">
-    <img src="assets/images/404_3.webp" alt="Saturn"/>
+    <img src="/assets/images/404_3.webp" alt="Saturn"/>
   </div>
 
   <!-- Main content -->
@@ -376,7 +418,7 @@
         <span class="num-zero">0</span>
         <div class="astronaut-wrap">
           <span class="question-mark">?</span>
-          <img src="assets/images/404_1.webp" alt="Lost astronaut"/>
+          <img src="/assets/images/404_1.webp" alt="Lost astronaut"/>
         </div>
       </div>
 

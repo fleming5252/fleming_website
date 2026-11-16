@@ -1,0 +1,155 @@
+# ============================================================
+#  Fleming Embedded & Software Solutions
+#  Production .htaccess — Apache 2.4+
+#  https://www.fleming.co.in
+# ============================================================
+
+# ─── PERFORMANCE: Compression ──────────────────────────────
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html
+  AddOutputFilterByType BROTLI_COMPRESS text/css
+  AddOutputFilterByType BROTLI_COMPRESS text/javascript
+  AddOutputFilterByType BROTLI_COMPRESS text/xml
+  AddOutputFilterByType BROTLI_COMPRESS text/plain
+  AddOutputFilterByType BROTLI_COMPRESS application/javascript
+  AddOutputFilterByType BROTLI_COMPRESS application/x-javascript
+  AddOutputFilterByType BROTLI_COMPRESS application/json
+  AddOutputFilterByType BROTLI_COMPRESS application/ld+json
+  AddOutputFilterByType BROTLI_COMPRESS application/xml
+  AddOutputFilterByType BROTLI_COMPRESS application/rss+xml
+  AddOutputFilterByType BROTLI_COMPRESS application/atom+xml
+  AddOutputFilterByType BROTLI_COMPRESS image/svg+xml
+  AddOutputFilterByType BROTLI_COMPRESS font/ttf
+  AddOutputFilterByType BROTLI_COMPRESS font/otf
+  AddOutputFilterByType BROTLI_COMPRESS font/woff
+  AddOutputFilterByType BROTLI_COMPRESS font/woff2
+  AddOutputFilterByType BROTLI_COMPRESS application/vnd.ms-fontobject
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE application/ld+json
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/atom+xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE font/ttf
+  AddOutputFilterByType DEFLATE font/otf
+  AddOutputFilterByType DEFLATE font/woff
+  AddOutputFilterByType DEFLATE font/woff2
+  AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+</IfModule>
+
+# ─── PERFORMANCE: Browser Caching ──────────────────────────
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # HTML — no cache (always fresh)
+  ExpiresByType text/html                         "access plus 0 seconds"
+
+  # CSS & JavaScript
+  ExpiresByType text/css                          "access plus 1 year"
+  ExpiresByType text/javascript                   "access plus 1 year"
+  ExpiresByType application/javascript            "access plus 1 year"
+  ExpiresByType application/x-javascript          "access plus 1 year"
+
+  # Images
+  ExpiresByType image/jpeg                        "access plus 1 year"
+  ExpiresByType image/png                         "access plus 1 year"
+  ExpiresByType image/gif                         "access plus 1 year"
+  ExpiresByType image/webp                        "access plus 1 year"
+  ExpiresByType image/avif                        "access plus 1 year"
+  ExpiresByType image/svg+xml                     "access plus 1 year"
+  ExpiresByType image/x-icon                      "access plus 1 year"
+  ExpiresByType image/vnd.microsoft.icon          "access plus 1 year"
+
+  # Fonts
+  ExpiresByType font/ttf                          "access plus 1 year"
+  ExpiresByType font/otf                          "access plus 1 year"
+  ExpiresByType font/woff                         "access plus 1 year"
+  ExpiresByType font/woff2                        "access plus 1 year"
+  ExpiresByType application/vnd.ms-fontobject     "access plus 1 year"
+
+  # Video
+  ExpiresByType video/mp4                         "access plus 1 year"
+  ExpiresByType video/webm                        "access plus 1 year"
+
+  # Data — no cache
+  ExpiresByType application/json                  "access plus 0 seconds"
+  ExpiresByType application/ld+json               "access plus 0 seconds"
+  ExpiresByType application/xml                   "access plus 0 seconds"
+  ExpiresByType text/xml                          "access plus 0 seconds"
+</IfModule>
+
+# ─── PERFORMANCE: Cache Control Headers ────────────────────
+<IfModule mod_headers.c>
+  # Static assets — aggressive caching
+  <FilesMatch "\.(css|js|woff|woff2|ttf|otf|eot|svg|webp|avif|png|jpe?g|gif|ico|mp4|webm)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # HTML — revalidate every time
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+
+  # JSON / XML — no cache
+  <FilesMatch "\.(json|xml)$">
+    Header set Cache-Control "no-store, no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# ─── SECURITY: Directory & Access Controls ─────────────────
+Options -Indexes
+
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+
+<FilesMatch "^(web\.config|\.htaccess|\.htpasswd)$">
+  Require all denied
+</FilesMatch>
+
+# ─── SECURITY: Response Headers ────────────────────────────
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ─── ERROR DOCUMENTS ───────────────────────────────────────
+# Custom 404 page — Apache serves /404.html with a true HTTP 404 status.
+# Absolute path (/404.html) ensures correct resolution regardless of the
+# requested URI.  Placed outside the RewriteBlock so it is evaluated by
+# Apache after mod_rewrite exhausts all rules without a match.
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Skip existing files and directories
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Clean URLs
+    RewriteRule ^about/?$ about.html [L]
+    RewriteRule ^services/?$ services.html [L]
+    RewriteRule ^products/?$ products.html [L]
+    RewriteRule ^contact/?$ contact.html [L]
+    RewriteRule ^privacy-policy/?$ privacy-policy.html [L]
+
+    RewriteRule ^techno-solutions/?$ techno.html [L]
+    RewriteRule ^techno-solutions/services/?$ techno_services.html [L]
+    RewriteRule ^techno-solutions/research/?$ techno_rd.html [L]
+    RewriteRule ^techno-solutions/careers/?$ techno_careers.html [L]
+    RewriteRule ^techno-solutions/contact/?$ techno_contact.html [L]
+</IfModule>

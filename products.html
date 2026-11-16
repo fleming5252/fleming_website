@@ -6,33 +6,166 @@
   <title>Products | Fleming Embedded & Software Solutions</title>
 
   <!-- INSERT THE NEW META DATA HERE -->
-  <meta name="description" content="Explore Fleming's custom software products in Kerala, including Payroll Management, Newspaper Agent Billing, Fees Management, E-Commerce, F Track Attendance, and E-Learning apps." />
-  <meta name="keywords" content="Fleming products, payroll management software, newspaper billing app, fees management system, e-commerce applications, F track attendance app, e-learning software, custom software Kerala" />
-  <meta name="author" content="Fleming Embedded & Software Solutions" />
+  <meta name="description" content="Explore Fleming's custom software products in Kerala, including GeoTag Attendance, Fruit Inventory Management, Payroll Management, Newspaper Agent Billing, Fees Management, E-Commerce, and E-Learning apps." />
+  <meta name="keywords" content="
+    Fleming software products, custom software products Kerala, GeoTag Attendance System, geo attendance software, GPS attendance management, employee attendance app, attendance tracking software, Fruit Inventory Management System, inventory management software Kerala, fruit wholesale software,
+    payroll management software, payroll automation system, employee payroll solution, HR payroll software, Newspaper Agent Billing Software, newspaper distribution software, billing management application, subscription billing software, Educational Institution Fees Management System, school fees management software,
+    college fee collection system, education management software, E-Learning platform Kerala, learning management system, online education software, digital classroom platform, student learning management, E-Commerce application development, custom e-commerce platform, online shopping software,
+    business management software, ERP software Kerala, inventory and billing software, custom business applications, workflow automation software, software products Kochi, GeoTag attendance software Kerala, custom attendance software, inventory software products, payroll software products,
+    educational software products, scalable software solutions, secure software applications, digital transformation solutions, enterprise application development, custom web applications, software product development, mobile application products, Fleming Embedded software products, business software products Kerala" />  <meta name="author" content="Fleming Embedded & Software Solutions" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0b5fa5" />
   
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Products | Fleming Embedded & Software Solutions" />
-  <meta property="og:description" content="Explore Fleming's custom software products in Kerala, including Payroll Management, Newspaper Agent Billing, Fees Management, E-Commerce, F Track Attendance, and E-Learning apps." />
+  <meta property="og:description" content="Explore Fleming's custom software products in Kerala, including GeoTag Attendance, Fruit Inventory Management, Payroll Management, Newspaper Agent Billing, Fees Management, E-Commerce, and E-Learning apps." />
   <meta property="og:url" content="https://www.fleming.co.in/products" />
-  <meta property="og:image" content="https://www.fleming.co.in/assets/images/logo.webp" />
+  <meta property="og:image" content="https://www.fleming.co.in/assets/images/logoembeddedandsoftware.webp" />
   <meta property="og:site_name" content="Fleming Embedded & Software Solutions" />
   <link rel="canonical" href="https://www.fleming.co.in/products" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Products | Fleming Embedded & Software Solutions" />
-  <meta name="twitter:description" content="Explore Fleming's custom software products in Kerala, including Payroll Management, Newspaper Agent Billing, Fees Management, E-Commerce, F Track Attendance, and E-Learning apps." />
-  <meta name="twitter:image" content="https://www.fleming.co.in/assets/images/logo.webp" />
+  <meta name="twitter:description" content="Explore Fleming's custom software products in Kerala, including GeoTag Attendance, Fruit Inventory Management, Payroll Management, Newspaper Agent Billing, Fees Management, E-Commerce, and E-Learning apps." />
+  <meta name="twitter:image" content="https://www.fleming.co.in/assets/images/logoembeddedandsoftware.webp" />
   <!-- END OF NEW META DATA -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Caveat:wght@700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="icon" type="image/png" href="assets/images/logo.webp" />
+
+  <!-- GEO TAG PRODUCT — "VIEW DETAILS" FEATURE-SLOT BUTTON
+       Occupies the exact grid cell of the replaced feature box. -->
+  <style>
+    .ps-feat.ps-feat-action,
+    .ps-c-feat.ps-c-feat-action {
+      position: relative;
+      display: block;
+      padding: 0;
+      border: none;
+      background: none;
+    }
+    .ps-feat-btn {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 12px 14px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      color: #ffffff;
+      background-color: #1a56db;
+      background-image: linear-gradient(135deg, #2b6fe8 0%, #1a56db 45%, #14479f 100%);
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      border-radius: 12px;
+      box-shadow:
+        0 0 0 1px rgba(11, 55, 145, 0.4),
+        0 6px 14px rgba(16, 55, 140, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      appearance: none;
+      -webkit-appearance: none;
+      overflow: hidden;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .ps-feat-btn::before {
+      content: '\2192';
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0;
+      opacity: 0.9;
+      transition: transform 0.3s ease;
+    }
+    .ps-feat-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top right,
+        rgba(255, 255, 255, 0) 38%,
+        rgba(255, 255, 255, 0.55) 50%,
+        rgba(255, 255, 255, 0) 62%
+      );
+      transform: translate(-100%, 100%);
+      animation: ps-feat-shine 3.2s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes ps-feat-shine {
+      0% {
+        transform: translate(-100%, 100%);
+      }
+      55% {
+        transform: translate(100%, -100%);
+      }
+      100% {
+        transform: translate(100%, -100%);
+      }
+    }
+    .ps-slide .ps-feat-btn {
+      font-size: 11px;
+      letter-spacing: 0.6px;
+      gap: 5px;
+      padding: 8px 10px;
+      border-radius: 10px;
+    }
+    .ps-slide .ps-feat-btn::before {
+      font-size: 12px;
+    }
+    @media (max-width: 480px) {
+      .ps-feat-btn {
+        font-size: 11px;
+        letter-spacing: 0.6px;
+        gap: 5px;
+        padding: 10px 8px;
+      }
+      .ps-feat-btn::before {
+        font-size: 12px;
+      }
+    }
+    @media (hover: hover) and (pointer: fine) {
+      .ps-feat-btn:hover {
+        transform: translateY(-2px);
+        box-shadow:
+          0 0 0 1px rgba(11, 55, 145, 0.55),
+          0 10px 22px rgba(16, 55, 140, 0.34),
+          inset 0 1px 0 rgba(255, 255, 255, 0.32);
+      }
+      .ps-feat-btn:hover::before {
+        transform: translateX(4px);
+      }
+    }
+    .ps-feat-btn:focus-visible {
+      outline: 2px solid #0b5fa5;
+      outline-offset: 2px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .ps-feat-btn::after {
+        animation: none !important;
+        transform: translate(-100%, 100%);
+      }
+      .ps-feat-btn,
+      .ps-feat-btn::before {
+        transition: none !important;
+      }
+      .ps-feat-btn:hover {
+        transform: none;
+      }
+      .ps-feat-btn:hover::before {
+        transform: none;
+      }
+    }
+  </style>
+  <link rel="icon" type="image/png" href="assets/images/logoembeddedandsoftware.webp" />
   <link rel="preload" as="image" href="assets/images/logo1.webp" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -42,19 +175,19 @@
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "@id": "https://www.fleming.co.inproducts.html#webpage",
+    "@id": "https://www.fleming.co.in/products#webpage",
     "url": "https://www.fleming.co.in/products",
     "name": "Products | Fleming Embedded & Software Solutions",
-    "description": "Explore Fleming's custom software products in Kerala, including Payroll Management, Newspaper Agent Billing, Fees Management, E-Commerce, F Track Attendance, and E-Learning apps.",
+    "description": "Explore Fleming's custom software products in Kerala, including GeoTag Attendance, Fruit Inventory Management, Payroll Management, Newspaper Agent Billing, Fees Management, E-Commerce, and E-Learning apps.",
     "isPartOf": {
       "@id": "https://www.fleming.co.in/#website"
     },
     "primaryImageOfPage": {
       "@type": "ImageObject",
-      "url": "https://www.fleming.co.in/assets/images/logo.webp"
+      "url": "https://www.fleming.co.in/assets/images/logoembeddedandsoftware.webp"
     },
     "breadcrumb": {
-      "@id": "https://www.fleming.co.inproducts.html#breadcrumb"
+      "@id": "https://www.fleming.co.in/products#breadcrumb"
     },
     "mainEntity": {
       "@type": "ItemList",
@@ -65,6 +198,12 @@
           "name": "Payroll Management System",
           "applicationCategory": "BusinessApplication",
           "description": "Custom payroll management software for streamlining employee salary processing and compliance."
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Fruit Inventory Management System",
+          "applicationCategory": "BusinessApplication",
+          "description": "Fruit inventory management software for wholesalers and distributors to manage stock, billing, crate tracking, and logistics."
         },
         {
           "@type": "SoftwareApplication",
@@ -86,12 +225,6 @@
         },
         {
           "@type": "SoftwareApplication",
-          "name": "F Track Attendance",
-          "applicationCategory": "BusinessApplication",
-          "description": "Employee and student attendance tracking system with real-time monitoring."
-        },
-        {
-          "@type": "SoftwareApplication",
           "name": "E-Learning Platform",
           "applicationCategory": "EducationalApplication",
           "description": "Online learning management system for educational content delivery and tracking."
@@ -104,7 +237,7 @@
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "@id": "https://www.fleming.co.inproducts.html#breadcrumb",
+    "@id": "https://www.fleming.co.in/products#breadcrumb",
     "itemListElement": [
       {
         "@type": "ListItem",
@@ -122,7 +255,23 @@
   }
   </script>
 
-</head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1845686676804278');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1845686676804278&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code --></head>
 <body class="page-products">
 
 <div class="site-preloader-overlay" id="loadingScreen">
@@ -167,63 +316,31 @@
   </script>
 </div>
 
-<!-- HERO NAV -->
-<header class="hero-nav" id="heroNav">
+<!-- SINGLE UNIFIED NAV -->
+<header class="site-nav" id="siteNav">
   <div class="nav-container">
     <div class="nav-logo">
-      <a href="index.html">
-        <img loading="lazy" src="assets/images/logo.webp" alt="logo" class="nav-logo-img" />
+      <a href="/">
+        <img src="assets/images/logoembeddedandsoftware.webp" alt="Fleming Embedded & Software Solutions logo" class="nav-logo-img" />
       </a>
     </div>
-    <nav class="nav-capsule">
+    <nav class="nav-capsule" aria-label="Main navigation">
       <ul class="nav-links">
-        <li class="nav-item"><a href="index.html">HOME</a></li>
-        <li class="nav-item"><a href="about.html">ABOUT</a></li>
-        <li class="nav-item"><a href="services.html">SERVICES</a></li>
+        <li class="nav-item"><a href="/">HOME</a></li>
+        <li class="nav-item"><a href="/about">ABOUT</a></li>
+        <li class="nav-item"><a href="/services">SERVICES</a></li>
         <li class="nav-item active">
-          <a href="products.html">
+          <a href="/products">
             <span class="active-dot"></span>
             Products
           </a>
         </li>
-        <li class="nav-item"><a href="techno.html">Training Division</a></li>
-        <li class="nav-item"><a href="contact.html">Contact</a></li>
-        <li class="nav-item"><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank">Blog</a></li>
+        <li class="nav-item"><a href="/techno-solutions">Training Division</a></li>
+        <li class="nav-item"><a href="/contact">Contact</a></li>
+        <li class="nav-item"><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank" rel="noopener noreferrer">Blog</a></li>
       </ul>
     </nav>
     <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
-</header>
-
-<!-- STICKY NAV -->
-<header class="sticky-nav" id="stickyNav">
-  <div class="nav-container">
-    <div class="nav-logo">
-      <a href="index.html">
-        <img loading="lazy" src="assets/images/logo.webp" alt="logo" class="nav-logo-img" />
-      </a>
-    </div>
-    <nav class="nav-capsule">
-      <ul class="nav-links">
-        <li class="nav-item"><a href="index.html">HOME</a></li>
-        <li class="nav-item"><a href="about.html">ABOUT</a></li>
-        <li class="nav-item"><a href="services.html">SERVICES</a></li>
-        <li class="nav-item active">
-          <a href="products.html">
-            <span class="active-dot"></span>
-            Products
-          </a>
-        </li>
-        <li class="nav-item"><a href="techno.html">Training Division</a></li>
-        <li class="nav-item"><a href="contact.html">Contact</a></li>
-        <li class="nav-item"><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank">Blog</a></li>
-      </ul>
-    </nav>
-    <button class="hamburger-btn sticky-hamburger" id="stickyHamburgerBtn" aria-label="Menu">
       <span></span>
       <span></span>
       <span></span>
@@ -235,28 +352,28 @@
 <div class="mobile-menu-overlay" id="mobileMenuOverlay">
   <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
   <ul class="mobile-nav-links">
-    <li class="nav-item"><a href="index.html">HOME</a></li>
-    <li class="nav-item"><a href="about.html">ABOUT</a></li>
-    <li class="nav-item"><a href="services.html">SERVICES</a></li>
+    <li class="nav-item"><a href="/">HOME</a></li>
+    <li class="nav-item"><a href="/about">ABOUT</a></li>
+    <li class="nav-item"><a href="/services">SERVICES</a></li>
     <li class="nav-item active">
-      <a href="products.html">
+      <a href="/products">
         <span class="active-dot"></span>
         Products
       </a>
     </li>
-    <li class="nav-item"><a href="techno.html">Training Division</a></li>
-    <li class="nav-item"><a href="contact.html">Contact</a></li>
-    <li class="nav-item"><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank">Blog</a></li>
+    <li class="nav-item"><a href="/techno-solutions">Training Division</a></li>
+    <li class="nav-item"><a href="/contact">Contact</a></li>
+    <li class="nav-item"><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank" rel="noopener noreferrer">Blog</a></li>
   </ul>
 </div>
 
 <!-- PRODUCTS HERO SECTION -->
-<section class="about-bg" id="parallaxHero" aria-label="Products hero background">
+<section class="about-bg" id="parallaxHero" aria-labelledby="products-hero-heading">
     <div class="about-overlay"></div>
     <div class="about-content">
-        <h1>PRODUCTS</h1>
+        <h1 id="products-hero-heading">PRODUCTS</h1>
         <p class="about-breadcrumbs">
-            <a href="index.html">HOME</a>
+            <a href="/">HOME</a>
             <span class="dot">•</span>
             <span class="active-page">PRODUCTS</span>
         </p>
@@ -274,14 +391,14 @@
   <div class="ps-intro-chips">
     <span class="ps-intro-chip">7+ Products</span>
     <span class="ps-intro-chip"><span id="psYearsCount">12</span>+ Years</span>
-    <span class="ps-intro-chip">100+ Clients</span>
+
   </div>
 </div>
 
 <!-- ═══════════════════════════════════════════
      MOBILE AUTO-SCROLLING IMAGE SLIDER
      ═══════════════════════════════════════════ -->
-<section id="psSliderSection">
+<section id="psSliderSection" aria-label="Product image slider">
   <div class="ps-slider-container">
     <div class="ps-slider-track" id="psSliderTrack"></div>
   </div>
@@ -308,10 +425,10 @@
 <!-- ═══════════════════════════════════════════
      MOBILE PRODUCT CARDS
      ═══════════════════════════════════════════ -->
-<section id="psCardsSection">
+<section id="psCardsSection" aria-labelledby="ps-cards-title">
   <div id="psCardsHeading">
     <div class="ps-cards-badge"><span class="badge-dot"></span> SELECTED PRODUCT</div>
-    <h2 class="ps-cards-title"><span id="psCardsProductName">GeoTag Attendance System</span></h2>
+    <h2 class="ps-cards-title" id="ps-cards-title"><span id="psCardsProductName">GeoTag Attendance System</span></h2>
     <div class="ps-cards-rule"></div>
     <p class="ps-cards-subtitle">Tap any product in the slider above to switch</p>
   </div>
@@ -322,7 +439,7 @@
      PRODUCTS SCROLL-STORYTELLING SECTION
      ═══════════════════════════════════════════ -->
 
-<section class="ps-section" id="productsSection">
+<section class="ps-section" id="productsSection" aria-labelledby="psTitle">
 
   <!-- Sticky viewport — stays pinned while section scrolls -->
   <div class="ps-sticky" id="psSticky">
@@ -371,11 +488,11 @@
         <!-- Image stack — all 6 images stacked, JS controls which is visible -->
         <div class="ps-image-frame" id="psImageFrame">
           <img loading="lazy" src="assets/images/product7.webp"     class="ps-img ps-img-active" data-idx="0" alt="GeoTag Attendance" />
-          <img loading="lazy" src="assets/images/product1.webp"     class="ps-img"               data-idx="1" alt="Payroll Management" />
-          <img loading="lazy" src="assets/images/product2.webp"     class="ps-img"               data-idx="2" alt="Newspaper Billing" />
-          <img loading="lazy" src="assets/images/product3.webp"     class="ps-img"               data-idx="3" alt="Education Fees" />
-          <img loading="lazy" src="assets/images/product6.webp"     class="ps-img"               data-idx="4" alt="E-Learning" />
-          <img loading="lazy" src="assets/images/product5.webp"     class="ps-img"               data-idx="5" alt="Attendance" />
+          <img loading="lazy" src="assets/images/product8.webp"     class="ps-img"               data-idx="1" alt="Fruit Inventory Management" />
+          <img loading="lazy" src="assets/images/product1.webp"     class="ps-img"               data-idx="2" alt="Payroll Management" />
+          <img loading="lazy" src="assets/images/product2.webp"     class="ps-img"               data-idx="3" alt="Newspaper Billing" />
+          <img loading="lazy" src="assets/images/product3.webp"     class="ps-img"               data-idx="4" alt="Education Fees" />
+          <img loading="lazy" src="assets/images/product6.webp"     class="ps-img"               data-idx="5" alt="E-Learning" />
           <img loading="lazy" src="assets/images/product4.webp"     class="ps-img"               data-idx="6" alt="E-Commerce" />
 
           <!-- Floating info card -->
@@ -417,18 +534,19 @@
         </div>
       </div>
 
+    </div><!-- /ps-progress-bar -->
   </div><!-- /ps-sticky -->
 
 </section>
 <!-- ═══════════════ END PRODUCTS SECTION ═══════════════ -->
 
-<section class="cta-dark-section">
+<section class="cta-dark-section" aria-labelledby="cta-heading">
   <div class="cta-container">
     <div class="cta-content-left">
-      <h2 class="cta-main-title">Let's make something great together</h2>
+      <h2 class="cta-main-title" id="cta-heading">Let's make something great together</h2>
     </div>
     <div class="cta-action-right">
-      <a href="contact.html" class="cta-brush-link">
+      <a href="/contact" class="cta-brush-link">
         Get Started <span class="cta-arrow">↗</span>
       </a>
     </div>
@@ -442,8 +560,8 @@
     <div class="footer-columns">
       <div class="footer-col footer-col-brand">
         <div class="footer-logo">
-          <a href="index.html">
-            <img loading="lazy" src="assets/images/logo.webp" alt="logo" class="footer-logo-img" />
+          <a href="/">
+            <img loading="lazy" src="assets/images/logoembeddedandsoftware.webp" alt="Fleming Embedded & Software Solutions logo" class="footer-logo-img" />
           </a>
         </div>
         <p class="footer-brand-desc">
@@ -480,8 +598,8 @@
       <div class="footer-col footer-col-links">
         <h4 class="footer-col-heading">Quick Links</h4>
         <ul class="footer-links">
-          <li><a href="services.html">Services</a></li>
-          <li><a href="techno.html">Training Division</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/techno-solutions">Training Division</a></li>
           <li><a href="#">Products</a></li>
           <li><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank">Blog</a></li>
         </ul>
@@ -489,8 +607,8 @@
       <div class="footer-col footer-col-about">
         <h4 class="footer-col-heading">About Us</h4>
         <ul class="footer-links">
-          <li><a href="about.html">Who We Are</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="/about">Who We Are</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col footer-col-contact">
@@ -505,7 +623,7 @@
               </svg>
             </span>
             <div class="contact-info-group">
-              <a href="tel:9745205252" class="contact-link">+91-9745205252</a>
+              <a href="tel:04844045252" class="contact-link">+91-484-4045252</a>
               <a href="tel:9745205252" class="contact-link">+91-9745205252</a>
             </div>
           </li>
@@ -518,7 +636,7 @@
                 <polyline points="22,6 12,13 2,6"/>
               </svg>
             </span>
-            <a href="mailto:helpdesk@fleming.co.in" class="contact-link">helpdesk@fleming.co.in</a>
+            <a href="mailto:helpdesk@fleminggroup.in" class="contact-link">helpdesk@fleminggroup.in</a>
           </li>
           <li class="footer-contact-item">
             <span class="contact-icon">
@@ -564,57 +682,16 @@
 </footer>
 
 <script>
-var heroNav   = document.getElementById('heroNav');
-var stickyNav = document.getElementById('stickyNav');
-var lastScrollY = window.scrollY;
-
-function getAboutHeroBottom() {
-  var hero = document.getElementById('parallaxHero');
-  return hero ? hero.offsetTop + hero.offsetHeight : window.innerHeight;
-}
-
-window.addEventListener('scroll', function() {
-  var currentY    = window.scrollY;
-  var scrollingUp = currentY < lastScrollY;
-  var heroBottom  = getAboutHeroBottom();
-  var inHeroZone  = currentY < heroBottom;
-
-  if (inHeroZone) {
-    stickyNav.classList.remove('nav-visible');
-    stickyNav.classList.add('nav-hidden');
-    heroNav.classList.remove('nav-hidden');
-    heroNav.classList.add('nav-visible');
-  } else {
-    heroNav.classList.remove('nav-visible');
-    heroNav.classList.add('nav-hidden');
-    if (scrollingUp) {
-      stickyNav.classList.remove('nav-hidden');
-      stickyNav.classList.add('nav-visible');
-    } else {
-      stickyNav.classList.remove('nav-visible');
-      stickyNav.classList.add('nav-hidden');
-    }
-  }
-  lastScrollY = currentY;
-}, { passive: true });
-
-heroNav.classList.add('nav-visible');
-stickyNav.classList.add('nav-hidden');
-</script>
-
-<script>
 (function() {
   var overlay = document.getElementById('mobileMenuOverlay');
-  var hamburgerBtns = document.querySelectorAll('#hamburgerBtn, #stickyHamburgerBtn');
+  var hamburgerBtn = document.getElementById('hamburgerBtn');
   var closeBtn = document.getElementById('mobileMenuClose');
   var navLinks = overlay.querySelectorAll('.nav-item a');
 
   function openMenu() { overlay.classList.add('open'); }
   function closeMenu() { overlay.classList.remove('open'); }
 
-  hamburgerBtns.forEach(function(btn) {
-    btn.addEventListener('click', openMenu);
-  });
+  hamburgerBtn.addEventListener('click', openMenu);
   closeBtn.addEventListener('click', closeMenu);
   navLinks.forEach(function(link) {
     link.addEventListener('click', closeMenu);
@@ -629,7 +706,7 @@ stickyNav.classList.add('nav-hidden');
 document.addEventListener('DOMContentLoaded', function() {
   gsap.registerPlugin(ScrollTrigger);
   gsap.to("#parallaxHero", {
-    backgroundPosition: "60% center",
+    backgroundPosition: "60% bottom",
     ease: "none",
     scrollTrigger: {
       trigger: "#parallaxHero",
@@ -668,12 +745,12 @@ document.addEventListener('DOMContentLoaded', function() {
       <span class="fcw-tooltip">Call Us</span>
     </a>
 
-    <a href="contact.html" class="fcw-btn fcw-message" aria-label="Contact">
+    <a href="/contact" class="fcw-btn fcw-message" aria-label="Contact">
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
         <polyline points="22,6 12,13 2,6"/>
       </svg>
-      <span class="fcw-tooltip">Email Us</span>
+      <span class="fcw-tooltip">Contact Us</span>
     </a>
 
   </div>
@@ -841,7 +918,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   /* ── Heading: keep 50% scrub ── */
   if (introHeading) {
-    var split = new SplitType(introHeading, { types: 'chars' });
+    var split = new SplitType(introHeading, { types: 'words, chars' });
     var chars = split.chars;
     if (chars && chars.length) {
       gsap.set(chars, { opacity: 0.15 });
@@ -954,7 +1031,7 @@ document.addEventListener('DOMContentLoaded', function() {
 (function() {
   var page = window.location.pathname.split('/').pop() || '/';
   if (page === 'techno-solutions') {
-    document.querySelectorAll('.nav-item a[href="contact.html"]').forEach(function(link) {
+    document.querySelectorAll('.nav-item a[href="/contact"]').forEach(function(link) {
       link.href = '/techno-solutions/contact';
     });
   }
@@ -981,7 +1058,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { icon: '📍', title: 'Geo-Fenced Attendance',  desc: 'Employees can only mark attendance within the defined company location.' },
         { icon: '📋', title: 'Leave Management',        desc: 'Simplify leave management with digital leave applications and status tracking.' },
         { icon: '📊', title: 'Attendance History',      desc: 'View detailed attendance and leave balance history anytime.' },
-        { icon: '📈', title: 'Management Reports',      desc: 'Project-wise, weekly, monthly and yearly attendance reports.' },
+        { action: 'view-details', label: 'View Details', href: '/employee-attendance-and-payroll-software.html#gt-intro' },
       ],
       floatTitle: 'Location-Verified. Hassle-Free. Accurate.',
       floatBody:  'GeoTag ensures your workforce attendance is verified by location, with seamless leave management and powerful reporting tools for decision-makers.',
@@ -991,6 +1068,25 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     {
       num: '02',
+      line1: 'Fruit Inventory',
+      line2: 'Management System',
+      tagline: 'MANAGE INVENTORY. <span class="ps-tagline-blue">MAXIMIZE PROFITS.</span>',
+      body: `<p>Fleming's Fruit Inventory Management System helps fruit wholesalers and distributors efficiently manage inventory, customer orders, billing, and daily operations through a single, easy-to-use platform.</p>
+             <p>The system also supports crate tracking, delivery route planning, vehicle management, and detailed business reports, helping businesses improve operational efficiency, reduce manual work, and maintain complete control over inventory movement.</p>`,
+      features: [
+        { icon: '📦', title: 'Stock Management',   desc: 'Manage fruit inventory with real-time stock updates, purchase entries, and warehouse tracking.' },
+        { icon: '🧾', title: 'Sales & Billing',     desc: 'Generate invoices, manage customer sales, record payments, and simplify the billing process.' },
+        { icon: '🧺', title: 'Crate Tracking',      desc: 'Track crate movement, monitor customer balances, and reduce losses with efficient crate management.' },
+        { action: 'view-details', label: 'View Details', href: '/fruit-inventory-management-software.html#fd-intro' },
+      ],
+      floatTitle: 'Fresh Stock. Smarter Operations.',
+      floatBody:  'Manage inventory, billing, deliveries, and crate movement through one integrated platform designed for modern fruit distribution businesses.',
+      floatIconSvg: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>`,
+      glow: 'rgba(249,115,22,0.12)',
+      layout: 'text-right',
+    },
+    {
+      num: '03',
       line1: 'Payroll',
       line2: 'Management',
       tagline: 'SIMPLIFY PAYROLL. <span class="ps-tagline-blue">EMPOWER PEOPLE.</span>',
@@ -1000,7 +1096,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { icon: '📄', title: 'Accurate Processing',   desc: 'Ensure precise salary calculations every time.' },
         { icon: '🛡️', title: 'Streamlined Payroll',   desc: 'Process employee payroll quickly and efficiently.' },
         { icon: '👥', title: 'Employee Management',   desc: 'Manage employee data, roles and payroll history.' },
-        { icon: '📊', title: 'Real-time Reports',     desc: 'Generate insightful reports and analytics instantly.' },
+        { action: 'view-details', label: 'View Details', href: '/payroll-management.html#pr-intro' },
       ],
       floatTitle: 'Accurate. Efficient. Hassle-free.',
       floatBody:  'From salary calculation to payroll processing, Fleming Payroll Management keeps your payroll operations simple, secure, and reliable.',
@@ -1009,7 +1105,7 @@ document.addEventListener('DOMContentLoaded', function() {
       layout: 'text-left',
     },
     {
-      num: '03',
+      num: '04',
       line1: 'Newspaper',
       line2: 'Agent Billing Software',
       tagline: 'SMART BILLING. <span class="ps-tagline-blue">STRONG RELATIONSHIPS.</span>',
@@ -1019,7 +1115,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { icon: '🧾', title: 'Easy Billing',          desc: 'Generate bills quickly and accurately.' },
         { icon: '👥', title: 'Agent Management',      desc: 'Manage agents, territories and customers with ease.' },
         { icon: '📊', title: 'Collection Tracking',   desc: 'Track payments and outstanding in real-time.' },
-        { icon: '📋', title: 'Detailed Reports',      desc: 'Get insights with comprehensive billing reports.' },
+        { action: 'view-details', label: 'View Details', href: '/newspaper-billing-software.html#nw-intro' },
       ],
       floatTitle: 'Accurate. Efficient. Effortless.',
       floatBody:  'Automate billing, manage agents, track collections, and generate reports — all in one powerful platform.',
@@ -1028,7 +1124,7 @@ document.addEventListener('DOMContentLoaded', function() {
       layout: 'text-right',
     },
     {
-      num: '04',
+      num: '05',
       line1: 'Educational',
       line2: 'Institution Fees Management',
       tagline: 'SIMPLIFY FEES. <span class="ps-tagline-blue">EMPOWER EDUCATION.</span>',
@@ -1038,7 +1134,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { icon: '₹',  title: 'Online Fee Collection',      desc: 'Collect fees securely through multiple online modes.' },
         { icon: '📅', title: 'Fee Structure Management',   desc: 'Create and manage flexible fee structures with ease.' },
         { icon: '📊', title: 'Reports & Analytics',        desc: 'Generate detailed reports and get real-time insights.' },
-        { icon: '🔔', title: 'Reminders & Notifications',  desc: 'Automated reminders reduce delays and improve collections.' },
+        { action: 'view-details', label: 'View Details', href: '/educational-institution-management.html#ee-intro' },
       ],
       floatTitle: 'Smarter Fee Management. Better Education.',
       floatBody:  'Our solution brings transparency, accuracy, and efficiency to fee management — so institutions can focus on what truly matters.',
@@ -1047,7 +1143,7 @@ document.addEventListener('DOMContentLoaded', function() {
       layout: 'text-left',
     },
     {
-      num: '05',
+      num: '06',
       line1: 'E-Learning',
       line2: 'Management',
       tagline: 'LEARN <span class="ps-tagline-blue">ANYTIME. ANYWHERE.</span>',
@@ -1057,31 +1153,12 @@ document.addEventListener('DOMContentLoaded', function() {
         { icon: '📚', title: 'Course Management',     desc: 'Organize and manage courses, lessons and study materials.' },
         { icon: '👥', title: 'Student Management',    desc: 'Add and manage students, batches and enrollments with ease.' },
         { icon: '📝', title: 'Assignments & Exams',   desc: 'Create assignments, quizzes and exams with automated evaluation.' },
-        { icon: '📈', title: 'Progress Tracking',     desc: 'Track student performance and generate insightful reports.' },
+        { action: 'view-details', label: 'View Details', href: '/e-learning-management.html#el-intro' },
       ],
       floatTitle: 'Empowering Education. Enriching Futures.',
       floatBody:  'Our e-learning solution makes digital education simple, interactive, and effective for both teachers and students.',
       floatIconSvg: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`,
       glow: 'rgba(239,68,68,0.10)',
-      layout: 'text-left',
-    },
-    {
-      num: '06',
-      line1: 'Attendance',
-      line2: 'Management',
-      tagline: 'MARK ATTENDANCE. <span class="ps-tagline-blue">ANYWHERE. ACCURATELY.</span>',
-      body: `<p>We have developed a location-based attendance management mobile app, F track, which allows the employees of a particular organization to mark their attendance in an easy and user-friendly manner.</p>
-             <p>The mobile app is designed such that employees can only mark their attendance from a specific location, which can be decided by the employer. Available on Android and iOS.</p>`,
-      features: [
-        { icon: '📍', title: 'Location Based',      desc: 'Mark attendance only within the employer defined location.' },
-        { icon: '✅', title: 'Accurate & Reliable',  desc: 'Ensure accurate attendance records with real-time sync.' },
-        { icon: '🕐', title: 'Real-time Tracking',  desc: 'Track employee attendance and working hours live.' },
-        { icon: '📊', title: 'Reports & Analytics', desc: 'Get detailed insights and export reports effortlessly.' },
-      ],
-      floatTitle: 'Right Person. Right Place. Right Time.',
-      floatBody:  'Our location-based attendance system ensures accuracy, prevents fraud, and helps organizations track workforce productivity.',
-      floatIconSvg: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
-      glow: 'rgba(34,197,94,0.12)',
       layout: 'text-left',
     },
     {
@@ -1095,7 +1172,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { icon: '🛒', title: 'Product Management',         desc: 'Add, update and manage products with ease.' },
         { icon: '📦', title: 'Order & Inventory Tracking',  desc: 'Track orders and inventory in real-time seamlessly.' },
         { icon: '💳', title: 'Secure Payments',             desc: 'Multiple payment gateways for safe transactions.' },
-        { icon: '📈', title: 'Sales Analytics',             desc: 'Get insights into sales performance and grow your business.' },
+        { action: 'view-details', label: 'View Details', href: '/ecommerce-management.html#ec-intro' },
       ],
       floatTitle: 'Build. Sell. Grow Online.',
       floatBody:  'Our e-commerce solution empowers you to manage products, track orders, accept payments, and grow your business.',
@@ -1230,8 +1307,14 @@ document.addEventListener('DOMContentLoaded', function() {
     featuresEl.innerHTML = '';
     p.features.forEach(f => {
       const div = document.createElement('div');
-      div.className = 'ps-feat';
-      div.innerHTML = `<div class="ps-feat-icon">${f.icon}</div><div class="ps-feat-text"><strong>${f.title}</strong><span>${f.desc}</span></div>`;
+      div.className = f.action ? 'ps-feat ps-feat-action' : 'ps-feat';
+      if (f.action) {
+        div.innerHTML = f.href
+          ? `<a href="${f.href}" class="ps-feat-btn">${f.label}</a>`
+          : `<button type="button" class="ps-feat-btn">${f.label}</button>`;
+      } else {
+        div.innerHTML = `<div class="ps-feat-icon">${f.icon}</div><div class="ps-feat-text"><strong>${f.title}</strong><span>${f.desc}</span></div>`;
+      }
       featuresEl.appendChild(div);
     });
 
@@ -1332,7 +1415,14 @@ document.addEventListener('DOMContentLoaded', function() {
       const feats = document.createElement('div');
       feats.className = 'ps-features';
       p.features.forEach(f => {
-        feats.innerHTML += `<div class="ps-feat"><div class="ps-feat-icon">${f.icon}</div><div class="ps-feat-text"><strong>${f.title}</strong><span>${f.desc}</span></div></div>`;
+        if (f.action) {
+          const btn = f.href
+            ? `<a href="${f.href}" class="ps-feat-btn">${f.label}</a>`
+            : `<button type="button" class="ps-feat-btn">${f.label}</button>`;
+          feats.innerHTML += `<div class="ps-feat ps-feat-action">${btn}</div>`;
+        } else {
+          feats.innerHTML += `<div class="ps-feat"><div class="ps-feat-icon">${f.icon}</div><div class="ps-feat-text"><strong>${f.title}</strong><span>${f.desc}</span></div></div>`;
+        }
       });
       textDiv.appendChild(feats);
       slide.appendChild(textDiv);
@@ -1341,7 +1431,7 @@ document.addEventListener('DOMContentLoaded', function() {
       imgDiv.className = 'ps-slide-image';
       const frame = document.createElement('div');
       frame.className = 'ps-image-frame';
-      const imgMap = [7, 1, 2, 3, 6, 5, 4];
+      const imgMap = [7, 8, 1, 2, 3, 6, 5, 4];
       frame.innerHTML = `
         <img loading="lazy" src="assets/images/product${imgMap[i]}.webp" class="ps-img ps-img-active" alt="${p.line1}" />
         <div class="ps-float-card">
@@ -1532,16 +1622,16 @@ document.addEventListener('DOMContentLoaded', function() {
   if (window.innerWidth > 900) return;
 
   var MOBILE_PRODUCTS = [
-    { num:'01', line1:'GeoTag', line2:'Attendance System', tagline:'MARK ATTENDANCE. RIGHT WHERE YOU ARE.', body:["Fleming's GeoTag Attendance System is a smart mobile application that enables companies to track and manage employee attendance based on real-time geo-location, ensuring accuracy and eliminating proxy attendance.","Employees can mark attendance only when they are physically within the company's defined geo-boundary. The app also supports leave applications, approvals, attendance history, and comprehensive reporting for management."], features:[{icon:'📍',title:'Geo-Fenced Attendance',desc:'Employees can only mark attendance within the defined company location.'},{icon:'📋',title:'Leave Management',desc:'Simplify leave management with digital leave applications and status tracking.'},{icon:'📊',title:'Attendance History',desc:'View detailed attendance and leave balance history anytime.'},{icon:'📈',title:'Management Reports',desc:'Project-wise, weekly, monthly and yearly attendance reports.'}] },
-    { num:'02', line1:'Payroll', line2:'Management', tagline:'SIMPLIFY PAYROLL. EMPOWER PEOPLE.', body:["Fleming makes sure that managing the payrolls of the employees of an organisation is a cakewalk, as we have developed a web application that allows organisations to effortlessly take care of the payroll of their employees.","Our application is designed with user-friendly features, providing a seamless experience for payroll processing. With just a few clicks, organizations can efficiently handle all payroll-related tasks, ensuring smooth operations."], features:[{icon:'📄',title:'Accurate Processing',desc:'Ensure precise salary calculations every time.'},{icon:'🛡️',title:'Streamlined Payroll',desc:'Process employee payroll quickly and efficiently.'},{icon:'👥',title:'Employee Management',desc:'Manage employee data, roles and payroll history.'},{icon:'📊',title:'Real-time Reports',desc:'Generate insightful reports and analytics instantly.'}] },
-    { num:'03', line1:'Newspaper', line2:'Agent Billing Software', tagline:'SMART BILLING. STRONG RELATIONSHIPS.', body:["Billing is one of the most important aspects of the sale of products, and it is imperative for every company to have a proper system to make sure that all activities associated with billing take place smoothly.","We have developed a web and mobile application that assists our clients in carrying out the billing associated with their organization effortlessly. The mobile app is available on both Android and iOS."], features:[{icon:'🧾',title:'Easy Billing',desc:'Generate bills quickly and accurately.'},{icon:'👥',title:'Agent Management',desc:'Manage agents, territories and customers with ease.'},{icon:'📊',title:'Collection Tracking',desc:'Track payments and outstanding in real-time.'},{icon:'📋',title:'Detailed Reports',desc:'Get insights with comprehensive billing reports.'}] },
-    { num:'04', line1:'Educational', line2:'Institution Fees Management', tagline:'SIMPLIFY FEES. EMPOWER EDUCATION.', body:["One of the most time-consuming and tedious processes in an educational institution is the management of fees.","We at Fleming make sure that this process becomes one of the easiest and most hassle-free with our Educational Institution Fees Management App."], features:[{icon:'₹',title:'Online Fee Collection',desc:'Collect fees securely through multiple online modes.'},{icon:'📅',title:'Fee Structure Management',desc:'Create and manage flexible fee structures with ease.'},{icon:'📊',title:'Reports & Analytics',desc:'Generate detailed reports and get real-time insights.'},{icon:'🔔',title:'Reminders & Notifications',desc:'Automated reminders reduce delays and improve collections.'}] },
-    { num:'05', line1:'E-Learning', line2:'Management', tagline:'LEARN ANYTIME. ANYWHERE.', body:["We have developed an e-learning application that helps educational institutions deliver quality education in a digital and interactive manner.","The platform is designed to manage courses, students, lessons, assignments, exams and performance — all in one place."], features:[{icon:'📚',title:'Course Management',desc:'Organize and manage courses, lessons and study materials.'},{icon:'👥',title:'Student Management',desc:'Add and manage students, batches and enrollments with ease.'},{icon:'📝',title:'Assignments & Exams',desc:'Create assignments, quizzes and exams with automated evaluation.'},{icon:'📈',title:'Progress Tracking',desc:'Track student performance and generate insightful reports.'}] },
-    { num:'06', line1:'Attendance', line2:'Management', tagline:'MARK ATTENDANCE. ANYWHERE. ACCURATELY.', body:["We have developed a location-based attendance management mobile app, F track, which allows the employees of a particular organization to mark their attendance in an easy and user-friendly manner.","The mobile app is designed such that employees can only mark their attendance from a specific location, which can be decided by the employer. Available on Android and iOS."], features:[{icon:'📍',title:'Location Based',desc:'Mark attendance only within the employer defined location.'},{icon:'✅',title:'Accurate & Reliable',desc:'Ensure accurate attendance records with real-time sync.'},{icon:'🕐',title:'Real-time Tracking',desc:'Track employee attendance and working hours live.'},{icon:'📊',title:'Reports & Analytics',desc:'Get detailed insights and export reports effortlessly.'}] },
-    { num:'07', line1:'E-Commerce', line2:'Management', tagline:'SELL SMARTER. MANAGE BETTER.', body:["Selling and managing products is one of the most basic needs for the successful operation of an organization.","We provide an e-commerce application that helps our clients sell and manage products in a straightforward and organized manner."], features:[{icon:'🛒',title:'Product Management',desc:'Add, update and manage products with ease.'},{icon:'📦',title:'Order & Inventory Tracking',desc:'Track orders and inventory in real-time seamlessly.'},{icon:'💳',title:'Secure Payments',desc:'Multiple payment gateways for safe transactions.'},{icon:'📈',title:'Sales Analytics',desc:'Get insights into sales performance and grow your business.'}] },
+    { num:'01', line1:'GeoTag', line2:'Attendance System', tagline:'MARK ATTENDANCE. RIGHT WHERE YOU ARE.', body:["Fleming's GeoTag Attendance System is a smart mobile application that enables companies to track and manage employee attendance based on real-time geo-location, ensuring accuracy and eliminating proxy attendance.","Employees can mark attendance only when they are physically within the company's defined geo-boundary. The app also supports leave applications, approvals, attendance history, and comprehensive reporting for management."], features:[{icon:'📍',title:'Geo-Fenced Attendance',desc:'Employees can only mark attendance within the defined company location.'},{icon:'📋',title:'Leave Management',desc:'Simplify leave management with digital leave applications and status tracking.'},{icon:'📊',title:'Attendance History',desc:'View detailed attendance and leave balance history anytime.'},{action:'view-details',label:'View Details',href:'/employee-attendance-and-payroll-software.html#gt-intro'}] },
+    { num:'02', line1:'Fruit Inventory', line2:'Management System', tagline:'MANAGE INVENTORY. MAXIMIZE PROFITS.', body:["Fleming's Fruit Inventory Management System helps fruit wholesalers and distributors efficiently manage inventory, customer orders, billing, and daily operations through a single, easy-to-use platform.","The system also supports crate tracking, delivery route planning, vehicle management, and detailed business reports, helping businesses improve operational efficiency, reduce manual work, and maintain complete control over inventory movement."], features:[{icon:'📦',title:'Stock Management',desc:'Manage fruit inventory with real-time stock updates, purchase entries, and warehouse tracking.'},{icon:'🧾',title:'Sales & Billing',desc:'Generate invoices, manage customer sales, record payments, and simplify the billing process.'},{icon:'🧺',title:'Crate Tracking',desc:'Track crate movement, monitor customer balances, and reduce losses with efficient crate management.'},{action:'view-details',label:'View Details',href:'/fruit-inventory-management-software.html#fd-intro'}] },
+    { num:'03', line1:'Payroll', line2:'Management', tagline:'SIMPLIFY PAYROLL. EMPOWER PEOPLE.', body:["Fleming makes sure that managing the payrolls of the employees of an organisation is a cakewalk, as we have developed a web application that allows organisations to effortlessly take care of the payroll of their employees.","Our application is designed with user-friendly features, providing a seamless experience for payroll processing. With just a few clicks, organizations can efficiently handle all payroll-related tasks, ensuring smooth operations."], features:[{icon:'📄',title:'Accurate Processing',desc:'Ensure precise salary calculations every time.'},{icon:'🛡️',title:'Streamlined Payroll',desc:'Process employee payroll quickly and efficiently.'},{icon:'👥',title:'Employee Management',desc:'Manage employee data, roles and payroll history.'},{action:'view-details',label:'View Details',href:'/payroll-management.html#pr-intro'}] },
+    { num:'04', line1:'Newspaper', line2:'Agent Billing Software', tagline:'SMART BILLING. STRONG RELATIONSHIPS.', body:["Billing is one of the most important aspects of the sale of products, and it is imperative for every company to have a proper system to make sure that all activities associated with billing take place smoothly.","We have developed a web and mobile application that assists our clients in carrying out the billing associated with their organization effortlessly. The mobile app is available on both Android and iOS."], features:[{icon:'🧾',title:'Easy Billing',desc:'Generate bills quickly and accurately.'},{icon:'👥',title:'Agent Management',desc:'Manage agents, territories and customers with ease.'},{icon:'📊',title:'Collection Tracking',desc:'Track payments and outstanding in real-time.'},{action:'view-details',label:'View Details',href:'/newspaper-billing-software.html#nw-intro'}] },
+    { num:'05', line1:'Educational', line2:'Institution Fees Management', tagline:'SIMPLIFY FEES. EMPOWER EDUCATION.', body:["One of the most time-consuming and tedious processes in an educational institution is the management of fees.","We at Fleming make sure that this process becomes one of the easiest and most hassle-free with our Educational Institution Fees Management App."], features:[{icon:'₹',title:'Online Fee Collection',desc:'Collect fees securely through multiple online modes.'},{icon:'📅',title:'Fee Structure Management',desc:'Create and manage flexible fee structures with ease.'},{icon:'📊',title:'Reports & Analytics',desc:'Generate detailed reports and get real-time insights.'},{action:'view-details',label:'View Details',href:'/educational-institution-management.html#ee-intro'}] },
+    { num:'06', line1:'E-Learning', line2:'Management', tagline:'LEARN ANYTIME. ANYWHERE.', body:["We have developed an e-learning application that helps educational institutions deliver quality education in a digital and interactive manner.","The platform is designed to manage courses, students, lessons, assignments, exams and performance — all in one place."], features:[{icon:'📚',title:'Course Management',desc:'Organize and manage courses, lessons and study materials.'},{icon:'👥',title:'Student Management',desc:'Add and manage students, batches and enrollments with ease.'},{icon:'📝',title:'Assignments & Exams',desc:'Create assignments, quizzes and exams with automated evaluation.'},{action:'view-details',label:'View Details',href:'/e-learning-management.html#el-intro'}] },
+    { num:'07', line1:'E-Commerce', line2:'Management', tagline:'SELL SMARTER. MANAGE BETTER.', body:["Selling and managing products is one of the most basic needs for the successful operation of an organization.","We provide an e-commerce application that helps our clients sell and manage products in a straightforward and organized manner."], features:[{icon:'🛒',title:'Product Management',desc:'Add, update and manage products with ease.'},{icon:'📦',title:'Order & Inventory Tracking',desc:'Track orders and inventory in real-time seamlessly.'},{icon:'💳',title:'Secure Payments',desc:'Multiple payment gateways for safe transactions.'},{action:'view-details',label:'View Details',href:'/ecommerce-management.html#ec-intro'}] },
   ];
 
-  var imgMap = [7, 1, 2, 3, 6, 5, 4];
+  var imgMap = [7, 8, 1, 2, 3, 6, 4];
   var total  = MOBILE_PRODUCTS.length;
 
   var track    = document.getElementById('psSliderTrack');
@@ -1581,6 +1671,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var featsHtml = '';
     p.features.forEach(function (f) {
+      if (f.action) {
+        var btnHtml = f.href
+          ? '<a href="' + f.href + '" class="ps-feat-btn">' + f.label + '</a>'
+          : '<button type="button" class="ps-feat-btn">' + f.label + '</button>';
+        featsHtml +=
+          '<div class="ps-c-feat ps-c-feat-action">' + btnHtml + '</div>';
+        return;
+      }
       featsHtml +=
         '<div class="ps-c-feat">' +
           '<div class="ps-c-feat-icon">' + f.icon + '</div>' +
@@ -1796,7 +1894,7 @@ document.addEventListener('DOMContentLoaded', function() {
   tapInternal('.hero-cta-btn--primary', 'hero-primary-tapped');
   tapInternal('.hero-cta-btn--outline', 'hero-outline-tapped');
   tapInternal('.cta-brush-link', 'cta-brush-link-tapped');
-  tapInternal('.footer-links a', 'footer-link-tapped');
+  tapInternal('.footer-links a:not([target="_blank"])', 'footer-link-tapped');
   tapInternal('.rnd-cta-btn', 'rnd-cta-btn-tapped');
   tapInternal('.sds-btn', 'sds-btn-tapped');
   tapInternal('.ict-btn-primary', 'ict-primary-tapped');
@@ -1841,6 +1939,40 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 })();
+</script>
+<script>
+const siteNav = document.getElementById('siteNav');
+let lastScrollY = window.scrollY;
+
+function getHeroBottom() {
+  const hero = document.getElementById('parallaxHero');
+  return hero ? hero.offsetTop + hero.offsetHeight : window.innerHeight;
+}
+
+window.addEventListener('scroll', () => {
+  const currentY    = window.scrollY;
+  const scrollingUp = currentY < lastScrollY;
+  const heroBottom  = getHeroBottom();
+  const inHeroZone  = currentY < heroBottom;
+
+  if (inHeroZone) {
+    siteNav.classList.remove('nav-sticky', 'nav-hidden', 'nav-visible');
+    siteNav.classList.add('nav-hero');
+  } else {
+    siteNav.classList.remove('nav-hero');
+    if (scrollingUp) {
+      siteNav.classList.add('nav-sticky');
+      siteNav.classList.remove('nav-hidden');
+      siteNav.classList.add('nav-visible');
+    } else {
+      siteNav.classList.remove('nav-visible');
+      siteNav.classList.add('nav-sticky', 'nav-hidden');
+    }
+  }
+  lastScrollY = currentY;
+}, { passive: true });
+
+siteNav.classList.add('nav-hero');
 </script>
 </body>
 </html>

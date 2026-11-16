@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Payroll Management Software | Fleming Embedded & Software Solutions</title>
+<meta name="description" content="Payroll management software by Fleming: salary structures, automated monthly payroll, preview and finalisation, PDF payslips, multi-branch payroll and reports, on web and mobile." />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#0b5fa5" />
+<link rel="canonical" href="https://www.fleming.co.in/payroll-management-software" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Caveat:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+<link rel="icon" type="image/png" href="assets/images/logoembeddedandsoftware.webp" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/split-type"></script>
+<style>
+.page-payroll .about-bg{background-image:url('/assets/images/product_desktop.webp');background-size:auto 100%;background-position:center bottom}
+@media(max-width:767px){.page-payroll .about-bg{background-size:cover;background-image:url('/assets/images/product_mobile.webp')}}
+.pr{--ink:#0c1a2e;--blue:#1a56db;--deep:#0b3d91;--mint:#12b76a;--amber:#f59e0b;--mist:#eef4ff;--line:#dde7f5;--tx:#2b3f5c;--mu:#64788f;--sh:0 24px 60px rgba(12,26,46,.14);font-family:'Poppins',sans-serif;color:var(--tx);background:#fff;overflow-x:clip}
+.pr *,.pr *::before,.pr *::after{box-sizing:border-box}
+.pr h2,.pr h3,.pr h4,.pr p,.pr ul{margin:0;padding:0}.pr ul{list-style:none}.pr button,.pr select{font-family:inherit}
+.pr-w{max-width:1200px;margin:0 auto;padding:0 32px}.pr-s{padding:100px 0}
+.pr-dark{background:var(--ink);color:#b9c8dc}.pr-soft{background:#f6f9ff}
+.pr-h{font-weight:500;font-size:clamp(26px,3.4vw,38px);line-height:1.15;letter-spacing:-1.2px;text-transform:uppercase;color:var(--ink);word-break:keep-all}
+.pr-h em{font-style:normal;color:var(--blue)}.pr-dark .pr-h{color:#fff}.pr-dark .pr-h em{color:#7fb0ff}
+.pr-h .char{display:inline!important;white-space:normal!important}.pr-h .word{display:inline!important;white-space:nowrap!important}
+.pr-lead{font-size:16px;line-height:1.75;color:#6b7280;max-width:58ch;margin-top:18px}.pr-dark .pr-lead{color:#93a9c4}
+.pr-btn{display:inline-flex;align-items:center;gap:10px;background:var(--blue);color:#fff;text-decoration:none;font-weight:500;font-size:15px;padding:15px 30px;border-radius:100px;border:2px solid var(--blue);cursor:pointer;transition:.25s}
+.pr-btn:hover{background:var(--deep);border-color:var(--deep);transform:translateY(-2px)}
+.pr-btn.o{background:#fff;color:var(--blue);border-color:var(--line)}.pr-btn.o:hover{background:var(--mist);border-color:var(--blue)}
+.pr-btn.m{background:var(--mint);border-color:var(--mint);color:#04281a}.pr-btn.m:hover{background:#2bd182;border-color:#2bd182}
+.pr-btn.g{background:transparent;border-color:rgba(255,255,255,.35)}.pr-btn.g:hover{background:rgba(255,255,255,.12)}
+.pr-btn:disabled{opacity:.45;pointer-events:none}
+.pr button:focus-visible,.pr a:focus-visible,.pr select:focus-visible,.pr input:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.pr-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.pr-img{display:block;max-width:100%}
+.pr-split{display:grid;grid-template-columns:1fr 1.05fr;gap:72px;align-items:center}
+.pr-tick li{display:flex;gap:10px;font-size:15px;line-height:1.55;margin-top:12px}.pr-tick li::before{content:'✓';color:var(--mint);font-weight:700}
+
+/* hero */
+.pr-hero{padding:96px 0 104px;background:#f6f9ff url('/assets/images/payrollbg.png') center/cover}
+.pr-hero>.pr-w>div{max-width:640px}.pr-hero .pr-h{font-size:clamp(28px,3.6vw,40px)}.pr-hero .pr-lead{padding-right:40px;text-align:justify}.pr-hero-mobile-img{display:none}
+.pr-pname{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:var(--blue);margin-bottom:22px}
+.pr-pname span{width:36px;height:36px;border-radius:11px;background:var(--blue);display:grid;place-items:center;font-size:18px;box-shadow:0 8px 20px rgba(26,86,219,.35)}
+.pr-pills{display:grid;grid-template-columns:1fr 1fr;gap:10px 26px;margin-top:30px}.pr-pills li{display:flex;gap:8px;font-size:14px;font-weight:500;color:var(--ink)}.pr-pills li::before{content:'✓';color:var(--mint);font-weight:700}
+
+/* 1 structure calculator */
+.pr-calc{background:#fff;border:1px solid var(--line);border-radius:26px;box-shadow:var(--sh);padding:30px}
+.pr-calc h3{font-weight:600;font-size:17px;color:var(--ink);display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+.pr-tag{font-size:11px;font-weight:600;padding:4px 11px;border-radius:100px;background:var(--mist);color:var(--blue)}
+.pr-basic{display:flex;justify-content:space-between;font-size:14px;color:var(--ink);font-weight:500}.pr-basic b{font-family:'Archivo',sans-serif;font-weight:900;font-size:22px}
+.pr-calc input[type=range]{width:100%;margin:12px 0 22px;accent-color:var(--blue);height:6px}
+.pr-cg{display:grid;grid-template-columns:1fr 1fr;gap:22px}.pr-cg h4{font-size:12px;font-weight:600;color:var(--mu);margin-bottom:10px}
+.pr-chip{display:flex;justify-content:space-between;width:100%;margin-bottom:8px;padding:11px 14px;border-radius:12px;border:1px solid var(--line);background:#fff;font-size:13px;color:var(--ink);cursor:pointer;transition:.2s}
+.pr-chip small{color:var(--mu)}.pr-chip[aria-pressed=true]{background:var(--mist);border-color:var(--blue)}.pr-chip.d[aria-pressed=true]{background:#fff4e0;border-color:var(--amber)}
+.pr-net{margin-top:16px;border-radius:18px;background:var(--ink);color:#fff;padding:20px 22px}
+.pr-net div{display:flex;justify-content:space-between;align-items:baseline}.pr-net small{color:#93a9c4;font-size:12px}.pr-net strong{font-family:'Archivo',sans-serif;font-weight:900;font-size:34px}
+.pr-bar{display:flex;height:10px;border-radius:10px;overflow:hidden;margin-top:12px;background:#22344f}.pr-bar i{display:block;transition:width .5s}.pr-bar .a{background:var(--mint)}.pr-bar .b{background:var(--amber)}
+
+/* 2 run console */
+.pr-steps{display:flex;gap:8px;flex-wrap:wrap;margin:36px 0 22px}
+.pr-st{font-size:13px;font-weight:500;padding:9px 18px;border-radius:100px;border:1px solid rgba(255,255,255,.2);color:#93a9c4;transition:.35s}
+.pr-st.on{background:var(--blue);border-color:var(--blue);color:#fff}.pr-st.done{border-color:var(--mint);color:var(--mint)}
+.pr-con{background:#fff;color:var(--ink);border-radius:24px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.pr-con-h{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding:18px 24px;border-bottom:1px solid var(--line)}
+.pr-con-h b{font-weight:600;font-size:16px}.pr-con-h span{display:block;font-weight:400;font-size:12px;color:var(--mu)}
+.pr-con-h .pr-btn{padding:11px 22px;font-size:14px}
+.pr-tw{overflow-x:auto}.pr-tb{width:100%;min-width:640px;border-collapse:collapse;font-size:13.5px}
+.pr-tb th{text-align:left;font-weight:500;font-size:12px;color:var(--mu);background:#f6f9ff;padding:13px 20px}.pr-tb td{padding:15px 20px;border-top:1px solid var(--line)}
+.pr-tb th:nth-child(n+3),.pr-tb td:nth-child(n+3){text-align:right}.pr-tb td small{display:block;color:var(--mu);font-size:11.5px}
+.pr-tb .net{font-family:'Archivo',sans-serif;font-weight:900;font-size:16px;min-width:90px}
+.pr-bd{display:inline-block;font-size:11px;font-weight:600;padding:4px 11px;border-radius:100px;background:#eef1f6;color:var(--mu);border:0}
+.pr-bd.c{background:var(--mist);color:var(--blue)}.pr-bd.p{background:#fff4e0;color:#9a6208;cursor:pointer}.pr-bd.k{background:#dcfce7;color:#15803d}
+.pr-con-f{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:16px 24px;background:#f6f9ff;border-top:1px solid var(--line);font-size:13px;color:var(--mu)}.pr-con-f b{color:var(--ink)}
+.pr-lock{display:none;margin:0;padding:12px 24px;background:#dcfce7;color:#14532d;font-size:13px;font-weight:500}.pr-lock.on{display:block}
+.pr-hint{margin-top:14px;font-size:13px;color:#7f97b4}
+
+/* 3 payslip */
+.pr-slipwrap{position:relative;perspective:1000px}
+.pr-slipwrap>img{width:100%;height:520px;object-fit:cover;border-radius:28px;box-shadow:var(--sh)}
+.pr-slip{position:absolute;right:-30px;bottom:-30px;width:330px;background:#fff;border-radius:20px;border:1px solid var(--line);box-shadow:0 30px 70px rgba(12,26,46,.28);overflow:hidden;transition:transform .2s ease-out;transform-style:preserve-3d}
+.pr-slip-h{background:var(--deep);color:#fff;padding:15px 20px;display:flex;justify-content:space-between;font-size:13px}.pr-slip-h b{font-weight:600}
+.pr-slip dl{margin:0;padding:6px 20px 0}.pr-slip dl div{display:flex;justify-content:space-between;font-size:13px;padding:9px 0;border-bottom:1px dashed var(--line)}.pr-slip dt{color:var(--tx)}.pr-slip dd{margin:0;font-weight:600;color:var(--ink)}
+.pr-slip-n{display:flex;justify-content:space-between;align-items:center;margin:14px 20px;background:var(--mist);border-radius:12px;padding:12px 14px;font-size:13px}.pr-slip-n b{font-family:'Archivo',sans-serif;font-weight:900;font-size:22px;color:var(--deep)}
+.pr-dl{display:block;width:calc(100% - 40px);margin:0 20px 20px;padding:12px;border:0;border-radius:12px;background:var(--blue);color:#fff;font-weight:600;font-size:13.5px;cursor:pointer;transition:background .3s}.pr-dl.ok{background:var(--mint);color:#04281a}
+.pr-dev{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}.pr-dev span{font-size:13px;font-weight:600;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 16px}
+
+/* 4 branches */
+.pr-br{background:#fff;border:1px solid var(--line);border-radius:26px;box-shadow:var(--sh);padding:30px}
+.pr-br-h{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:24px}.pr-br-h h3{font-weight:600;font-size:17px;color:var(--ink)}
+.pr-sel{border:1px solid var(--line);border-radius:100px;padding:10px 18px;font-size:14px;font-weight:500;color:var(--ink);background:#f6f9ff;cursor:pointer}
+.pr-kp{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:28px}.pr-kp div{border:1px solid var(--line);border-radius:16px;padding:16px;background:#f6f9ff}
+.pr-kp small{display:block;font-size:12px;color:var(--mu)}.pr-kp b{font-family:'Archivo',sans-serif;font-weight:900;font-size:24px;color:var(--ink)}
+.pr-cols{display:flex;align-items:flex-end;gap:14px;height:190px;border-bottom:2px solid var(--line);padding:0 4px;margin-bottom:34px}
+.pr-col{flex:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;position:relative}
+.pr-col i{display:block;width:100%;max-width:54px;border-radius:10px 10px 0 0;background:linear-gradient(var(--blue),var(--deep));height:var(--h);transition:height .7s cubic-bezier(.2,.7,.2,1)}
+.pr-col:last-child i{background:linear-gradient(#34d399,var(--mint))}.pr-col span{position:absolute;bottom:-26px;font-size:12px;color:var(--mu)}
+
+/* 5 hover index */
+.pr-idx{display:grid;grid-template-columns:1.25fr .75fr;gap:64px;align-items:start}
+.pr-rows{border-top:1px solid var(--line)}
+.pr-r{display:block;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line);padding:20px 4px;cursor:pointer}
+.pr-r strong{display:block;font-weight:500;font-size:clamp(17px,1.8vw,21px);letter-spacing:-.4px;color:#9fb0c6;transition:color .3s,transform .3s}
+.pr-r p{max-height:0;overflow:hidden;opacity:0;font-size:15px;line-height:1.7;color:var(--mu);max-width:56ch;transition:max-height .45s ease,opacity .4s,margin .3s}
+.pr-r.on strong{color:var(--ink);transform:translateX(10px)}.pr-r.on p{max-height:120px;opacity:1;margin-top:8px}
+/* 5 capability visuals */
+.pr-pv{position:sticky;top:90px}
+.pr-vis{position:relative;height:540px;background:#fff;border:1px solid var(--line);border-radius:26px;box-shadow:var(--sh);overflow:hidden}
+.pr-sc{position:absolute;inset:0;padding:28px;opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity .35s,transform .35s,visibility .35s}
+.pr-sc.on{opacity:1;visibility:visible;transform:none}
+.pr-sc h3{font-weight:600;font-size:17px;color:var(--ink);display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+.pr-sc .an{opacity:0}
+.pr-sc.on .an{animation:prIn .5s forwards;animation-delay:calc(var(--i,0)*.08s + .1s)}
+@keyframes prIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.vr{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;margin-bottom:9px;border:1px solid var(--line);border-radius:12px;font-size:13px;color:var(--ink);background:#fff}
+.vr small{display:block;color:var(--mu);font-size:11.5px}.vr b{font-family:'Archivo',sans-serif;font-weight:900}
+.vx{display:flex;align-items:center;gap:12px}
+.vl{display:flex;justify-content:space-between;font-size:13px;color:var(--ink);margin-bottom:6px}.vl b{font-family:'Archivo',sans-serif;font-weight:900}
+.vt{font-size:12px;font-weight:600;color:var(--mu);margin:4px 0 12px}
+.vn{font-size:12.5px;color:var(--mu);margin-top:14px;line-height:1.6}
+.tg{display:block;width:34px;height:20px;border-radius:20px;background:#cfd9e8;position:relative;flex-shrink:0}
+.tg::after{content:'';position:absolute;top:3px;left:3px;width:14px;height:14px;border-radius:50%;background:#fff;transition:.3s}
+.tg.y{background:var(--mint)}.tg.y::after{left:17px}
+.av{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--mist);color:var(--blue);font:600 12px 'Poppins',sans-serif;flex-shrink:0}
+.pb{height:10px;border-radius:10px;background:#e8eef8;overflow:hidden}
+.pb i{display:block;height:100%;width:0;border-radius:10px;background:var(--blue);transition:width .9s .3s}
+.pb i.m{background:var(--mint)}.pb i.a{background:var(--amber)}
+.pr-sc.on .pb i{width:var(--w)}
+.vc{display:flex;align-items:flex-end;gap:12px;height:170px;border-bottom:2px solid var(--line);margin-top:6px}
+.vc i{flex:1;height:0;border-radius:8px 8px 0 0;background:linear-gradient(var(--blue),var(--deep));transition:height .8s .2s}
+.vc i:last-child{background:linear-gradient(#34d399,var(--mint))}
+.pr-sc.on .vc i{height:var(--h)}
+.ring{stroke-dasharray:264;stroke-dashoffset:264;transition:stroke-dashoffset 1.1s .2s}
+.pr-sc.on .ring{stroke-dashoffset:0}
+.mx{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:8px;align-items:center;font-size:12.5px;color:var(--ink);padding:10px 0;border-bottom:1px dashed var(--line)}
+.mx.hd{font-size:11.5px;font-weight:600;color:var(--mu)}
+.mx span:nth-child(n+2){text-align:center;font-weight:700;color:var(--mint)}.mx span.no{color:#c3cedd}
+.fl{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:16px;font-size:12.5px;font-weight:500;color:var(--ink)}
+.fl b{padding:8px 14px;border-radius:100px;background:var(--mist);color:var(--blue);font-weight:600}.fl b:last-child{background:#dcfce7;color:#15803d}
+.pr-sc .pr-kp{margin-bottom:20px}.pr-sc .pr-kp b{font-size:18px}
+@media(prefers-reduced-motion:reduce){.pr-sc .an{opacity:1;animation:none!important}}
+
+/* 6 benefits */
+.pr-ben{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:start}.pr-ben-t{position:sticky;top:110px}
+.pr-bl{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(255,255,255,.16)}
+.pr-bl li{padding:24px 22px 24px 0;border-bottom:1px solid rgba(255,255,255,.16);color:#fff;font-weight:500;font-size:16px;line-height:1.45;display:flex;gap:12px;transition:color .3s}
+.pr-bl li:nth-child(even){padding-left:22px;border-left:1px solid rgba(255,255,255,.16)}.pr-bl li::before{content:'✓';flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-size:12px;font-weight:700}
+.pr-bl li:hover{color:#7fe0b2}
+
+/* close */
+.pr-close{position:relative;overflow:hidden;border-radius:28px;padding:68px 60px;display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center;background:linear-gradient(105deg,rgba(12,26,46,.96) 35%,rgba(12,26,46,.72))}
+.pr-close::before{content:'';position:absolute;right:-110px;top:-110px;width:400px;height:400px;border-radius:50%;border:2px dashed rgba(18,183,106,.5)}.pr-close>*{position:relative;z-index:1}
+.pr-ct{display:grid;gap:12px}.pr-ct a{display:block;text-decoration:none;color:#fff;font-weight:500;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:15px 18px;transition:.2s}.pr-ct a:hover{background:rgba(255,255,255,.17)}.pr-ct small{display:block;font-weight:400;color:#93a9c4;font-size:11.5px}
+.pr-fg{display:grid;grid-template-columns:1fr 1.6fr;gap:72px;align-items:start}
+.pr-eye{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue);margin-bottom:16px}.pr-eye::before{content:'';width:22px;height:2px;background:var(--mint)}.pr-dark .pr-eye{color:#7fb0ff}
+.pr details{border-top:1px solid var(--line)}.pr details:last-child{border-bottom:1px solid var(--line)}
+.pr summary{list-style:none;cursor:pointer;display:flex;align-items:center;padding:20px 4px;font-weight:700;font-size:16.5px;color:var(--ink)}
+.pr summary::-webkit-details-marker{display:none}.pr summary::after{content:'+';margin-left:auto;font-size:26px;font-weight:400;color:var(--blue);transition:.25s}
+.pr details[open] summary::after{transform:rotate(45deg)}.pr details p{padding:0 4px 22px;font-size:14.5px;line-height:1.75;color:var(--mu);max-width:62ch}
+.pr summary:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+@media(max-width:1000px){.pr-split,.pr-idx,.pr-ben,.pr-close,.pr-fg{grid-template-columns:1fr;gap:46px}.pr-pv,.pr-ben-t{position:static}.pr-pv{display:none}.pr-r p{max-height:none;opacity:1;margin-top:6px}.pr-r strong{color:var(--ink)}.pr-slip{right:14px}}
+@media(max-width:700px){.pr-s{padding:70px 0}.pr-w{padding:0 24px}.pr-hero{padding:64px 0 72px;background-image:url('/assets/images/productmobilebg.png')}.pr-hero-mobile-img{display:block;width:100%;max-width:640px;height:auto;margin-top:30px}.pr-hero .pr-lead{padding-right:0}.pr-row .pr-btn{width:100%;justify-content:center}
+.pr-cg,.pr-kp,.pr-bl{grid-template-columns:1fr}.pr-bl li:nth-child(even){padding-left:0;border-left:0}.pr-slipwrap>img{height:380px}.pr-slip{left:14px;right:14px;width:auto}.pr-close{padding:44px 24px;border-radius:22px}.pr-calc,.pr-br{padding:22px}}
+@media(prefers-reduced-motion:reduce){.pr *{transition:none!important}}
+
+/* ═══════════ MOBILE FIXES (phones only) ═══════════ */
+.pr-car { display: none; }
+
+@media (max-width: 700px) {
+
+  /* spacing + type */
+  .pr-w { padding: 0 20px; }
+  .pr-s { padding: 56px 0; }
+  .pr-h { font-size: 24px; letter-spacing: -.6px; }
+  .pr-hero .pr-h { font-size: 27px; }
+  .pr-lead { font-size: 15px; margin-top: 14px; }
+  .pr-eye { font-size: 11px; margin-bottom: 12px; }
+  .pr-btn { padding: 14px 24px; font-size: 14px; }
+  .pr-row { margin-top: 26px; }
+  .pr-split { gap: 32px; }
+  .pr-tick li { font-size: 14px; margin-top: 10px; }
+
+  /* hero */
+  .pr-pname { font-size: 16px; margin-bottom: 16px; }
+  .pr-pills { grid-template-columns: 1fr; gap: 10px; margin-top: 22px; }
+
+  /* 1 · Salary builder */
+  .pr-calc { padding: 18px; border-radius: 20px; }
+  .pr-calc h3 { font-size: 15px; margin-bottom: 16px; }
+  .pr-basic b { font-size: 20px; }
+  .pr-cg { gap: 16px; }
+  .pr-chip { padding: 10px 12px; font-size: 12.5px; }
+  .pr-net { padding: 16px; border-radius: 14px; }
+  .pr-net strong { font-size: 28px; }
+
+  /* 2 · Payroll run: table fits the screen (Deductions column hidden) */
+  .pr-steps { margin: 26px 0 16px; gap: 6px; }
+  .pr-st { font-size: 12px; padding: 7px 13px; }
+  .pr-con { border-radius: 18px; }
+  .pr-con-h { padding: 14px 16px; }
+  .pr-con-h .pr-btn { width: 100%; justify-content: center; }
+  .pr-tb { min-width: 0; }
+  .pr-tb th, .pr-tb td { padding: 11px 10px; font-size: 12px; }
+  .pr-tb th:nth-child(4), .pr-tb td:nth-child(4) { display: none; }
+  .pr-tb td:nth-child(2) { white-space: nowrap; }
+  .pr-tb .net { min-width: 0; font-size: 14px; }
+  .pr-bd { font-size: 10.5px; padding: 3px 8px; }
+  .pr-con-f { padding: 12px 16px; font-size: 12px; }
+  .pr-lock { padding: 10px 16px; font-size: 12px; }
+  .pr-hint { font-size: 12px; }
+
+  /* 3 · Payslip: image → heading → payslip card → content (card no longer sits over the photo) */
+  .pr-split-slip { display: flex; flex-direction: column; gap: 0; align-items: stretch; }
+  .pr-split-slip > div { display: contents; }
+  .pr-split-slip .pr-img { order: 1; }
+  .pr-split-slip .pr-eye { order: 2; margin-top: 26px; }
+  .pr-split-slip .pr-h { order: 3; }
+  .pr-split-slip .pr-slip { order: 4; position: static; width: 100%; margin-top: 20px; }
+  .pr-split-slip .pr-lead { order: 5; margin-top: 22px; }
+  .pr-split-slip .pr-tick { order: 6; margin-top: 16px; }
+  .pr-split-slip .pr-dev { order: 7; }
+  .pr-slipwrap { margin-bottom: 0; }
+  .pr-slipwrap > img { height: 340px; border-radius: 20px; }
+  .pr-slip-n b { font-size: 20px; }
+  .pr-dev { gap: 8px; margin-top: 22px; }
+  .pr-dev span { font-size: 12px; padding: 8px 12px; }
+
+  /* 4 · Branches */
+  .pr-br { padding: 18px; border-radius: 20px; }
+  .pr-br-h { margin-bottom: 18px; }
+  .pr-br-h h3 { font-size: 15px; }
+  .pr-sel { padding: 9px 14px; font-size: 13px; }
+  .pr-br .pr-kp { grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 24px; }
+  .pr-br .pr-kp div { padding: 10px; border-radius: 12px; }
+  .pr-br .pr-kp small { font-size: 10.5px; }
+  .pr-br .pr-kp b { font-size: 16px; }
+  .pr-cols { height: 150px; gap: 8px; margin-bottom: 30px; }
+  .pr-col i { max-width: 36px; }
+
+  /* 5 · Capabilities: hide the desktop list, show the carousel */
+  .pr-idx { margin-top: 28px !important; grid-template-columns: minmax(0, 1fr); }
+  .pr-car { min-width: 0; width: 100%; max-width: 100%; }
+  .pr-idx.is-car > .pr-rows { display: none; }
+  .pr-idx.is-car .pr-car { display: block; }
+
+  .pr-car-vp { overflow: hidden; touch-action: pan-y; width: 100%; min-width: 0; }
+  .pr-car-tr { display: flex; transition: transform .55s cubic-bezier(.4, 0, .2, 1); }
+  .pr-car-sl { flex: 0 0 100%; width: 100%; min-width: 0; max-width: 100%; padding-bottom: 14px; overflow-wrap: anywhere; }
+  .pr-car-n { font-size: 12px; font-weight: 600; color: var(--blue); letter-spacing: .5px; }
+  .pr-car-t { font-weight: 500; font-size: 20px; line-height: 1.2; letter-spacing: -.3px; color: var(--ink); margin: 6px 0 8px; }
+  .pr-car-d { font-size: 14px; line-height: 1.65; color: var(--mu); margin-bottom: 18px; }
+
+  /* the design card: natural height, so nothing is clipped */
+  .pr-car-v { background: #fff; border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 10px 28px rgba(12,26,46,.1); overflow: hidden; }
+  .pr-car .pr-sc { position: relative; inset: auto; padding: 16px; }
+  .pr-car .pr-sc h3 { font-size: 14px; margin-bottom: 14px; }
+  .pr-car .vr { padding: 9px 10px; margin-bottom: 7px; font-size: 12px; gap: 8px; }
+  .pr-car .vr > span:first-child { min-width: 0; }
+  .pr-car .vr small { font-size: 10.5px; }
+  .pr-car .vl { font-size: 12px; }
+  .pr-car .vt { font-size: 11px; margin: 2px 0 8px; }
+  .pr-car .vn { font-size: 11.5px; margin-top: 10px; }
+  .pr-car .fl { font-size: 11.5px; gap: 6px; margin-top: 12px; }
+  .pr-car .fl b { padding: 6px 10px; }
+  .pr-car .vc { height: 110px; gap: 8px; }
+  .pr-car .mx { font-size: 11px; gap: 4px; padding: 8px 0; }
+  .pr-car .pr-kp { grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 14px; }
+  .pr-car .pr-kp div { padding: 9px; border-radius: 12px; }
+  .pr-car .pr-kp small { font-size: 10px; }
+  .pr-car .pr-kp b { font-size: 13px; }
+  .pr-car .pr-sc svg { max-width: 100%; height: auto; }
+  .pr-car .pr-slip-h { padding: 12px 14px; font-size: 12px; }
+  .pr-car .pr-slip-n { margin: 10px 14px 14px; padding: 10px 12px; }
+  .pr-car .pr-slip-n b { font-size: 18px; }
+
+  .pr-car-dots { display: flex; justify-content: center; gap: 6px; margin-top: 14px; }
+  .pr-car-dot { position: relative; width: 7px; height: 7px; padding: 0; border: 0; border-radius: 7px; background: #cfd9e8; cursor: pointer; transition: width .3s, background .3s; }
+  .pr-car-dot::after { content: ''; position: absolute; inset: -10px -3px; }
+  .pr-car-dot.on { width: 22px; background: var(--blue); }
+
+  /* 6 · Benefits */
+  .pr-ben { gap: 28px; }
+  .pr-bl li { padding: 16px 0; font-size: 15px; }
+
+  /* FAQ */
+  .pr-fg { gap: 32px; }
+  .pr summary { font-size: 15px; padding: 16px 2px; gap: 12px; }
+  .pr details p { font-size: 14px; padding: 0 2px 18px; }
+
+  /* Closing panel */
+  .pr-close { padding: 36px 20px; gap: 30px; border-radius: 20px; }
+  .pr-close::before { width: 260px; height: 260px; right: -100px; top: -100px; }
+  .pr-ct a { padding: 13px 14px; font-size: 14px; overflow-wrap: anywhere; }
+}
+
+/* very small phones */
+@media (max-width: 380px) {
+  .pr-h { font-size: 22px; }
+  .pr-hero .pr-h { font-size: 24px; }
+  .pr-br .pr-kp b { font-size: 14px; }
+  .pr-car-t { font-size: 18px; }
+}
+</style>
+</head>
+<body class="page-payroll">
+
+<div class="site-preloader-overlay" id="loadingScreen">
+  <div class="loader-wrapper-master">
+    <div class="circle r-6-outer"></div>
+    <div class="circle r-7-outer"></div>
+    <div class="circle r-4-outer"></div>
+    <div class="circle r-5-outer"></div>
+    <div class="loader-wrapper">
+      <div class="circle r-z"></div>
+      <div class="circle r-y"></div>
+      <div class="circle r-x"></div>
+      <div class="logo-placeholder" id="logoPlaceholder">F</div>
+      <img src="assets/images/logo1.webp" class="logo" id="loaderLogo" alt="f" style="display:none;" />
+    </div>
+  </div>
+  <script>
+    document.body.style.overflow = 'hidden';
+    var loaderImg = document.getElementById('loaderLogo');
+    var placeholder = document.getElementById('logoPlaceholder');
+    function showLogo() {
+      if (placeholder) placeholder.style.display = 'none';
+      if (loaderImg) loaderImg.style.display = 'block';
+    }
+    if (loaderImg) {
+      if (loaderImg.complete && loaderImg.naturalWidth > 0) {
+        showLogo();
+      } else {
+        loaderImg.addEventListener('load', showLogo);
+        loaderImg.addEventListener('error', function() {
+          if (placeholder) placeholder.style.display = 'flex';
+        });
+      }
+    }
+    window.addEventListener('load', function() {
+      var e = document.getElementById('loadingScreen');
+      if (e) {
+        e.classList.add('loader-hidden');
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
+</div>
+
+<!-- NAV (same as other product pages) -->
+<header class="site-nav" id="siteNav"><div class="nav-container">
+<div class="nav-logo"><a href="/"><img src="assets/images/logoembeddedandsoftware.webp" alt="Fleming Embedded & Software Solutions logo" class="nav-logo-img" /></a></div>
+<nav class="nav-capsule" aria-label="Main navigation"><ul class="nav-links">
+<li class="nav-item"><a href="/">HOME</a></li><li class="nav-item"><a href="/about">ABOUT</a></li><li class="nav-item"><a href="/services">SERVICES</a></li>
+<li class="nav-item active"><a href="/products"><span class="active-dot"></span>Products</a></li>
+<li class="nav-item"><a href="/techno-solutions">Training Division</a></li><li class="nav-item"><a href="/contact">Contact</a></li>
+<li class="nav-item"><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank" rel="noopener noreferrer">Blog</a></li></ul></nav>
+<button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button></div></header>
+<div class="mobile-menu-overlay" id="mobileMenuOverlay"><button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+<ul class="mobile-nav-links"><li class="nav-item"><a href="/">HOME</a></li><li class="nav-item"><a href="/about">ABOUT</a></li><li class="nav-item"><a href="/services">SERVICES</a></li>
+<li class="nav-item active"><a href="/products"><span class="active-dot"></span>Products</a></li><li class="nav-item"><a href="/techno-solutions">Training Division</a></li>
+<li class="nav-item"><a href="/contact">Contact</a></li><li class="nav-item"><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank" rel="noopener noreferrer">Blog</a></li></ul></div>
+
+<section class="about-bg" id="parallaxHero" aria-labelledby="products-hero-heading"><div class="about-overlay"></div>
+<div class="about-content"><h1 id="products-hero-heading">PRODUCTS</h1>
+<p class="about-breadcrumbs"><a href="/">HOME</a><span class="dot">•</span><a href="/products">PRODUCTS</a><span class="dot">•</span><span class="active-page">PAYROLL</span></p></div></section>
+
+<main class="pr">
+
+<!-- HERO -->
+<section class="pr-hero" id="pr-intro"><div class="pr-w"><div>
+<p class="pr-pname"><span>💼</span>Payroll Management System</p>
+<h2 class="pr-h">Simplify payroll.<br><em>Empower your workforce.</em></h2>
+<p class="pr-lead">A centralised platform for salary structures, monthly payroll, payslips and payment records across every branch, with web and mobile applications for administrators, accountants and employees.</p>
+<ul class="pr-pills"><li>Preview before you finalise</li><li>PDF payslips on mobile</li><li>Multi-branch payroll</li><li>Role-based approvals</li></ul>
+<div class="pr-row"><a href="https://wa.me/919745205252?text=I%20would%20like%20to%20request%20a%20demonstration%20of%20the%20Payroll%20Management%20System.%20Please%20share%20a%20convenient%20time." class="pr-btn">Request a demonstration →</a><a href="#pr-build" class="pr-btn o">Try the salary builder</a></div>
+</div>
+<img class="pr-hero-mobile-img" src="assets/images/payrollmobilebg.png" alt="Payroll dashboard on mobile" loading="lazy" />
+</div></section>
+
+<!-- 1 SALARY BUILDER -->
+<section class="pr-s" id="pr-build"><div class="pr-w pr-split">
+<div>
+<p class="pr-eye">Salary structures</p>
+<h2 class="pr-h">Design pay once. <em>Reuse it for everyone.</em></h2>
+<p class="pr-lead" style="text-align:justify">Define basic salary, allowances, incentives, bonuses and deductions for each designation, then assign the structure to employees. When policy changes, update the structure and keep the revision history.</p>
+<ul class="pr-tick"><li>Flexible structures by designation and role</li><li>Employee-wise assignment with salary history</li><li>Allowances, bonuses and deductions you can switch on or off</li></ul>
+<p class="pr-hint" style="color:var(--mu);margin-top:22px">Try it: move the slider and toggle components. Sample figures only.</p>
+</div>
+<div class="pr-calc" id="prCalc">
+<h3>Senior Teacher structure <span class="pr-tag">Sample</span></h3>
+<div class="pr-basic"><span>Basic salary</span><b id="prBasic">₹30,000</b></div>
+<input type="range" id="prRange" min="12000" max="80000" step="1000" value="30000" aria-label="Basic salary" />
+<div class="pr-cg">
+<div><h4>Earnings</h4>
+<button class="pr-chip" data-k="hra" data-p="0.4" aria-pressed="true">House allowance <small>40%</small></button>
+<button class="pr-chip" data-k="ta" data-f="1600" aria-pressed="true">Travel allowance <small>₹1,600</small></button>
+<button class="pr-chip" data-k="inc" data-p="0.05" aria-pressed="false">Incentive <small>5%</small></button>
+<button class="pr-chip" data-k="bon" data-p="0.0833" aria-pressed="false">Bonus <small>8.33%</small></button></div>
+<div><h4>Deductions</h4>
+<button class="pr-chip d" data-k="adv" data-f="2000" aria-pressed="true">Advance recovery <small>₹2,000</small></button>
+<button class="pr-chip d" data-k="lv" data-p="0.02" aria-pressed="false">Leave deduction <small>2%</small></button></div></div>
+<div class="pr-net"><div><small>Net pay per month</small><strong id="prNet">₹0</strong></div>
+<div class="pr-bar"><i class="a" id="prA"></i><i class="b" id="prB"></i></div></div>
+</div></div></section>
+
+<!-- 2 PAYROLL RUN -->
+<section class="pr-s pr-dark" id="pr-run"><div class="pr-w">
+<p class="pr-eye">Monthly payroll</p>
+<h2 class="pr-h">Review every rupee <em>before you finalise.</em></h2>
+<p class="pr-lead" style="text-align:justify">Payroll is calculated from the assigned structures and adjustments, shown in a preview, and locked only after verification. Then track each payment from pending to paid. Run a sample cycle below.</p>
+<div class="pr-steps" id="prSteps"><span class="pr-st on">Process</span><span class="pr-st">Preview</span><span class="pr-st">Finalise</span><span class="pr-st">Pay</span></div>
+<div class="pr-con">
+<div class="pr-con-h"><div><b>November payroll</b><span>Main branch · 5 employees · sample data</span></div><button class="pr-btn" id="prGo">Process payroll</button></div>
+<p class="pr-lock" id="prLock">🔒 Payroll finalised and locked. Salary payments are now being tracked.</p>
+<div class="pr-tw"><table class="pr-tb"><thead><tr><th>Employee</th><th>Status</th><th>Gross</th><th>Deductions</th><th>Net pay</th></tr></thead><tbody id="prRows"></tbody></table></div>
+<div class="pr-con-f"><span>Total net payroll <b id="prTot">₹0</b></span><span>Payments completed <b id="prPaid">0 / 5</b></span></div>
+</div>
+<p class="pr-hint">After finalising, click “Pending” on any row to mark it paid. <a href="#pr-run" id="prReset" style="color:#7fb0ff">Start over</a></p>
+</div></section>
+
+<!-- 3 PAYSLIP -->
+<section class="pr-s"><div class="pr-w pr-split pr-split-slip">
+<div class="pr-slipwrap" id="prTilt">
+<img class="pr-img" src="/assets/images/payrollimage1.png" width="1254" height="1254" alt="Employee checking salary details" loading="lazy" />
+<div class="pr-slip" id="prSlip"><div class="pr-slip-h"><b>Anjana R.</b><span>November payslip</span></div>
+<dl><div><dt>Basic</dt><dd>₹30,000</dd></div><div><dt>Allowances</dt><dd>₹13,600</dd></div><div><dt>Deductions</dt><dd>₹2,000</dd></div></dl>
+<div class="pr-slip-n"><span>Net pay</span><b>₹41,600</b></div><button class="pr-dl" id="prDl">Download PDF payslip</button></div>
+</div>
+<div>
+<p class="pr-eye">Payslips</p>
+<h2 class="pr-h">Payslips employees <em>can open anywhere.</em></h2>
+<p class="pr-lead" style="text-align:justify">Every employee gets a detailed payslip with a clear salary breakdown. Employees view summaries and download PDFs from their phone. Accountants run payroll from the same mobile app when needed.</p>
+<ul class="pr-tick"><li>Detailed breakdown of salary components</li><li>PDF payslips for employees and authorised administrators</li><li>Corrections and extra payments recorded and traceable</li></ul>
+<div class="pr-dev"><span>🌐 Web app</span><span>📱 Mobile app</span><span>📄 PDF payslip</span></div>
+</div></div></section>
+
+<!-- 4 BRANCHES -->
+<section class="pr-s pr-soft" id="pr-branch"><div class="pr-w pr-split">
+<div>
+<p class="pr-eye">Multi-branch payroll</p>
+<h2 class="pr-h">One payroll system. <em>Every branch in view.</em></h2>
+<p class="pr-lead" style="text-align:justify">Keep salary assignments and payroll records organised by branch, and still see the whole organisation in consolidated reports covering salary spend, employee-wise payments, deductions and payroll history.</p>
+<ul class="pr-tick"><li>Branch-specific salary assignments and records</li><li>Payroll summaries and detailed reports</li><li>Spend data that supports financial planning</li></ul>
+</div>
+<div class="pr-br"><div class="pr-br-h"><h3>Payroll spend <span class="pr-tag">Sample</span></h3>
+<select class="pr-sel" id="prSel" aria-label="Branch"><option value="all">All branches</option><option value="kochi">Kochi</option><option value="kozhikode">Kozhikode</option><option value="thrissur">Thrissur</option></select></div>
+<div class="pr-kp"><div><small>This month</small><b id="kA"></b></div><div><small>Employees paid</small><b id="kB"></b></div><div><small>Pending</small><b id="kC"></b></div></div>
+<div class="pr-cols" id="prCols"></div></div>
+</div></section>
+
+<!-- 5 CAPABILITIES INDEX -->
+<section class="pr-s"><div class="pr-w">
+<p class="pr-eye">Everything included</p>
+<h2 class="pr-h" style="max-width:20ch">Eleven capabilities, <em>one platform.</em></h2>
+<div class="pr-idx" style="margin-top:44px">
+<div class="pr-rows" id="prRowsIdx"></div>
+<div class="pr-pv"><div class="pr-vis" id="prVis" aria-hidden="true"></div></div>
+</div></div></section>
+
+<!-- 6 BENEFITS -->
+<section class="pr-s pr-dark"><div class="pr-w pr-ben">
+<div class="pr-ben-t"><p class="pr-eye">Benefits</p><h2 class="pr-h">Less manual work. <em>More certainty.</em></h2><p class="pr-lead" style="text-align:justify">Built for educational institutions and organisations that need payroll to be accurate, organised and easy to audit.</p></div>
+<ul class="pr-bl"><li>Simpler monthly payroll processing</li><li>Less manual calculation and admin work</li><li>Organised employee salary records</li><li>Clear view of payments and expenses</li><li>Role-based access and approvals</li><li>Payslips on web and mobile</li><li>Support for multiple branches</li><li>Reliable payroll history and reports</li></ul>
+</div></section>
+
+<!-- FAQ -->
+<section class="pr-s"><div class="pr-w pr-fg">
+<div><p class="pr-eye">FAQ</p><h2 class="pr-h">Questions <em>we hear most</em></h2><p class="pr-lead">Something not covered? Our team will walk you through it.</p><div class="pr-row"><a href="/contact" class="pr-btn o">Ask our team</a></div></div>
+<div>
+<details open><summary>How is the monthly payroll calculated?</summary><p>Payroll is calculated from each employee's assigned salary structure plus any recorded adjustments. You review the preview, verify the numbers and only then finalise and lock the cycle.</p></details>
+<details><summary>Can I change a salary structure after it is assigned?</summary><p>Yes. Update allowances, deductions or incentives at any time — every revision is kept in history so past payroll stays traceable.</p></details>
+<details><summary>How do employees receive their payslips?</summary><p>Each employee gets a detailed PDF payslip they can open and download from the web or mobile app, with a clear breakdown of earnings and deductions.</p></details>
+<details><summary>Does the system support multiple branches?</summary><p>Yes. Salary assignments and payroll records can be maintained branch-wise, with consolidated reports across the whole organisation.</p></details>
+<details><summary>Who can run payroll and approve changes?</summary><p>Access is role-based. Administrators, accountants and employees each see only what they need — approvals and corrections stay controlled and recorded.</p></details>
+<details><summary>How do I see it working for my organisation?</summary><p>Request a demonstration and we will walk you through salary structures, a payroll cycle, payslips and reports using your branch structure.</p></details>
+</div></div></section>
+
+<!-- CLOSE -->
+<section class="pr-s" style="padding-top:48px"><div class="pr-w"><div class="pr-close">
+<div><h2 class="pr-h" style="color:#fff">Run your next payroll <em style="color:#7fb0ff">with confidence.</em></h2>
+<p class="pr-lead" style="color:#93a9c4">See how the Payroll Management System fits your branches, roles and salary policies.</p>
+<div class="pr-row"><a href="https://wa.me/919745205252?text=I%20would%20like%20to%20request%20a%20demonstration%20of%20the%20Payroll%20Management%20System.%20Please%20share%20a%20convenient%20time." class="pr-btn">Request a demonstration →</a><a href="/contact" class="pr-btn g">Enquire now</a></div></div>
+<div class="pr-ct"><a href="tel:+919745205252"><small>Call us</small>+91-9745205252</a><a href="mailto:helpdesk@fleminggroup.in"><small>Email</small>helpdesk@fleminggroup.in</a><a href="/contact"><small>Visit</small>Kaloor, Ernakulam</a></div>
+</div></div></section>
+</main>
+
+<!-- CTA (same as other pages) -->
+<section class="cta-dark-section" aria-labelledby="cta-heading"><div class="cta-container">
+<div class="cta-content-left"><h2 class="cta-main-title" id="cta-heading">Let's make something great together</h2></div>
+<div class="cta-action-right"><a href="/contact" class="cta-brush-link">Get Started <span class="cta-arrow">↗</span></a></div></div></section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-blob footer-blob-1"></div>
+  <div class="footer-blob footer-blob-2"></div>
+  <div class="footer-container">
+    <div class="footer-columns">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-logo"><a href="/"><img loading="lazy" src="assets/images/logoembeddedandsoftware.webp" alt="Fleming Embedded & Software Solutions logo" class="footer-logo-img" /></a></div>
+        <p class="footer-brand-desc">Empowering businesses through embedded systems, software solutions, and cutting-edge IT services. Your trusted technology partner in Kerala.</p>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/ieeeprojectskochi?mibextid=YMEMSu" class="social-icon" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://www.youtube.com/@flemingembeddedandsoftware7876" class="social-icon" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19A3.02 3.02 0 0 0 21.36 4.2c-1.9-.5-9.35-.5-9.35-.5s-7.46 0-9.36.5A3.02 3.02 0 0 0 .5 6.19C0 8.1 0 12 0 12s0 3.9.5 5.81a3.02 3.02 0 0 0 2.15 1.99c1.9.5 9.35.5 9.35.5s7.46 0 9.36-.5a3.02 3.02 0 0 0 2.14-1.99C24 15.9 24 12 24 12s0-3.9-.5-5.81zM9.5 15.57V8.43L16.18 12z"/></svg></a>
+          <a href="https://in.linkedin.com/company/fleming-embedded-software-solutions" class="social-icon" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="https://www.instagram.com/fleming_kochi/" class="social-icon" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col footer-col-links"><h4 class="footer-col-heading">Quick Links</h4><ul class="footer-links"><li><a href="/services">Services</a></li><li><a href="/techno-solutions">Training Division</a></li><li><a href="/products">Products</a></li><li><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank">Blog</a></li></ul></div>
+      <div class="footer-col footer-col-about"><h4 class="footer-col-heading">About Us</h4><ul class="footer-links"><li><a href="/about">Who We Are</a></li><li><a href="/contact">Contact</a></li></ul></div>
+      <div class="footer-col footer-col-contact">
+        <h4 class="footer-col-heading">Reach Us</h4>
+        <ul class="footer-contact-list">
+          <li class="footer-contact-item"><span class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.57 3.42 2 2 0 0 1 3.54 1.25h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.68 2.81a2 2 0 0 1-.45 2.11L7.91 8.75a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.91.33 1.85.55 2.81.68A2 2 0 0 1 21.5 16h.5z"/></svg></span><div class="contact-info-group"><a href="tel:04844045252" class="contact-link">+91-484-4045252</a><a href="tel:9745205252" class="contact-link">+91-9745205252</a></div></li>
+          <li class="footer-contact-item"><span class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span><a href="mailto:helpdesk@fleminggroup.in" class="contact-link">helpdesk@fleminggroup.in</a></li>
+          <li class="footer-contact-item"><span class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><a href="https://www.google.com/maps?ll=9.996532,76.295951&z=17&t=m&hl=en&gl=IN&mapclient=embed&cid=2057725792007139428" class="contact-link" style="display:inline-block;"><span class="contact-info-text">Fleming Embedded and Software Solutions<br>#37/3956, Bank Road,<br>Kaloor, Ernakulam — 682017</span></a></li>
+          <li class="footer-contact-item"><span class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span><span class="contact-info-text">Mon – Sat &nbsp;|&nbsp; 9:30 AM – 6:30 PM</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><div class="footer-divider"></div><p class="footer-copyright">&copy; 2026 All Rights Reserved by <span class="footer-brand-name">FLEMING EMBEDDED & SOFTWARE SOLUTIONS LLP</span></p></div>
+  </div>
+</footer>
+
+<!-- BACK-TO-TOP CONTROL -->
+<div id="bttControl" tabindex="0" role="button" aria-label="Back to Top"><span class="btt-text">Back to Top</span><div class="btt-line-wrap" aria-hidden="true"><div class="btt-line-fill"></div></div></div>
+
+<!-- FLOATING CONTACT WIDGET -->
+<div class="fcw-wrapper" id="fcwWrapper">
+  <div class="fcw-actions" id="fcwActions">
+    <a href="https://wa.me/919745205252" class="fcw-btn fcw-whatsapp" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span class="fcw-tooltip">WhatsApp</span></a>
+    <a href="tel:04844045252" class="fcw-btn fcw-call" aria-label="Call Us"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.57 3.42 2 2 0 0 1 3.54 1.25h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.68 2.81a2 2 0 0 1-.45 2.11L7.91 8.75a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.91.33 1.85.55 2.81.68A2 2 0 0 1 21.5 16h.5z"/></svg><span class="fcw-tooltip">Call Us</span></a>
+    <a href="/contact" class="fcw-btn fcw-message" aria-label="Contact"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span class="fcw-tooltip">Contact Us</span></a>
+  </div>
+  <button class="fcw-toggle" id="fcwToggle" aria-label="Contact options"><span class="fcw-icon-chat"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><span class="fcw-icon-close"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></button>
+</div>
+
+<script>
+(function(){
+  /* site widgets: floating contact + back-to-top (same as other pages) */
+  var w=document.getElementById('fcwWrapper'),t=document.getElementById('fcwToggle'),open=false;
+  function cl(){open=false;w.classList.remove('fcw-open')}
+  t.addEventListener('click',function(){open=!open;w.classList.toggle('fcw-open',open)});
+  document.addEventListener('pointerdown',function(e){if(open&&!w.contains(e.target))cl()});
+  addEventListener('scroll',function(){if(open)cl()},{passive:true});
+  var b=document.getElementById('bttControl'),f=b.querySelector('.btt-line-fill'),d=document.documentElement;
+  function up(){var y=pageYOffset||d.scrollTop,m=Math.max(d.scrollHeight-innerHeight,1);b.classList.toggle('btt-visible',y>400);f.style.transform='scaleY('+Math.min(y/m,1)+')'}
+  var te=b.querySelector('.btt-text'),we=b.querySelector('.btt-line-wrap');function sl(){var h=te.getBoundingClientRect().height;if(h>0)we.style.height=h+'px'}
+  sl();addEventListener('resize',sl);var tk=false;addEventListener('scroll',function(){if(!tk){requestAnimationFrame(function(){up();tk=false});tk=true}},{passive:true});up();
+  new MutationObserver(function(){b.classList.toggle('btt-fcw-open',w.classList.contains('fcw-open'))}).observe(w,{attributes:true,attributeFilter:['class']});
+  function ce(x){if(x<.2)return 2.5*x*x;if(x<.8)return .1+.8*(x-.2)/.6;var e=(x-.8)/.2;return .9+.1*(1-(1-e)*(1-e))}
+  function top(){var s=pageYOffset||d.scrollTop;if(s<5)return;var t0=performance.now();(function st(n){var x=Math.min((n-t0)/1200,1);scrollTo(0,s*(1-ce(x)));if(x<1)requestAnimationFrame(st)})(t0)}
+  b.addEventListener('click',top);b.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();top()}});
+})();
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $=function(i){return document.getElementById(i)};
+  var inr=function(n){return '₹'+Math.round(n).toLocaleString('en-IN')};
+
+  /* nav + mobile menu */
+  var o=$('mobileMenuOverlay');
+  $('hamburgerBtn').onclick=function(){o.classList.add('open')};
+  $('mobileMenuClose').onclick=function(){o.classList.remove('open')};
+  o.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){o.classList.remove('open')})});
+  var n=$('siteNav'),h=$('parallaxHero'),y=scrollY;n.classList.add('nav-hero');
+  addEventListener('scroll',function(){var c=scrollY,up=c<y;
+    if(c<h.offsetTop+h.offsetHeight){n.classList.remove('nav-sticky','nav-hidden','nav-visible');n.classList.add('nav-hero')}
+    else{n.classList.remove('nav-hero');n.classList.add('nav-sticky');n.classList.toggle('nav-hidden',!up);n.classList.toggle('nav-visible',up)}y=c},{passive:true});
+
+  /* image fallback */
+  document.querySelectorAll('.pr img').forEach(function(i){function fb(){if(i.dataset.f)return;i.dataset.f=1;i.src='https://placehold.co/'+(i.getAttribute('width')||800)+'x'+(i.getAttribute('height')||600)+'/eef4ff/1a56db?text=Replace+image'}i.addEventListener('error',fb)});
+
+  /* 1 salary builder */
+  var chips=document.querySelectorAll('#prCalc .pr-chip'),range=$('prRange'),shown=0;
+  function calc(){
+    var b=+range.value,e=b,d=0;$('prBasic').textContent=inr(b);
+    chips.forEach(function(c){if(c.getAttribute('aria-pressed')!=='true')return;
+      var v=c.dataset.p?b*parseFloat(c.dataset.p):parseFloat(c.dataset.f);
+      if(c.classList.contains('d'))d+=v;else e+=v});
+    var net=e-d,from=shown,t0=null;shown=net;
+    function f(t){if(!t0)t0=t;var p=rm?1:Math.min((t-t0)/500,1);$('prNet').textContent=inr(from+(net-from)*p);if(p<1)requestAnimationFrame(f)}
+    requestAnimationFrame(f);
+    $('prA').style.width=(net/e*100)+'%';$('prB').style.width=(d/e*100)+'%';
+  }
+  chips.forEach(function(c){c.addEventListener('click',function(){c.setAttribute('aria-pressed',c.getAttribute('aria-pressed')!=='true');calc()})});
+  range.addEventListener('input',calc);calc();
+
+  /* 2 payroll run */
+  var EMP=[['Anjana R.','Senior Teacher',42500,3200],['Nikhil S.','Accountant',36000,2100],['Fathima K.','Coordinator',31000,1800],['Joel M.','Lab Assistant',24500,900],['Meera P.','Office Admin',22000,1500]];
+  var tb=$('prRows'),go=$('prGo'),st=0,paid=0,steps=document.querySelectorAll('#prSteps .pr-st');
+  function setStep(i){steps.forEach(function(s,j){s.className='pr-st'+(j<i?' done':j===i?' on':'')})}
+  function draw(){tb.innerHTML='';EMP.forEach(function(r,i){var tr=document.createElement('tr');
+    tr.innerHTML='<td>'+r[0]+'<small>'+r[1]+'</small></td><td><span class="pr-bd" id="s'+i+'">Draft</span></td><td>'+inr(r[2])+'</td><td>'+inr(r[3])+'</td><td class="net" id="n'+i+'">—</td>';tb.appendChild(tr)});
+    st=0;paid=0;go.textContent='Process payroll';go.disabled=false;$('prLock').classList.remove('on');$('prTot').textContent='₹0';$('prPaid').textContent='0 / 5';setStep(0)}
+  function setS(i,t,c){var e=$('s'+i);e.textContent=t;e.className='pr-bd '+c}
+  go.addEventListener('click',function(){
+    if(st===0){st=1;go.disabled=true;var tot=0;
+      EMP.forEach(function(r,i){setTimeout(function(){setS(i,'Calculated','c');$('n'+i).textContent=inr(r[2]-r[3]);tot+=r[2]-r[3];$('prTot').textContent=inr(tot);
+        if(i===EMP.length-1){st=2;go.disabled=false;go.textContent='Finalise payroll';setStep(1)}},rm?0:i*380)})}
+    else if(st===2){st=3;go.disabled=true;go.textContent='Finalised';$('prLock').classList.add('on');setStep(3);
+      EMP.forEach(function(r,i){setS(i,'Pending','p');$('s'+i).onclick=function(){if(this.classList.contains('k'))return;setS(i,'Paid','k');paid++;$('prPaid').textContent=paid+' / 5';if(paid===5)setStep(4)}})}});
+  $('prReset').addEventListener('click',function(e){e.preventDefault();draw()});draw();
+
+  /* 3 payslip tilt + download */
+  var slip=$('prSlip'),wrap=$('prTilt');
+  if(!rm&&matchMedia('(hover:hover)').matches){wrap.addEventListener('pointermove',function(e){var r=wrap.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,yy=(e.clientY-r.top)/r.height-.5;slip.style.transform='rotateY('+(x*12)+'deg) rotateX('+(-yy*12)+'deg)'});wrap.addEventListener('pointerleave',function(){slip.style.transform=''})}
+  var dl=$('prDl');dl.addEventListener('click',function(){dl.textContent='Preparing…';setTimeout(function(){dl.textContent='Downloaded ✓';dl.classList.add('ok');setTimeout(function(){dl.textContent='Download PDF payslip';dl.classList.remove('ok')},1800)},700)});
+
+  /* 4 branches */
+  var D={all:['₹48.6L','412','18',[62,68,71,74,79,86]],kochi:['₹21.4L','186','6',[40,52,60,66,74,82]],kozhikode:['₹15.9L','133','7',[55,58,66,71,70,78]],thrissur:['₹11.3L','93','5',[48,60,57,68,75,80]]};
+  var mo=['Jun','Jul','Aug','Sep','Oct','Nov'],cols=$('prCols');
+  mo.forEach(function(m){cols.insertAdjacentHTML('beforeend','<div class="pr-col"><i style="--h:0%"></i><span>'+m+'</span></div>')});
+  function branch(k){var d=D[k];$('kA').textContent=d[0];$('kB').textContent=d[1];$('kC').textContent=d[2];
+    cols.querySelectorAll('i').forEach(function(i,j){i.style.setProperty('--h',d[3][j]+'%')})}
+  $('prSel').addEventListener('change',function(){branch(this.value)});
+  var seen=false;new IntersectionObserver(function(es,io){if(es[0].isIntersecting&&!seen){seen=true;branch('all');io.disconnect()}},{threshold:.3}).observe($('pr-branch'));
+
+  /* 5 capability index */
+  var F=[['Salary structure management','Configure basic salary, allowances, deductions and other components by designation, and update them when policy changes.'],
+  ['Employee salary assignment','Assign structures to staff and keep employee-wise compensation, revisions and salary history in one place.'],
+  ['Automated payroll processing','Calculate monthly salaries from assigned structures and adjustments, with a payroll summary for each cycle.'],
+  ['Payroll preview and finalisation','Verify calculations, make corrections, then finalise. Completed periods stay on record.'],
+  ['Allowances and deductions','Manage allowances, incentives, bonuses and deductions according to your organisation’s salary policy.'],
+  ['Payslip generation','Create individual payslips with a detailed salary breakdown, available as downloadable PDFs.'],
+  ['Adjustments and salary revisions','Record salary changes, additional payments and corrections so payroll stays consistent and traceable.'],
+  ['Payment management','Track pending and completed salary payments for each payroll period.'],
+  ['Multi-branch payroll','Keep branch-specific salary assignments and payroll records organised within each branch.'],
+  ['Role-based access and approval','Give administrators and accounting staff the right permissions, with approval workflows that protect salary data.'],
+  ['Reports and analytics','Review salary expenditure, employee-wise payments, deductions and payroll history to support planning.']];
+  /* scenes: one mini-UI per capability, same order as F */
+  var R=function(a,b,i,on){return '<div class="vr an" style="--i:'+i+'"><span>'+a+'</span><span class="vx"><b>'+b+'</b>'+(on===undefined?'':'<i class="tg'+(on?' y':'')+'"></i>')+'</span></div>'};
+  var BD=function(t,c){return '<span class="pr-bd '+c+'">'+t+'</span>'};
+  var BR=function(l,v,w,c,i){return '<div class="an" style="--i:'+i+';margin-bottom:16px"><div class="vl"><span>'+l+'</span><b>'+v+'</b></div><div class="pb"><i class="'+c+'" style="--w:'+w+'%"></i></div></div>'};
+  var EM=function(n,s,i,badge){return '<div class="vr an" style="--i:'+i+'"><span class="vx"><i class="av">'+n.split(' ').map(function(x){return x[0]}).join('')+'</i><span>'+n+'<small>'+s+'</small></span></span>'+badge+'</div>'};
+  var MX=function(a,x,i){return '<div class="mx an" style="--i:'+i+'"><span>'+a+'</span>'+x.map(function(v){return '<span class="'+(v?'':'no')+'">'+(v?'✓':'–')+'</span>'}).join('')+'</div>'};
+  var V=[
+   ['Salary structure','Senior Teacher',R('Basic salary','₹30,000',0,1)+R('House allowance · 40%','₹12,000',1,1)+R('Travel allowance','₹1,600',2,1)+R('Incentive · 5%','₹1,500',3,0)+R('Advance recovery','−₹2,000',4,1)+'<p class="vn an" style="--i:5">Switch components on or off and save a new revision of the structure.</p>'],
+   ['Employee assignment','Sample',EM('Anjana R.','Senior Teacher',0,BD('Structure A','c'))+EM('Nikhil S.','Accountant',1,BD('Structure B','c'))+EM('Joel M.','Lab Assistant',2,BD('Structure C','c'))+'<p class="vt an" style="--i:3;margin-top:18px">Salary history · Anjana R.</p><div class="fl an" style="--i:4;margin-top:0"><b>₹28,000</b>→<b>₹30,000</b>→<b>₹32,500</b></div>'],
+   ['Automated processing','November',
+    '<div class="an" style="--i:0;display:grid;place-items:center;margin:6px 0 22px"><svg width="132" height="132" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="none" stroke="#e8eef8" stroke-width="9"/><circle class="ring" cx="50" cy="50" r="42" fill="none" stroke="#1a56db" stroke-width="9" stroke-linecap="round" transform="rotate(-90 50 50)"/><text x="50" y="47" text-anchor="middle" font-family="Archivo" font-weight="900" font-size="17" fill="#0c1a2e">5 / 5</text><text x="50" y="62" text-anchor="middle" font-family="Poppins" font-size="7.5" fill="#64788f">calculated</text></svg></div>'+
+    '<div class="pr-kp an" style="--i:2"><div><small>Gross</small><b>₹1,56,000</b></div><div><small>Deductions</small><b>₹9,500</b></div><div><small>Net payroll</small><b>₹1,46,500</b></div></div><p class="vn an" style="--i:3">Salaries are calculated from assigned structures and adjustments.</p>'],
+   ['Preview and finalise','Review',R('Anjana R.<small>Calculated</small>','₹39,300',0)+R('Nikhil S.<small>Calculated</small>','₹33,900',1)+R('Fathima K.<small>Correction applied</small>','₹29,200',2)+'<div class="an" style="--i:3;margin-top:20px"><span class="pr-btn m">🔒 Finalise payroll</span></div><p class="vn an" style="--i:4">Once finalised, the period is locked and kept on record.</p>'],
+   ['Allowances & deductions','Policy',
+    '<p class="vt">Earnings</p>'+BR('House allowance','40%',80,'',0)+BR('Incentive','5%',25,'',1)+BR('Bonus','8.33%',40,'',2)+'<p class="vt" style="margin-top:22px">Deductions</p>'+BR('Advance recovery','₹2,000',45,'a',3)+BR('Leave deduction','2%',20,'a',4)],
+   ['Payslip generation','PDF',
+    '<div class="an" style="--i:0;border:1px solid var(--line);border-radius:18px;overflow:hidden"><div class="pr-slip-h"><b>Anjana R.</b><span>November payslip</span></div><div style="padding:14px 16px 4px">'+R('Basic','₹30,000',0)+R('Allowances','₹13,600',0)+R('Deductions','₹2,000',0)+'</div><div class="pr-slip-n"><span>Net pay</span><b>₹41,600</b></div></div><div class="fl an" style="--i:3"><b>📄 payslip-nov.pdf</b><span>Ready to download</span></div>'],
+   ['Adjustments & revisions','Audit trail',R('Salary revision<small>Jul · Ref REV-014</small>','+₹2,500',0)+R('Extra payment<small>Festival · Ref ADJ-203</small>','+₹1,200',1)+R('Correction<small>Oct · Ref COR-031</small>','−₹300',2)+'<p class="vn an" style="--i:3">Every change is recorded with who made it and when.</p>'],
+   ['Payment management','3 of 5 paid',EM('Anjana R.','₹39,300',0,BD('Paid','k'))+EM('Nikhil S.','₹33,900',1,BD('Paid','k'))+EM('Fathima K.','₹29,200',2,BD('Paid','k'))+EM('Joel M.','₹23,600',3,BD('Pending','p'))+EM('Meera P.','₹20,500',4,BD('Pending','p'))+'<div class="pb an" style="--i:5;margin-top:14px"><i class="m" style="--w:60%"></i></div>'],
+   ['Multi-branch payroll','All branches',BR('Kochi','₹21.4L',44,'',0)+BR('Kozhikode','₹15.9L',33,'m',1)+BR('Thrissur','₹11.3L',23,'a',2)+'<div class="vr an" style="--i:3;margin-top:22px"><span>Total this month</span><b>₹48.6L</b></div><p class="vn an" style="--i:4">Records stay organised by branch, with one consolidated view.</p>'],
+   ['Roles & approvals','Access',
+    '<div class="mx hd"><span>Permission</span><span>Admin</span><span>Accounts</span><span>Staff</span></div>'+MX('Edit structures',[1,0,0],0)+MX('Run payroll',[1,1,0],1)+MX('Approve payroll',[1,0,0],2)+MX('View payslip',[1,1,1],3)+'<div class="fl an" style="--i:4"><b>Prepared</b>→<b>Approved</b>→<b>Locked</b></div>'],
+   ['Reports & analytics','Last 6 months',
+    '<div class="pr-kp an" style="--i:0"><div><small>Spend</small><b>₹48.6L</b></div><div><small>Deductions</small><b>₹3.1L</b></div><div><small>Paid</small><b>412</b></div></div><div class="vc"><i style="--h:62%"></i><i style="--h:68%"></i><i style="--h:71%"></i><i style="--h:74%"></i><i style="--h:79%"></i><i style="--h:86%"></i></div><div class="vl" style="margin-top:8px;color:var(--mu)"><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span></div>']
+  ];
+  var box=$('prRowsIdx'),vis=$('prVis');
+  vis.innerHTML=V.map(function(v,i){return '<div class="pr-sc'+(i===0?' on':'')+'"><h3>'+v[0]+' <span class="pr-tag">'+v[1]+'</span></h3>'+v[2]+'</div>'}).join('');
+  var scs=vis.children;
+  F.forEach(function(f,i){var b=document.createElement('button');b.className='pr-r'+(i===0?' on':'');b.type='button';b.innerHTML='<strong>'+f[0]+'</strong><p>'+f[1]+'</p>';
+    function act(){box.querySelectorAll('.pr-r').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+      for(var k=0;k<scs.length;k++)scs[k].classList.toggle('on',k===i)}
+    b.addEventListener('mouseenter',act);b.addEventListener('focus',act);b.addEventListener('click',act);box.appendChild(b)});
+
+  /* FAQ: one open at a time */
+  var fqs=document.querySelectorAll('.pr-fg details');
+  fqs.forEach(function(d){ d.addEventListener('toggle',function(){ if(!d.open) return; fqs.forEach(function(o){ if(o!==d) o.open=false; }); }); });
+
+  /* GSAP: hero parallax, heading reveal, CTA reveal */
+  if(typeof gsap==='undefined'||typeof ScrollTrigger==='undefined'||rm)return;
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.to('#parallaxHero',{backgroundPosition:'60% bottom',ease:'none',scrollTrigger:{trigger:'#parallaxHero',start:'top top',end:'bottom top',scrub:2.5}});
+  if(typeof SplitType!=='undefined'){document.querySelectorAll('.pr-h').forEach(function(hd){
+    var c=new SplitType(hd,{types:'words, chars'}).chars;if(!c||!c.length)return;
+    gsap.set(c,{opacity:.15});
+    gsap.to(c,{scrollTrigger:{trigger:hd,start:'top 60%',end:'top 35%',scrub:true,invalidateOnRefresh:true},opacity:1,stagger:.1,ease:'none'})})}
+  gsap.set('.cta-container',{opacity:0,y:80});
+  ScrollTrigger.create({trigger:'.cta-dark-section',start:'top 85%',
+    onEnter:function(){gsap.to('.cta-container',{opacity:1,y:0,duration:1.2,ease:'power4.out'})},
+    onLeaveBack:function(){gsap.to('.cta-container',{opacity:0,y:80,duration:.6,ease:'power3.in'})},
+    onEnterBack:function(){gsap.to('.cta-container',{opacity:1,y:0,duration:1.2,ease:'power4.out'})}});
+});
+</script>
+
+<!-- MOBILE ONLY: Capabilities carousel (text first, design below, auto-slides, hold to pause, swipe) -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  if (!window.matchMedia('(max-width: 700px)').matches) return;
+
+  var idxWrap = document.querySelector('.pr-idx');
+  var rows = document.querySelectorAll('#prRowsIdx .pr-r');
+  var scenes = document.querySelectorAll('#prVis .pr-sc');
+  if (!idxWrap || !rows.length || rows.length !== scenes.length) return;
+
+  var total = rows.length;
+  var pad = function (n) { return n < 10 ? '0' + n : '' + n; };
+
+  /* build slides: number, title, description, then the design card */
+  var html = '<div class="pr-car-vp"><div class="pr-car-tr">';
+  rows.forEach(function (r, i) {
+    html += '<div class="pr-car-sl">' +
+      '<p class="pr-car-n">' + pad(i + 1) + ' / ' + total + '</p>' +
+      '<h3 class="pr-car-t">' + r.querySelector('strong').innerHTML + '</h3>' +
+      '<p class="pr-car-d">' + r.querySelector('p').innerHTML + '</p>' +
+      '<div class="pr-car-v"></div></div>';
+  });
+  html += '</div></div><div class="pr-car-dots">';
+  for (var d = 0; d < total; d++) {
+    html += '<button type="button" class="pr-car-dot" aria-label="Go to capability ' + (d + 1) + '"></button>';
+  }
+  html += '</div>';
+
+  var car = document.createElement('div');
+  car.className = 'pr-car';
+  car.innerHTML = html;
+
+  /* copy each design scene into its slide */
+  car.querySelectorAll('.pr-car-v').forEach(function (box, i) {
+    var clone = scenes[i].cloneNode(true);
+    clone.classList.remove('on');
+    box.appendChild(clone);
+  });
+
+  idxWrap.appendChild(car);
+  idxWrap.classList.add('is-car');
+
+  var vp = car.querySelector('.pr-car-vp');
+  var track = car.querySelector('.pr-car-tr');
+  var sc = car.querySelectorAll('.pr-sc');
+  var dots = car.querySelectorAll('.pr-car-dot');
+  var cur = 0, timer = null, inView = false, holding = false, startX = 0;
+
+  function show(n) {
+    cur = (n + total) % total;
+    track.style.transform = 'translateX(-' + (cur * 100) + '%)';
+    sc.forEach(function (s, i) { s.classList.toggle('on', i === cur); });   /* replays the animation */
+    dots.forEach(function (b, i) { b.classList.toggle('on', i === cur); });
+  }
+
+  function start() {
+    if (timer) return;
+    timer = setInterval(function () { show(cur + 1); }, 5000);
+  }
+  function stop() {
+    if (timer) { clearInterval(timer); timer = null; }
+  }
+  function update() {
+    if (inView && !holding && !document.hidden) start();
+    else stop();
+  }
+
+  dots.forEach(function (b, i) {
+    b.addEventListener('click', function () { show(i); stop(); update(); });
+  });
+
+  /* tap & hold pauses, release resumes; a horizontal swipe changes slide */
+  vp.addEventListener('pointerdown', function (e) {
+    holding = true; startX = e.clientX; stop();
+  });
+  function endHold(e) {
+    if (!holding) return;
+    holding = false;
+    if (e && e.type === 'pointerup') {
+      var dx = e.clientX - startX;
+      if (Math.abs(dx) > 50) show(dx < 0 ? cur + 1 : cur - 1);
+    }
+    update();
+  }
+  window.addEventListener('pointerup', endHold);
+  window.addEventListener('pointercancel', endHold);
+
+  /* only run while the section is on screen */
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      inView = entries[0].isIntersecting;
+      update();
+    }, { threshold: 0.25 }).observe(idxWrap);
+  } else {
+    inView = true;
+  }
+  document.addEventListener('visibilitychange', update);
+
+  show(0);
+  update();
+});
+</script>
+</body>
+</html>
