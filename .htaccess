@@ -135,6 +135,26 @@ ErrorDocument 404 /404.html
     RewriteEngine On
     RewriteBase /
 
+    # ─── Canonical redirects: .html → clean URL ───────────
+    # Must run BEFORE the skip-existing block, otherwise the real
+    # .html file matches first and the redirect never fires.
+    RewriteCond %{THE_REQUEST} \s/employee-attendance-and-payroll-software\.html[\s?] [NC]
+    RewriteRule ^employee-attendance-and-payroll-software\.html$ /employee-attendance-and-payroll-software [R=301,L]
+
+    RewriteCond %{THE_REQUEST} \s/fruit-inventory-management-software\.html[\s?] [NC]
+    RewriteRule ^fruit-inventory-management-software\.html$ /fruit-inventory-management-software [R=301,L]
+
+    RewriteCond %{THE_REQUEST} \s/payroll-management\.html[\s?] [NC]
+    RewriteRule ^payroll-management\.html$ /payroll-management [R=301,L]
+
+    RewriteCond %{THE_REQUEST} \s/educational-institution-management\.html[\s?] [NC]
+    RewriteRule ^educational-institution-management\.html$ /educational-institution-management [R=301,L]
+
+    # Legacy canonical slugs → current clean URLs
+    RewriteRule ^fruit-inventory-distribution-software/?$ /fruit-inventory-management-software [R=301,L]
+    RewriteRule ^payroll-management-software/?$ /payroll-management [R=301,L]
+    RewriteRule ^education-erp-management-software/?$ /educational-institution-management [R=301,L]
+
     # Skip existing files and directories
     RewriteCond %{REQUEST_FILENAME} -f [OR]
     RewriteCond %{REQUEST_FILENAME} -d
@@ -146,6 +166,10 @@ ErrorDocument 404 /404.html
     RewriteRule ^products/?$ products.html [L]
     RewriteRule ^contact/?$ contact.html [L]
     RewriteRule ^privacy-policy/?$ privacy-policy.html [L]
+    RewriteRule ^employee-attendance-and-payroll-software/?$ employee-attendance-and-payroll-software.html [L]
+    RewriteRule ^fruit-inventory-management-software/?$ fruit-inventory-management-software.html [L]
+    RewriteRule ^payroll-management/?$ payroll-management.html [L]
+    RewriteRule ^educational-institution-management/?$ educational-institution-management.html [L]
 
     RewriteRule ^techno-solutions/?$ techno.html [L]
     RewriteRule ^techno-solutions/services/?$ techno_services.html [L]
