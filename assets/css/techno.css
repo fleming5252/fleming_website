@@ -226,10 +226,10 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
     height: 56px;
   }
   .about-bg .about-overlay { background: rgba(0, 0, 0, 0.25); }
-  .page-contact .about-bg { background-image: url('../images/contact_mobile.webp'); background-size: cover; background-position: center center; }
-  .page-techno-services .about-bg { background-image: url('../images/techno/services_mobile.webp'); background-size: cover; }
-  .page-techno-rd .about-bg { background-image: url('../images/techno/r_d_mobile.webp'); background-size: cover; }
-  .page-techno-careers .about-bg { background-image: url('../images/techno/careers_mobile.webp'); background-size: cover; }
+  .page-contact .about-bg { background-image: url('/assets/images/contact_mobile.webp'); background-size: cover; background-position: center center; }
+  .page-techno-services .about-bg { background-image: url('/assets/images/techno/services_mobile.webp'); background-size: cover; }
+  .page-techno-rd .about-bg { background-image: url('/assets/images/techno/r_d_mobile.webp'); background-size: cover; }
+  .page-techno-careers .about-bg { background-image: url('/assets/images/techno/careers_mobile.webp'); background-size: cover; }
 }
 .site-footer {
   position: relative;
@@ -1657,7 +1657,7 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  background-image: url('../images/techno/whychooseus.webp');
+  background-image: url('/assets/images/techno/whychooseus.webp');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
@@ -2673,7 +2673,7 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: url('../images/about_bg.webp');
+    background-image: url('/assets/images/about_bg.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -2723,10 +2723,10 @@ body { font-family: 'Poppins', sans-serif; background: #00071c; overflow-x: clip
 .about-bg .about-breadcrumbs .active-page {
     color: #ffffff;
 }
-.page-contact .about-bg { background-image: url('../images/contact_desktop.webp'); background-size: auto 100%; background-position: center bottom; }
-.page-techno-services .about-bg { background-image: url('../images/techno/services_desktop.webp'); background-size: auto 100%; background-position: center bottom; }
-.page-techno-rd .about-bg { background-image: url('../images/techno/r_d_desktop.webp'); background-size: auto 100%; background-position: center bottom; }
-.page-techno-careers .about-bg { background-image: url('../images/techno/careers_desktop.webp'); background-size: auto 100%; background-position: center bottom; }
+.page-contact .about-bg { background-image: url('/assets/images/contact_desktop.webp'); background-size: auto 100%; background-position: center bottom; }
+.page-techno-services .about-bg { background-image: url('/assets/images/techno/services_desktop.webp'); background-size: auto 100%; background-position: center bottom; }
+.page-techno-rd .about-bg { background-image: url('/assets/images/techno/r_d_desktop.webp'); background-size: auto 100%; background-position: center bottom; }
+.page-techno-careers .about-bg { background-image: url('/assets/images/techno/careers_desktop.webp'); background-size: auto 100%; background-position: center bottom; }
 .contact-section {
   background: #f5f7ff;
   padding: 80px 0 0;
@@ -3857,10 +3857,10 @@ a.cf-privacy-text {
     min-height: 320px;
   }
   .about-bg .about-overlay { background: rgba(0, 0, 0, 0.25); }
-  .page-contact .about-bg { background-image: url('../images/contact_mobile.webp'); background-size: cover; }
-  .page-techno-services .about-bg { background-image: url('../images/techno/services_mobile.webp'); background-size: cover; }
-  .page-techno-rd .about-bg { background-image: url('../images/techno/r_d_mobile.webp'); background-size: cover; }
-  .page-techno-careers .about-bg { background-image: url('../images/techno/careers_mobile.webp'); background-size: cover; }
+  .page-contact .about-bg { background-image: url('/assets/images/contact_mobile.webp'); background-size: cover; }
+  .page-techno-services .about-bg { background-image: url('/assets/images/techno/services_mobile.webp'); background-size: cover; }
+  .page-techno-rd .about-bg { background-image: url('/assets/images/techno/r_d_mobile.webp'); background-size: cover; }
+  .page-techno-careers .about-bg { background-image: url('/assets/images/techno/careers_mobile.webp'); background-size: cover; }
 }
 .rnd-intro-section {
   background: #ffffff;

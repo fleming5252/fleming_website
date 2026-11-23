@@ -150,6 +150,51 @@ ErrorDocument 404 /404.html
     RewriteCond %{THE_REQUEST} \s/educational-institution-management\.html[\s?] [NC]
     RewriteRule ^educational-institution-management\.html$ /educational-institution-management [R=301,L]
 
+    RewriteCond %{THE_REQUEST} \s/newspaper-billing-software\.html[\s?] [NC]
+    RewriteRule ^newspaper-billing-software\.html$ /newspaper-billing-software [R=301,L]
+
+    RewriteCond %{THE_REQUEST} \s/e-learning-management\.html[\s?] [NC]
+    RewriteRule ^e-learning-management\.html$ /e-learning-management [R=301,L]
+
+    RewriteCond %{THE_REQUEST} \s/ecommerce-management\.html[\s?] [NC]
+    RewriteRule ^ecommerce-management\.html$ /ecommerce-management [R=301,L]
+
+    RewriteCond %{THE_REQUEST} \s/distribution-inventory-management\.html[\s?] [NC]
+    RewriteRule ^distribution-inventory-management\.html$ /distribution-inventory-management [R=301,L]
+
+    RewriteCond %{THE_REQUEST} \s/about\.html[\s?] [NC]
+    RewriteRule ^about\.html$ /about [R=301,L]
+
+    RewriteCond %{THE_REQUEST} \s/services\.html[\s?] [NC]
+    RewriteRule ^services\.html$ /services [R=301,L]
+
+    RewriteCond %{THE_REQUEST} \s/products\.html[\s?] [NC]
+    RewriteRule ^products\.html$ /products [R=301,L]
+
+    RewriteCond %{THE_REQUEST} \s/contact\.html[\s?] [NC]
+    RewriteRule ^contact\.html$ /contact [R=301,L]
+
+    RewriteCond %{THE_REQUEST} \s/privacy-policy\.html[\s?] [NC]
+    RewriteRule ^privacy-policy\.html$ /privacy-policy [R=301,L]
+
+    RewriteCond %{THE_REQUEST} \s/techno\.html[\s?] [NC]
+    RewriteRule ^techno\.html$ /techno-solutions [R=301,L]
+
+    RewriteCond %{THE_REQUEST} \s/techno_services\.html[\s?] [NC]
+    RewriteRule ^techno_services\.html$ /techno-solutions/services [R=301,L]
+
+    RewriteCond %{THE_REQUEST} \s/techno_rd\.html[\s?] [NC]
+    RewriteRule ^techno_rd\.html$ /techno-solutions/research [R=301,L]
+
+    RewriteCond %{THE_REQUEST} \s/techno_careers\.html[\s?] [NC]
+    RewriteRule ^techno_careers\.html$ /techno-solutions/careers [R=301,L]
+
+    RewriteCond %{THE_REQUEST} \s/techno_contact\.html[\s?] [NC]
+    RewriteRule ^techno_contact\.html$ /techno-solutions/contact [R=301,L]
+
+    RewriteCond %{THE_REQUEST} \s/index\.html[\s?] [NC]
+    RewriteRule ^index\.html$ / [R=301,L]
+
     # Legacy canonical slugs → current clean URLs
     RewriteRule ^fruit-inventory-distribution-software/?$ /fruit-inventory-management-software [R=301,L]
     RewriteRule ^payroll-management-software/?$ /payroll-management [R=301,L]
@@ -170,6 +215,10 @@ ErrorDocument 404 /404.html
     RewriteRule ^fruit-inventory-management-software/?$ fruit-inventory-management-software.html [L]
     RewriteRule ^payroll-management/?$ payroll-management.html [L]
     RewriteRule ^educational-institution-management/?$ educational-institution-management.html [L]
+    RewriteRule ^newspaper-billing-software/?$ newspaper-billing-software.html [L]
+    RewriteRule ^e-learning-management/?$ e-learning-management.html [L]
+    RewriteRule ^ecommerce-management/?$ ecommerce-management.html [L]
+    RewriteRule ^distribution-inventory-management/?$ distribution-inventory-management.html [L]
 
     RewriteRule ^techno-solutions/?$ techno.html [L]
     RewriteRule ^techno-solutions/services/?$ techno_services.html [L]

@@ -210,7 +210,7 @@ body { font-family: 'Poppins', sans-serif; }
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: url('../images/index_desktop.webp');
+    background-image: url('/assets/images/index_desktop.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% center;
@@ -218,7 +218,7 @@ body { font-family: 'Poppins', sans-serif; }
 }
 @media (max-width: 767px) {
   .hero-section {
-    background-image: url('../images/index_mobile.webp');
+    background-image: url('/assets/images/index_mobile.webp');
     background-position: center center;
   }
 }
@@ -265,7 +265,7 @@ body { font-family: 'Poppins', sans-serif; }
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: url('../images/about_desktop.webp');
+    background-image: url('/assets/images/about_desktop.webp');
     background-repeat: no-repeat;
     background-size: auto 100%;
     background-position: center bottom;
@@ -310,23 +310,23 @@ body { font-family: 'Poppins', sans-serif; }
 .about-bg .about-breadcrumbs .active-page {
     color: #ffffff;
 }
-.page-services .about-bg { background-image: url('../images/services_desktop.webp'); background-size: auto 100%; background-position: center bottom; }
-.page-products .about-bg { background-image: url('../images/product_desktop.webp'); background-size: auto 100%; background-position: center bottom; }
-.page-contact .about-bg { background-image: url('../images/contact_desktop.webp'); background-size: auto 100%; background-position: center bottom; }
+.page-services .about-bg { background-image: url('/assets/images/services_desktop.webp'); background-size: auto 100%; background-position: center bottom; }
+.page-products .about-bg { background-image: url('/assets/images/product_desktop.webp'); background-size: auto 100%; background-position: center bottom; }
+.page-contact .about-bg { background-image: url('/assets/images/contact_desktop.webp'); background-size: auto 100%; background-position: center bottom; }
 @media (max-width: 767px) {
-  .about-bg { min-height: 350px; background-size: cover; background-image: url('../images/about_mobile.webp'); }
+  .about-bg { min-height: 350px; background-size: cover; background-image: url('/assets/images/about_mobile.webp'); }
   .about-bg .about-overlay { background: rgba(0, 0, 0, 0.25); }
   .about-bg h1 { font-size: 3.75rem; letter-spacing: 1px; word-break: break-word; }
   .about-bg .about-breadcrumbs { font-size: 0.85rem; }
-  .page-services .about-bg { background-size: cover; background-image: url('../images/services_mobile.webp'); }
-  .page-products .about-bg { background-size: cover; background-image: url('../images/product_mobile.webp'); }
-  .page-contact .about-bg { background-size: cover; background-image: url('../images/contact_mobile.webp'); }
+  .page-services .about-bg { background-size: cover; background-image: url('/assets/images/services_mobile.webp'); }
+  .page-products .about-bg { background-size: cover; background-image: url('/assets/images/product_mobile.webp'); }
+  .page-contact .about-bg { background-size: cover; background-image: url('/assets/images/contact_mobile.webp'); }
 }
 @media (max-width: 480px) {
-  .about-bg { min-height: 320px; background-size: cover; background-image: url('../images/about_mobile.webp'); }
-  .page-services .about-bg { background-size: cover; background-image: url('../images/services_mobile.webp'); }
-  .page-products .about-bg { background-size: cover; background-image: url('../images/product_mobile.webp'); }
-  .page-contact .about-bg { background-size: cover; background-image: url('../images/contact_mobile.webp'); }
+  .about-bg { min-height: 320px; background-size: cover; background-image: url('/assets/images/about_mobile.webp'); }
+  .page-services .about-bg { background-size: cover; background-image: url('/assets/images/services_mobile.webp'); }
+  .page-products .about-bg { background-size: cover; background-image: url('/assets/images/product_mobile.webp'); }
+  .page-contact .about-bg { background-size: cover; background-image: url('/assets/images/contact_mobile.webp'); }
   .about-bg h1 { font-size: 2.7rem; }
   .about-bg .about-breadcrumbs { font-size: 0.75rem; }
 }
@@ -2247,7 +2247,7 @@ body { font-family: 'Poppins', sans-serif; }
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  background-image: url('../images/management_bg.webp');
+  background-image: url('/assets/images/management_bg.webp');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;

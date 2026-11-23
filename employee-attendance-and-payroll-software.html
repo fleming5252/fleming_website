@@ -43,9 +43,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Caveat:wght@700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <!-- Shared site styles: navbar, footer, hero and CTA are already defined here -->
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
 
-  <link rel="icon" type="image/png" href="assets/images/logoembeddedandsoftware.webp" />
+  <link rel="icon" type="image/png" href="/assets/images/logoembeddedandsoftware.webp" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/split-type"></script>
@@ -185,20 +185,20 @@
 
     /* ── Hero background — mirrors the products page hero ── */
     .page-employee-attendance .about-bg {
-      background-image: url('assets/images/product_desktop.webp');
+      background-image: url('/assets/images/product_desktop.webp');
       background-size: auto 100%;
       background-position: center bottom;
     }
     @media (max-width: 767px) {
       .page-employee-attendance .about-bg {
         background-size: cover;
-        background-image: url('assets/images/product_mobile.webp');
+        background-image: url('/assets/images/product_mobile.webp');
       }
     }
     @media (max-width: 480px) {
       .page-employee-attendance .about-bg {
         background-size: cover;
-        background-image: url('assets/images/product_mobile.webp');
+        background-image: url('/assets/images/product_mobile.webp');
       }
     }
 
@@ -290,7 +290,7 @@
        ═══════════════════════════════════════════ */
     .gt-intro {
       padding: 92px 0 100px;
-      background-image: url('assets/images/attendancebg1.webp');
+      background-image: url('/assets/images/attendancebg1.webp');
       background-size: cover;
       background-position: center center;
       position: relative;
@@ -664,7 +664,7 @@
       .gt-sec { padding: 72px 0; }
       .gt-intro {
         padding: 64px 0 72px;
-        background-image: url('assets/images/productmobilebg.webp');
+        background-image: url('/assets/images/productmobilebg.webp');
         background-size: cover;
         background-position: center center;
       }
@@ -989,7 +989,7 @@
       <div class="circle r-y"></div>
       <div class="circle r-x"></div>
       <div class="logo-placeholder" id="logoPlaceholder">F</div>
-      <img src="assets/images/logo1.webp" class="logo" id="loaderLogo" alt="f" style="display:none;" />
+      <img src="/assets/images/logo1.webp" class="logo" id="loaderLogo" alt="f" style="display:none;" />
     </div>
   </div>
   <script>
@@ -1024,23 +1024,23 @@
 <header class="site-nav" id="siteNav">
   <div class="nav-container">
     <div class="nav-logo">
-      <a href="index.html">
-        <img src="assets/images/logoembeddedandsoftware.webp" alt="Fleming Embedded & Software Solutions logo" class="nav-logo-img" />
+      <a href="/">
+        <img src="/assets/images/logoembeddedandsoftware.webp" alt="Fleming Embedded & Software Solutions logo" class="nav-logo-img" />
       </a>
     </div>
     <nav class="nav-capsule" aria-label="Main navigation">
       <ul class="nav-links">
-        <li class="nav-item"><a href="index.html">HOME</a></li>
-        <li class="nav-item"><a href="about.html">ABOUT</a></li>
-        <li class="nav-item"><a href="services.html">SERVICES</a></li>
+        <li class="nav-item"><a href="/">HOME</a></li>
+        <li class="nav-item"><a href="/about">ABOUT</a></li>
+        <li class="nav-item"><a href="/services">SERVICES</a></li>
         <li class="nav-item active">
-          <a href="products.html">
+          <a href="/products">
             <span class="active-dot"></span>
             Products
           </a>
         </li>
-        <li class="nav-item"><a href="techno.html">Training Division</a></li>
-        <li class="nav-item"><a href="contact.html">Contact</a></li>
+        <li class="nav-item"><a href="/techno-solutions">Training Division</a></li>
+        <li class="nav-item"><a href="/contact">Contact</a></li>
         <li class="nav-item"><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank" rel="noopener noreferrer">Blog</a></li>
       </ul>
     </nav>
@@ -1056,17 +1056,17 @@
 <div class="mobile-menu-overlay" id="mobileMenuOverlay">
   <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
   <ul class="mobile-nav-links">
-    <li class="nav-item"><a href="index.html">HOME</a></li>
-    <li class="nav-item"><a href="about.html">ABOUT</a></li>
-    <li class="nav-item"><a href="services.html">SERVICES</a></li>
+    <li class="nav-item"><a href="/">HOME</a></li>
+    <li class="nav-item"><a href="/about">ABOUT</a></li>
+    <li class="nav-item"><a href="/services">SERVICES</a></li>
     <li class="nav-item active">
-      <a href="products.html">
+      <a href="/products">
         <span class="active-dot"></span>
         Products
       </a>
     </li>
-    <li class="nav-item"><a href="techno.html">Training Division</a></li>
-    <li class="nav-item"><a href="contact.html">Contact</a></li>
+    <li class="nav-item"><a href="/techno-solutions">Training Division</a></li>
+    <li class="nav-item"><a href="/contact">Contact</a></li>
     <li class="nav-item"><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank" rel="noopener noreferrer">Blog</a></li>
   </ul>
 </div>
@@ -1076,7 +1076,7 @@
     <div class="about-overlay"></div>
     <div class="about-content">
         <h1 id="products-hero-heading">PRODUCTS</h1>
-        <p class="about-breadcrumbs"><a href="index.html">HOME</a><span class="dot">•</span><a href="products.html">PRODUCTS</a><span class="dot">•</span><span class="active-page">ATTENDANCE &amp; PAYROLL</span></p>
+        <p class="about-breadcrumbs"><a href="/">HOME</a><span class="dot">•</span><a href="/products">PRODUCTS</a><span class="dot">•</span><span class="active-page">ATTENDANCE &amp; PAYROLL</span></p>
     </div>
 </section>
 
@@ -1138,7 +1138,7 @@
         </div>
       </div>
 
-      <img class="gt-intro-mobile-img" src="assets/images/attendancemobilebg1.webp" alt="GeoTag attendance and payroll software dashboard on mobile" width="800" height="600" loading="lazy" />
+      <img class="gt-intro-mobile-img" src="/assets/images/attendancemobilebg1.webp" alt="GeoTag attendance and payroll software dashboard on mobile" width="800" height="600" loading="lazy" />
 
       </div>
   </div>
@@ -1210,7 +1210,7 @@
 
     <div class="gt-bento">
       <article class="gt-tile gt-tile--face">
-        <img src="assets/images/attendanceimage2.webp" alt="Face recognition attendance system marking an employee's attendance" width="1199" height="1312" loading="lazy" data-fallback="900x1100" />
+        <img src="/assets/images/attendanceimage2.webp" alt="Face recognition attendance system marking an employee's attendance" width="1199" height="1312" loading="lazy" data-fallback="900x1100" />
         <span class="gt-scan" aria-hidden="true"></span>
         <span class="gt-scan-label" aria-hidden="true">Face matched</span>
         <div class="gt-tile-in">
@@ -1530,7 +1530,7 @@
 <section class="gt-sec" aria-labelledby="gt-site-h">
   <div class="gt-wrap gt-sites">
     <div class="gt-photo">
-      <img src="assets/images/attendanceimage4.webp" alt="Construction site workers tracked with multi-site labour attendance software" width="1254" height="1254" loading="lazy" data-fallback="1000x780" />
+      <img src="/assets/images/attendanceimage4.webp" alt="Construction site workers tracked with multi-site labour attendance software" width="1254" height="1254" loading="lazy" data-fallback="1000x780" />
       <div class="gt-transfer" aria-hidden="true">
         <div class="gt-transfer-who"><span class="gt-avatar">SN</span><div>Suresh N.<small>Electrician · Contractor: Nair &amp; Sons</small></div></div>
         <div class="gt-transfer-move"><span>Site A</span><svg class="gt-i"><use href="#i-arrow"/></svg><span>Site D</span></div>
@@ -1620,7 +1620,7 @@
       <p class="gt-eyebrow">Everything included</p>
       <h2 class="gt-h2" id="gt-mod-h">Everything in the <em>platform</em></h2>
       <p class="gt-lead">Eleven connected modules, from biometric attendance to the administrator’s mobile app. Open any one to see what it covers.</p>
-      <div class="gt-btn-row"><a href="contact.html" class="gt-btn">Talk to our team <svg class="gt-i"><use href="#i-arrow"/></svg></a></div>
+      <div class="gt-btn-row"><a href="/contact" class="gt-btn">Talk to our team <svg class="gt-i"><use href="#i-arrow"/></svg></a></div>
     </div>
 
     <div>
@@ -1675,7 +1675,7 @@
 <section class="gt-sec" aria-labelledby="gt-apps-h">
   <div class="gt-wrap gt-apps">
     <div class="gt-photo">
-      <img src="assets/images/attendanceimage3.webp" alt="Team using the GeoTag mobile attendance app with GPS check-in" width="1086" height="1448" loading="lazy" data-fallback="1000x780" />
+      <img src="/assets/images/attendanceimage3.webp" alt="Team using the GeoTag mobile attendance app with GPS check-in" width="1086" height="1448" loading="lazy" data-fallback="1000x780" />
     </div>
     <div>
       <p class="gt-eyebrow">Mobile app</p>
@@ -1710,7 +1710,7 @@
       <p class="gt-eyebrow">FAQ</p>
       <h2 class="gt-h2" id="gt-faq-h">Questions <em>we hear most</em></h2>
       <p class="gt-lead">Something not covered here? Our team will walk you through it.</p>
-      <div class="gt-btn-row"><a href="contact.html" class="gt-btn gt-btn--line">Ask our team</a></div>
+      <div class="gt-btn-row"><a href="/contact" class="gt-btn gt-btn--line">Ask our team</a></div>
     </div>
     <div>
       <details class="gt-faq" open>
@@ -1758,13 +1758,13 @@
         <p class="gt-lead">See how GeoTag can handle attendance, payroll and site administration for your organisation.</p>
         <div class="gt-btn-row">
           <a href="https://wa.me/919745205252?text=I%20would%20like%20to%20request%20a%20product%20demonstration%20of%20the%20Employee%20Attendance%20and%20Payroll%20Software.%20Please%20share%20the%20details%20and%20a%20convenient%20time." class="gt-btn gt-btn--amber">Request a product demonstration <svg class="gt-i"><use href="#i-arrow"/></svg></a>
-          <a href="contact.html" class="gt-btn gt-btn--ghost-light">Enquire now</a>
+          <a href="/contact" class="gt-btn gt-btn--ghost-light">Enquire now</a>
         </div>
       </div>
       <div class="gt-contact">
         <a href="tel:+919745205252"><svg class="gt-i"><use href="#i-phone-call"/></svg><span><small>Call us</small>+91-9745205252</span></a>
         <a href="mailto:helpdesk@fleminggroup.in"><svg class="gt-i"><use href="#i-mail"/></svg><span><small>Email</small>helpdesk@fleminggroup.in</span></a>
-        <a href="contact.html"><svg class="gt-i"><use href="#i-pin"/></svg><span><small>Visit</small>Kaloor, Ernakulam</span></a>
+        <a href="/contact"><svg class="gt-i"><use href="#i-pin"/></svg><span><small>Visit</small>Kaloor, Ernakulam</span></a>
       </div>
     </div>
   </div>
@@ -1780,7 +1780,7 @@
       <h2 class="cta-main-title" id="cta-heading">Let's make something great together</h2>
     </div>
     <div class="cta-action-right">
-      <a href="contact.html" class="cta-brush-link">
+      <a href="/contact" class="cta-brush-link">
         Get Started <span class="cta-arrow">↗</span>
       </a>
     </div>
@@ -1794,8 +1794,8 @@
     <div class="footer-columns">
       <div class="footer-col footer-col-brand">
         <div class="footer-logo">
-          <a href="index.html">
-            <img loading="lazy" src="assets/images/logoembeddedandsoftware.webp" alt="Fleming Embedded & Software Solutions logo" class="footer-logo-img" />
+          <a href="/">
+            <img loading="lazy" src="/assets/images/logoembeddedandsoftware.webp" alt="Fleming Embedded & Software Solutions logo" class="footer-logo-img" />
           </a>
         </div>
         <p class="footer-brand-desc">
@@ -1832,8 +1832,8 @@
       <div class="footer-col footer-col-links">
         <h4 class="footer-col-heading">Quick Links</h4>
         <ul class="footer-links">
-          <li><a href="services.html">Services</a></li>
-          <li><a href="techno.html">Training Division</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/techno-solutions">Training Division</a></li>
           <li><a href="#">Products</a></li>
           <li><a href="https://flemingsoftwareernakulam.blogspot.com/" target="_blank">Blog</a></li>
         </ul>
@@ -1841,8 +1841,8 @@
       <div class="footer-col footer-col-about">
         <h4 class="footer-col-heading">About Us</h4>
         <ul class="footer-links">
-          <li><a href="about.html">Who We Are</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="/about">Who We Are</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col footer-col-contact">
@@ -2106,7 +2106,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  // Hero parallax - same as products.html
+  // Hero parallax - same as /products
   if (!isMobile) {
     gsap.to("#parallaxHero", {
       backgroundPosition: "60% bottom",
@@ -2201,7 +2201,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <span class="fcw-tooltip">Call Us</span>
     </a>
 
-    <a href="contact.html" class="fcw-btn fcw-message" aria-label="Contact">
+    <a href="/contact" class="fcw-btn fcw-message" aria-label="Contact">
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
         <polyline points="22,6 12,13 2,6"/>
